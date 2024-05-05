@@ -10,4 +10,4 @@ function loadPage(pageUrl) {
     xhttp.send();
 }
 
-loadPage("about.html");
+loadPage("articles.html");
