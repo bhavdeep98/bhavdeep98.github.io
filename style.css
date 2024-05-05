@@ -21,6 +21,10 @@ main {
     overflow-y: auto;
 }
 
+#main-content {
+    background-color: #ffefcd;
+}
+
 h1,
 h2 {
     font-family: "Montserrat", sans-serif;
@@ -180,6 +184,7 @@ footer {
     margin: 0;
     padding: 0;
     width: 100%;
+    max-width: 90vw;
 }
 
 .publication {
@@ -207,6 +212,11 @@ footer {
 .me {
     color: #a97400 !important;
     font-weight: 800 !important;
+}
+
+.authors {
+    max-width: 650px;
+    text-align: left;
 }
 
 .authors a {

@@ -11,4 +11,4 @@ function loadPage(pageUrl) {
     xhttp.send();
 }
 
-// loadPage("research.html");
+loadPage("research.html");
