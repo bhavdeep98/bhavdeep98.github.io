@@ -11,4 +11,4 @@ function loadPage(pageUrl) {
     xhttp.send();
 }
 
-loadPage("cv.html");
+// loadPage("cv.html");
