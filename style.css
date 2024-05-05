@@ -83,12 +83,11 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    height: 100%;
-    padding: 16px 24px;
     -webkit-user-select: none; /* Chrome, Safari, etc. */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
+    padding: 20px 0;
 }
 
 nav ul li:hover {
@@ -100,6 +99,7 @@ nav ul li a {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
+    padding: 24px;
 }
 
 img {
