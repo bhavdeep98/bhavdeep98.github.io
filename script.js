@@ -10,4 +10,4 @@ function loadPage(pageUrl) {
     xhttp.send();
 }
 
-// loadPage("cv.html");
+loadPage("about.html");
