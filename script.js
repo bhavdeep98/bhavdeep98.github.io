@@ -9,7 +9,7 @@ function loadPage(pageUrl) {
     xhttp.open("GET", pageUrl, true);
     xhttp.send();
     if (pageUrl == "articles.html") {
-        filterCards("tag1");
+        filterCards("all");
     }
 }
 
