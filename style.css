@@ -382,6 +382,36 @@ footer {
     text-align: left;
 }
 
+.articles-heading-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#filters {
+    display: flex;
+    align-items: center;
+}
+
+#filters p {
+    margin-right: 10px;
+}
+
+#filters button {
+    border: 2px solid black;
+    background-color: white;
+    margin-right: 12px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#filters button.selected {
+    background: goldenrod;
+}
+
 /* Mobile CSS - Bottom */
 
 @media only screen and (max-width: 600px) {

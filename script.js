@@ -8,6 +8,35 @@ function loadPage(pageUrl) {
     };
     xhttp.open("GET", pageUrl, true);
     xhttp.send();
+    if (pageUrl == "articles.html") {
+        filterCards("tag1");
+    }
 }
 
-loadPage("about.html");
+window.onload = function () {
+    loadPage("articles.html");
+};
+
+function filterCards(tag) {
+    var cards = document.getElementsByClassName("article-item");
+    var filters = document.querySelectorAll('#filters button');
+
+    setTimeout(function () {
+        filters.forEach(button => {
+            if (button.className === 'filter-' + tag) {
+                button.classList.add('selected');
+            } else {
+                button.classList.remove('selected');
+            }
+        });
+
+        for (var i = 0; i < cards.length; i++) {
+            var tags = cards[i].getAttribute("data-tags");
+            if (tag === "all" || tags.includes(tag)) {
+                cards[i].style.display = ""; // Show card
+            } else {
+                cards[i].style.display = "none"; // Hide card
+            }
+        }
+    }, 50);
+}
