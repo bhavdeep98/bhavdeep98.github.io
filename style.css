@@ -451,4 +451,12 @@ footer {
     .cv-item-right {
         font-size: 0.7em;
     }
+
+    .articles-heading-container {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+
 }
