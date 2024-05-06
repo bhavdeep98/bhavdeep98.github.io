@@ -14,7 +14,7 @@ function loadPage(pageUrl) {
 }
 
 window.onload = function () {
-    loadPage("articles.html");
+    loadPage("about.html");
 };
 
 function filterCards(tag) {
