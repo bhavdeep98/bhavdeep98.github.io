@@ -5,6 +5,51 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>My Publications</title>
         <link rel="stylesheet" href="./style.css" />
+        <style>
+            body {
+                font-family: 'Lato', sans-serif;
+                line-height: 1.6;
+                padding: 20px;
+            }
+
+            h1 {
+                text-align: left;
+                margin-bottom: 30px;
+            }
+
+            .publications-list {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            .publication {
+                margin-bottom: 30px;
+                text-align: left;
+            }
+
+            .publication-left-details {
+                flex: 1;
+            }
+
+            .publication-details,
+            .summary,
+            .authors {
+                margin-bottom: 10px;
+            }
+
+            .summary {
+                margin-top: 10px;
+            }
+
+            a {
+                text-decoration: none;
+                color: #0073e6;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
     </head>
     <body>
         <section id="research">
@@ -12,155 +57,139 @@
                 <h1>My Publications</h1>
                 <ul class="publications-list">
                     <li>
-                        <div class="publication">
+                         <div class="publication">
                             <div class="publication-left-details">
                                 <h2 class="publication-title">
-                                    Real‐Time Visual Feedback Benchmark
-                                    Creation: <br />A
-                                    Human‐and‐Metric‐in‐the‐loop workflow
+                                    <a href="https://arxiv.org/abs/2302.04434" target="_blank">Real‐Time Visual Feedback Benchmark Creation: <br />A Human‐and‐Metric‐in‐the‐loop workflow</a>
                                 </h2>
                                 <p class="authors">
-                                    <a href="#">Anjana Arunkumar,</a>
-                                    <a href="#">Swaroop Mishra,</a>
-                                    <a class="me" href="#"
-                                        >Bhavdeep Sachdeva,</a
-                                    >
-                                    <a href="#">Chitta Baral,</a>
-                                    <a href="#">Chris Bryan</a>
+                                    <a href="https://aarunku5.github.io/" target="_blank">Anjana Arunkumar,</a>
+                                    <a href="https://swarooprm.github.io/" target="_blank">Swaroop Mishra,</a>
+                                    <a class="me" href="#">Bhavdeep Sachdeva,</a>
+                                    <a href="https://www.public.asu.edu/~cbaral/chitta-web/" target="_blank">Chitta Baral,</a>
+                                    <a href="https://chrisbryan.github.io/" target="_blank">Chris Bryan</a>
                                 </p>
-                            </div>
-                            <div class="publication-details">
-                                <p class="year"><strong>2023</strong></p>
-                                <p class="conference">
-                                    <strong><span>EACL</span></strong>
+                                <div class="publication-details">
+                                    <p class="year"><strong>2023</strong></p>
+                                    <p class="conference"><strong><span>EACL</span></strong></p>
+                                </div>
+                                <p class="summary">
+                                    This paper introduces <strong>VAIDA</strong>, a system designed to improve the quality of NLP benchmarks by guiding crowdworkers with real-time visual feedback and metric-based recommendations. The system significantly reduces artifacts in data samples, leading to better, more robust benchmarks. It achieved a 45.8% reduction in artifact levels and improved the diversity and robustness of models across tasks.
                                 </p>
                             </div>
                         </div>
+
                         <div class="publication">
                             <div class="publication-left-details">
                                 <h2 class="publication-title">
-                                    NumGLUE: A Suite of Fundamental yet
-                                    Challenging Mathematical Reasoning Tasks
+                                    <a href="https://github.com/allenai/numglue?tab=readme-ov-file" target="_blank">NumGLUE: A Suite of Fundamental yet Challenging Mathematical Reasoning Tasks</a>
                                 </h2>
                                 <p class="authors">
-                                    <a href="#">Swaroop Mishra,</a>
-                                    <a href="#">Arindam Mitra,</a>
-                                    <a href="#">Neeraj Varshney,</a>
-                                    <a class="me" href="#"
-                                        >Bhavdeep Singh Sachdeva,</a
-                                    >
-                                    <a href="#">Peter Clark</a>
-                                    <a href="#">Chitta Baral</a>
-                                    <a href="#">Ashwin Kalyan</a>
+                                    <a href="https://swarooprm.github.io/" target="_blank">Swaroop Mishra,</a>
+                                    <a href="https://ari9dam.github.io/" target="_blank">Arindam Mitra,</a>
+                                    <a href="https://nrjvarshney.github.io/" target="_blank">Neeraj Varshney,</a>
+                                    <a class="me" href="#">Bhavdeep Singh Sachdeva,</a>
+                                    <a href="https://pclark425.github.io/" target="_blank">Peter Clark,</a>
+                                    <a href="https://www.public.asu.edu/~cbaral/chitta-web/" target="_blank">Chitta Baral,</a>
+                                    <a href="http://ashwinkalyan.com/" target="_blank">Ashwin Kalyan</a>
                                 </p>
-                            </div>
-                            <div class="publication-details">
-                                <p class="year"><strong>2022</strong></p>
-                                <p class="conference">
-                                    <strong><span>ACL</span></strong>
+                                <div class="publication-details">
+                                    <p class="year"><strong>2022</strong></p>
+                                    <p class="conference"><strong><span>ACL</span></strong></p>
+                                </div>
+                                <p class="summary">
+                                    <strong>NumGLUE</strong> offers a benchmark that tests models' mathematical reasoning skills. It focuses on creating challenges that test fundamental math reasoning, revealing gaps in model understanding and pushing models to improve on this front.
                                 </p>
                             </div>
                         </div>
+
                         <div class="publication">
                             <div class="publication-left-details">
                                 <h2 class="publication-title">
-                                    Generalized but not Robust? Understanding
-                                    the Effects of Out‐of‐Domain Generalization
-                                    Methods
+                                    <a href="https://aclanthology.org/2022.findings-acl.213/" target="_blank">Generalized but not Robust? Understanding the Effects of Out‐of‐Domain Generalization Methods</a>
                                 </h2>
                                 <p class="authors">
-                                    <a href="#">Tejas Gokhale,</a>
-                                    <a href="#">Swaroop Mishra,</a>
-                                    <a href="#">Man Luo,</a>
-                                    <a class="me" href="#"
-                                        >Bhavdeep Singh Sachdeva,</a
-                                    >
-                                    <a href="#">Chitta Baral</a>
+                                    <a href="https://www.tejasgokhale.com/" target="_blank">Tejas Gokhale,</a>
+                                    <a href="https://swarooprm.github.io/" target="_blank">Swaroop Mishra,</a>
+                                    <a href="https://luomancs.github.io/" target="_blank">Man Luo,</a>
+                                    <a class="me" href="#">Bhavdeep Singh Sachdeva,</a>
+                                    <a href="https://www.public.asu.edu/~cbaral/chitta-web/" target="_blank">Chitta Baral</a>
                                 </p>
-                            </div>
-                            <div class="publication-details">
-                                <p class="year"><strong>2022</strong></p>
-                                <p class="conference">
-                                    <strong><span>ACL</span></strong>
+                                <div class="publication-details">
+                                    <p class="year"><strong>2022</strong></p>
+                                    <p class="conference"><strong><span>ACL</span></strong></p>
+                                </div>
+                                <p class="summary">
+                                    This study investigates how generalization techniques can improve performance in NLP models, particularly in out-of-domain tasks. The findings emphasize the trade-off between generalization and robustness, urging improvements in both aspects.
                                 </p>
                             </div>
                         </div>
+
                         <div class="publication">
                             <div class="publication-left-details">
                                 <h2 class="publication-title">
-                                    DQI: A Guide to Benchmark Evaluation
+                                    <a href="https://arxiv.org/abs/2008.03964" target="_blank">DQI: A Guide to Benchmark Evaluation</a>
                                 </h2>
                                 <p class="authors">
-                                    <a href="#">Swaroop Mishra,</a>
-                                    <a href="#">Anjana Arunkumar,</a>
-                                    <a class="me" href="#"
-                                        >Bhavdeep Sachdeva,</a
-                                    >
-                                    <a href="#">Chris Bryan,</a>
-                                    <a href="#">Chitta Baral</a>
+                                    <a href="https://swarooprm.github.io/" target="_blank">Swaroop Mishra,</a>
+                                    <a href="https://aarunku5.github.io/" target="_blank">Anjana Arunkumar,</a>
+                                    <a class="me" href="#">Bhavdeep Sachdeva,</a>
+                                    <a href="https://www.public.asu.edu/~cbaral/chitta-web/" target="_blank">Chitta Baral</a>
                                 </p>
-                            </div>
-                            <div class="publication-details">
-                                <p class="year"><strong>2020</strong></p>
-                                <p class="conference">
-                                    <strong
-                                        ><span
-                                            >ICML Workshop on Uncertainty and
-                                            Robustness in Deep Learning</span
-                                        ></strong
-                                    >
+                                <div class="publication-details">
+                                    <p class="year"><strong>2020</strong></p>
+                                    <p class="conference">
+                                        <strong><span>ICML Workshop on Uncertainty and Robustness in Deep Learning</span></strong>
+                                    </p>
+                                </div>
+                                <p class="summary">
+                                    <strong>DQI</strong> presents a framework to assess benchmark quality by identifying and correcting artifacts in datasets. It provides guidelines for better sample creation in NLP benchmarks, promoting more robust and reliable evaluations.
                                 </p>
                             </div>
                         </div>
+
                         <div class="publication">
                             <div class="publication-left-details">
                                 <h2 class="publication-title">
-                                    Do We Need to Create Big Datasets to Learn a
-                                    Task?
+                                    <a href="https://aclanthology.org/2020.sustainlp-1.23/" target="_blank">Do We Need to Create Big Datasets to Learn a Task?</a>
                                 </h2>
                                 <p class="authors">
-                                    <a class="me" href="#"
-                                        >Bhavdeep Sachdeva</a
-                                    >
-                                    <a href="#">Swaroop Mishra,</a>
+                                    <a class="me" href="#">Bhavdeep Sachdeva</a>
+                                    <a href="https://swarooprm.github.io/" target="_blank">Swaroop Mishra</a>
                                 </p>
-                            </div>
-                            <div class="publication-details">
-                                <p class="year"><strong>2020</strong></p>
-                                <p class="conference">
-                                    <strong
-                                        ><span>SUSTAINLP Workshop</span></strong
-                                    >
+                                <div class="publication-details">
+                                    <p class="year"><strong>2020</strong></p>
+                                    <p class="conference"><strong><span>SUSTAINLP Workshop</span></strong></p>
+                                </div>
+                                <p class="summary">
+                                    This paper explores the efficiency of training NLP models using smaller, well-targeted datasets, promoting a more sustainable approach to AI development without compromising performance.
                                 </p>
                             </div>
                         </div>
-                        <div class="publication">
-                            <div class="publication-left-details">
-                                <h2 class="publication-title">
-                                    Traffic state detection using smartphone
-                                    based acoustic sensing.
-                                </h2>
-                                <p class="authors">
-                                    <a href="#">Arshvir Kaur,</a>
-                                    <a href="#">Nitakshi Sood,</a>
-                                    <a href="#">Naveen Aggarwal,</a>
-                                    <a href="#">Dinesh Vij,</a>
-                                    <a class="me" href="#"
-                                        >Bhavdeep Sachdeva</a
-                                    >
-                                </p>
-                            </div>
+
+                         <div class="publication">
+                        <div class="publication-left-details">
+                            <h2 class="publication-title">
+                                <a href="https://content.iospress.com/articles/journal-of-intelligent-and-fuzzy-systems/ifs169259" target="_blank">Traffic state detection using smartphone based acoustic sensing.</a>
+                            </h2>
+                            <p class="authors">
+                                <a href="#">Arshvir Kaur,</a>
+                                <a href="#">Nitakshi Sood,</a>
+                                <a href="#">Naveen Aggarwal,</a>
+                                <a href="#">Dinesh Vij,</a>
+                                <a class="me" href="#">Bhavdeep Sachdeva</a>
+                            </p>
                             <div class="publication-details">
                                 <p class="year"><strong>2016</strong></p>
                                 <p class="conference">
-                                    <strong
-                                        ><span
-                                            >Journal of Intelligent & Fuzzy Systems</span
-                                        ></strong
-                                    >
+                                    <strong><span>Journal of Intelligent & Fuzzy Systems</span></strong>
                                 </p>
                             </div>
+                            <p class="summary">
+                                This study proposes a novel approach to traffic state detection using acoustic data collected from smartphones. It offers a scalable and cost-effective solution to urban traffic monitoring.
+                            </p>
                         </div>
+                    </div>
                     </li>
                 </ul>
             </div>

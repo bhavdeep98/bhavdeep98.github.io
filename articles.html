@@ -5,71 +5,126 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Articles</title>
         <link rel="stylesheet" href="./style.css" />
+        <style>
+            /* Set uniform image size */
+            .article-item-top img {
+                width: 100%;
+                height: auto;
+                max-width: 300px;
+                max-height: 200px;
+                object-fit: cover;
+                display: block;
+                margin: 0 auto; /* Center the image horizontally */
+            }
+
+            /* Center articles-container and its content */
+            .articles-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center; /* Centers items horizontally */
+                gap: 20px; /* Space between the article items */
+                padding: 20px;
+            }
+
+            .article-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Align content to the center */
+                max-width: 350px;
+                text-align: center;
+                background-color: #f9f9f9;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .article-item-bottom h3 {
+                margin: 10px 0;
+                font-size: 1.5rem;
+            }
+
+            .article-item-bottom p {
+                font-size: 1rem;
+                color: #555;
+            }
+
+            .read-more-link {
+                text-decoration: none;
+                color: #007bff;
+                font-weight: bold;
+                margin-top: 10px;
+                display: inline-block;
+            }
+        </style>
     </head>
     <body>
-        <section id="cv">
+        <section id="note">
+            <div class="container-2" style="background-color: #f1f1f1; padding: 20px; border-radius: 8px; margin-bottom: 30px; margin-top: 10px;">
+                <p style="font-size: 1.1rem; color: #333;">
+                    <strong>Note:</strong> The articles listed here are not peer-reviewed. They reflect my evolving thought process as I continually refine my research problems in small, incremental steps. My insights draw heavily from my experiences in industry and entrepreneurship, where I have faced and learned from many failures. While I remain adaptable, I hold strong to my core values and work ethic.
+                </p>
+                <p style="font-size: 1.1rem; color: #333;">
+                    If you're interested, ask me about my skating journey, including how I earned the <a href="https://pib.gov.in/newsite/erelcontent.aspx?relid=54038" target="_blank" style="color: #007bff; text-decoration: none; font-weight: bold;">National Child Award for Exceptional Achievement</a>.
+                </p>
+                <p style="font-size: 1.1rem; color: #333;">
+                    Additionally, all photographs featured here are my own. Feel free to use them if any catch your interest.
+                </p>
+            </div>
+        </section>
+
+        <section id="articles">
             <div class="container-2">
                 <div class="articles-heading-container">
                     <h1>Articles</h1>
                     <div id="filters">
                         <p>Filters: </p>
                         <button class="filter-all selected" onclick="filterCards('all')">All</button>
-                        <button class="filter-tag1" onclick="filterCards('tag1')">Tag1</button>
-                        <button class="filter-tag2" onclick="filterCards('tag2')">Tag2</button>
+                        <button class="filter-tag1" onclick="filterCards('tag1')">AIGovernance</button>
+                        <button class="filter-tag2" onclick="filterCards('tag2')">AISafety</button>
                     </div>
                 </div>
 
                 <div class="articles-container">
-                    <div class="article-item" data-tags="tag1">
-                    <div class="article-item-top">
-                        <img src="images/EmotionsGameTheoryAndLLM.png" alt="Emotions in Game Theory and Computational Models">
-                    </div>
-                    <div class="article-item-bottom">
-                        <h3>Role of Emotions in Game Theory and Society</h3>
-                        <p>How emotions influence game theory and social dynamics, emphasizing emotional intelligence and computational models.</p>
-                        <a href="articles/emotions-game-theory.html" class="read-more-link">Read more</a>
-                    </div>
-                    </div>
-                    <div class="article-item" data-tags="tag1 tag2">
-                        <div class="article-item-top"></div>
+                    <div class="article-item" data-tags="">
+                        <div class="article-item-top">
+                            <img src="images/Photography/SpaceNeedle.JPG" alt="Space Needle">
+                        </div>
                         <div class="article-item-bottom">
-                            <h3>Article 2</h3>
-                            <p>This is an article description</p>
+                            <h3>Role of Emotions in Game Theory and Society</h3>
+                            <p>How emotions influence game theory and social dynamics, emphasizing emotional intelligence and computational models.</p>
+                            <a href="articles/emotions-game-theory.html" class="read-more-link">Read more</a>
                         </div>
                     </div>
-                    <div class="article-item" data-tags="tag3 tag2">
-                        <div class="article-item-top"></div>
+                    <div class="article-item" data-tags="AIGovernance AISafety">
+                        <div class="article-item-top">
+                            <img src="images/Photography/rubyBeach.JPG" alt="Ruby Beach">
+                        </div>
                         <div class="article-item-bottom">
-                            <h3>Article 3</h3>
-                            <p>This is an article description</p>
+                            <h3>Evolving AI Intelligence</h3>
+                            <p>Adaptive Problem-Solving in Multi-Agent Environments Using Evolutionary Game Theory and Human Guidance</p>
+                            <a href="articles/phd-research-proposal.html" class="read-more-link">Read more</a>
                         </div>
                     </div>
-                    <div class="article-item" data-tags="tag3">
-                        <div class="article-item-top"></div>
+                    <div class="article-item" data-tags="AIGovernance AISafety">
+                        <div class="article-item-top">
+                            <img src="images/Photography/RainierMorning.JPG" alt="Emotions in Game Theory and Computational Models">
+                        </div>
                         <div class="article-item-bottom">
-                            <h3>Article 4</h3>
-                            <p>This is an article description</p>
+                            <h3>Agent Learning Control</h3>
+                            <p>Defining Human-in-the-Loop Governance for Evolving AI Agents in Confined Boundaries</p>
+                            <a href="articles/human_in_the_loop_governance_evolving_agents.html" class="read-more-link">Read more</a>
                         </div>
                     </div>
-                    <div class="article-item" data-tags="tag4">
-                        <div class="article-item-top"></div>
-                        <div class="article-item-bottom">
-                            <h3>Article 5</h3>
-                            <p>This is an article description</p>
+                    
+                    <div class="article-item" data-tags="AIGovernance AISafety">
+                        <div class="article-item-top">
+                            <img src="images/Photography/MtBaker.JPG" alt="Balancing Human and Model Capabilities: A Synergistic Approach">
                         </div>
-                    </div>
-                    <div class="article-item" data-tags="tag4 tag2">
-                        <div class="article-item-top"></div>
                         <div class="article-item-bottom">
-                            <h3>Article 6</h3>
-                            <p>This is an article description</p>
-                        </div>
-                    </div>
-                    <div class="article-item" data-tags="tag3">
-                        <div class="article-item-top"></div>
-                        <div class="article-item-bottom">
-                            <h3>Article 7</h3>
-                            <p>This is an article description</p>
+                            <h3>Balancing Human and Model Capabilities: A Synergistic Approach</h3>
+                            <p>Optimizing Human-Model Synergy for Smarter, Adaptive Problem-Solving</p>
+                            <a href="articles/human-model-synergy-slow-fast-thinking.html
+" class="read-more-link">Read more</a>
                         </div>
                     </div>
                 </div>

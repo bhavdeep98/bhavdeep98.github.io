@@ -8,6 +8,7 @@ body {
     flex-direction: column;
     overflow-y: hidden;
     color: black !important;
+    font-size: 18px; /* Adjust base font size */
 }
 
 * {
@@ -30,7 +31,7 @@ h1,
 h2 {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: 700; /* Make headings bold */
     font-style: normal;
     padding: 12px 0;
 }
@@ -75,6 +76,8 @@ h2 {
     max-width: 320px;
     object-fit: cover;
     object-position: center;
+    width: 100%; /* Ensures responsiveness */
+    max-width: 180px; /* Limits size to maintain design */
 }
 
 nav {
@@ -367,10 +370,12 @@ footer {
     min-width: 200px;
 }
 
-.article-item-top {
-    background-color: #2b2b2b;
+.article-item-top img {
     width: 100%;
-    flex: 1;
+    height: auto; /* Maintains the aspect ratio */
+    max-width: 300px; /* Optional: limits the max width */
+    max-height: 200px; /* Optional: limits the max height */
+    object-fit: cover; /* Ensures the image fits within the given space without distortion */
 }
 
 .article-item-bottom {
@@ -461,3 +466,54 @@ footer {
 
 
 }
+
+.accent {
+    color: #d6e0f0; /* Pale blue for light accents */
+}
+
+nav ul li a:hover, nav ul li a:focus, .social-icon:hover {
+    background-color: #555; /* Darker shade for hover effect */
+    transition: background-color 0.3s ease;
+}
+@media only screen and (max-width: 600px) {
+    nav ul li a {
+        padding: 30px; /* Larger padding for easier touch */
+    }
+}
+
+
+#hero {
+    background: url('images/achievement-background.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 40px 20px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+.photo-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+.photo-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.photo-grid img:hover {
+    transform: scale(1.1);
+}
+
