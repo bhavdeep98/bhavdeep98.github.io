@@ -13,10 +13,6 @@ function loadPage(pageUrl) {
     }
 }
 
-window.onload = function () {
-    loadPage("about.html");
-};
-
 function filterCards(tag) {
     var cards = document.getElementsByClassName("article-item");
     var filters = document.querySelectorAll('#filters button');

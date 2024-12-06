@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     overflow-y: hidden;
     color: black !important;
-    font-size: 18px; /* Adjust base font size */
+    font-size: 1rem; /* Adjust base font size */
 }
 
 * {
@@ -45,6 +45,12 @@ h2 {
     margin-bottom: 70px;
 }
 
+#note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .container-2 {
     max-width: 800px;
     margin: 0 auto;
@@ -54,6 +60,28 @@ h2 {
     align-items: flex-start;
     width: 100%;
     margin-bottom: 70px;
+}
+
+.articles-top-note{
+    position: relative;
+    max-width: 700px;
+    padding: 20px;
+    border: 2px solid #614200; /* Border color */
+    border-radius: 12px; /* Curved borders */
+    background-color: #FFF; /* Light background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+    margin: 20px 20px 0 20px;
+  }
+  
+.articles-top-note::before {
+    content: "Note"; /* Label text */
+    position: absolute;
+    top: -14px;
+    left: 20px;
+    background-color: #fff;
+    padding: 0 5px;
+    font-weight: bold;
+    color: #a97400; /* Same color as border */
 }
 
 .content {
@@ -461,6 +489,10 @@ footer {
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 20px;
+    }
+
+    .articles-top-note {
+        padding-top: 16px;
     }
 
 
