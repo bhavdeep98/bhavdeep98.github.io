@@ -73,9 +73,9 @@ h2 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
     width: 100%;
     aspect-ratio: 1 / 1;
-    max-width: 320px;
+    max-width: 480px;
     object-fit: cover;
-    object-position: center;
+    object-position: left;
     width: 100%; /* Ensures responsiveness */
     max-width: 180px; /* Limits size to maintain design */
 }
@@ -436,7 +436,7 @@ footer {
     }
 
     .profile-picture {
-        width: 260px;
+        width: 20rem;
     }
 
     .profile-container {
