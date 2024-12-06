@@ -118,7 +118,7 @@ img {
 }
 
 #welcome {
-    background-color: #ffefcd;
+    background-color: #ffffff;
     padding: 40px 0;
     background-image: url("../images/background.svg");
     background-size: cover;
@@ -127,6 +127,7 @@ img {
     height: 100%;
     overflow-y: auto;
 }
+
 
 #summary {
     font-size: 1em;
@@ -435,7 +436,7 @@ footer {
     }
 
     .profile-picture {
-        width: 180px;
+        width: 260px;
     }
 
     .profile-container {
