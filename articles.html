@@ -1,210 +1,211 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Articles</title>
-    <style>
-      /* Set uniform image size */
-      .article-item-top img {
-        width: 100%;
-        height: auto;
-        max-width: 300px;
-        max-height: 200px;
-        object-fit: cover;
-        display: block;
-        margin: 0 auto; /* Center the image horizontally */
-      }
 
-      /* Center articles-container and its content */
-      .articles-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center; /* Centers items horizontally */
-        gap: 20px; /* Space between the article items */
-        padding: 20px;
-      }
 
-      .article-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Align content to the center */
-        max-width: 350px;
-        text-align: center;
-        background-color: #f9f9f9;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .article-item-bottom h3 {
-        margin: 10px 0;
-        font-size: 1.5rem;
-      }
-
-      .article-item-bottom p {
-        font-size: 1rem;
-        color: #555;
-      }
-
-      .read-more-link {
-        text-decoration: none;
-        color: #007bff;
-        font-weight: bold;
-        margin-top: 10px;
-        display: inline-block;
-      }
-
-      /* Optional: Highlight the selected filter button */
-      .filters button {
-        cursor: pointer;
-        border: none;
-        background: #eee;
-        padding: 8px 16px;
-        margin-right: 8px;
-        border-radius: 4px;
-      }
-      .filters button.selected {
-        background: #007bff;
-        color: #fff;
-      }
-    </style>
-  </head>
-  <body>
-    <section id="note">
-      <div class="container-2 articles-top-note" style="padding: 20px;">
-        <p style="font-size: 0.9rem; color: #333;">
-          The articles listed here are not peer-reviewed. They reflect my evolving thought process as I continually refine my research problems in small, incremental steps. My insights draw heavily from my experiences in industry and entrepreneurship, where I have faced and learned from many failures. While I remain adaptable, I hold strong to my core values and work ethic.
-        </p>
-        <p style="font-size: 0.9rem; color: #333;">
-          If you're interested, ask me about my skating journey, including how I earned the 
-          <a href="https://pib.gov.in/newsite/erelcontent.aspx?relid=54038" target="_blank" style="color: #007bff; text-decoration: none; font-weight: bold;">
-            National Child Award for Exceptional Achievement
-          </a>.
-        </p>
-        <p style="font-size: 0.9rem; color: #333;">
-          Additionally, all photographs featured here are my own. Feel free to use them if any catch your interest.
-        </p>
-      </div>
-    </section>
-
-    <section id="articles">
-      <div class="container-2" style="padding: 20px;">
-        <div class="articles-heading-container">
-          <h1>Articles</h1>
-          <div id="filters" class="filters">
-            <p style="display: inline;">Filters: </p>
-            <!-- Updated buttons to match the data-tags in your articles -->
-            <button class="selected" onclick="filterCards('all')">All</button>
-            <button onclick="filterCards('AIGovernance')">AIGovernance</button>
-            <button onclick="filterCards('AISafety')">AISafety</button>
-            <button onclick="filterCards('AIResearch')">AIResearch</button>
-            <button onclick="filterCards('AIInnovation')">AIInnovation</button>
-          </div>
-        </div>
-
-        <div class="articles-container">
-          <!-- Example article without tags -->
-          <div class="article-item" data-tags="">
-            <div class="article-item-top">
-              <img src="images/Photography/SpaceNeedle.JPG" alt="Space Needle">
-            </div>
-            <div class="article-item-bottom">
-              <h3>Role of Emotions in Game Theory and Society</h3>
-              <p>How emotions influence game theory and social dynamics, emphasizing emotional intelligence and computational models.</p>
-              <a href="articles/emotions-game-theory.html" class="read-more-link">Read more</a>
-            </div>
-          </div>
-
-          <!-- Example article with multiple tags -->
-          <div class="article-item" data-tags="AIGovernance AISafety">
-            <div class="article-item-top">
-              <img src="images/Photography/rubyBeach.JPG" alt="Ruby Beach">
-            </div>
-            <div class="article-item-bottom">
-              <h3>Evolving AI Intelligence</h3>
-              <p>Adaptive Problem-Solving in Multi-Agent Environments Using Evolutionary Game Theory and Human Guidance</p>
-              <a href="articles/phd-research-proposal.html" class="read-more-link">Read more</a>
-            </div>
-          </div>
-
-          <div class="article-item" data-tags="AIGovernance AISafety">
-            <div class="article-item-top">
-              <img src="images/Photography/RainierMorning.JPG" alt="Emotions in Game Theory">
-            </div>
-            <div class="article-item-bottom">
-              <h3>Agent Learning Control</h3>
-              <p>Defining Human-in-the-Loop Governance for Evolving AI Agents in Confined Boundaries</p>
-              <a href="articles/human_in_the_loop_governance_evolving_agents.html" class="read-more-link">Read more</a>
-            </div>
-          </div>
-
-          <div class="article-item" data-tags="AIGovernance AISafety">
-            <div class="article-item-top">
-              <img src="images/Photography/MtBaker.JPG" alt="Balancing Human and Model Capabilities">
-            </div>
-            <div class="article-item-bottom">
-              <h3>Balancing Human and Model Capabilities</h3>
-              <p>Optimizing Human-Model Synergy for Smarter, Adaptive Problem-Solving</p>
-              <a href="articles/human-model-synergy-slow-fast-thinking.html" class="read-more-link">Read more</a>
-            </div>
-          </div>
-
-          <div class="article-item" data-tags="AIGovernance">
-            <div class="article-item-top">
-              <img src="images/IMG_20190519_180955-EFFECTS_Original.jpg" alt="Multi-Agent Systems Strategies">
-            </div>
-            <div class="article-item-bottom">
-              <h3>Strategies in Multi-Agent Systems</h3>
-              <p>Explore how predefined frameworks improve multi-agent collaboration and problem-solving efficiency.</p>
-              <a href="articles/mas-strategies.html" class="read-more-link">Read more</a>
-            </div>
-          </div>
-
-          <div class="article-item" data-tags="AIResearch AIInnovation">
-            <div class="article-item-top">
-              <img src="images/IMG_2982.JPG" alt="Compound AI Strategies">
-            </div>
-            <div class="article-item-bottom">
-              <h3>From Monolithic Models to Compound AI</h3>
-              <p>Discover the evolution of AI systems from monolithic models to compound AI, exploring their impact and future trends.</p>
-              <a href="articles/from-monolithic-to-compound-ai.html" class="read-more-link">Read more</a>
-            </div>
-          </div>
-
-          <div class="article-item" data-tags="AIGovernance AIResearch">
-            <div class="article-item-top">
-              <img src="images/Photography/GaneshayeNamah.jpg" alt="Task Allocation Strategies">
-            </div>
-            <div class="article-item-bottom">
-              <h3>Task Allocation in Multi-Agent Collaboration</h3>
-              <p>Explore strategies for role-based specialization, dynamic task assignment, and adaptive delegation in multi-agent systems.</p>
-              <a href="articles/task_allocation_expanded.html" class="read-more-link">Read more</a>
-            </div>
-          </div>
+<!-- articles.html -->
+<section id="note">
+  <div class="container-2 articles-top-note" style="text-align: left;">
+    <p class="note-text">
+      Recently, I've been reflecting on a powerful statement by <b>Andrew Ng</b>:
+      <span style="font-style: italic;">"I am not important, what I want to do is."</span>
+      This resonated deeply with me as I navigated a period of anxiety and uncertainty. It reminded me to
+      <span style="font-weight: bold;">focus on my goals and contributions</span>, rather than getting caught up in
+      self-doubt.
+    </p>
+  
+    <p class="note-text">
+      Inspired by this, I'm excited to share my research and thoughts here. This space is dedicated to exploring the
+      fascinating intersection of:
+    </p>
+  
+    <ul class="note-list" style="font-size: 0.9em; padding-left: 20px;">
+      <li style="margin-bottom: 5px;">
+        <span style="color: #a97400; font-weight: bold">Ethical AI:</span> Building AI systems that are ethically sound from their inception.
+      </li>
+      <li style="margin-bottom: 5px;">
+        <span style="color: #a97400; font-weight: bold">Collaborative Multi-Agent Systems:</span> Designing frameworks for productive
+        interactions between humans and AI agents.
+      </li>
+      <li style="margin-bottom: 5px;">
+        <span style="color: #a97400; font-weight: bold">AI Safety and Human Psychology:</span> Investigating the psychological impacts of AI
+        on human trust, reliance, and well-being.
+      </li>
+    </ul>
+  
+    <p class="note-text">
+      I believe that by combining human <span style="font-style: italic;">"slow thinking"</span> with AI's
+      <span style="font-style: italic;">"fast thinking,"</span> we can achieve extraordinary outcomes. But this requires
+      careful consideration of the
+      <span style="font-weight: bold;">ethical implications</span> and the
+      <span style="font-weight: bold;">potential impacts on human psychology</span>.
+    </p>
+  
+    <p class="note-text">
+      My hope for this space is to:
+    </p>
+  
+    <ul class="note-list" style="font-size: 0.9em; padding-left: 20px;">
+      <li style="margin-bottom: 5px;">
+        <span style="color: #a97400;">Spark valuable conversations about the future of AI.</span>
+      </li>
+      <li style="margin-bottom: 5px;">
+        <span style="color: #a97400;">Contribute to the development of AI that truly benefits humanity.</span>
+      </li>
+    </ul>
+  
+    <p class="note-text">
+      Beyond my research, I'll also be sharing some personal reflections here. I believe that our values and
+      experiences shape who we are, both as researchers and individuals. Feel free to explore these posts – you might
+      find something that resonates with you.
+    </p>
+  </div>
+  </section>
+  
+  <section id="articles">
+    <div class="container-2">
+      <div class="articles-heading-container">
+        <h1>Articles</h1>
+        <div id="filters" class="filters">
+          <p>Filters: </p>
+          <button class="selected" data-tag="all" aria-pressed="true">All</button>
+          <button data-tag="AIGovernance" aria-pressed="false">AIGovernance</button>
+          <button data-tag="AISafety" aria-pressed="false">AISafety</button>
+          <button data-tag="AIResearch" aria-pressed="false">AIResearch</button>
+          <button data-tag="AIInnovation" aria-pressed="false">AIInnovation</button>
         </div>
       </div>
-    </section>
-
-    <script>
-      function filterCards(tag) {
-        // Remove 'selected' class from all filter buttons
-        document.querySelectorAll('#filters button').forEach(btn => btn.classList.remove('selected'));
-
-        // Add 'selected' class to the currently clicked button
-        event.target.classList.add('selected');
-
-        // Show/Hide articles based on the chosen tag
-        const articles = document.querySelectorAll('.article-item');
-        articles.forEach(article => {
-          const tags = article.getAttribute('data-tags').split(' ');
-          if (tag === 'all' || tags.includes(tag)) {
-            article.style.display = 'flex';
-          } else {
-            article.style.display = 'none';
-          }
-        });
-      }
-    </script>
-  </body>
-</html>
+  
+      <div class="articles-container">
+        <!-- Example article without tags -->
+        <article class="article-item" data-tags="">
+          <div class="article-item-top">
+            <img src="images/Photography/SpaceNeedle.JPG" alt="View of the Space Needle from the ground" loading="lazy">
+          </div>
+          <div class="article-item-bottom">
+            <h3>Role of Emotions in Game Theory and Society</h3>
+            <p>How emotions influence game theory and social dynamics, emphasizing emotional intelligence and computational models.</p>
+            <a href="articles/emotions-game-theory.html" class="read-more-link">Read more</a>
+          </div>
+        </article>
+  
+        <!-- Example article with multiple tags -->
+        <article class="article-item" data-tags="AIGovernance AISafety">
+          <div class="article-item-top">
+            <img src="images/Photography/rubyBeach.JPG" alt="Ruby Beach during sunrise" loading="lazy">
+          </div>
+          <div class="article-item-bottom">
+            <h3>Evolving AI Intelligence</h3>
+            <p>Adaptive Problem-Solving in Multi-Agent Environments Using Evolutionary Game Theory and Human Guidance</p>
+            <a href="articles/phd-research-proposal.html" class="read-more-link">Read more</a>
+          </div>
+        </article>
+  
+        <!-- Additional articles... -->
+        <article class="article-item" data-tags="AIGovernance AISafety">
+            <div class="article-item-top">
+            <img src="images/Photography/RainierMorning.JPG" alt="Rainier Morning" loading="lazy">
+            </div>
+            <div class="article-item-bottom">
+            <h3>Agent Learning Control</h3>
+            <p>Defining Human-in-the-Loop Governance for Evolving AI Agents in Confined Boundaries</p>
+            <a href="articles/human_in_the_loop_governance_evolving_agents.html" class="read-more-link">Read more</a>
+            </div>
+        </article>
+        
+        <article class="article-item" data-tags="AIGovernance AISafety">
+            <div class="article-item-top">
+            <img src="images/Photography/MtBaker.JPG" alt="Balancing Human and Model Capabilities" loading="lazy">
+            </div>
+            <div class="article-item-bottom">
+            <h3>Balancing Human and Model Capabilities</h3>
+            <p>Optimizing Human-Model Synergy for Smarter, Adaptive Problem-Solving</p>
+            <a href="articles/human-model-synergy-slow-fast-thinking.html" class="read-more-link">Read more</a>
+            </div>
+        </article>
+        
+        <article class="article-item" data-tags="AIGovernance">
+            <div class="article-item-top">
+            <img src="images/Photography/GaneshayeNamah.jpg" alt="Strategies in Multi-Agent Systems" loading="lazy">
+            </div>
+            <div class="article-item-bottom">
+            <h3>Strategies in Multi-Agent Systems</h3>
+            <p>Explore how predefined frameworks improve multi-agent collaboration and problem-solving efficiency.</p>
+            <a href="articles/mas-strategies.html" class="read-more-link">Read more</a>
+            </div>
+        </article>
+        
+        <article class="article-item" data-tags="AIResearch AIInnovation">
+            <div class="article-item-top">
+            <img src="images/IMG_2982.JPG" alt="Compound AI Strategies" loading="lazy">
+            </div>
+            <div class="article-item-bottom">
+            <h3>From Monolithic Models to Compound AI</h3>
+            <p>Discover the evolution of AI systems from monolithic models to compound AI, exploring their impact and future trends.</p>
+            <a href="articles/from-monolithic-to-compound-ai.html" class="read-more-link">Read more</a>
+            </div>
+        </article>
+        
+        <article class="article-item" data-tags="AIGovernance AIResearch">
+            <div class="article-item-top">
+            <img src="images/Photography/Gandhi.JPG" alt="Task Allocation Strategies" loading="lazy">
+            </div>
+            <div class="article-item-bottom">
+            <h3>Task Allocation in Multi-Agent Collaboration</h3>
+            <p>Explore strategies for role-based specialization, dynamic task assignment, and adaptive delegation in multi-agent systems.</p>
+            <a href="articles/task_allocation_expanded.html" class="read-more-link">Read more</a>
+            </div>
+        </article>
+<!--   
+        <article class="article-item" data-tags="AIResearch AIInnovation">
+          <div class="article-item-top">
+            <img src="images/Photography/AyaMission.JPG" alt="Representation of Aya's Mission" loading="lazy">
+          </div>
+          <div class="article-item-bottom">
+            <h3>Aya's Mission and Applications</h3>
+            <p>Explore how Aya's multilingual AI research fosters inclusivity and preserves linguistic diversity.</p>
+            <a href="articles/aya-mission-applications.html" class="read-more-link">Read more</a>
+          </div>
+        </article> -->
+        <article class="article-item" data-tags="AIResearch">
+          <div class="article-item-top">
+            <img src="images/Photography/DogWalk.JPG" alt="Preserving Panjabi Through Aya" loading="lazy">
+          </div>
+          <div class="article-item-bottom">
+            <h3>Preserving Panjabi Through Aya</h3>
+            <p>Reflections on the challenges and opportunities of preserving Panjabi through Aya's mission.</p>
+            <a href="articles/preserving-panjabi-aya.html" class="read-more-link">Read more</a>
+          </div>
+        </article>
+        <!-- <article class="article-item" data-tags="AIInnovation">
+          <div class="article-item-top">
+            <img src="images/Photography/CodeChefChapter.JPG" alt="Founding CodeChef Campus Chapter" loading="lazy">
+          </div>
+          <div class="article-item-bottom">
+            <h3>Founding CodeChef Campus Chapter at UIET PU</h3>
+            <p>How founding the CodeChef Campus Chapter elevated UIET's coding standards and fostered a culture of programming excellence.</p>
+            <a href="articles/codechef-campus-chapter.html" class="read-more-link">Read more</a>
+          </div>
+        </article> -->
+        <!-- <article class="article-item" data-tags="AIResearch">
+          <div class="article-item-top">
+            <img src="images/Photography/TrafficDetection.JPG" alt="Traffic State Detection Using Acoustic Signals" loading="lazy">
+          </div>
+          <div class="article-item-bottom">
+            <h3>Traffic State Detection Using Acoustic Signals</h3>
+            <p>Discover the innovative methodologies used in traffic state detection research at UIET.</p>
+            <a href="articles/traffic-state-detection.html" class="read-more-link">Read more</a>
+          </div>
+        </article> -->
+        <article class="article-item" data-tags="AIGovernance">
+          <div class="article-item-top">
+            <img src="images/Photography/RainierFromMySeat.JPG" alt="Business Lessons from Unisys" loading="lazy">
+          </div>
+          <div class="article-item-bottom">
+            <h3>Business Lessons from Unisys</h3>
+            <p>Insights into systems engineering, regulatory challenges, and entrepreneurial lessons learned at Unisys.</p>
+            <a href="articles/business-lessons-unisys.html" class="read-more-link">Read more</a>
+          </div>
+        </article>
+        
+      </div>
+    </div>
+  </section>
+  

@@ -2,7 +2,7 @@
     <defs>
         <style>
             @keyframes rotate {
-					 0% {
+                0% {
                     transform: rotate(0deg);
                 }
                 100% {
@@ -10,19 +10,19 @@
                 }
             }
             .out-top {
-                animation: rotate 20s linear infinite;
+                animation: rotate 60s linear infinite; /* Increased duration to slow down */
                 transform-origin: 13px 25px;
             }
             .in-top {
-                animation: rotate 10s linear infinite;
+                animation: rotate 40s linear infinite; /* Increased duration to slow down */
                 transform-origin: 13px 25px;
             }
             .out-bottom {
-                animation: rotate 25s linear infinite;
+                animation: rotate 70s linear infinite; /* Increased duration to slow down */
                 transform-origin: 84px 93px;
             }
             .in-bottom {
-                animation: rotate 15s linear infinite;
+                animation: rotate 50s linear infinite; /* Increased duration to slow down */
                 transform-origin: 84px 93px;
             }
         </style>
