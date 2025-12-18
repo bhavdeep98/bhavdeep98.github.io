@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolving Large Language Models Through Social Interaction - Bhavdeep Singh Sachdeva</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="PhD research proposal by Bhavdeep Singh Sachdeva on evolving large language models through social interaction in multi-agent environments. AI safety and adaptive problem-solving research.">
+    <meta name="keywords" content="Bhavdeep Singh Sachdeva, PhD research proposal, large language models, social interaction, multi-agent systems, AI safety, adaptive problem-solving, machine learning research">
+    <meta name="author" content="Bhavdeep Singh Sachdeva">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="en">
+    <link rel="canonical" href="https://bhavdeep98.github.io/articles_archive/phd-research-proposal.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Evolving Large Language Models Through Social Interaction - Bhavdeep Singh Sachdeva">
+    <meta property="og:description" content="PhD research proposal on evolving large language models through social interaction in multi-agent environments. AI safety and adaptive problem-solving research.">
+    <meta property="og:image" content="https://bhavdeep98.github.io/images/profilev2_optimized.jpg">
+    <meta property="og:url" content="https://bhavdeep98.github.io/articles_archive/phd-research-proposal.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Bhavdeep Singh Sachdeva">
+    <meta property="article:author" content="Bhavdeep Singh Sachdeva">
+    <meta property="article:published_time" content="2024-01-01">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Evolving Large Language Models Through Social Interaction - Bhavdeep Singh Sachdeva">
+    <meta name="twitter:description" content="PhD research proposal on evolving large language models through social interaction in multi-agent environments.">
+    <meta name="twitter:image" content="https://bhavdeep98.github.io/images/profilev2_optimized.jpg">
+    <meta name="twitter:creator" content="@BhavdeepSingh93">
+    <!-- Fonts - Optimized Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Design System Variables - Matching Main Site */
+        :root {
+            /* Color Palette - High Contrast */
+            --color-primary: #1a365d;
+            --color-primary-light: #2b6cb0;
+            --color-primary-lighter: #3182ce;
+            --color-accent: #2c5282;
+            --color-text-primary: #1a202c;
+            --color-text-secondary: #4a5568;
+            --color-text-muted: #718096;
+            --color-background: #ffffff;
+            --color-background-alt: #f7fafc;
+            --color-background-accent: #ebf8ff;
+            --color-border: #e2e8f0;
+            --color-border-light: #f1f5f9;
+            
+            /* Typography System */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            
+            /* Typography Scale */
+            --text-sm: 0.875rem;   /* 14px */
+            --text-base: 1rem;     /* 16px */
+            --text-lg: 1.125rem;   /* 18px */
+            --text-xl: 1.25rem;    /* 20px */
+            --text-2xl: 1.5rem;    /* 24px */
+            --text-3xl: 1.875rem;  /* 30px */
+            --text-4xl: 2.25rem;   /* 36px */
+            
+            /* Spacing System */
+            --space-4: 1rem;       /* 16px */
+            --space-6: 1.5rem;     /* 24px */
+            --space-8: 2rem;       /* 32px */
+            --space-12: 3rem;      /* 48px */
+            --space-16: 4rem;      /* 64px */
+            --space-20: 5rem;      /* 80px */
+            
+            /* Border Radius */
+            --radius-md: 0.5rem;
+            --radius-lg: 1rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            
+            /* Transitions */
+            --transition-base: 0.2s ease;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.7;
+            color: var(--color-text-primary);
+            background-color: var(--color-background);
+            font-size: var(--text-base);
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 1000;
+            padding: var(--space-4) 0;
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 var(--space-8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-home {
+            color: var(--color-primary-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--text-lg);
+            transition: var(--transition-base);
+        }
+
+        .nav-home:hover {
+            color: var(--color-primary);
+        }
+
+        .nav-breadcrumb {
+            color: var(--color-text-muted);
+            font-size: var(--text-sm);
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-20) var(--space-8) var(--space-16);
+        }
+
+        article {
+            background: var(--color-background);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, var(--color-background-alt) 0%, var(--color-background) 100%);
+            padding: var(--space-16) var(--space-8);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            margin-bottom: var(--space-6);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+        }
+
+        .article-category {
+            background: var(--color-background-accent);
+            color: var(--color-primary-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: var(--text-4xl);
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-4);
+        }
+
+        .article-subtitle {
+            font-size: var(--text-xl);
+            color: var(--color-text-secondary);
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        /* Article Content */
+        .article-content {
+            padding: var(--space-8);
+        }
+
+        h2 {
+            font-size: var(--text-2xl);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin: var(--space-12) 0 var(--space-6) 0;
+            padding-bottom: var(--space-4);
+            border-bottom: 2px solid var(--color-background-alt);
+        }
+
+        h3 {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin: var(--space-8) 0 var(--space-4) 0;
+        }
+
+        p {
+            margin-bottom: var(--space-6);
+            line-height: 1.7;
+            color: var(--color-text-secondary);
+        }
+
+        /* Links */
+        a {
+            color: var(--color-primary-light);
+            text-decoration: none;
+            transition: var(--transition-base);
+        }
+
+        a:hover {
+            color: var(--color-primary);
+            text-decoration: underline;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: var(--space-6) 0;
+            padding-left: var(--space-8);
+        }
+
+        li {
+            margin-bottom: var(--space-4);
+            line-height: 1.6;
+            color: var(--color-text-secondary);
+        }
+
+        /* Blockquotes */
+        blockquote {
+            border-left: 4px solid var(--color-primary-light);
+            background: var(--color-background-alt);
+            padding: var(--space-6);
+            margin: var(--space-8) 0;
+            border-radius: var(--radius-md);
+            font-style: italic;
+        }
+
+        /* Images */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+            margin: var(--space-6) 0;
+        }
+
+        /* Footer */
+        .article-footer {
+            background: var(--color-background-alt);
+            padding: var(--space-8);
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: var(--space-4) var(--space-6);
+            background: var(--color-primary-light);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            transition: var(--transition-base);
+        }
+
+        .back-to-home:hover {
+            background: var(--color-primary);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 var(--space-4);
+            }
+            
+            .article-container {
+                padding: var(--space-16) var(--space-4) var(--space-12);
+            }
+            
+            .article-header {
+                padding: var(--space-12) var(--space-6);
+            }
+            
+            .article-content {
+                padding: var(--space-6);
+            }
+            
+            h1 {
+                font-size: var(--text-3xl);
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-home">← Bhavdeep Singh Sachdeva</a>
+            <div class="nav-breadcrumb">Articles / PhD Research Proposal</div>
+        </div>
+    </nav>
+
+    <!-- Article Container -->
+    <div class="article-container">
+        <article>
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">AI Safety & Governance</span>
+                    <span>•</span>
+                    <span>2024</span>
+                    <span>•</span>
+                    <span>Research Proposal</span>
+                </div>
+                <h1>Evolving Large Language Models Through Interaction</h1>
+                <p class="article-subtitle">A Framework for Adaptive Problem-Solving in Multi-Agent Environments Using Evolutionary Game Theory and Human-in-the-Loop Training</p>
+            </header>
+            
+            <div class="article-content">
+
+        <section>
+            <h2>Introduction</h2>
+            <p>The development of large language models (LLMs) has led to remarkable progress in various natural language tasks, but significant challenges remain in the areas of common sense reasoning and adaptive problem-solving. Current LLMs, while effective in narrowly defined tasks, struggle to generalize solutions to unfamiliar problems, especially in multi-agent environments where collaboration, competition, and strategy are essential. Human intelligence evolved through social interaction, and the ability to cooperate and solve complex problems was key to this development. To enable LLMs to better simulate this human capability, a new approach is required.</p>
+            <p>This research proposes a framework that allows LLM agents to evolve through social interaction, drawing on principles from evolutionary game theory and cognitive science. By incorporating human-in-the-loop training, the agents will refine their reasoning and decision-making processes in real-time. The ultimate goal is to create adaptable LLM agents capable of solving complex tasks collaboratively, bridging the gap between task-specific intelligence and true adaptive problem-solving.</p>
+        </section>
+
+        <section>
+            <h2>Background and Related Work</h2>
+            <p>Humans possess an innate ability to solve new and complex problems with ease, rooted in common sense reasoning and shaped by evolutionary processes. This ability evolved through social interaction, cooperation, and shared problem-solving, allowing humans to adapt to increasingly complex environments. Our species developed strategies for survival by identifying critical challenges—such as food gathering and group defense—and solving them collaboratively (Sapolsky, 2021). Through these interactions, human intelligence evolved, integrating experiences and social cues to generate flexible and adaptive solutions to novel problems.</p>
+            <p>In contrast, current artificial intelligence (AI) models, including large language models (LLMs), lack this ability to seamlessly adapt and cooperate in solving new challenges. Despite their impressive capabilities in specific tasks, LLMs struggle with common sense reasoning and fail to generalize solutions to unfamiliar situations. Research by Tomer Ullman (2023) and Yejin Choi (2022) has shown that these models can pass benchmarks without truly understanding the underlying reasoning required for flexible problem-solving. The rigid structure of LLMs, which relies heavily on predefined tasks, prevents them from engaging in the type of adaptive learning that humans do naturally.</p>
+        </section>
+
+        <section>
+            <h2>Research Objectives</h2>
+            <ul>
+                <li><strong>Design a Multi-Agent Learning Environment:</strong> Create a multi-agent system where LLM agents interact with each other to develop strategies for cooperation, competition, and problem-solving. This environment will simulate the evolutionary pressures humans faced, fostering the development of adaptive strategies.</li>
+                <li><strong>Incorporate Human-in-the-Loop Training:</strong> Implement a human-in-the-loop system where human feedback guides the learning process. By monitoring agent behavior in real-time, human intervention will refine the agents' decision-making abilities, ensuring they adapt to new and complex problems effectively.</li>
+                <li><strong>Enhance Social Reasoning and Problem-Solving Capabilities:</strong> Integrate principles from evolutionary game theory to model interactions among agents. The goal is to enhance LLM agents’ ability to solve both social and physical problems by evolving their reasoning processes through interaction, cooperation, and competition.</li>
+                <li><strong>Develop a Scalable Framework for LLM Adaptation:</strong> Ensure the framework is scalable, allowing LLM agents to learn from smaller, simpler interactions and progressively handle more complex tasks. This will facilitate the evolution of agents from solving basic problems to more complex, real-world challenges.</li>
+                <li><strong>Bridge the Gap Between LLM Capabilities and Human-Like Problem Solving:</strong> Focus on bridging the current gap in common sense reasoning by equipping LLM agents with the ability to generalize from observed behaviors and adapt to new scenarios, thereby overcoming the limitations of pre-defined benchmarks.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Methodology</h2>
+            <h3>1. Multi-Agent Environment Design</h3>
+            <p>The first phase involves creating a multi-agent environment where LLM agents can interact and evolve through simulated social scenarios. This environment will model real-world complexities, such as cooperation, competition, and task-sharing, to simulate the evolutionary pressures that humans faced throughout their development.</p>
+            <h3>2. Human-in-the-Loop Training</h3>
+            <p>The second phase involves incorporating human-in-the-loop training, where human operators monitor and guide the agents as they interact within the multi-agent environment.</p>
+            <h3>3. Evaluation and Iterative Improvement</h3>
+            <p>The final phase focuses on evaluating the effectiveness of the proposed framework and iterating based on the results.</p>
+            <h3>4. Scalability and Real-World Application</h3>
+            <p>As agents evolve through training and interaction, the framework will be tested for scalability in larger, more complex environments that mimic real-world tasks.</p>
+        </section>
+
+        <section>
+            <h2>Expected Contributions</h2>
+            <ul>
+                <li><strong>Developing a Formal Framework:</strong> A novel framework for LLM agents that allows them to evolve through social interaction in multi-agent environments, enabling real-time learning and adaptability.</li>
+                <li><strong>Enhancing Common Sense Reasoning:</strong> Addressing the gap in common sense reasoning, enabling agents to generalize problem-solving skills to new and complex tasks.</li>
+                <li><strong>Advancing Human-in-the-Loop Systems:</strong> Improving human-in-the-loop training methods, allowing real-time feedback to refine agent behavior and adaptability in dynamic tasks.</li>
+                <li><strong>Multi-Agent System Applications:</strong> Providing practical applications for collaborative AI systems in fields like robotics and autonomous decision-making.</li>
+                <li><strong>Integrating Evolutionary Game Theory:</strong> Applying evolutionary game theory to enhance agent cooperation and competition strategies, contributing to AI and cognitive science.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Conclusion</h2>
+            <p>This research aims to address the critical limitations of large language models (LLMs) in common sense reasoning and adaptive problem-solving by developing a novel framework that enables LLM agents to evolve through social interaction in multi-agent environments. Drawing from principles of evolutionary game theory and cognitive science, the framework will allow agents to collaboratively learn and refine their strategies, with human-in-the-loop training ensuring real-time adaptability and error mitigation.</p>
+        </section>
+            </div>
+            
+            <footer class="article-footer">
+                <a href="../index.html#articles" class="back-to-home">
+                    ← Back to Articles
+                </a>
+            </footer>
+        </article>
+    </div>
+</body>
+</html>

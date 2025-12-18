@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Concept to Market: Business and Entrepreneurship Learnings at Unisys</title>
+        <!-- Fonts - Optimized Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Design System Variables - Matching Main Site */
+        :root {
+            /* Color Palette - High Contrast */
+            --color-primary: #1a365d;
+            --color-primary-light: #2b6cb0;
+            --color-primary-lighter: #3182ce;
+            --color-accent: #2c5282;
+            --color-text-primary: #1a202c;
+            --color-text-secondary: #4a5568;
+            --color-text-muted: #718096;
+            --color-background: #ffffff;
+            --color-background-alt: #f7fafc;
+            --color-background-accent: #ebf8ff;
+            --color-border: #e2e8f0;
+            --color-border-light: #f1f5f9;
+            
+            /* Typography System */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            
+            /* Typography Scale */
+            --text-sm: 0.875rem;   /* 14px */
+            --text-base: 1rem;     /* 16px */
+            --text-lg: 1.125rem;   /* 18px */
+            --text-xl: 1.25rem;    /* 20px */
+            --text-2xl: 1.5rem;    /* 24px */
+            --text-3xl: 1.875rem;  /* 30px */
+            --text-4xl: 2.25rem;   /* 36px */
+            
+            /* Spacing System */
+            --space-4: 1rem;       /* 16px */
+            --space-6: 1.5rem;     /* 24px */
+            --space-8: 2rem;       /* 32px */
+            --space-12: 3rem;      /* 48px */
+            --space-16: 4rem;      /* 64px */
+            --space-20: 5rem;      /* 80px */
+            
+            /* Border Radius */
+            --radius-md: 0.5rem;
+            --radius-lg: 1rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            
+            /* Transitions */
+            --transition-base: 0.2s ease;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.7;
+            color: var(--color-text-primary);
+            background-color: var(--color-background);
+            font-size: var(--text-base);
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 1000;
+            padding: var(--space-4) 0;
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 var(--space-8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-home {
+            color: var(--color-primary-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--text-lg);
+            transition: var(--transition-base);
+        }
+
+        .nav-home:hover {
+            color: var(--color-primary);
+        }
+
+        .nav-breadcrumb {
+            color: var(--color-text-muted);
+            font-size: var(--text-sm);
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-20) var(--space-8) var(--space-16);
+        }
+
+        article {
+            background: var(--color-background);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, var(--color-background-alt) 0%, var(--color-background) 100%);
+            padding: var(--space-16) var(--space-8);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            margin-bottom: var(--space-6);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+        }
+
+        .article-category {
+            background: var(--color-background-accent);
+            color: var(--color-primary-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: var(--text-4xl);
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-4);
+        }
+
+        .article-subtitle {
+            font-size: var(--text-xl);
+            color: var(--color-text-secondary);
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        /* Article Content */
+        .article-content {
+            padding: var(--space-8);
+        }
+
+        h2 {
+            font-size: var(--text-2xl);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin: var(--space-12) 0 var(--space-6) 0;
+            padding-bottom: var(--space-4);
+            border-bottom: 2px solid var(--color-background-alt);
+        }
+
+        h3 {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin: var(--space-8) 0 var(--space-4) 0;
+        }
+
+        p {
+            margin-bottom: var(--space-6);
+            line-height: 1.7;
+            color: var(--color-text-secondary);
+        }
+
+        /* Links */
+        a {
+            color: var(--color-primary-light);
+            text-decoration: none;
+            transition: var(--transition-base);
+        }
+
+        a:hover {
+            color: var(--color-primary);
+            text-decoration: underline;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: var(--space-6) 0;
+            padding-left: var(--space-8);
+        }
+
+        li {
+            margin-bottom: var(--space-4);
+            line-height: 1.6;
+            color: var(--color-text-secondary);
+        }
+
+        /* Blockquotes */
+        blockquote {
+            border-left: 4px solid var(--color-primary-light);
+            background: var(--color-background-alt);
+            padding: var(--space-6);
+            margin: var(--space-8) 0;
+            border-radius: var(--radius-md);
+            font-style: italic;
+        }
+
+        /* Images */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+            margin: var(--space-6) 0;
+        }
+
+        /* Footer */
+        .article-footer {
+            background: var(--color-background-alt);
+            padding: var(--space-8);
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: var(--space-4) var(--space-6);
+            background: var(--color-primary-light);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            transition: var(--transition-base);
+        }
+
+        .back-to-home:hover {
+            background: var(--color-primary);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 var(--space-4);
+            }
+            
+            .article-container {
+                padding: var(--space-16) var(--space-4) var(--space-12);
+            }
+            
+            .article-header {
+                padding: var(--space-12) var(--space-6);
+            }
+            
+            .article-content {
+                padding: var(--space-6);
+            }
+            
+            h1 {
+                font-size: var(--text-3xl);
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-home">← Bhavdeep Singh Sachdeva</a>
+            <div class="nav-breadcrumb">Articles / From Concept to Market: Business and Entrepreneurs...</div>
+        </div>
+    </nav>
+
+    <!-- Article Container -->
+    <div class="article-container">
+        <article>
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Industry & Experience</span>
+                    <span>•</span>
+                    <span>2024</span>
+                </div>
+                <h1>From Concept to Market: Business and Entrepreneurship Learnings at Unisys</h1>
+            </header>
+            
+            <div class="article-content">
+                <section>
+            <h2>Introduction</h2>
+            <p>Under the guidance of <a href="https://www.linkedin.com/in/soma-ghosh-kohli/">Soma Kohli</a>, <a href="https://www.linkedin.com/in/nandish-kopri-9a190a24/">Nandish Kopri</a>, and <a href="https://www.linkedin.com/in/shivdeep-nancherla/">Shivdeep Nancherla</a>, my journey at Unisys was a transformative experience in business and entrepreneurship. This article reflects on the key business strategies, frameworks, and operational insights gained through working on cutting-edge cybersecurity projects like Malware Analysis, Sentiment-Based Authentication, and Enhanced Facial Recognition using Feature Modulation. It also highlights the entrepreneurial lessons learned in simplifying requirements and making impactful decisions with limited resources.</p>
+        </section>
+
+        <section>
+            <h2>Unisys Stealth and Malware Analysis</h2>
+            <p>The Malware Analysis project was an initiative to enhance Unisys Stealth®, a leading Zero Trust security platform. Stealth transforms traditional networks into secure micro-segmented environments called Communities of Interest (COIs). These COIs isolate sensitive assets, preventing lateral movement of attackers and significantly reducing the attack surface.</p>
+            <p>Malware Analysis added value to Stealth by incorporating advanced features like User Behavior Analytics (UBA), Network Monitoring, and Security Analytics. Initially conceptualized as part of a hackathon, the project aimed to detect malicious activity with greater precision and reduce operational complexities for existing Stealth clients. After winning the hackathon, the project underwent further refinement using business frameworks such as SWOT analysis and Porter’s Five Forces to ensure its market viability.</p>
+        </section>
+
+        <section>
+            <h2>1. Market Analysis and Strategy</h2>
+            <p>Applying strategic frameworks like SWOT and Porter’s Five Forces was critical to refining the project’s business case. Here’s how these frameworks were utilized:</p>
+            <ul>
+                <li><strong>SWOT Analysis:</strong>
+                    <ul>
+                        <li><strong>Strengths:</strong> Stealth’s adaptability to existing infrastructure and strong data encryption capabilities.</li>
+                        <li><strong>Weaknesses:</strong> Initial development costs and dependency on client trust for adoption.</li>
+                        <li><strong>Opportunities:</strong> Growing demand for Zero Trust solutions and cloud security adoption.</li>
+                        <li><strong>Threats:</strong> Competitors with established market presence and emerging regulations.</li>
+                    </ul>
+                </li>
+                <li><strong>Porter’s Five Forces:</strong>
+                    <ul>
+                        <li><strong>New Entrants:</strong> High barriers due to technological expertise and customer trust.</li>
+                        <li><strong>Power of Suppliers:</strong> Partnerships with LogRhythm reduced reliance on third-party tools.</li>
+                        <li><strong>Power of Buyers:</strong> Clients demanded seamless integration and lower operational overheads.</li>
+                        <li><strong>Substitutes:</strong> Manual monitoring systems posed moderate risks, addressed through automation and analytics.</li>
+                        <li><strong>Rivalry:</strong> Differentiation through Stealth’s micro-segmentation and Zero Trust approach positioned it effectively against competitors.</li>
+                    </ul>
+                </li>
+            </ul>
+            <img src="../images/articleImages/porter5forces.png" alt="Porter's Five Forces">
+        </section>
+
+        <section>
+            <h2>2. Customer and Stakeholder Insights</h2>
+            <p>Understanding stakeholders’ needs was central to project success. For Malware Analysis, we had access to principal engineers inside and outside Unisys, including partners, to whom we presented our ideas. Feedback from these experts, combined with insights from the board of directors, enabled us to refine and validate the solution. This approach ensured the project aligned with both technical feasibility and market expectations.</p>
+        </section>
+
+        <section>
+            <h2>3. Business Modeling and Operations</h2>
+            <p>Strategic partnerships played a pivotal role in the success of the Malware Analysis project. LogRhythm's advanced SIEM capabilities provided unparalleled real-time threat detection and analytics, a level of expertise that would have been resource-intensive and time-consuming to replicate internally. This collaboration highlighted the value of partnerships in enhancing product offerings and accelerating time to market.</p>
+            <p>Explore the official announcement of the partnership here: <a href="https://www.unisys.com/news-release/unisys-adds-logrhythm-security-intelligence-technology/">Unisys Adds LogRhythm Security Intelligence Technology</a>.</p>
+        </section>
+
+        <section>
+            <h2>4. Sentiment-Based Authentication and Feature Modulation</h2>
+            <p>The <a href="https://github.com/HemantKoti/Sentiment-Key-to-User-Identification">Sentiment-Based Authentication</a> project was a creative endeavor to enhance user identification by utilizing behavioral and sentiment analysis. By analyzing user input patterns such as typing speed, sentiment polarity, and behavior during authentication processes, we replaced static passwords with dynamic, personalized questions.</p>
+            <p>This project used Natural Language Processing (NLP) techniques to create an MVP that demonstrated the feasibility of the concept. For example, by generating questions dynamically from user-entered data, we minimized the hardware requirements, focusing on software intelligence instead. This approach reduced upfront costs and enabled scalability across different deployment environments.</p>
+            <img src="../images/articleImages/Architecture.png" alt="Sentiment-Based Authentication Architecture">
+            <p>The <a href="https://github.com/HemantKoti/Enhanced-Facial-Recognition-using-Feature-Modulation">Enhanced Facial Recognition</a> project further explored the theme of resource optimization by implementing feature modulation techniques. By dynamically prioritizing distinguishing attributes, such as facial landmarks, the system demonstrated robust performance even in challenging environments like low lighting or partial occlusions.</p>
+            <p>This feature modulation was an earlier concept I extensively researched during my time at ASU. Although I did not initially label it as "robustness," the idea revolved around improving AI model resilience by deliberately introducing variations in facial features, such as adding goggles, mustaches, or hats, and evaluating the impact on model performance. This foundational work shaped my later thesis and influenced subsequent projects, emphasizing robustness and adaptability in AI systems.</p>
+        </section>
+
+        <section>
+            <h2>5. Requirements Reduction and Scalability</h2>
+            <p>Requirements reduction is both a strategy and a mindset that I honed through my experience as a software engineer and entrepreneur. Building on the insights gained at AWS, I recognized that the first iteration of any solution must focus on delivering functionality, however minimal, to address the core problem. The goal isn’t perfection but usability—ensuring the product is valuable from iteration one.</p>
+            <p>In the Sentiment-Based Authentication project, this approach led to prioritizing Natural Language Processing (NLP) techniques for generating dynamic questions. By focusing on software intelligence rather than adding costly hardware for biometric sensors, we created a Minimum Viable Product (MVP) that demonstrated feasibility while minimizing resource requirements. This made it easier to iterate and scale as we gathered feedback and improved the solution.</p>
+            <p>Similarly, the Enhanced Facial Recognition project reduced the computational overhead by employing feature modulation to prioritize key distinguishing attributes. This simplified the system design, enabling faster deployment and reducing the need for advanced hardware, all while maintaining performance in challenging scenarios.</p>
+            <p>Scalability stems from this foundation of simplification. A resource-efficient MVP ensures that as the solution evolves, it can handle increased complexity without overwhelming the infrastructure or budget. This iterative development approach, driven by user feedback and incremental improvements, is critical for entrepreneurial ventures where resources—particularly expertise—are often the costliest and most limited assets.</p>
+        </section>
+
+        <section>
+            <h2>Conclusion</h2>
+            <p>My experience at Unisys underscored the importance of strategic frameworks, stakeholder engagement, and iterative development in transforming ideas into impactful solutions. By leveraging partnerships, simplifying requirements, and focusing on scalable designs, we delivered innovations that addressed complex cybersecurity challenges effectively and efficiently. Projects like Malware Analysis and Sentiment-Based Authentication serve as prime examples of how technology and business strategy can work hand-in-hand to achieve success.</p>
+        </section>
+            </div>
+            
+            <footer class="article-footer">
+                <a href="../index.html#articles" class="back-to-home">
+                    ← Back to Articles
+                </a>
+            </footer>
+        </article>
+    </div></body>
+</html>

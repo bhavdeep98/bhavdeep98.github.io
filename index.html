@@ -1,73 +1,1864 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Bhavdeep Singh</title>
-        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png"> 
-        <link rel="stylesheet" href="style.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-            rel="stylesheet"
-        />
-    </head>
-    <body>
-        <nav>
-            <ul>
-                <li><a href="#" onclick="loadPage('about.html')">About</a></li>
-                <li><a href="#" onclick="loadPage('cv.html')">Timeline</a></li>
-                <li><a href="#" onclick="loadPage('articles.html')">Articles</a></li>
-                <li><a href="#" onclick="loadPage('research.html')">Publications</a></li>
-            </ul>
-        </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhavdeep Singh Sachdeva - AI Researcher & Software Engineer</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Bhavdeep Singh Sachdeva is a Software Engineer at AWS GuardDuty and aspiring AI researcher specializing in NLP, multi-agent systems, and AI safety.">
+    <meta name="keywords" content="Bhavdeep Singh Sachdeva, AI researcher, NLP, machine learning, AWS, Arizona State University">
+    <meta name="author" content="Bhavdeep Singh Sachdeva">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://bhavdeep98.github.io/">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Bhavdeep Singh Sachdeva - AI Researcher & Software Engineer">
+    <meta property="og:description" content="Software Engineer at AWS GuardDuty and aspiring AI researcher specializing in NLP, multi-agent systems, and AI safety.">
+    <meta property="og:image" content="https://bhavdeep98.github.io/images/profilev2_optimized.jpg">
+    <meta property="og:url" content="https://bhavdeep98.github.io/">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+    
+    <!-- Performance Optimizations -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+    <meta name="theme-color" content="#1a365d">
+    
+    <!-- Fonts - Optimized Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Resource Hints -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <style>
+        /* CSS Design System Variables */
+        :root {
+            /* Color Palette - High Contrast */
+            --color-primary: #1a365d;
+            --color-primary-light: #2b6cb0;
+            --color-primary-lighter: #3182ce;
+            --color-accent: #2c5282;
+            --color-text-primary: #1a202c;
+            --color-text-secondary: #4a5568;
+            --color-text-muted: #718096;
+            --color-background: #ffffff;
+            --color-background-alt: #f7fafc;
+            --color-background-accent: #ebf8ff;
+            --color-border: #e2e8f0;
+            --color-border-light: #f1f5f9;
+            
+            /* Typography System - 2 Font Families */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-secondary: 'Georgia', 'Times New Roman', serif;
+            
+            /* Typography Scale */
+            --text-xs: 0.75rem;    /* 12px */
+            --text-sm: 0.875rem;   /* 14px */
+            --text-base: 1rem;     /* 16px */
+            --text-lg: 1.125rem;   /* 18px */
+            --text-xl: 1.25rem;    /* 20px */
+            --text-2xl: 1.5rem;    /* 24px */
+            --text-3xl: 1.875rem;  /* 30px */
+            --text-4xl: 2.25rem;   /* 36px */
+            --text-5xl: 3rem;      /* 48px */
+            
+            /* Spacing System - Consistent White Space */
+            --space-1: 0.25rem;    /* 4px */
+            --space-2: 0.5rem;     /* 8px */
+            --space-3: 0.75rem;    /* 12px */
+            --space-4: 1rem;       /* 16px */
+            --space-5: 1.25rem;    /* 20px */
+            --space-6: 1.5rem;     /* 24px */
+            --space-8: 2rem;       /* 32px */
+            --space-10: 2.5rem;    /* 40px */
+            --space-12: 3rem;      /* 48px */
+            --space-16: 4rem;      /* 64px */
+            --space-20: 5rem;      /* 80px */
+            --space-24: 6rem;      /* 96px */
+            
+            /* Border Radius */
+            --radius-sm: 0.25rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 1rem;
+            --radius-full: 50%;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+            
+            /* Transitions */
+            --transition-fast: 0.15s ease;
+            --transition-base: 0.2s ease;
+            --transition-slow: 0.3s ease;
+            
+            /* Animation Durations */
+            --animation-fast: 0.2s;
+            --animation-base: 0.3s;
+            --animation-slow: 0.5s;
+        }
 
-        <main id="main-content">
-        </main>
-        <footer>
-            <p>&copy; 2024 Bhavdeep Singh Sachdeva</p>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/bssachde/" target="_blank"
-                    ><img
-                        src="images/linkedin.svg"
-                        class="social-icon"
-                        alt="linkedin"
-                /></a>
-                <a href="https://twitter.com/BhavdeepSingh93" target="_blank"
-                    ><img
-                        src="images/twitter.svg"
-                        class="social-icon"
-                        alt="twitter"
-                /></a>
-                <a
-                    href="https://www.instagram.com/unorthodox_singh/"
-                    target="_blank"
-                    ><img
-                        src="images/instagram.svg"
-                        class="social-icon"
-                        alt="instagram"
-                /></a>
-                <a
-                    href="https://scholar.google.com/citations?user=d0sZa-oAAAAJ&hl=en"
-                    target="_blank"
-                    ><img
-                        src="images/google-scholar.svg"
-                        class="social-icon"
-                        alt="google scholar"
-                /></a>
-                <a href="mailto:bssachde@asu.edu" target="_blank"
-                    ><img
-                        src="images/envelope-solid.svg"
-                        class="social-icon"
-                        alt="email"
-                /></a>
+        /* Respect user's motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            :root {
+                --transition-fast: 0s;
+                --transition-base: 0s;
+                --transition-slow: 0s;
+                --animation-fast: 0s;
+                --animation-base: 0s;
+                --animation-slow: 0s;
+            }
+            
+            html {
+                scroll-behavior: auto;
+            }
+            
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--color-text-primary);
+            background-color: var(--color-background);
+            font-size: var(--text-base);
+        }
+
+        /* Typography Hierarchy */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-primary);
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-4);
+        }
+
+        h1 { font-size: var(--text-5xl); }
+        h2 { font-size: var(--text-4xl); }
+        h3 { font-size: var(--text-2xl); }
+        h4 { font-size: var(--text-xl); }
+        h5 { font-size: var(--text-lg); }
+        h6 { font-size: var(--text-base); }
+
+        p {
+            margin-bottom: var(--space-4);
+            line-height: 1.7;
+            color: var(--color-text-secondary);
+        }
+
+        a {
+            color: var(--color-primary-light);
+            text-decoration: none;
+            transition: var(--transition-base);
+        }
+
+        a:hover {
+            color: var(--color-primary);
+            text-decoration: underline;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 1000;
+            padding: 0 var(--space-8);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            padding: var(--space-4) 0;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: var(--space-8);
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--color-text-secondary);
+            font-weight: 500;
+            font-size: var(--text-sm);
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-md);
+            transition: var(--transition-base);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--color-primary-light);
+            background-color: var(--color-background-accent);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 var(--space-8);
+        }
+
+        /* Sections */
+        section {
+            padding: var(--space-20) 0;
+        }
+
+        .section-title {
+            font-size: var(--text-4xl);
+            font-weight: 600;
+            margin-bottom: var(--space-4);
+            color: var(--color-text-primary);
+        }
+
+        .section-subtitle {
+            font-size: var(--text-xl);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-12);
+            font-weight: 300;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--color-background-alt) 0%, var(--color-background) 100%);
+            padding-top: var(--space-20);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--space-16);
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: var(--text-5xl);
+            font-weight: 600;
+            margin-bottom: var(--space-4);
+            color: var(--color-text-primary);
+            line-height: 1.2;
+        }
+
+        .hero-role {
+            font-size: var(--text-xl);
+            color: var(--color-primary-light);
+            margin-bottom: var(--space-6);
+            font-weight: 500;
+        }
+
+        .hero-description {
+            font-size: var(--text-lg);
+            line-height: 1.7;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-8);
+        }
+
+        .hero-links {
+            display: flex;
+            gap: var(--space-4);
+            margin-bottom: var(--space-8);
+        }
+
+        .hero-link {
+            color: var(--color-primary-light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .hero-link:hover {
+            text-decoration: underline;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: var(--space-4);
+        }
+
+        .cta-button {
+            padding: var(--space-3) var(--space-6);
+            background-color: var(--color-primary-light);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            transition: var(--transition-base);
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-accent);
+            transform: translateY(-1px);
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            color: var(--color-primary-light);
+            border: 2px solid var(--color-primary-light);
+        }
+
+        .cta-button.secondary:hover {
+            background-color: var(--color-primary-light);
+            color: white;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-img {
+            width: 280px;
+            height: 280px;
+            border-radius: var(--radius-full);
+            object-fit: cover;
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: var(--text-2xl);
+            cursor: pointer;
+            color: var(--color-text-secondary);
+            padding: var(--space-2);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--space-16);
+            align-items: start;
+        }
+
+        .about-text p {
+            margin-bottom: var(--space-6);
+            font-size: var(--text-lg);
+            line-height: 1.7;
+            color: var(--color-text-secondary);
+        }
+
+        .about-highlights {
+            background-color: var(--color-background-alt);
+            padding: var(--space-8);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--color-primary-light);
+        }
+
+        .about-highlights h3 {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-4);
+            margin-top: var(--space-8);
+        }
+
+        .about-highlights h3:first-child {
+            margin-top: 0;
+        }
+
+        .about-highlights ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-highlights li {
+            padding: var(--space-2) 0;
+            color: var(--color-text-secondary);
+            position: relative;
+            padding-left: var(--space-6);
+        }
+
+        .about-highlights li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--color-primary-light);
+            font-weight: bold;
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            padding-left: var(--space-8);
+        }
+
+        .experience-timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--color-primary-light), var(--color-primary-lighter));
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: var(--space-12);
+            padding-left: var(--space-8);
+        }
+
+        .experience-item:before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: var(--space-2);
+            width: 12px;
+            height: 12px;
+            background-color: var(--color-primary-light);
+            border-radius: var(--radius-full);
+            border: 3px solid var(--color-background);
+            box-shadow: 0 0 0 3px var(--color-border);
+        }
+
+        .experience-date {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--color-primary-light);
+            margin-bottom: var(--space-2);
+        }
+
+        .experience-content h3 {
+            font-size: var(--text-2xl);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-1);
+        }
+
+        .experience-content h4 {
+            font-size: var(--text-lg);
+            font-weight: 500;
+            color: var(--color-primary-light);
+            margin-bottom: var(--space-4);
+        }
+
+        .experience-content p {
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Publications Section */
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: var(--space-8);
+        }
+
+        .publication-card {
+            background: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-8);
+            transition: var(--transition-slow);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .publication-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-primary-light);
+        }
+
+        .publication-card h3 {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            margin-bottom: var(--space-4);
+            line-height: 1.4;
+        }
+
+        .publication-card h3 a {
+            color: var(--color-text-primary);
+            text-decoration: none;
+            transition: var(--transition-base);
+        }
+
+        .publication-card h3 a:hover {
+            color: var(--color-primary-light);
+        }
+
+        .publication-card .authors {
+            font-size: var(--text-sm);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-2);
+            line-height: 1.5;
+        }
+
+        .publication-card .venue {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--color-primary-light);
+            margin-bottom: var(--space-4);
+        }
+
+        .publication-card .summary {
+            font-size: var(--text-sm);
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Articles Section */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .article-card {
+            background: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            transition: var(--transition-slow);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .article-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--color-primary-light);
+        }
+
+        .article-category {
+            font-size: var(--text-xs);
+            font-weight: 600;
+            color: var(--color-primary-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: var(--space-2);
+        }
+
+        .article-card h3 {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            margin-bottom: var(--space-2);
+            line-height: 1.4;
+        }
+
+        .article-card h3 a {
+            color: var(--color-text-primary);
+            text-decoration: none;
+            transition: var(--transition-base);
+        }
+
+        .article-card h3 a:hover {
+            color: var(--color-primary-light);
+        }
+
+        .article-date {
+            font-size: var(--text-xs);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-4);
+        }
+
+        .article-summary {
+            font-size: var(--text-sm);
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-16);
+            align-items: start;
+        }
+
+        .contact-info h3,
+        .contact-cta h3 {
+            font-size: var(--text-2xl);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-4);
+        }
+
+        .contact-info p,
+        .contact-cta p {
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--space-6);
+        }
+
+        .contact-item {
+            margin-bottom: var(--space-6);
+            font-size: var(--text-lg);
+        }
+
+        .contact-item strong {
+            color: var(--color-text-primary);
+            margin-right: var(--space-2);
+        }
+
+        .contact-item a {
+            color: var(--color-primary-light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-4);
+            margin-top: var(--space-8);
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            padding: var(--space-3) var(--space-6);
+            background-color: var(--color-background-alt);
+            color: var(--color-primary-light);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            transition: var(--transition-base);
+            border: 2px solid transparent;
+        }
+
+        .contact-link:hover {
+            background-color: var(--color-primary-light);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .contact-cta ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: var(--space-6);
+        }
+
+        .contact-cta li {
+            padding: var(--space-2) 0;
+            color: var(--color-text-secondary);
+            position: relative;
+            padding-left: var(--space-6);
+        }
+
+        .contact-cta li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--color-primary-light);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--color-background-alt);
+            padding: var(--space-8) 0;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        .footer p {
+            color: var(--color-text-muted);
+            font-size: var(--text-sm);
+        }
+
+        /* Responsive Design - Mobile First Approach */
+        
+        /* Base styles are mobile-first (320px+) */
+        
+        /* Small devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) {
+            .container {
+                padding: 0 var(--space-6);
+            }
+            
+            .hero-text h1 {
+                font-size: var(--text-4xl);
+            }
+            
+            .section-title {
+                font-size: var(--text-3xl);
+            }
+        }
+
+        /* Medium devices (tablets, 768px and up) */
+        @media (min-width: 768px) {
+            .nav {
+                padding: 0 var(--space-8);
+            }
+            
+            .container {
+                padding: 0 var(--space-8);
+            }
+            
+            .hero-content {
+                grid-template-columns: 2fr 1fr;
+                gap: var(--space-16);
+                text-align: left;
+            }
+            
+            .hero-text h1 {
+                font-size: var(--text-5xl);
+            }
+            
+            .section-title {
+                font-size: var(--text-4xl);
+            }
+            
+            .about-content {
+                grid-template-columns: 2fr 1fr;
+                gap: var(--space-16);
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-16);
+            }
+            
+            .publications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            }
+            
+            .articles-grid {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            }
+        }
+
+        /* Large devices (desktops, 992px and up) */
+        @media (min-width: 992px) {
+            .container {
+                max-width: 1000px;
+            }
+            
+            .nav-container {
+                max-width: 1200px;
+            }
+        }
+
+        /* Extra large devices (large desktops, 1200px and up) */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1100px;
+            }
+            
+            .nav-container {
+                max-width: 1300px;
+            }
+        }
+
+        /* Ultra wide screens (1920px and up) */
+        @media (min-width: 1920px) {
+            .container {
+                max-width: 1400px;
+            }
+            
+            .nav-container {
+                max-width: 1600px;
+            }
+        }
+
+        /* Mobile-specific styles (up to 767px) */
+        @media (max-width: 767px) {
+            .nav {
+                padding: 0 var(--space-4);
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-list {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--color-background);
+                flex-direction: column;
+                padding: var(--space-4);
+                box-shadow: var(--shadow-md);
+                border-top: 1px solid var(--color-border);
+            }
+
+            .nav-list.active {
+                display: flex;
+            }
+
+            .nav-link {
+                padding: var(--space-3) var(--space-4);
+                text-align: center;
+            }
+
+            .container {
+                padding: 0 var(--space-4);
+            }
+
+            .hero {
+                padding-top: var(--space-16);
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: var(--text-3xl);
+            }
+
+            .hero-role {
+                font-size: var(--text-lg);
+            }
+
+            .hero-description {
+                font-size: var(--text-base);
+            }
+
+            .section-title {
+                font-size: var(--text-3xl);
+            }
+
+            .section-subtitle {
+                font-size: var(--text-lg);
+            }
+
+            .hero-cta {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+            }
+
+            .about-highlights {
+                padding: var(--space-6);
+            }
+
+            .experience-timeline {
+                padding-left: var(--space-4);
+            }
+
+            .experience-item {
+                padding-left: var(--space-6);
+            }
+
+            .experience-item:before {
+                left: -4px;
+            }
+
+            .publications-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-6);
+            }
+
+            .publication-card {
+                padding: var(--space-6);
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-4);
+            }
+
+            .article-card {
+                padding: var(--space-5);
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+
+            .contact-link {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        /* Extra small devices (320px to 575px) */
+        @media (max-width: 575px) {
+            .hero-text h1 {
+                font-size: var(--text-2xl);
+            }
+            
+            .section-title {
+                font-size: var(--text-2xl);
+            }
+            
+            .cta-button {
+                padding: var(--space-2) var(--space-4);
+                font-size: var(--text-sm);
+            }
+            
+            .publication-card,
+            .article-card {
+                padding: var(--space-4);
+            }
+            
+            .profile-img {
+                width: 160px;
+                height: 160px;
+            }
+        }
+
+        /* Animations and Interactions */
+        
+        /* Fade in animation for sections */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Apply animations to elements */
+        .hero-content {
+            animation: fadeInUp var(--animation-slow) ease-out;
+        }
+
+        .section-title {
+            animation: slideInFromLeft var(--animation-base) ease-out;
+        }
+
+        .publication-card,
+        .article-card {
+            animation: fadeIn var(--animation-base) ease-out;
+        }
+
+        /* Enhanced hover effects */
+        .cta-button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: var(--transition-slow);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Smooth focus states */
+        .nav-link:focus,
+        .cta-button:focus,
+        .contact-link:focus {
+            outline: 2px solid var(--color-primary-light);
+            outline-offset: 2px;
+            border-radius: var(--radius-sm);
+        }
+
+        /* Interactive elements */
+        .publication-card,
+        .article-card {
+            cursor: pointer;
+        }
+
+        .publication-card:active,
+        .article-card:active {
+            transform: translateY(-2px) scale(0.98);
+        }
+
+        /* Smooth scrolling enhancement */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--space-20);
+        }
+
+        /* Loading animation for images */
+        .profile-img {
+            transition: var(--transition-base);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Enhanced Navigation active state animation */
+        .nav-link {
+            position: relative;
+            transition: var(--transition-base);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-primary-light);
+            transition: var(--transition-base);
+            transform: translateX(-50%);
+        }
+
+        .nav-link.active::after,
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        /* Enhanced active state styling */
+        .nav-link.active {
+            color: var(--color-primary-light);
+            background-color: var(--color-background-accent);
+            font-weight: 600;
+        }
+
+        /* Visual feedback for current location - removed problematic left line */
+
+        /* Scrolling state management */
+        .is-scrolling .nav {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Enhanced mobile menu toggle */
+        .mobile-menu-toggle {
+            transition: var(--transition-base);
+            border-radius: var(--radius-sm);
+        }
+
+        .mobile-menu-toggle:hover {
+            background-color: var(--color-background-accent);
+            color: var(--color-primary-light);
+        }
+
+        .mobile-menu-toggle:focus {
+            outline: 2px solid var(--color-primary-light);
+            outline-offset: 2px;
+        }
+
+        /* Enhanced mobile navigation */
+        @media (max-width: 767px) {
+            .nav-list {
+                transform: translateY(-10px);
+                opacity: 0;
+                transition: var(--transition-base);
+            }
+            
+            .nav-list.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            /* Mobile active state uses underline only - no left line */
+        }
+
+        /* Accessibility improvements */
+        .nav-link:focus {
+            outline: 2px solid var(--color-primary-light);
+            outline-offset: 2px;
+            border-radius: var(--radius-sm);
+        }
+
+        /* Smooth section transitions */
+        section {
+            scroll-margin-top: var(--space-20);
+        }
+
+        /* Enhanced visual feedback for section changes */
+        @keyframes sectionHighlight {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+
+        .nav-link.active {
+            animation: sectionHighlight 0.6s ease-in-out;
+        }
+
+        /* Fallback navigation without JavaScript using :target pseudo-class */
+        /* This ensures navigation works even when JavaScript is disabled */
+        
+        /* Reset all nav links */
+        .nav-link {
+            color: var(--color-text-secondary);
+            background-color: transparent;
+        }
+
+        /* Style active navigation based on target sections */
+        #hero:target ~ * .nav-link[href="#hero"],
+        #about:target ~ * .nav-link[href="#about"],
+        #experience:target ~ * .nav-link[href="#experience"],
+        #publications:target ~ * .nav-link[href="#publications"],
+        #articles:target ~ * .nav-link[href="#articles"],
+        #contact:target ~ * .nav-link[href="#contact"] {
+            color: var(--color-primary-light);
+            background-color: var(--color-background-accent);
+            font-weight: 600;
+        }
+
+        /* Alternative approach using body classes for better browser support */
+        body:not(.js-enabled) .nav-link[href="#hero"] {
+            color: var(--color-primary-light);
+            background-color: var(--color-background-accent);
+            font-weight: 600;
+        }
+
+        /* Ensure sections are properly spaced for anchor navigation */
+        section[id] {
+            scroll-margin-top: 80px;
+        }
+
+        /* Visual indicator for targeted sections without JavaScript */
+        section:target {
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        /* Enhanced focus management for accessibility */
+        section:target:focus {
+            outline: none;
+        }
+
+        /* Smooth scrolling fallback */
+        @media (prefers-reduced-motion: no-preference) {
+            html {
+                scroll-behavior: smooth;
+            }
+        }
+
+        /* Experience timeline animation */
+        .experience-item {
+            opacity: 0;
+            animation: fadeInUp var(--animation-base) ease-out forwards;
+        }
+
+        .experience-item:nth-child(1) { animation-delay: 0.1s; }
+        .experience-item:nth-child(2) { animation-delay: 0.2s; }
+        .experience-item:nth-child(3) { animation-delay: 0.3s; }
+        .experience-item:nth-child(4) { animation-delay: 0.4s; }
+
+        /* Staggered animation for cards */
+        .publication-card:nth-child(1) { animation-delay: 0.1s; }
+        .publication-card:nth-child(2) { animation-delay: 0.2s; }
+        .publication-card:nth-child(3) { animation-delay: 0.3s; }
+        .publication-card:nth-child(4) { animation-delay: 0.4s; }
+        .publication-card:nth-child(5) { animation-delay: 0.5s; }
+        .publication-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .article-card:nth-child(1) { animation-delay: 0.1s; }
+        .article-card:nth-child(2) { animation-delay: 0.2s; }
+        .article-card:nth-child(3) { animation-delay: 0.3s; }
+        .article-card:nth-child(4) { animation-delay: 0.4s; }
+        .article-card:nth-child(5) { animation-delay: 0.5s; }
+        .article-card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Subtle background animations */
+        .hero {
+            background: linear-gradient(135deg, var(--color-background-alt) 0%, var(--color-background) 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 10s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Mobile menu animation */
+        .nav-list {
+            transition: var(--transition-base);
+        }
+
+        @media (max-width: 767px) {
+            .nav-list {
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+            
+            .nav-list.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navList">☰</button>
+            <ul class="nav-list" id="navList" role="navigation">
+                <li><a href="#hero" class="nav-link" aria-current="false">Home</a></li>
+                <li><a href="#about" class="nav-link" aria-label="Navigate to About section">About</a></li>
+                <li><a href="#experience" class="nav-link" aria-label="Navigate to Experience section">Experience</a></li>
+                <li><a href="#publications" class="nav-link" aria-label="Navigate to Publications section">Publications</a></li>
+                <li><a href="#articles" class="nav-link" aria-label="Navigate to Articles section">Articles</a></li>
+                <li><a href="#contact" class="nav-link" aria-label="Navigate to Contact section">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero" aria-label="Introduction and hero section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Bhavdeep Singh Sachdeva</h1>
+                    <p class="hero-role">Software Engineer @ AWS | Aspiring AI Researcher</p>
+                    <p class="hero-description">
+                        I work on large-scale threat detection systems at AWS and explore AI safety, 
+                        multi-agent systems, and robust machine learning through research and writing. 
+                        My goal is to develop systematic thinking and contribute to AI research through 
+                        rigorous technical analysis.
+                    </p>
+                    <div class="hero-links">
+                        <a href="mailto:bhavdeepsachdeva@gmail.com" class="hero-link">bhavdeepsachdeva@gmail.com</a>
+                        <span>•</span>
+                        <a href="https://scholar.google.com/citations?user=d0sZa-oAAAAJ&hl=en" target="_blank" class="hero-link">Google Scholar</a>
+                        <span>•</span>
+                        <a href="https://www.linkedin.com/in/bssachde/" target="_blank" class="hero-link">LinkedIn</a>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#publications" class="cta-button">View Publications</a>
+                        <a href="#contact" class="cta-button secondary">Get in Touch</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/profile-new.jpg" alt="Bhavdeep Singh Sachdeva" class="profile-img" loading="eager" width="280" height="280" decoding="async">
+                </div>
             </div>
-        </footer>
-        <script src="script.js"></script> 
-    </body>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            <p class="section-subtitle">Building the future of AI through research and engineering</p>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I am a Software Engineer at AWS GuardDuty with a deep passion for advancing Artificial Intelligence, 
+                        particularly in Natural Language Processing (NLP). My work focuses on addressing the limitations of 
+                        current AI systems in areas such as robustness, generalization, and ethical impact.
+                    </p>
+                    <p>
+                        Through projects involving benchmark development, data quality improvement, and efficient training 
+                        strategies, I aim to create AI models that are not only technically advanced but also socially 
+                        responsible. I bring over six years of industry experience and three years of research to my work, 
+                        where I explore cutting-edge solutions in machine learning, threat detection, and adaptive problem-solving.
+                    </p>
+                    <p>
+                        My research interests include multi-agent systems, AI safety, and human-AI collaboration. I believe 
+                        that by combining human "slow thinking" with AI's "fast thinking," we can achieve extraordinary 
+                        outcomes while maintaining ethical considerations and positive impacts on human psychology.
+                    </p>
+                </div>
+                
+                <div class="about-highlights">
+                    <h3>Research Interests</h3>
+                    <ul>
+                        <li>AI Safety & Governance</li>
+                        <li>Multi-Agent Systems</li>
+                        <li>Natural Language Processing</li>
+                        <li>Benchmark Development</li>
+                        <li>Human-AI Collaboration</li>
+                    </ul>
+                    
+                    <h3>Education</h3>
+                    <ul>
+                        <li>M.S. Computer Science, Arizona State University (2021)</li>
+                        <li>B.Tech Computer Science, UIET Panjab University (2016)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <p class="section-subtitle">Professional journey in AI and software engineering</p>
+            
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-date">2021 - Present</div>
+                    <div class="experience-content">
+                        <h3>Software Development Engineer</h3>
+                        <h4>AWS GuardDuty</h4>
+                        <p>Contributing to scalable and secure tier-1 services in the AWS GuardDuty team, working on large-scale threat detection systems and machine learning applications. Focus on building robust, high-performance systems that protect AWS customers from security threats.</p>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-date">2023</div>
+                    <div class="experience-content">
+                        <h3>Language Ambassador for Panjabi</h3>
+                        <h4>Cohere AI (Project Aya)</h4>
+                        <p>Promoted multilingual AI as part of Project Aya, focusing on the Panjabi language and contributing to inclusive AI development. Worked on improving language representation in large language models.</p>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-date">2019 - 2021</div>
+                    <div class="experience-content">
+                        <h3>M.S. Research Assistant</h3>
+                        <h4>Arizona State University</h4>
+                        <p>Conducted research on numerical reasoning benchmarks for NLP under Dr. Chitta Baral. Published multiple papers in top-tier conferences including ACL and EACL. Focused on benchmark quality, data artifacts, and mathematical reasoning in AI systems.</p>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-date">2016 - 2019</div>
+                    <div class="experience-content">
+                        <h3>Systems Engineer</h3>
+                        <h4>Unisys</h4>
+                        <p>Worked on IPP implementation, database migration, and machine learning prototypes in enterprise systems. Gained experience in large-scale system architecture and enterprise software development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+        <div class="container">
+            <header>
+                <h2 class="section-title">Publications</h2>
+                <p class="section-subtitle">Research contributions to AI and machine learning</p>
+            </header>
+            
+            <div class="publications-grid">
+                <article class="publication-card">
+                    <h3><a href="https://arxiv.org/abs/2302.04434" target="_blank">Real-Time Visual Feedback Benchmark Creation: A Human-and-Metric-in-the-loop workflow</a></h3>
+                    <p class="authors">Anjana Arunkumar, Swaroop Mishra, <strong>Bhavdeep Sachdeva</strong>, Chitta Baral, Chris Bryan</p>
+                    <p class="venue">EACL 2023</p>
+                    <p class="summary">Introduces VAIDA, a system that improves NLP benchmark quality through real-time visual feedback and metric-based recommendations, achieving a 45.8% reduction in artifact levels.</p>
+                </article>
+
+                <article class="publication-card">
+                    <h3><a href="https://github.com/allenai/numglue?tab=readme-ov-file" target="_blank">NumGLUE: A Suite of Fundamental yet Challenging Mathematical Reasoning Tasks</a></h3>
+                    <p class="authors">Swaroop Mishra, Arindam Mitra, Neeraj Varshney, <strong>Bhavdeep Singh Sachdeva</strong>, Peter Clark, Chitta Baral, Ashwin Kalyan</p>
+                    <p class="venue">ACL 2022</p>
+                    <p class="summary">A comprehensive benchmark that tests models' mathematical reasoning skills, revealing gaps in model understanding and pushing improvements in fundamental math reasoning.</p>
+                </article>
+
+                <article class="publication-card">
+                    <h3><a href="https://aclanthology.org/2022.findings-acl.213/" target="_blank">Generalized but not Robust? Understanding the Effects of Out-of-Domain Generalization Methods</a></h3>
+                    <p class="authors">Tejas Gokhale, Swaroop Mishra, Man Luo, <strong>Bhavdeep Singh Sachdeva</strong>, Chitta Baral</p>
+                    <p class="venue">ACL 2022</p>
+                    <p class="summary">Investigates how generalization techniques improve NLP model performance in out-of-domain tasks, emphasizing the trade-off between generalization and robustness.</p>
+                </article>
+
+                <article class="publication-card">
+                    <h3><a href="https://arxiv.org/abs/2008.03964" target="_blank">DQI: A Guide to Benchmark Evaluation</a></h3>
+                    <p class="authors">Swaroop Mishra, Anjana Arunkumar, <strong>Bhavdeep Sachdeva</strong>, Chitta Baral</p>
+                    <p class="venue">ICML Workshop 2020</p>
+                    <p class="summary">Presents a framework to assess benchmark quality by identifying and correcting artifacts in datasets, promoting more robust and reliable evaluations.</p>
+                </article>
+
+                <article class="publication-card">
+                    <h3><a href="https://aclanthology.org/2020.sustainlp-1.23/" target="_blank">Do We Need to Create Big Datasets to Learn a Task?</a></h3>
+                    <p class="authors"><strong>Bhavdeep Sachdeva</strong>, Swaroop Mishra</p>
+                    <p class="venue">SUSTAINLP Workshop 2020</p>
+                    <p class="summary">Explores the efficiency of training NLP models using smaller, well-targeted datasets, promoting a more sustainable approach to AI development.</p>
+                </article>
+
+                <article class="publication-card">
+                    <h3><a href="https://content.iospress.com/articles/journal-of-intelligent-and-fuzzy-systems/ifs169259" target="_blank">Traffic state detection using smartphone based acoustic sensing</a></h3>
+                    <p class="authors">Arshvir Kaur, Nitakshi Sood, Naveen Aggarwal, Dinesh Vij, <strong>Bhavdeep Sachdeva</strong></p>
+                    <p class="venue">Journal of Intelligent & Fuzzy Systems 2016</p>
+                    <p class="summary">Proposes a novel approach to traffic state detection using acoustic data collected from smartphones, offering a scalable solution to urban traffic monitoring.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles">
+        <div class="container">
+            <h2 class="section-title">Articles</h2>
+            <p class="section-subtitle">Technical writing on AI safety and research</p>
+            
+            <div class="articles-grid">
+                <!-- PhD Research Proposal - Commented Out
+                <div class="article-card">
+                    <div class="article-category">AI Safety & Governance</div>
+                    <h3><a href="articles_archive/phd-research-proposal.html" target="_blank">Evolving AI Intelligence: Adaptive Problem-Solving in Multi-Agent Environments</a></h3>
+                    <p class="article-date">2024</p>
+                    <p class="article-summary">Research proposal exploring adaptive problem-solving capabilities in multi-agent AI systems and their implications for future AI development.</p>
+                </div>
+                -->
+
+                <div class="article-card">
+                    <div class="article-category">AI Safety & Governance</div>
+                    <h3><a href="articles_archive/human_in_the_loop_governance_evolving_agents.html" target="_blank">Human-in-the-Loop Governance for Evolving AI Agents</a></h3>
+                    <p class="article-date">2024</p>
+                    <p class="article-summary">Examining governance frameworks for AI systems that can evolve and adapt, ensuring human oversight and control.</p>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-category">Multi-Agent Systems</div>
+                    <h3><a href="articles_archive/human-model-synergy-slow-fast-thinking.html" target="_blank">Balancing Human and Model Capabilities</a></h3>
+                    <p class="article-date">2024</p>
+                    <p class="article-summary">Analysis of how human "slow thinking" can complement AI "fast thinking" for optimal collaborative outcomes.</p>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-category">AI Research & Innovation</div>
+                    <h3><a href="articles_archive/from-monolithic-to-compound-ai.html" target="_blank">From Monolithic Models to Compound AI</a></h3>
+                    <p class="article-date">2024</p>
+                    <p class="article-summary">Exploring the evolution from single large models to compound AI systems and their architectural implications.</p>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-category">AI Research & Innovation</div>
+                    <h3><a href="articles_archive/preserving-panjabi-aya.html" target="_blank">Preserving Panjabi Through Aya</a></h3>
+                    <p class="article-date">2024</p>
+                    <p class="article-summary">Personal experience working on multilingual AI development and language preservation through Cohere's Project Aya.</p>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-category">Industry & Experience</div>
+                    <h3><a href="articles_archive/business-lessons-unisys.html" target="_blank">Business Lessons from Unisys</a></h3>
+                    <p class="article-date">2024</p>
+                    <p class="article-summary">Insights and lessons learned from enterprise software development and business operations during my time at Unisys.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <p class="section-subtitle">Let's connect and collaborate</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>I'm always interested in discussing AI research, collaboration opportunities, and innovative projects. Feel free to reach out!</p>
+                    
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <a href="mailto:bhavdeepsachdeva@gmail.com">bhavdeepsachdeva@gmail.com</a>
+                    </div>
+                    
+                    <div class="contact-links">
+                        <a href="https://www.linkedin.com/in/bssachde/" target="_blank" class="contact-link">
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=d0sZa-oAAAAJ&hl=en" target="_blank" class="contact-link">
+                            <span>Google Scholar</span>
+                        </a>
+                        <a href="https://twitter.com/BhavdeepSingh93" target="_blank" class="contact-link">
+                            <span>Twitter</span>
+                        </a>
+                        <a href="https://www.instagram.com/unorthodox_singh/" target="_blank" class="contact-link">
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-cta">
+                    <h3>Research Interests</h3>
+                    <p>Currently exploring:</p>
+                    <ul>
+                        <li>AI Safety & Governance</li>
+                        <li>Multi-Agent Systems</li>
+                        <li>Human-AI Collaboration</li>
+                        <li>Benchmark Development</li>
+                    </ul>
+                    <p>Open to research collaborations, speaking opportunities, and consulting projects in these areas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Bhavdeep Singh Sachdeva. Built with modern web technologies.</p>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            'use strict';
+            
+            const config = {
+                navOffset: 80,
+                scrollThreshold: 50, // Reduced for better section detection
+                throttleDelay: 16,
+                smoothScrollDuration: 800
+            };
+
+            let isScrolling = false;
+            let scrollTimeout;
+            let currentSection = 'hero';
+            let isNavigating = false; // Flag to prevent scroll handler from overriding click navigation
+            
+            // Cache DOM elements
+            const navList = document.getElementById('navList');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section[id]');
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            // Mobile menu toggle function
+            function toggleMobileMenu() {
+                if (navList) {
+                    navList.classList.toggle('active');
+                    
+                    // Update ARIA attributes for accessibility
+                    const isExpanded = navList.classList.contains('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+                    
+                    // Add visual feedback
+                    mobileMenuToggle.style.transform = isExpanded ? 'rotate(90deg)' : 'rotate(0deg)';
+                }
+            }
+
+            // Enhanced smooth scrolling with fallback
+            function smoothScrollTo(targetElement, offset = 0) {
+                if (!targetElement) return;
+                
+                const targetPosition = targetElement.offsetTop - offset;
+                
+                // Check if smooth scrolling is supported and not disabled
+                if ('scrollBehavior' in document.documentElement.style && 
+                    !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // Fallback for browsers without smooth scrolling support
+                    window.scrollTo(0, targetPosition);
+                }
+            }
+
+            // Throttled scroll handler for better performance using requestAnimationFrame
+            function throttle(func, delay) {
+                let timeoutId;
+                let lastExecTime = 0;
+                return function (...args) {
+                    const currentTime = Date.now();
+                    
+                    if (currentTime - lastExecTime > delay) {
+                        func.apply(this, args);
+                        lastExecTime = currentTime;
+                    } else {
+                        clearTimeout(timeoutId);
+                        timeoutId = setTimeout(() => {
+                            requestAnimationFrame(() => {
+                                func.apply(this, args);
+                                lastExecTime = Date.now();
+                            });
+                        }, delay - (currentTime - lastExecTime));
+                    }
+                };
+            }
+
+            // Enhanced section detection with improved accuracy
+            function getCurrentSection() {
+                const scrollPosition = window.scrollY + 150; // Offset for fixed nav
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                
+                // Special case: if we're near the bottom of the page, return the last section
+                if (scrollPosition + windowHeight >= documentHeight - 100) {
+                    return sections[sections.length - 1].getAttribute('id');
+                }
+                
+                // Check each section from bottom to top for better accuracy
+                for (let i = sections.length - 1; i >= 0; i--) {
+                    const section = sections[i];
+                    const sectionTop = section.offsetTop;
+                    
+                    // If we've scrolled past this section's start
+                    if (scrollPosition >= sectionTop) {
+                        return section.getAttribute('id');
+                    }
+                }
+                
+                // Default to hero if no section matches
+                return 'hero';
+            }
+
+            // Update active navigation state with visual feedback
+            function updateActiveNavigation(activeSection) {
+                if (activeSection === currentSection) return; // No change needed
+                
+                const previousSection = currentSection;
+                currentSection = activeSection;
+                
+                // Navigation state change
+                
+                navLinks.forEach(link => {
+                    const isActive = link.getAttribute('href') === `#${activeSection}`;
+                    
+                    // Update active class
+                    link.classList.toggle('active', isActive);
+                    
+                    // Update ARIA attributes for accessibility
+                    link.setAttribute('aria-current', isActive ? 'page' : 'false');
+                    
+                    // Add visual feedback animation
+                    if (isActive) {
+                        link.style.transform = 'scale(1.05)';
+                        setTimeout(() => {
+                            link.style.transform = '';
+                        }, 200);
+                    }
+                });
+                
+                // Dispatch custom event for other components that might need to know
+                window.dispatchEvent(new CustomEvent('navigationChange', {
+                    detail: { activeSection, previousSection }
+                }));
+            }
+
+            // Scroll event handler with throttling
+            const handleScroll = throttle(function() {
+                // Don't update navigation if we're in the middle of a click navigation
+                if (!isNavigating) {
+                    const activeSection = getCurrentSection();
+                    updateActiveNavigation(activeSection);
+                }
+                
+                // Add scrolling state management
+                isScrolling = true;
+                document.body.classList.add('is-scrolling');
+                
+                // Clear existing timeout
+                clearTimeout(scrollTimeout);
+                
+                // Set timeout to remove scrolling state
+                scrollTimeout = setTimeout(() => {
+                    isScrolling = false;
+                    document.body.classList.remove('is-scrolling');
+                }, 150);
+                
+            }, config.throttleDelay);
+
+            // Enhanced navigation click handler
+            function handleNavClick(event) {
+                event.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    // Set navigation flag to prevent scroll handler interference
+                    isNavigating = true;
+                    
+                    // Update active state immediately for better UX
+                    const sectionId = targetId.substring(1);
+                    updateActiveNavigation(sectionId);
+                    
+                    // Smooth scroll to target
+                    smoothScrollTo(targetSection, config.navOffset);
+                    
+                    // Close mobile menu if open
+                    if (navList && navList.classList.contains('active')) {
+                        toggleMobileMenu();
+                    }
+                    
+                    // Focus management for accessibility
+                    targetSection.setAttribute('tabindex', '-1');
+                    targetSection.focus();
+                    
+                    // Remove tabindex after focus for proper tab order
+                    setTimeout(() => {
+                        targetSection.removeAttribute('tabindex');
+                    }, 1000);
+                    
+                    // Clear navigation flag after scroll completes
+                    setTimeout(() => {
+                        isNavigating = false;
+                    }, config.smoothScrollDuration + 100);
+                }
+            }
+
+            // Keyboard navigation support
+            function handleKeyboardNavigation(event) {
+                // Handle Escape key to close mobile menu
+                if (event.key === 'Escape' && navList && navList.classList.contains('active')) {
+                    toggleMobileMenu();
+                    mobileMenuToggle.focus();
+                }
+                
+                // Handle Enter/Space on mobile menu toggle
+                if ((event.key === 'Enter' || event.key === ' ') && 
+                    event.target === mobileMenuToggle) {
+                    event.preventDefault();
+                    toggleMobileMenu();
+                }
+            }
+
+            // Initialize navigation functionality
+            function initNavigation() {
+                // Add class to indicate JavaScript is enabled
+                document.body.classList.add('js-enabled');
+                
+                // Set up mobile menu toggle
+                if (mobileMenuToggle) {
+                    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    mobileMenuToggle.setAttribute('aria-controls', 'navList');
+                }
+                
+                // Set up navigation links
+                navLinks.forEach(link => {
+                    link.addEventListener('click', handleNavClick);
+                    
+                    // Add keyboard support
+                    link.addEventListener('keydown', function(event) {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault();
+                            handleNavClick.call(this, event);
+                        }
+                    });
+                });
+                
+                // Set up scroll listener
+                window.addEventListener('scroll', handleScroll, { passive: true });
+                
+                // Set up keyboard navigation
+                document.addEventListener('keydown', handleKeyboardNavigation);
+                
+                // Set up resize listener to handle mobile menu on orientation change
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 767 && navList && navList.classList.contains('active')) {
+                        navList.classList.remove('active');
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // Initialize active section on page load
+                const initialSection = getCurrentSection();
+                updateActiveNavigation(initialSection);
+                
+                // Handle browser back/forward navigation
+                window.addEventListener('popstate', function() {
+                    setTimeout(() => {
+                        const activeSection = getCurrentSection();
+                        updateActiveNavigation(activeSection);
+                    }, 100);
+                });
+            }
+
+            // Fallback functionality for when JavaScript is disabled
+            // This is handled by the CSS :target pseudo-class and proper anchor links
+            
+            // Initialize when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initNavigation);
+            } else {
+                initNavigation();
+            }
+            
+            // Expose toggle function globally for onclick handlers (fallback)
+            window.toggleMobileMenu = toggleMobileMenu;
+            
+        })();
+
+        // Performance optimization: Preload critical resources
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(() => {
+                // Preload any additional resources during idle time
+                const link = document.createElement('link');
+                link.rel = 'prefetch';
+                link.href = 'articles_archive/';
+                document.head.appendChild(link);
+            });
+        }
+    </script>
+</body>
 </html>
