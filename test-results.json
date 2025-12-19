@@ -2,7 +2,7 @@
   "summary": {
     "totalTests": 41,
     "totalPassed": 41,
-    "timestamp": "2025-12-18T07:27:44.894Z",
+    "timestamp": "2025-12-18T08:49:29.240Z",
     "overallStatus": true
   },
   "results": {
@@ -11,91 +11,91 @@
         "test": "index.html exists",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.887Z"
+        "timestamp": "2025-12-18T08:49:29.229Z"
       },
       {
         "test": "Single-page with multiple sections",
         "passed": true,
         "details": "Found 6 sections with IDs",
-        "timestamp": "2025-12-18T07:27:44.891Z"
+        "timestamp": "2025-12-18T08:49:29.237Z"
       },
       {
         "test": "hero section exists",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.891Z"
+        "timestamp": "2025-12-18T08:49:29.237Z"
       },
       {
         "test": "about section exists",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.891Z"
+        "timestamp": "2025-12-18T08:49:29.237Z"
       },
       {
         "test": "experience section exists",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.891Z"
+        "timestamp": "2025-12-18T08:49:29.237Z"
       },
       {
         "test": "publications section exists",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.891Z"
+        "timestamp": "2025-12-18T08:49:29.237Z"
       },
       {
         "test": "articles section exists",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.891Z"
+        "timestamp": "2025-12-18T08:49:29.238Z"
       },
       {
         "test": "contact section exists",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.891Z"
+        "timestamp": "2025-12-18T08:49:29.238Z"
       },
       {
         "test": "Uses <nav semantic element",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.892Z"
+        "timestamp": "2025-12-18T08:49:29.238Z"
       },
       {
         "test": "Uses <section semantic element",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.892Z"
+        "timestamp": "2025-12-18T08:49:29.238Z"
       },
       {
         "test": "Uses <article semantic element",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.892Z"
+        "timestamp": "2025-12-18T08:49:29.238Z"
       },
       {
         "test": "Uses <header semantic element",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.892Z"
+        "timestamp": "2025-12-18T08:49:29.238Z"
       },
       {
         "test": "Uses <footer semantic element",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.892Z"
+        "timestamp": "2025-12-18T08:49:29.238Z"
       },
       {
         "test": "Viewport meta tag present",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.892Z"
+        "timestamp": "2025-12-18T08:49:29.238Z"
       },
       {
         "test": "Description meta tag present",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.892Z"
+        "timestamp": "2025-12-18T08:49:29.238Z"
       }
     ],
     "content": [
@@ -103,37 +103,37 @@
         "test": "Publications count (4-6)",
         "passed": true,
         "details": "Found 6 publication cards",
-        "timestamp": "2025-12-18T07:27:44.892Z"
+        "timestamp": "2025-12-18T08:49:29.238Z"
       },
       {
         "test": "Articles count (4-6)",
         "passed": true,
         "details": "Found 6 article cards",
-        "timestamp": "2025-12-18T07:27:44.892Z"
+        "timestamp": "2025-12-18T08:49:29.238Z"
       },
       {
         "test": "Experience timeline items",
         "passed": true,
         "details": "Found 4 experience items",
-        "timestamp": "2025-12-18T07:27:44.892Z"
+        "timestamp": "2025-12-18T08:49:29.238Z"
       },
       {
         "test": "External links open in new tab",
         "passed": true,
         "details": "18 links with target=\"_blank\", 18 external links found",
-        "timestamp": "2025-12-18T07:27:44.892Z"
+        "timestamp": "2025-12-18T08:49:29.238Z"
       },
       {
         "test": "Email contact present",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.892Z"
+        "timestamp": "2025-12-18T08:49:29.238Z"
       },
       {
         "test": "Social media links (3-4)",
         "passed": true,
         "details": "Found 6 social media references",
-        "timestamp": "2025-12-18T07:27:44.892Z"
+        "timestamp": "2025-12-18T08:49:29.238Z"
       }
     ],
     "performance": [
@@ -141,31 +141,31 @@
         "test": "CSS consolidation",
         "passed": true,
         "details": "1 external stylesheets, 1 inline styles",
-        "timestamp": "2025-12-18T07:27:44.892Z"
+        "timestamp": "2025-12-18T08:49:29.239Z"
       },
       {
         "test": "Image optimization attributes",
         "passed": true,
         "details": "1/1 images have optimization attributes",
-        "timestamp": "2025-12-18T07:27:44.892Z"
+        "timestamp": "2025-12-18T08:49:29.239Z"
       },
       {
         "test": "Font preconnect optimization",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.892Z"
+        "timestamp": "2025-12-18T08:49:29.239Z"
       },
       {
         "test": "Resource hints present",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.892Z"
+        "timestamp": "2025-12-18T08:49:29.239Z"
       },
       {
         "test": "HTML file size reasonable",
         "passed": true,
-        "details": "File size: 66.1KB",
-        "timestamp": "2025-12-18T07:27:44.892Z"
+        "details": "File size: 66.2KB",
+        "timestamp": "2025-12-18T08:49:29.239Z"
       }
     ],
     "accessibility": [
@@ -173,31 +173,31 @@
         "test": "Images have alt attributes",
         "passed": true,
         "details": "1/1 images have alt attributes",
-        "timestamp": "2025-12-18T07:27:44.893Z"
+        "timestamp": "2025-12-18T08:49:29.239Z"
       },
       {
         "test": "Proper heading hierarchy",
         "passed": true,
         "details": "1 H1 elements, 30 total headings",
-        "timestamp": "2025-12-18T07:27:44.893Z"
+        "timestamp": "2025-12-18T08:49:29.239Z"
       },
       {
         "test": "ARIA attributes present",
         "passed": true,
         "details": "Found 10 ARIA attributes",
-        "timestamp": "2025-12-18T07:27:44.893Z"
+        "timestamp": "2025-12-18T08:49:29.239Z"
       },
       {
         "test": "Focusable elements present",
         "passed": true,
         "details": "Found 29 focusable elements",
-        "timestamp": "2025-12-18T07:27:44.893Z"
+        "timestamp": "2025-12-18T08:49:29.239Z"
       },
       {
         "test": "Reduced motion support",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.893Z"
+        "timestamp": "2025-12-18T08:49:29.239Z"
       }
     ],
     "responsive": [
@@ -205,31 +205,31 @@
         "test": "Proper viewport meta tag",
         "passed": true,
         "details": "Content: width=device-width, initial-scale=1.0",
-        "timestamp": "2025-12-18T07:27:44.893Z"
+        "timestamp": "2025-12-18T08:49:29.239Z"
       },
       {
         "test": "CSS media queries present",
         "passed": true,
-        "details": "Found 11 media queries",
-        "timestamp": "2025-12-18T07:27:44.893Z"
+        "details": "Found 9 media queries",
+        "timestamp": "2025-12-18T08:49:29.239Z"
       },
       {
         "test": "Mobile navigation present",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.893Z"
+        "timestamp": "2025-12-18T08:49:29.239Z"
       },
       {
         "test": "Multiple breakpoints defined",
         "passed": true,
         "details": "Found 3 standard breakpoints",
-        "timestamp": "2025-12-18T07:27:44.893Z"
+        "timestamp": "2025-12-18T08:49:29.239Z"
       },
       {
         "test": "Container max-width set",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.893Z"
+        "timestamp": "2025-12-18T08:49:29.239Z"
       }
     ],
     "links": [
@@ -237,31 +237,31 @@
         "test": "CSS smooth scrolling enabled",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.893Z"
+        "timestamp": "2025-12-18T08:49:29.239Z"
       },
       {
         "test": "Internal navigation links",
         "passed": true,
         "details": "Found 15 internal navigation links",
-        "timestamp": "2025-12-18T07:27:44.893Z"
+        "timestamp": "2025-12-18T08:49:29.239Z"
       },
       {
         "test": "JavaScript navigation enhancement",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.893Z"
+        "timestamp": "2025-12-18T08:49:29.239Z"
       },
       {
         "test": "Fixed/sticky navigation",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.893Z"
+        "timestamp": "2025-12-18T08:49:29.239Z"
       },
       {
         "test": "Navigation active state",
         "passed": true,
         "details": "",
-        "timestamp": "2025-12-18T07:27:44.893Z"
+        "timestamp": "2025-12-18T08:49:29.239Z"
       }
     ]
   }
