@@ -23,7 +23,7 @@ This is my corner of the internet where I share:
 
 Think of it as my digital business card, but way cooler.
 
-## The Good Stuff
+## What's Inside
 
 ```
 ┌─────────────────────────────────────────┐
@@ -38,13 +38,6 @@ Think of it as my digital business card, but way cooler.
 │  No frameworks, no fuss, just code     │
 └─────────────────────────────────────────┘
 ```
-
-**The site features:**
-- Clean, responsive design that works everywhere
-- Horizontal scrolling navigation (no broken hamburger menus!)
-- Fast loading with optimized everything
-- Accessible and keyboard-friendly
-- Single page with smooth scrolling between sections
 
 ## Tech Stack
 
@@ -70,22 +63,7 @@ No frameworks, no build process, no nonsense. Just clean code that works.
 └── README.md              # You are here
 ```
 
-## SEO Optimization
 
-This site is optimized to rank high when people search for "Bhavdeep Singh Sachdeva":
-
-```
-✓ Comprehensive meta tags with variations of my name
-✓ JSON-LD structured data for search engines
-✓ Open Graph tags for social media
-✓ Twitter Card optimization
-✓ Sitemap.xml and robots.txt
-✓ Semantic HTML with proper headings
-✓ Fast loading and mobile-friendly
-✓ Regular content updates
-```
-
-**Search terms covered:** Bhavdeep Singh Sachdeva, Bhavdeep Sachdeva, AI researcher, AWS GuardDuty, NLP, machine learning, Arizona State University, ACL, EACL, and more.
 
 ## Quick Development
 
