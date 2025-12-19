@@ -792,36 +792,67 @@
             }
         }
 
-        /* Mobile-specific styles (up to 767px) */
+        /* Mobile-specific styles (up to 767px) - Horizontal Scrollable Navigation */
         @media (max-width: 767px) {
             .nav {
-                padding: 0 var(--space-4);
+                padding: 0 var(--space-2);
             }
 
             .mobile-menu-toggle {
-                display: block;
+                display: none; /* Hide hamburger - we don't need it anymore */
+            }
+
+            .nav-container {
+                justify-content: flex-start;
+                padding: var(--space-3) 0;
             }
 
             .nav-list {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--color-background);
-                flex-direction: column;
-                padding: var(--space-4);
-                box-shadow: var(--shadow-md);
-                border-top: 1px solid var(--color-border);
+                display: flex;
+                flex-direction: row;
+                gap: var(--space-2);
+                overflow-x: auto;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none; /* Firefox */
+                -ms-overflow-style: none; /* IE/Edge */
+                padding: var(--space-2) var(--space-4);
+                margin: 0;
             }
 
-            .nav-list.active {
-                display: flex;
+            .nav-list::-webkit-scrollbar {
+                display: none; /* Chrome/Safari */
             }
 
             .nav-link {
-                padding: var(--space-3) var(--space-4);
-                text-align: center;
+                white-space: nowrap;
+                padding: var(--space-2) var(--space-4);
+                font-size: var(--text-sm);
+                border-radius: var(--radius-full);
+                background-color: var(--color-background-alt);
+                border: 1px solid var(--color-border);
+                flex-shrink: 0;
+                transition: var(--transition-base);
+            }
+
+            .nav-link:hover,
+            .nav-link.active {
+                background-color: var(--color-primary-light);
+                color: white;
+                border-color: var(--color-primary-light);
+            }
+
+            /* Subtle scroll indicator */
+            .nav-container::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 20px;
+                background: linear-gradient(to left, var(--color-background), transparent);
+                pointer-events: none;
+                z-index: 1;
             }
 
             .container {
@@ -1116,21 +1147,7 @@
             outline-offset: 2px;
         }
 
-        /* Enhanced mobile navigation */
-        @media (max-width: 767px) {
-            .nav-list {
-                transform: translateY(-10px);
-                opacity: 0;
-                transition: var(--transition-base);
-            }
-            
-            .nav-list.active {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-            /* Mobile active state uses underline only - no left line */
-        }
+        /* Enhanced mobile navigation - consolidated with main mobile styles */
 
         /* Accessibility improvements */
         .nav-link:focus {
@@ -1247,29 +1264,13 @@
             }
         }
 
-        /* Mobile menu animation */
-        .nav-list {
-            transition: var(--transition-base);
-        }
-
-        @media (max-width: 767px) {
-            .nav-list {
-                transform: translateY(-10px);
-                opacity: 0;
-            }
-            
-            .nav-list.active {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
+        /* Mobile menu animation - consolidated above in main mobile styles */
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navList">☰</button>
             <ul class="nav-list" id="navList" role="navigation">
                 <li><a href="#hero" class="nav-link" aria-current="false">Home</a></li>
                 <li><a href="#about" class="nav-link" aria-label="Navigate to About section">About</a></li>
@@ -1568,6 +1569,8 @@
     </footer>
 
     <script>
+        // Mobile navigation now uses horizontal scrolling - no toggle needed
+
         (function() {
             'use strict';
             
@@ -1587,21 +1590,8 @@
             const navList = document.getElementById('navList');
             const navLinks = document.querySelectorAll('.nav-link');
             const sections = document.querySelectorAll('section[id]');
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             
-            // Mobile menu toggle function
-            function toggleMobileMenu() {
-                if (navList) {
-                    navList.classList.toggle('active');
-                    
-                    // Update ARIA attributes for accessibility
-                    const isExpanded = navList.classList.contains('active');
-                    mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
-                    
-                    // Add visual feedback
-                    mobileMenuToggle.style.transform = isExpanded ? 'rotate(90deg)' : 'rotate(0deg)';
-                }
-            }
+            // Mobile menu toggle function is now defined globally above
 
             // Enhanced smooth scrolling with fallback
             function smoothScrollTo(targetElement, offset = 0) {
@@ -1745,10 +1735,7 @@
                     // Smooth scroll to target
                     smoothScrollTo(targetSection, config.navOffset);
                     
-                    // Close mobile menu if open
-                    if (navList && navList.classList.contains('active')) {
-                        toggleMobileMenu();
-                    }
+                    // No need to close mobile menu - always visible
                     
                     // Focus management for accessibility
                     targetSection.setAttribute('tabindex', '-1');
@@ -1768,17 +1755,20 @@
 
             // Keyboard navigation support
             function handleKeyboardNavigation(event) {
-                // Handle Escape key to close mobile menu
-                if (event.key === 'Escape' && navList && navList.classList.contains('active')) {
-                    toggleMobileMenu();
-                    mobileMenuToggle.focus();
-                }
-                
-                // Handle Enter/Space on mobile menu toggle
-                if ((event.key === 'Enter' || event.key === ' ') && 
-                    event.target === mobileMenuToggle) {
-                    event.preventDefault();
-                    toggleMobileMenu();
+                // Enhanced keyboard navigation for scrollable nav
+                if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+                    const focusedLink = document.activeElement;
+                    if (focusedLink && focusedLink.classList.contains('nav-link')) {
+                        event.preventDefault();
+                        const links = Array.from(navLinks);
+                        const currentIndex = links.indexOf(focusedLink);
+                        
+                        if (event.key === 'ArrowRight' && currentIndex < links.length - 1) {
+                            links[currentIndex + 1].focus();
+                        } else if (event.key === 'ArrowLeft' && currentIndex > 0) {
+                            links[currentIndex - 1].focus();
+                        }
+                    }
                 }
             }
 
@@ -1787,12 +1777,7 @@
                 // Add class to indicate JavaScript is enabled
                 document.body.classList.add('js-enabled');
                 
-                // Set up mobile menu toggle
-                if (mobileMenuToggle) {
-                    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
-                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                    mobileMenuToggle.setAttribute('aria-controls', 'navList');
-                }
+                // Mobile navigation now uses horizontal scrolling - no setup needed
                 
                 // Set up navigation links
                 navLinks.forEach(link => {
@@ -1813,12 +1798,9 @@
                 // Set up keyboard navigation
                 document.addEventListener('keydown', handleKeyboardNavigation);
                 
-                // Set up resize listener to handle mobile menu on orientation change
+                // Set up resize listener for responsive behavior
                 window.addEventListener('resize', function() {
-                    if (window.innerWidth > 767 && navList && navList.classList.contains('active')) {
-                        navList.classList.remove('active');
-                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                    }
+                    // Responsive behavior is now handled by CSS
                 });
                 
                 // Initialize active section on page load
@@ -1844,8 +1826,7 @@
                 initNavigation();
             }
             
-            // Expose toggle function globally for onclick handlers (fallback)
-            window.toggleMobileMenu = toggleMobileMenu;
+            // toggleMobileMenu is already globally accessible
             
         })();
 
