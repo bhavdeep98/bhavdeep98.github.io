@@ -564,20 +564,22 @@
             border-color: var(--color-primary-light);
         }
 
+        .publication-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
         .publication-card h3 {
             font-size: var(--text-xl);
             font-weight: 600;
             margin-bottom: var(--space-4);
             line-height: 1.4;
-        }
-
-        .publication-card h3 a {
             color: var(--color-text-primary);
-            text-decoration: none;
             transition: var(--transition-base);
         }
 
-        .publication-card h3 a:hover {
+        .publication-card-link:hover .publication-card h3 {
             color: var(--color-primary-light);
         }
 
@@ -632,20 +634,22 @@
             margin-bottom: var(--space-2);
         }
 
+        .article-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
         .article-card h3 {
             font-size: var(--text-lg);
             font-weight: 600;
             margin-bottom: var(--space-2);
             line-height: 1.4;
-        }
-
-        .article-card h3 a {
             color: var(--color-text-primary);
-            text-decoration: none;
             transition: var(--transition-base);
         }
 
-        .article-card h3 a:hover {
+        .article-card-link:hover .article-card h3 {
             color: var(--color-primary-light);
         }
 
@@ -1482,47 +1486,59 @@
             </header>
             
             <div class="publications-grid">
-                <article class="publication-card">
-                    <h3><a href="https://arxiv.org/abs/2302.04434" target="_blank">Real-Time Visual Feedback Benchmark Creation: A Human-and-Metric-in-the-loop workflow</a></h3>
-                    <p class="authors">Anjana Arunkumar, Swaroop Mishra, <strong>Bhavdeep Sachdeva</strong>, Chitta Baral, Chris Bryan</p>
-                    <p class="venue">EACL 2023</p>
-                    <p class="summary">Introduces VAIDA, a system that improves NLP benchmark quality through real-time visual feedback and metric-based recommendations, achieving a 45.8% reduction in artifact levels.</p>
-                </article>
+                <a href="https://arxiv.org/abs/2302.04434" target="_blank" class="publication-card-link">
+                    <article class="publication-card">
+                        <h3>Real-Time Visual Feedback Benchmark Creation: A Human-and-Metric-in-the-loop workflow</h3>
+                        <p class="authors">Anjana Arunkumar, Swaroop Mishra, <strong>Bhavdeep Sachdeva</strong>, Chitta Baral, Chris Bryan</p>
+                        <p class="venue">EACL 2023</p>
+                        <p class="summary">Introduces VAIDA, a system that improves NLP benchmark quality through real-time visual feedback and metric-based recommendations, achieving a 45.8% reduction in artifact levels.</p>
+                    </article>
+                </a>
 
-                <article class="publication-card">
-                    <h3><a href="https://github.com/allenai/numglue?tab=readme-ov-file" target="_blank">NumGLUE: A Suite of Fundamental yet Challenging Mathematical Reasoning Tasks</a></h3>
-                    <p class="authors">Swaroop Mishra, Arindam Mitra, Neeraj Varshney, <strong>Bhavdeep Singh Sachdeva</strong>, Peter Clark, Chitta Baral, Ashwin Kalyan</p>
-                    <p class="venue">ACL 2022</p>
-                    <p class="summary">A comprehensive benchmark that tests models' mathematical reasoning skills, revealing gaps in model understanding and pushing improvements in fundamental math reasoning.</p>
-                </article>
+                <a href="https://github.com/allenai/numglue?tab=readme-ov-file" target="_blank" class="publication-card-link">
+                    <article class="publication-card">
+                        <h3>NumGLUE: A Suite of Fundamental yet Challenging Mathematical Reasoning Tasks</h3>
+                        <p class="authors">Swaroop Mishra, Arindam Mitra, Neeraj Varshney, <strong>Bhavdeep Singh Sachdeva</strong>, Peter Clark, Chitta Baral, Ashwin Kalyan</p>
+                        <p class="venue">ACL 2022</p>
+                        <p class="summary">A comprehensive benchmark that tests models' mathematical reasoning skills, revealing gaps in model understanding and pushing improvements in fundamental math reasoning.</p>
+                    </article>
+                </a>
 
-                <article class="publication-card">
-                    <h3><a href="https://aclanthology.org/2022.findings-acl.213/" target="_blank">Generalized but not Robust? Understanding the Effects of Out-of-Domain Generalization Methods</a></h3>
-                    <p class="authors">Tejas Gokhale, Swaroop Mishra, Man Luo, <strong>Bhavdeep Singh Sachdeva</strong>, Chitta Baral</p>
-                    <p class="venue">ACL 2022</p>
-                    <p class="summary">Investigates how generalization techniques improve NLP model performance in out-of-domain tasks, emphasizing the trade-off between generalization and robustness.</p>
-                </article>
+                <a href="https://aclanthology.org/2022.findings-acl.213/" target="_blank" class="publication-card-link">
+                    <article class="publication-card">
+                        <h3>Generalized but not Robust? Understanding the Effects of Out-of-Domain Generalization Methods</h3>
+                        <p class="authors">Tejas Gokhale, Swaroop Mishra, Man Luo, <strong>Bhavdeep Singh Sachdeva</strong>, Chitta Baral</p>
+                        <p class="venue">ACL 2022</p>
+                        <p class="summary">Investigates how generalization techniques improve NLP model performance in out-of-domain tasks, emphasizing the trade-off between generalization and robustness.</p>
+                    </article>
+                </a>
 
-                <article class="publication-card">
-                    <h3><a href="https://arxiv.org/abs/2008.03964" target="_blank">DQI: A Guide to Benchmark Evaluation</a></h3>
-                    <p class="authors">Swaroop Mishra, Anjana Arunkumar, <strong>Bhavdeep Sachdeva</strong>, Chitta Baral</p>
-                    <p class="venue">ICML Workshop 2020</p>
-                    <p class="summary">Presents a framework to assess benchmark quality by identifying and correcting artifacts in datasets, promoting more robust and reliable evaluations.</p>
-                </article>
+                <a href="https://arxiv.org/abs/2008.03964" target="_blank" class="publication-card-link">
+                    <article class="publication-card">
+                        <h3>DQI: A Guide to Benchmark Evaluation</h3>
+                        <p class="authors">Swaroop Mishra, Anjana Arunkumar, <strong>Bhavdeep Sachdeva</strong>, Chitta Baral</p>
+                        <p class="venue">ICML Workshop 2020</p>
+                        <p class="summary">Presents a framework to assess benchmark quality by identifying and correcting artifacts in datasets, promoting more robust and reliable evaluations.</p>
+                    </article>
+                </a>
 
-                <article class="publication-card">
-                    <h3><a href="https://aclanthology.org/2020.sustainlp-1.23/" target="_blank">Do We Need to Create Big Datasets to Learn a Task?</a></h3>
-                    <p class="authors"><strong>Bhavdeep Sachdeva</strong>, Swaroop Mishra</p>
-                    <p class="venue">SUSTAINLP Workshop 2020</p>
-                    <p class="summary">Explores the efficiency of training NLP models using smaller, well-targeted datasets, promoting a more sustainable approach to AI development.</p>
-                </article>
+                <a href="https://aclanthology.org/2020.sustainlp-1.23/" target="_blank" class="publication-card-link">
+                    <article class="publication-card">
+                        <h3>Do We Need to Create Big Datasets to Learn a Task?</h3>
+                        <p class="authors"><strong>Bhavdeep Sachdeva</strong>, Swaroop Mishra</p>
+                        <p class="venue">SUSTAINLP Workshop 2020</p>
+                        <p class="summary">Explores the efficiency of training NLP models using smaller, well-targeted datasets, promoting a more sustainable approach to AI development.</p>
+                    </article>
+                </a>
 
-                <article class="publication-card">
-                    <h3><a href="https://content.iospress.com/articles/journal-of-intelligent-and-fuzzy-systems/ifs169259" target="_blank">Traffic state detection using smartphone based acoustic sensing</a></h3>
-                    <p class="authors">Arshvir Kaur, Nitakshi Sood, Naveen Aggarwal, Dinesh Vij, <strong>Bhavdeep Sachdeva</strong></p>
-                    <p class="venue">Journal of Intelligent & Fuzzy Systems 2016</p>
-                    <p class="summary">Proposes a novel approach to traffic state detection using acoustic data collected from smartphones, offering a scalable solution to urban traffic monitoring.</p>
-                </article>
+                <a href="https://content.iospress.com/articles/journal-of-intelligent-and-fuzzy-systems/ifs169259" target="_blank" class="publication-card-link">
+                    <article class="publication-card">
+                        <h3>Traffic state detection using smartphone based acoustic sensing</h3>
+                        <p class="authors">Arshvir Kaur, Nitakshi Sood, Naveen Aggarwal, Dinesh Vij, <strong>Bhavdeep Sachdeva</strong></p>
+                        <p class="venue">Journal of Intelligent & Fuzzy Systems 2016</p>
+                        <p class="summary">Proposes a novel approach to traffic state detection using acoustic data collected from smartphones, offering a scalable solution to urban traffic monitoring.</p>
+                    </article>
+                </a>
             </div>
         </div>
     </section>
@@ -1543,40 +1559,50 @@
                 </div>
                 -->
 
-                <div class="article-card">
-                    <div class="article-category">AI Safety & Governance</div>
-                    <h3><a href="articles_archive/human_in_the_loop_governance_evolving_agents.html" target="_blank">Human-in-the-Loop Governance for Evolving AI Agents</a></h3>
-                    <p class="article-date">2024</p>
-                    <p class="article-summary">Examining governance frameworks for AI systems that can evolve and adapt, ensuring human oversight and control.</p>
-                </div>
+                <a href="articles_archive/human_in_the_loop_governance_evolving_agents.html" target="_blank" class="article-card-link">
+                    <div class="article-card">
+                        <div class="article-category">AI Safety & Governance</div>
+                        <h3>Human-in-the-Loop Governance for Evolving AI Agents</h3>
+                        <p class="article-date">2024</p>
+                        <p class="article-summary">Examining governance frameworks for AI systems that can evolve and adapt, ensuring human oversight and control.</p>
+                    </div>
+                </a>
 
-                <div class="article-card">
-                    <div class="article-category">Multi-Agent Systems</div>
-                    <h3><a href="articles_archive/human-model-synergy-slow-fast-thinking.html" target="_blank">Balancing Human and Model Capabilities</a></h3>
-                    <p class="article-date">2024</p>
-                    <p class="article-summary">Analysis of how human "slow thinking" can complement AI "fast thinking" for optimal collaborative outcomes.</p>
-                </div>
+                <a href="articles_archive/human-model-synergy-slow-fast-thinking.html" target="_blank" class="article-card-link">
+                    <div class="article-card">
+                        <div class="article-category">Multi-Agent Systems</div>
+                        <h3>Balancing Human and Model Capabilities</h3>
+                        <p class="article-date">2024</p>
+                        <p class="article-summary">Analysis of how human "slow thinking" can complement AI "fast thinking" for optimal collaborative outcomes.</p>
+                    </div>
+                </a>
 
-                <div class="article-card">
-                    <div class="article-category">AI Research & Innovation</div>
-                    <h3><a href="articles_archive/from-monolithic-to-compound-ai.html" target="_blank">From Monolithic Models to Compound AI</a></h3>
-                    <p class="article-date">2024</p>
-                    <p class="article-summary">Exploring the evolution from single large models to compound AI systems and their architectural implications.</p>
-                </div>
+                <a href="articles_archive/from-monolithic-to-compound-ai.html" target="_blank" class="article-card-link">
+                    <div class="article-card">
+                        <div class="article-category">AI Research & Innovation</div>
+                        <h3>From Monolithic Models to Compound AI</h3>
+                        <p class="article-date">2024</p>
+                        <p class="article-summary">Exploring the evolution from single large models to compound AI systems and their architectural implications.</p>
+                    </div>
+                </a>
 
-                <div class="article-card">
-                    <div class="article-category">AI Research & Innovation</div>
-                    <h3><a href="articles_archive/preserving-panjabi-aya.html" target="_blank">Preserving Panjabi Through Aya</a></h3>
-                    <p class="article-date">2024</p>
-                    <p class="article-summary">Personal experience working on multilingual AI development and language preservation through Cohere's Project Aya.</p>
-                </div>
+                <a href="articles_archive/preserving-panjabi-aya.html" target="_blank" class="article-card-link">
+                    <div class="article-card">
+                        <div class="article-category">AI Research & Innovation</div>
+                        <h3>Preserving Panjabi Through Aya</h3>
+                        <p class="article-date">2024</p>
+                        <p class="article-summary">Personal experience working on multilingual AI development and language preservation through Cohere's Project Aya.</p>
+                    </div>
+                </a>
 
-                <div class="article-card">
-                    <div class="article-category">Industry & Experience</div>
-                    <h3><a href="articles_archive/business-lessons-unisys.html" target="_blank">Business Lessons from Unisys</a></h3>
-                    <p class="article-date">2024</p>
-                    <p class="article-summary">Insights and lessons learned from enterprise software development and business operations during my time at Unisys.</p>
-                </div>
+                <a href="articles_archive/business-lessons-unisys.html" target="_blank" class="article-card-link">
+                    <div class="article-card">
+                        <div class="article-category">Industry & Experience</div>
+                        <h3>Business Lessons from Unisys</h3>
+                        <p class="article-date">2024</p>
+                        <p class="article-summary">Insights and lessons learned from enterprise software development and business operations during my time at Unisys.</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
