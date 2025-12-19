@@ -1,170 +1,127 @@
-# Bhavdeep Singh Sachdeva - Personal Website
-
-A modern, responsive personal website showcasing research, publications, and professional journey in AI/ML. Built with vanilla HTML, CSS, and JavaScript, hosted on GitHub Pages.
-
-## 🌐 Live Website
-
-Visit the website at: [https://bhavdeep98.github.io](https://bhavdeep98.github.io)
-
-## 📋 About
-
-This is the personal website of **Bhavdeep Singh Sachdeva**, a Ph.D. candidate and researcher specializing in Artificial Intelligence, particularly Natural Language Processing (NLP). The website serves as a comprehensive portfolio showcasing:
-
-- **Research Publications** - Academic papers and conference presentations
-- **Articles & Blog Posts** - Insights on AI governance, safety, and innovation
-- **Professional Timeline** - Career journey from UIET to AWS
-- **Contact Information** - Professional networking and collaboration opportunities
-
-## 🚀 Features
-
-### Core Functionality
-- **Single Page Application (SPA)** - Dynamic content loading without page refreshes
-- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
-- **Interactive Navigation** - Smooth transitions between sections
-- **Article Filtering** - Categorized content by research themes
-- **Professional Timeline** - Visual career progression display
-
-### Content Sections
-1. **About** - Personal introduction and research focus
-2. **Timeline** - Professional journey with visual timeline
-3. **Articles** - Research insights and thought leadership
-4. **Publications** - Academic papers and conference presentations
-
-### Technical Features
-- **Dynamic Content Loading** - JavaScript-powered SPA architecture
-- **Image Optimization** - Lazy loading and responsive images
-- **Social Media Integration** - Direct links to professional profiles
-- **Accessibility** - ARIA labels and keyboard navigation support
-
-## 🛠️ Technology Stack
-
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-- **Styling**: Custom CSS with Google Fonts (Lato, Montserrat)
-- **Icons**: SVG icons for social media and UI elements
-- **Hosting**: GitHub Pages
-- **Version Control**: Git
-
-## 📁 Project Structure
+# Bhavdeep Singh Sachdeva
 
 ```
-bhavdeep98.github.io/
-├── index.html              # Main entry point
-├── about.html              # About page content
-├── articles.html           # Articles listing page
-├── research.html           # Publications page
-├── style.css               # Main stylesheet
-├── script.js               # JavaScript functionality
-├── images/                 # Image assets
-│   ├── profilev2.jpg       # Profile picture
-│   ├── Photography/        # Photography portfolio
-│   ├── timeline/           # Career timeline logos
-│   └── articleImages/      # Article featured images
-├── articles/               # Individual article pages
-│   ├── phd-research-proposal.html
-│   ├── emotions-game-theory.html
-│   ├── human_in_the_loop_governance_evolving_agents.html
-│   └── ... (13 total articles)
-└── README.md               # This file
+    ____  __                     __                   _____ _             __  
+   / __ )/ /_  ____ __   ______/ /__  ___  ____     / ___/(_)___  ____ _/ /_ 
+  / __  / __ \/ __ `/ | / / __  / _ \/ _ \/ __ \    \__ \/ / __ \/ __ `/ __ \
+ / /_/ / / / / /_/ /| |/ / /_/ /  __/  __/ /_/ /   ___/ / / / / / /_/ / / / /
+/_____/_/ /_/\__,_/ |___/\__,_/\___/\___/ .___/   /____/_/_/ /_/\__, /_/ /_/ 
+                                      /_/                     /____/        
 ```
 
-## 🎨 Design Philosophy
+Hey there! I'm Bhavdeep Singh Sachdeva - a Software Engineer at AWS GuardDuty who loves building AI systems and writing about the future of artificial intelligence.
 
-### Visual Design
-- **Color Scheme**: Warm, professional palette with golden accents (#a97400)
-- **Typography**: Clean, readable fonts (Lato for body, Montserrat for headings)
-- **Layout**: Card-based design with subtle shadows and rounded corners
-- **Background**: Subtle SVG pattern for visual interest
+**Live site:** https://bhavdeep98.github.io
 
-### User Experience
-- **Mobile-First**: Responsive design prioritizing mobile experience
-- **Fast Loading**: Optimized images and efficient code structure
-- **Intuitive Navigation**: Clear menu structure and breadcrumbs
-- **Content Discovery**: Filtering and categorization for easy browsing
+## What's This About?
 
-## 📝 Content Categories
+This is my corner of the internet where I share:
+- Research papers I've published (ACL, EACL, and friends)
+- Thoughts on AI safety, governance, and multi-agent systems
+- My journey from academia to AWS
+- Random musings about technology and life
 
-### Research Areas
-- **AI Governance** - Ethical AI and policy frameworks
-- **AI Safety** - Robustness and reliability in AI systems
-- **AI Research** - Academic publications and methodologies
-- **AI Innovation** - Emerging technologies and applications
+Think of it as my digital business card, but way cooler.
 
-### Article Topics
-- Multi-agent systems and collaboration
-- Human-AI interaction and psychology
-- Benchmark development and evaluation
-- Language preservation and multilingual AI
-- Business applications and lessons learned
+## The Good Stuff
 
-## 🔧 Local Development
+```
+┌─────────────────────────────────────────┐
+│  What you'll find here:                 │
+│                                         │
+│  → About me and my AI research          │
+│  → Work experience timeline            │
+│  → Published papers and articles       │
+│  → Ways to get in touch                │
+│                                         │
+│  Built with: HTML + CSS + vanilla JS   │
+│  No frameworks, no fuss, just code     │
+└─────────────────────────────────────────┘
+```
 
-### Prerequisites
-- Modern web browser
-- Local web server (optional, for testing)
+**The site features:**
+- Clean, responsive design that works everywhere
+- Horizontal scrolling navigation (no broken hamburger menus!)
+- Fast loading with optimized everything
+- Accessible and keyboard-friendly
+- Single page with smooth scrolling between sections
 
-### Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/bhavdeep98/bhavdeep98.github.io.git
-   cd bhavdeep98.github.io
-   ```
+## Tech Stack
 
-2. Open `index.html` in your web browser or serve locally:
-   ```bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Using Node.js
-   npx serve .
-   
-   # Using PHP
-   php -S localhost:8000
-   ```
+```
+ Frontend:  HTML5 + CSS3 + Vanilla JavaScript
+ Fonts:     Google Fonts (Inter)
+ Hosting:   GitHub Pages
+ SEO:       Meta tags + JSON-LD + Open Graph
+ Testing:   Custom Node.js test suite
+```
 
-3. Navigate to `http://localhost:8000` in your browser
+No frameworks, no build process, no nonsense. Just clean code that works.
 
-### Development Notes
-- The site uses vanilla JavaScript for SPA functionality
-- CSS is organized with mobile-first responsive design
-- Images are optimized for web delivery
-- No build process required - direct HTML/CSS/JS
+## What's Inside
 
-## 📱 Browser Support
+```
+├── index.html              # The main show
+├── images/                 # Photos and icons
+├── articles_archive/       # My writing (13 articles)
+├── robots.txt             # For search engines
+├── sitemap.xml            # Also for search engines
+├── run-tests.js           # Quality control
+└── README.md              # You are here
+```
 
-- **Modern Browsers**: Chrome, Firefox, Safari, Edge (latest versions)
-- **Mobile**: iOS Safari, Chrome Mobile, Samsung Internet
-- **Features**: CSS Grid, Flexbox, ES6 JavaScript, Fetch API
+## SEO Optimization
 
-## 🤝 Contributing
+This site is optimized to rank high when people search for "Bhavdeep Singh Sachdeva":
 
-This is a personal website, but suggestions and improvements are welcome:
+```
+✓ Comprehensive meta tags with variations of my name
+✓ JSON-LD structured data for search engines
+✓ Open Graph tags for social media
+✓ Twitter Card optimization
+✓ Sitemap.xml and robots.txt
+✓ Semantic HTML with proper headings
+✓ Fast loading and mobile-friendly
+✓ Regular content updates
+```
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+**Search terms covered:** Bhavdeep Singh Sachdeva, Bhavdeep Sachdeva, AI researcher, AWS GuardDuty, NLP, machine learning, Arizona State University, ACL, EACL, and more.
 
-## 📄 License
+## Quick Development
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Want to run this locally?
 
-## 📞 Contact
+```bash
+git clone https://github.com/bhavdeep98/bhavdeep98.github.io.git
+cd bhavdeep98.github.io
+python -m http.server 8000
+# Open http://localhost:8000
+```
 
-**Bhavdeep Singh Sachdeva**
-- **Email**: bhavdeepsachdeva@gmail.com
-- **LinkedIn**: [bssachde](https://www.linkedin.com/in/bssachde/)
-- **Twitter**: [@BhavdeepSingh93](https://twitter.com/BhavdeepSingh93)
-- **Google Scholar**: [Profile](https://scholar.google.com/citations?user=d0sZa-oAAAAJ&hl=en)
-- **Instagram**: [@unorthodox_singh](https://www.instagram.com/unorthodox_singh/)
+Run tests:
+```bash
+node run-tests.js
+```
 
-## 🙏 Acknowledgments
+## Contact
 
-- **Research Collaborators**: Dr. Chitta Baral, Swaroop Mishra, and other research partners
-- **Institutions**: Arizona State University, AWS, Unisys, UIET Panjab University
-- **Open Source**: Google Fonts, SVG icons, and web standards
-- **Photography**: Personal photography used throughout the site
+```
+ Email:     bhavdeepsachdeva@gmail.com
+ LinkedIn:  linkedin.com/in/bssachde
+ Twitter:   @BhavdeepSingh93
+ Scholar:   Google Scholar profile
+ GitHub:    You're looking at it
+```
+
+## License
+
+MIT License - feel free to fork, modify, or use as inspiration for your own site.
 
 ---
 
-*Last updated: December 2024*
+```
+    Made with vanilla HTML, CSS, and JavaScript
+    No frameworks were harmed in the making of this website
+    
+    Last updated: December 2024
+```
