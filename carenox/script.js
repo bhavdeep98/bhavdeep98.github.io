@@ -1,5 +1,5 @@
 // ========================================
-// Arogya — Interactive Scripts
+// Carenox — Interactive Scripts
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
