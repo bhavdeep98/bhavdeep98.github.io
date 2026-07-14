@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Home Passport — AI-Powered Transaction Execution for Homebuilders</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --bg-card: #f8fafc;
+            --text: #1e293b;
+            --text-2: #475569;
+            --text-3: #64748b;
+            --accent: #2563eb;
+            --accent-light: #eff6ff;
+            --accent-mid: #dbeafe;
+            --accent-dark: #1d4ed8;
+            --green: #059669;
+            --green-light: #ecfdf5;
+            --orange: #d97706;
+            --orange-light: #fffbeb;
+            --red: #dc2626;
+            --red-light: #fef2f2;
+            --purple: #7c3aed;
+            --purple-light: #f5f3ff;
+            --border: rgba(0,0,0,0.08);
+            --r: 12px;
+        }
+        * { box-sizing: border-box; }
+        .reveal {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 16px;
+            color: var(--text);
+        }
+        .reveal .slides { text-align: left; }
+        .reveal .slides section {
+            background: var(--bg);
+            padding: 30px 44px;
+            height: 100%;
+            display: flex !important;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .reveal h1,.reveal h2,.reveal h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text);
+            font-weight: 700;
+            text-transform: none;
+            letter-spacing: -0.02em;
+            margin: 0;
+        }
+        .reveal h1 { font-size: 1.7em; margin-bottom: 0.15em; }
+        .reveal h2 { font-size: 1.35em; margin-bottom: 0.2em; }
+        .reveal h3 { font-size: 0.88em; margin-bottom: 0.15em; color: var(--accent-dark); }
+        .reveal p { color: var(--text-2); font-size: 0.78em; line-height: 1.55; margin: 0 0 0.4em; }
+        .reveal a { color: var(--accent); text-decoration: underline; }
+        .eyebrow {
+            font-size: 0.62em; font-weight: 600; color: var(--accent);
+            text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;
+        }
+        .badge {
+            display: inline-block; background: var(--accent-light); color: var(--accent-dark);
+            padding: 3px 10px; border-radius: 999px; font-size: 0.58em;
+            font-weight: 600; margin-right: 5px; margin-bottom: 5px;
+        }
+        .badge-green { background: var(--green-light); color: var(--green); }
+        .badge-orange { background: var(--orange-light); color: var(--orange); }
+        .badge-purple { background: var(--purple-light); color: var(--purple); }
+        .card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 14px 16px;
+        }
+        .card h3 { font-size: 0.78em; margin-bottom: 4px; }
+        .card p { font-size: 0.66em; margin: 0; color: var(--text-3); line-height: 1.45; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 10px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 10px; }
+        .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .highlight {
+            background: var(--accent-light); border-left: 3px solid var(--accent);
+            border-radius: 0 var(--r) var(--r) 0; padding: 10px 14px; margin-top: 10px;
+        }
+        .highlight p { font-size: 0.68em; color: var(--accent-dark); margin: 0; font-weight: 500; }
+        .stat { font-family: 'Plus Jakarta Sans',sans-serif; font-size: 2em; font-weight: 800; color: var(--accent); line-height: 1; }
+        .stat-red { color: var(--red); }
+        .stat-green { color: var(--green); }
+        .stat-orange { color: var(--orange); }
+        .steps { display: flex; align-items: stretch; gap: 8px; margin-top: 12px; }
+        .step {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 12px 14px; flex: 1; text-align: center;
+        }
+        .step .num { font-size: 0.58em; font-weight: 700; color: var(--accent); margin-bottom: 3px; }
+        .step h3 { font-size: 0.72em; margin: 0 0 3px; color: var(--text); }
+        .step p { font-size: 0.56em; margin: 0; color: var(--text-3); text-align: center; }
+        .step-arrow { color: var(--accent); font-size: 1em; align-self: center; }
+        .flow-row { display: flex; align-items: center; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+        .flow-box {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; padding: 8px 12px; font-size: 0.62em;
+            font-weight: 600; color: var(--text);
+        }
+        .flow-box.accent { background: var(--accent-light); border-color: var(--accent); color: var(--accent-dark); }
+        .flow-arrow { color: var(--accent); font-size: 0.9em; }
+        table.data-table {
+            width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.6em;
+        }
+        table.data-table th {
+            background: var(--accent-light); color: var(--accent-dark); padding: 8px 12px;
+            text-align: left; font-weight: 600; border-bottom: 2px solid var(--accent-mid);
+        }
+        table.data-table td {
+            padding: 6px 12px; border-bottom: 1px solid var(--border); color: var(--text-2);
+        }
+        table.data-table tr:hover td { background: var(--bg-card); }
+        .source-note {
+            margin-top: 10px; font-size: 0.5em; color: var(--text-3); line-height: 1.5;
+        }
+        .source-note a { color: var(--text-3); }
+        .connector-icon {
+            width: 48px; height: 48px; border-radius: 10px; display: flex;
+            align-items: center; justify-content: center; font-size: 1.4em;
+            margin-bottom: 6px;
+        }
+        .lifecycle-bar {
+            display: flex; border-radius: 8px; overflow: hidden; height: 32px; margin-top: 10px;
+        }
+        .lifecycle-segment {
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.56em; font-weight: 600; color: white; padding: 0 10px;
+        }
+        .source-quote {
+            background: #f8fafc; border: 1px solid var(--border); border-left: 3px solid var(--accent);
+            border-radius: 0 8px 8px 0; padding: 10px 14px; margin-bottom: 8px;
+        }
+        .source-quote .quote-label {
+            display: inline-block; background: var(--accent-light); color: var(--accent-dark);
+            font-size: 0.48em; font-weight: 600; padding: 2px 7px; border-radius: 4px;
+            margin-bottom: 5px;
+        }
+        .source-quote .quote-text {
+            font-size: 0.62em; color: var(--text); line-height: 1.5; font-style: italic; margin: 0 0 4px;
+        }
+        .source-quote .quote-text mark {
+            background: #fef08a; color: var(--text); font-weight: 700; font-style: italic;
+            padding: 1px 3px; border-radius: 3px;
+        }
+        .source-quote .quote-text mark.red { background: #fecaca; }
+        .source-quote .quote-text mark.orange { background: #fed7aa; }
+        .source-quote .quote-text mark.green { background: #bbf7d0; }
+        .source-quote .quote-text mark.blue { background: #bfdbfe; }
+        .source-quote .quote-source {
+            font-size: 0.5em; color: var(--text-3); margin: 0;
+        }
+        .source-quote .quote-source a { color: var(--accent); text-decoration: underline; }
+        .source-quote.red { border-left-color: var(--red); }
+        .source-quote.red .quote-label { background: var(--red-light); color: var(--red); }
+        .source-quote.orange { border-left-color: var(--orange); }
+        .source-quote.orange .quote-label { background: var(--orange-light); color: var(--orange); }
+        .source-quote.green { border-left-color: var(--green); }
+        .source-quote.green .quote-label { background: var(--green-light); color: var(--green); }
+    </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 1: Title -->
+<section>
+    <p class="eyebrow">AI-Powered Transaction Execution</p>
+    <h1>Home Passport</h1>
+    <p style="font-size: 0.92em; margin-top: 8px; color: var(--text);">Cross-system intelligence that predicts and prevents closing delays for homebuilders.</p>
+    <p style="font-size: 0.72em; margin-top: 4px;">A real-time <strong>Closing Confidence Score</strong> for every home in your pipeline.</p>
+    <div style="margin-top: 16px;">
+        <span class="badge">Read-Only Integration</span>
+        <span class="badge">6 System Categories</span>
+        <span class="badge">51 Signal Types</span>
+        <span class="badge badge-green">500+ Tests</span>
+        <span class="badge badge-purple">ML-Powered Predictions</span>
+        <span class="badge badge-orange">Blockchain Audit Trail</span>
+    </div>
+    <div class="highlight" style="margin-top: 18px;">
+        <p>Sits ABOVE existing builder tools (BuildPro, Encompass, Qualia, JDE, Salesforce, Procore) — never writes back, never disrupts operations.</p>
+    </div>
+    <aside class="notes">
+        Home Passport is a cross-system intelligence layer for homebuilders. The core idea: builders already have their tools — BuildPro for construction, Encompass for mortgage, Qualia for title. Those tools work fine individually. The problem is they don't talk to each other. We sit above all of them, ingest their events in real-time, and produce one thing: a Closing Confidence Score for every deal in the pipeline. It's a probability that this specific deal will close on time. We never write back to their systems. Read-only. Zero risk of disrupting operations. That's how we get adopted fast.
+    </aside>
+</section>
+
+<!-- SLIDE 2: The Problem — Overview -->
+<section>
+    <p class="eyebrow">The Problem</p>
+    <h2>Homebuilders are bleeding billions to siloed systems.</h2>
+    <p>Three structural problems compound into massive financial losses for every major U.S. homebuilder.</p>
+
+    <div class="grid-3" style="margin-top: 14px;">
+        <div class="card" style="border-top: 3px solid var(--red); text-align: center; padding: 18px;">
+            <div class="stat stat-red" style="font-size: 1.8em;">$10.8B</div>
+            <p style="margin-top: 6px; font-weight: 600; color: var(--text);">Annual economic impact from labor shortages alone</p>
+            <p style="font-size: 0.56em; margin-top: 4px;">$2.663B in carrying costs + $8.143B in lost production (19,000 homes not built)</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--orange); text-align: center; padding: 18px;">
+            <div class="stat stat-orange" style="font-size: 1.8em;">16.3%</div>
+            <p style="margin-top: 6px; font-weight: 600; color: var(--text);">Home purchases canceled in Dec 2025</p>
+            <p style="font-size: 0.56em; margin-top: 4px;">Highest since Redfin began tracking in 2017. ~40,000 purchase agreements voided in one month.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent); text-align: center; padding: 18px;">
+            <div class="stat" style="font-size: 1.8em;">9–10 mo</div>
+            <p style="margin-top: 6px; font-weight: 600; color: var(--text);">Average single-family build time</p>
+            <p style="font-size: 0.56em; margin-top: 4px;">Peaked at 10.1 months (Census/NAHB). 2024 data: 9.1 months. Still ~2.5 months longer than a decade ago.</p>
+        </div>
+    </div>
+
+    <div class="source-quote" style="margin-top: 14px;">
+        <span class="quote-label">NAHB/HBI Study · June 2025</span>
+        <p class="quote-text">"The study estimates an aggregate economic impact of <mark>$10.806 billion per year</mark> due to longer construction times associated with the skilled labor shortage. Higher carrying costs: <mark class="red">$2.663 billion annually</mark>."</p>
+        <p class="quote-source">— <a href="https://www.nahb.org/blog/2025/10/hbi-labor-market-report" target="_blank">NAHB: HBI Report Reveals Economic Impact of Labor Shortages</a> · Also covered by <a href="https://www.forbes.com/sites/jennifercastenson/2025/06/19/building-the-trades-we-cant-afford-a-10-billion-annual-housing-loss/" target="_blank">Forbes</a>, <a href="https://builderonline.com/data-analysis/study-skilled-labor-shortage-costs-industry-billions" target="_blank">Builder Online</a></p>
+    </div>
+
+    <div class="source-quote red">
+        <span class="quote-label">Redfin / CNBC · Jan 2026</span>
+        <p class="quote-text">"More than <mark class="red">40,000</mark> signed home purchase agreements were canceled in December, representing <mark class="red">16.3% of all homes</mark> that went under contract — up from 14.9% in December 2024."</p>
+        <p class="quote-source">— <a href="https://www.cnbc.com/2026/01/27/homebuyers-backing-out-of-deals.html" target="_blank">CNBC: Homebuyers backing out of deals at fastest pace since 2017</a> · Also: <a href="https://eu.usatoday.com/story/money/personalfinance/real-estate/2026/01/27/home-purchase-cancellations-record-high/88376420007/" target="_blank">USA Today</a></p>
+    </div>
+    <aside class="notes">
+        This slide sets the stage. Three massive structural problems: (1) It takes nearly a year to build a home — 2.5 months longer than a decade ago. That's $700/day in carrying costs bleeding out. (2) One in six deals is now falling apart — 40,000 contracts voided in a single month. (3) The NAHB quantified this pain at $10.8 billion per year just from labor-related delays — $2.6B in direct carrying costs plus $8.1B in lost production. And this doesn't even count the excess incentives builders are paying to move stuck inventory. These aren't estimates — these are from NAHB's own study published June 2025, and Redfin's transaction data tracked since 2017.
+    </aside>
+</section>
+
+<!-- SLIDE 2B: The Problem — Builder Financials -->
+<section>
+    <p class="eyebrow">The Problem · Builder Financials</p>
+    <h2>Top builders losing billions — the numbers from their own earnings.</h2>
+
+    <div class="grid-2" style="margin-top: 10px;">
+        <div>
+            <div class="source-quote orange" style="margin-bottom: 8px;">
+                <span class="quote-label">D.R. Horton · Q2 FY2026</span>
+                <p class="quote-text">"Cancellation rate — <mark class="orange">16%</mark>, flat year over year. Earnings per diluted share fell to <mark class="red">$2.24 from $2.58</mark>. Elevated sales incentives at roughly <mark class="orange">10% of revenues</mark>."</p>
+                <p class="quote-source">— <a href="https://www.fool.com/earnings/call-transcripts/2026/04/21/dr-horton-dhi-q2-2026-earnings-transcript/" target="_blank">Motley Fool: DHI Q2 2026 Earnings Transcript</a></p>
+            </div>
+            <div class="source-quote orange">
+                <span class="quote-label">D.R. Horton · Q1 FY2026</span>
+                <p class="quote-text">"Net income <mark class="red">fell 30%</mark> to $594.8 million. Cancellation rate was <mark class="red">18%</mark>. Net sales orders: 18,300 homes."</p>
+                <p class="quote-source">— <a href="https://www.businesswire.com/news/home/20260120750275/en/" target="_blank">BusinessWire: DHI Q1 FY2026 Results</a> · Also: <a href="https://finviz.com/news/281081/americas-largest-homebuilder-dr-horton-weathers-affordability-squeeze" target="_blank">Finviz</a></p>
+            </div>
+        </div>
+        <div>
+            <div class="source-quote orange" style="margin-bottom: 8px;">
+                <span class="quote-label">Lennar · Q1 FY2026</span>
+                <p class="quote-text">"Net earnings of $229M, or <mark class="red">$0.93 per diluted share</mark>, compared to $520M or $1.96 in Q1 2025 <mark class="red">(-53%)</mark>. Gross margin on home sales: <mark class="orange">15.2%</mark>, down from 18.7% year-over-year. Sales incentives at <mark class="orange">~14%</mark>."</p>
+                <p class="quote-source">— <a href="https://newsroom.lennar.com/2026-03-12-Lennar-Reports-First-Quarter-2026-Results" target="_blank">Lennar IR: Q1 2026 Results</a></p>
+            </div>
+            <div class="source-quote orange">
+                <span class="quote-label">Lennar · Q2 FY2026</span>
+                <p class="quote-text">"Net earnings of $305M, or <mark class="red">$1.24 per diluted share vs. $1.81</mark> prior year <mark class="red">(-31%)</mark>. Incentive rate: <mark class="orange">12.9%</mark>. New orders fell 4% to 21,749 homes. Full-year guidance cut to <mark class="orange">82,000–83,000</mark>."</p>
+                <p class="quote-source">— <a href="https://investors.lennar.com/press-releases/2026/06-11-2026-214520364" target="_blank">Lennar IR: Q2 2026 Results</a> · Also: <a href="https://www.stocktitan.net/news/LEN/lennar-reports-second-quarter-2026-ujbebt5he482.html" target="_blank">Stock Titan</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="highlight" style="margin-top: 10px;">
+        <p><strong>Combined estimated annual pain:</strong> D.R. Horton ~$1.9B (carry + incentive waste + cancellation cost). Lennar ~$2.1–2.9B excess incentive spend alone (12.9% vs. normalized 4–6% on 82K homes at $371K avg).</p>
+    </div>
+
+    <div class="source-note">
+        <strong>Additional context:</strong> Meritage Homes reports 211% backlog conversion by optimizing cycle time (<a href="https://investors.meritagehomes.com/news-events-presentations/press-releases/detail/422/meritage-homes-reports-third-quarter-2025-results/" target="_blank">Meritage IR</a>). KB Home: 16% cancellation rate, operating income -30% (<a href="https://investor.kbhome.com/company-news/news-releases/press-release-details/2025/KB-Home-Reports-2025-Second-Quarter-Results/default.aspx" target="_blank">KBH IR</a>).
+    </div>
+    <aside class="notes">
+        Now let's look at specific builders' own earnings reports. D.R. Horton — America's largest homebuilder, 86,000 homes a year — is running at 16-18% cancellation and spending 10% of revenue on incentives just to move homes. Their net income fell 30% in a single quarter. Lennar — the second largest — reported EPS down 53% year-over-year in Q1. Their incentive rate hit 14%, more than double normal. By Q2 it dropped slightly to 12.9% but that's still massive — on 82,000 homes at $371K average, that's roughly $2.4 billion in incentives versus a normal $1 billion. These are public earnings filings — every number here is from their investor relations pages.
+    </aside>
+</section>
+
+<!-- SLIDE 2C: The Problem — Root Cause -->
+<section>
+    <p class="eyebrow">The Problem · Root Cause</p>
+    <h2>Siloed systems — nobody owns the cross-functional view.</h2>
+    <p>Builders run 5–10 disconnected systems. No single platform connects the dependencies between construction, mortgage, title, and CRM.</p>
+
+    <div class="grid-2" style="margin-top: 10px;">
+        <div>
+            <div class="source-quote" style="margin-bottom: 8px;">
+                <span class="quote-label">Builder's Daily · July 2025</span>
+                <p class="quote-text">"<mark class="orange">Silos Kill Margin</mark> — builders must remap workflows across tens of thousands of moving parts and handoffs."</p>
+                <p class="quote-source">— <a href="https://www.thebuildersdaily.com/silos-kill-margin-heres-how-homebuilders-can-fight-back/" target="_blank">The Builder's Daily: Silos Kill Margin</a></p>
+            </div>
+            <div class="source-quote" style="margin-bottom: 8px;">
+                <span class="quote-label">Builder's Daily · April 2025</span>
+                <p class="quote-text">"<mark class="blue">Integration has pivoted into homebuilding's survival skill</mark> — disjointed systems create friction and reduce margins."</p>
+                <p class="quote-source">— <a href="https://www.thebuildersdaily.com/integration-has-pivoted-into-homebuildings-survival-skill/" target="_blank">The Builder's Daily: Integration = Survival Skill</a></p>
+            </div>
+            <div class="source-quote">
+                <span class="quote-label">Digs.com · Jan 2026</span>
+                <p class="quote-text">"Teams spend time <mark>searching for answers instead of acting</mark>; builders can't get <mark>real-time views of progress</mark>."</p>
+                <p class="quote-source">— <a href="https://digs.com/post/from-siloed-systems-to-integrated-workflows-the-digital-transformation-of-homebuilding" target="_blank">Digs: Digital Transformation of Homebuilding</a></p>
+            </div>
+        </div>
+        <div>
+            <div class="source-quote green" style="margin-bottom: 8px;">
+                <span class="quote-label">NAHB · May 2025</span>
+                <p class="quote-text">"Builders <mark class="orange">miss land/lot opportunities</mark> due to inflexibility of siloed systems."</p>
+                <p class="quote-source">— <a href="https://www.nahb.org/nahb-community/councils/20-clubs/pages/resources/20-clubs-sponsors/building-smarter-with-a-single-source-of-truth" target="_blank">NAHB: Building Smarter with a Single Source of Truth</a></p>
+            </div>
+            <div class="source-quote green" style="margin-bottom: 8px;">
+                <span class="quote-label">NFX (VC) · 2025</span>
+                <p class="quote-text">"<mark class="green">AI fueled by data will become the base layer</mark> that unlocks efficiency and speed... close the productivity gap."</p>
+                <p class="quote-source">— <a href="https://www.nfx.com/post/ai-revolution-proptech" target="_blank">NFX: AI Revolution in PropTech</a></p>
+            </div>
+            <div class="source-quote green">
+                <span class="quote-label">HousingWire · June 2026</span>
+                <p class="quote-text">"The next wave of homebuilding tech focuses on <mark class="green">operational intelligence</mark> — faster visibility into <mark class="green">schedule delays and margin leakage</mark>."</p>
+                <p class="quote-source">— <a href="https://www.housingwire.com/articles/ai-erp-homebuilding-margin-leaks/" target="_blank">HousingWire: AI ERP Homebuilding</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="highlight" style="margin-top: 10px;">
+        <p><strong>The gap:</strong> Nobody has built the cross-system dependency graph that connects construction → mortgage → title → CRM into a single predictive intelligence layer. That's Home Passport.</p>
+    </div>
+    <aside class="notes">
+        So why is this happening? The root cause is structural: builders run 5 to 10 completely disconnected systems. BuildPro for construction, Encompass for mortgage, Qualia for title, JDE for financials, Salesforce for CRM. None of them talk to each other. The Builder's Daily — the industry's leading trade publication — literally ran a headline saying "Silos Kill Margin." HousingWire is writing about "the next wave" being operational intelligence. NFX, a top VC firm, is calling AI the "base layer" for PropTech. The industry knows the problem exists. They know the answer is integration and intelligence. Nobody has built it yet. That's the gap we fill — the cross-system dependency graph that makes every deal's path to close visible for the first time.
+    </aside>
+</section>
+
+<!-- SLIDE 3: Architecture Overview -->
+<section>
+    <p class="eyebrow">Architecture</p>
+    <h2>Three-layer platform — intelligence above existing tools.</h2>
+    <svg viewBox="0 0 900 380" style="width: 92%; margin-top: 10px;">
+        <!-- Layer 1 -->
+        <rect x="50" y="290" width="800" height="70" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+        <text x="450" y="315" text-anchor="middle" font-size="11" fill="#64748b" font-weight="bold">LAYER 1 — EXISTING BUILDER SYSTEMS (Read-Only)</text>
+        <text x="450" y="340" text-anchor="middle" font-size="10" fill="#94a3b8">BuildPro · JDE · Encompass · Qualia · Salesforce · Procore</text>
+
+        <!-- Layer 2 -->
+        <rect x="50" y="140" width="800" height="130" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+        <text x="450" y="163" text-anchor="middle" font-size="11" fill="#2563eb" font-weight="bold">LAYER 2 — AI TRANSACTION EXECUTION (Core Product)</text>
+
+        <!-- Layer 2 components -->
+        <rect x="80" y="175" width="130" height="50" rx="6" fill="#fff" stroke="#2563eb" stroke-width="1"/>
+        <text x="145" y="197" text-anchor="middle" font-size="9" fill="#1e293b" font-weight="600">Event Ingestion</text>
+        <text x="145" y="213" text-anchor="middle" font-size="8" fill="#64748b">YAML Connectors</text>
+
+        <rect x="230" y="175" width="120" height="50" rx="6" fill="#fff" stroke="#2563eb" stroke-width="1"/>
+        <text x="290" y="197" text-anchor="middle" font-size="9" fill="#1e293b" font-weight="600">Kafka Bus</text>
+        <text x="290" y="213" text-anchor="middle" font-size="8" fill="#64748b">Redpanda</text>
+
+        <rect x="370" y="175" width="130" height="50" rx="6" fill="#fff" stroke="#2563eb" stroke-width="1"/>
+        <text x="435" y="197" text-anchor="middle" font-size="9" fill="#1e293b" font-weight="600">Graph Engine</text>
+        <text x="435" y="213" text-anchor="middle" font-size="8" fill="#64748b">DAG + Critical Path</text>
+
+        <rect x="520" y="175" width="130" height="50" rx="6" fill="#fff" stroke="#2563eb" stroke-width="1"/>
+        <text x="585" y="197" text-anchor="middle" font-size="9" fill="#1e293b" font-weight="600">ML Prediction</text>
+        <text x="585" y="213" text-anchor="middle" font-size="8" fill="#64748b">26 Features</text>
+
+        <rect x="670" y="175" width="150" height="50" rx="6" fill="#fff" stroke="#2563eb" stroke-width="1"/>
+        <text x="745" y="197" text-anchor="middle" font-size="9" fill="#1e293b" font-weight="600">Confidence Score</text>
+        <text x="745" y="213" text-anchor="middle" font-size="8" fill="#64748b">Real-time per home</text>
+
+        <!-- API + Portal row -->
+        <rect x="200" y="237" width="240" height="25" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="0.5"/>
+        <text x="320" y="254" text-anchor="middle" font-size="9" fill="#1d4ed8" font-weight="600">Fastify REST API + Escalation Engine</text>
+
+        <rect x="470" y="237" width="200" height="25" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="0.5"/>
+        <text x="570" y="254" text-anchor="middle" font-size="9" fill="#1d4ed8" font-weight="600">Next.js Builder Portal</text>
+
+        <!-- Layer 3 -->
+        <rect x="50" y="20" width="800" height="100" rx="10" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6"/>
+        <text x="450" y="43" text-anchor="middle" font-size="11" fill="#7c3aed" font-weight="bold">LAYER 3 — BLOCKCHAIN INFRASTRUCTURE (Planned)</text>
+        <text x="250" y="72" text-anchor="middle" font-size="10" fill="#6d28d9">Home Passport</text>
+        <text x="250" y="88" text-anchor="middle" font-size="8" fill="#8b5cf6">Immutable milestone history</text>
+        <text x="450" y="72" text-anchor="middle" font-size="10" fill="#6d28d9">Land Passport</text>
+        <text x="450" y="88" text-anchor="middle" font-size="8" fill="#8b5cf6">Ownership lineage</text>
+        <text x="650" y="72" text-anchor="middle" font-size="10" fill="#6d28d9">Smart Contracts</text>
+        <text x="650" y="88" text-anchor="middle" font-size="8" fill="#8b5cf6">Hyperledger Fabric 2.x</text>
+
+        <!-- Arrows -->
+        <path d="M 450 290 L 450 270" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+        <path d="M 450 140 L 450 120" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4" marker-end="url(#arrowPurple)"/>
+        <defs>
+            <marker id="arrowGray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#94a3b8"/></marker>
+            <marker id="arrowPurple" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#7c3aed"/></marker>
+            <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2563eb"/></marker>
+        </defs>
+    </svg>
+    <div class="highlight" style="margin-top: 8px;">
+        <p><strong>Key principle:</strong> Never writes back to builder systems. Read-only integration enforced by EgressGuard (blocks non-GET/HEAD requests at the connector level).</p>
+    </div>
+    <aside class="notes">
+        This is the three-layer architecture. At the bottom, Layer 1, are the builder's existing systems — BuildPro, JDE, Encompass, Qualia, Salesforce, Procore. We don't replace any of them. We connect to them read-only. Layer 2 is our core product — the AI Transaction Execution layer. Data flows from their systems through our YAML-based connectors into Kafka, then into the Graph Engine where we maintain a dependency DAG per deal. The ML model extracts 26 features and produces a confidence score. All of this serves the API and the builder portal. Layer 3, shown dashed because it's planned, is the blockchain layer — Hyperledger Fabric for immutable event anchoring. It creates a permanent Home Passport that travels with the property. The key principle is that read-only guarantee. We have an EgressGuard that physically blocks any non-GET request at the connector level. Builders can trust we'll never touch their data.
+    </aside>
+</section>
+<!-- SLIDE 4: Connector Framework -->
+<section>
+    <p class="eyebrow">Connectivity</p>
+    <h2>System-agnostic connectors — one framework, any builder tool.</h2>
+    <p style="margin-bottom: 6px;">Connectors are defined in YAML, not hardcoded. The Generic Connector Runtime processes any definition. Builders choose which systems they use per lifecycle stage.</p>
+
+    <div class="lifecycle-bar">
+        <div class="lifecycle-segment" style="flex: 2.5; background: #2563eb;">🏗️ Construction</div>
+        <div class="lifecycle-segment" style="flex: 2; background: #0891b2;">💰 Mortgage</div>
+        <div class="lifecycle-segment" style="flex: 1.8; background: #7c3aed;">📜 Title & Escrow</div>
+        <div class="lifecycle-segment" style="flex: 1.2; background: #059669;">💵 Financial</div>
+        <div class="lifecycle-segment" style="flex: 1.5; background: #d97706;">🤝 Sales/CRM</div>
+        <div class="lifecycle-segment" style="flex: 1.5; background: #dc2626;">⚡ Utility</div>
+    </div>
+
+    <div class="grid-3" style="margin-top: 12px;">
+        <div class="card">
+            <h3>🏗️ Construction (12 signals)</h3>
+            <p><strong>Primary:</strong> BuildPro (33% of US homes)<br><strong>Alt:</strong> Procore, CoConstruct, Buildertrend<br>Foundation → Framing → Rough-ins → Drywall → Exterior → Interior → Punch → CO</p>
+        </div>
+        <div class="card">
+            <h3>💰 Mortgage (10 signals)</h3>
+            <p><strong>Primary:</strong> Encompass (dominant LOS)<br><strong>Alt:</strong> Empower, Blend, Calyx<br>Application → Rate Lock → Appraisal → Underwriting → CTC → Funded</p>
+        </div>
+        <div class="card">
+            <h3>📜 Title & Escrow (8 signals)</h3>
+            <p><strong>Primary:</strong> Qualia (1M+ professionals)<br><strong>Alt:</strong> ResWare, SoftPro<br>Search → Commitment → Clear → Escrow → Disclosure → Record</p>
+        </div>
+        <div class="card">
+            <h3>💵 Financial/ERP (5 signals)</h3>
+            <p><strong>Primary:</strong> JDE EnterpriseOne<br><strong>Alt:</strong> Acumatica, SAP S/4HANA, Sage<br>Agreement → Earnest Money → Selections → Change Orders → Reconciled</p>
+        </div>
+        <div class="card">
+            <h3>🤝 Sales/CRM (7 signals)</h3>
+            <p><strong>Primary:</strong> Salesforce (JWT Bearer)<br><strong>Alt:</strong> Lasso CRM, HubSpot<br>Lot Released → Contract → Close Date → Orientation → Walkthrough</p>
+        </div>
+        <div class="card">
+            <h3>⚡ Utility (9 signals)</h3>
+            <p><strong>Derived from:</strong> BuildPro schedule<br>Power · Water · Sewer · Gas · Internet<br>Scheduled → Connected → Meter Set</p>
+        </div>
+    </div>
+    <div class="highlight" style="margin-top: 8px;">
+        <p><strong>One-active-per-stage per tenant.</strong> Builders don't need ALL tools — just the ones they use. The platform adapts to their stack. YAML definitions mean adding a new connector takes days, not months.</p>
+    </div>
+    <aside class="notes">
+        Here's how we stay system-agnostic. We track 6 lifecycle stages of a home: construction, mortgage, title/escrow, financial, sales, and utility. For each stage, we define connectors in YAML — not hardcoded. So if a builder uses BuildPro for construction, great. If another uses Procore or CoConstruct, we define a different YAML file and the same Generic Connector Runtime handles it. The key signals are the same regardless of source: we normalize everything into our 51 signal types. Each builder activates one tool per stage. They don't need to change their systems — just tell us what they use and we adapt. Adding a new connector is a YAML file plus optional TypeScript hooks. Days of work, not months.
+    </aside>
+</section>
+
+<!-- SLIDE 5: Lifecycle Stages -->
+<section>
+    <p class="eyebrow">Home Site Lifecycle</p>
+    <h2>51 signals track every stage from lot release to deed recorded.</h2>
+
+    <svg viewBox="0 0 900 300" style="width: 94%; margin-top: 8px;">
+        <!-- Timeline bar -->
+        <rect x="50" y="140" width="800" height="6" rx="3" fill="#e2e8f0"/>
+
+        <!-- Stage markers -->
+        <circle cx="90" cy="143" r="8" fill="#d97706"/><text x="90" y="125" text-anchor="middle" font-size="9" fill="#d97706" font-weight="600">Lot Release</text>
+        <circle cx="180" cy="143" r="8" fill="#d97706"/><text x="180" y="170" text-anchor="middle" font-size="8" fill="#92400e">Contract</text>
+
+        <circle cx="280" cy="143" r="8" fill="#2563eb"/><text x="280" y="125" text-anchor="middle" font-size="8" fill="#1d4ed8">Foundation</text>
+        <circle cx="360" cy="143" r="8" fill="#2563eb"/><text x="360" y="170" text-anchor="middle" font-size="8" fill="#1d4ed8">Framing</text>
+        <circle cx="430" cy="143" r="8" fill="#2563eb"/><text x="430" y="125" text-anchor="middle" font-size="8" fill="#1d4ed8">Rough-ins</text>
+        <circle cx="500" cy="143" r="8" fill="#2563eb"/><text x="500" y="170" text-anchor="middle" font-size="8" fill="#1d4ed8">Drywall</text>
+        <circle cx="560" cy="143" r="8" fill="#2563eb"/><text x="560" y="125" text-anchor="middle" font-size="8" fill="#1d4ed8">Trim/Finish</text>
+
+        <circle cx="640" cy="143" r="8" fill="#0891b2"/><text x="640" y="170" text-anchor="middle" font-size="8" fill="#0891b2">CTC</text>
+        <circle cx="710" cy="143" r="8" fill="#7c3aed"/><text x="710" y="125" text-anchor="middle" font-size="8" fill="#7c3aed">Title Clear</text>
+        <circle cx="780" cy="143" r="8" fill="#059669"/><text x="780" y="170" text-anchor="middle" font-size="8" fill="#059669">Funded</text>
+        <circle cx="830" cy="143" r="8" fill="#dc2626"/><text x="830" y="125" text-anchor="middle" font-size="8" fill="#dc2626">Close</text>
+
+        <!-- Parallel tracks labels -->
+        <rect x="250" y="55" width="340" height="24" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="0.5"/>
+        <text x="420" y="71" text-anchor="middle" font-size="8" fill="#2563eb" font-weight="600">Construction Track (12 milestones, ~145 days)</text>
+
+        <rect x="160" y="195" width="320" height="24" rx="4" fill="#ecfdf5" stroke="#059669" stroke-width="0.5"/>
+        <text x="320" y="211" text-anchor="middle" font-size="8" fill="#059669" font-weight="600">Mortgage Track (10 milestones, parallel)</text>
+
+        <rect x="500" y="195" width="250" height="24" rx="4" fill="#f5f3ff" stroke="#7c3aed" stroke-width="0.5"/>
+        <text x="625" y="211" text-anchor="middle" font-size="8" fill="#7c3aed" font-weight="600">Title Track (8 milestones, parallel)</text>
+
+        <rect x="100" y="235" width="200" height="24" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="0.5"/>
+        <text x="200" y="251" text-anchor="middle" font-size="8" fill="#d97706" font-weight="600">Sales Track (7 milestones)</text>
+
+        <rect x="540" y="235" width="180" height="24" rx="4" fill="#fef2f2" stroke="#dc2626" stroke-width="0.5"/>
+        <text x="630" y="251" text-anchor="middle" font-size="8" fill="#dc2626" font-weight="600">Utility Track (9 signals)</text>
+
+        <!-- Key insight -->
+        <rect x="150" y="270" width="600" height="25" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="450" y="287" text-anchor="middle" font-size="9" fill="#475569">These tracks run in PARALLEL — delays in one block the others. That's what we detect.</text>
+    </svg>
+
+    <div class="grid-2" style="margin-top: 4px;">
+        <div class="card">
+            <h3>3 Graph Templates</h3>
+            <p><strong>Standard:</strong> 45 milestones, 48 edges · <strong>Cash Buyer:</strong> 35 milestones (no mortgage) · <strong>Condo:</strong> 41 milestones (HOA instead of utility)</p>
+        </div>
+        <div class="card">
+            <h3>Critical Path Calculation</h3>
+            <p>Kahn's topological sort + longest-path DP identifies which milestones gate the close date. Informed by cross-system dependencies.</p>
+        </div>
+    </div>
+    <aside class="notes">
+        This shows the home's lifecycle as we track it. There are parallel tracks running simultaneously: construction with 12 milestones over about 145 days, mortgage with 10 milestones running in parallel, title with 8, sales, financial, and utility. The critical insight is these tracks run in PARALLEL but they BLOCK each other. You can't close without clear-to-close from mortgage AND title clear AND CO issued from construction. If any one track stalls, it blocks the close. We maintain this as a directed acyclic graph per deal, with 3 templates: standard (45 milestones, 48 edges), cash buyer (no mortgage track), and condo (HOA instead of utility). Kahn's topological sort plus longest-path dynamic programming gives us the critical path — which milestones actually gate the close date right now.
+    </aside>
+</section>
+
+<!-- SLIDE 6: ETL Pipeline -->
+<section>
+    <p class="eyebrow">ETL Pipeline</p>
+    <h2>From raw webhook to actionable intelligence — in real time.</h2>
+
+    <div class="steps" style="margin-top: 10px;">
+        <div class="step">
+            <div class="num">01 — EXTRACT</div>
+            <h3>Connector Runtime</h3>
+            <p>YAML-driven connectors pull from builder APIs via webhooks, REST polling, or event streams. Auth is per-connector (OAuth2, JWT, API key).</p>
+        </div>
+        <span class="step-arrow">→</span>
+        <div class="step">
+            <div class="num">02 — NORMALIZE</div>
+            <h3>Signal Mapping</h3>
+            <p>Raw events normalized into 51 typed signals. Deduplication via idempotency keys. Source freshness tracked per home/system.</p>
+        </div>
+        <span class="step-arrow">→</span>
+        <div class="step">
+            <div class="num">03 — STREAM</div>
+            <h3>Kafka (Redpanda)</h3>
+            <p>Signals published to <code>signals</code> topic keyed by deal_id. DLQ for failures. At-least-once delivery with manual offset commit.</p>
+        </div>
+        <span class="step-arrow">→</span>
+        <div class="step">
+            <div class="num">04 — TRANSFORM</div>
+            <h3>Graph Engine</h3>
+            <p>Signal Router (51 routes) → Graph Processor (COMPLETE/REGRESS/NOOP) → Critical Path recalculation → Event emission.</p>
+        </div>
+    </div>
+
+    <div class="grid-2" style="margin-top: 14px;">
+        <div class="card" style="border-left: 3px solid var(--accent);">
+            <h3>Analytics Layer</h3>
+            <p><strong>Confidence Score Calculator:</strong> Weighted category completion (Construction 35%, Mortgage 40%, Title 25%) minus penalties for staleness.<br><br><strong>Escalation Engine:</strong> Threshold-based alerts fire when scores drop or milestones stall. Right alert → right person → right time.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--green);">
+            <h3>Data Guarantees</h3>
+            <p>✓ Idempotent signal processing (dedup by source + type + home)<br>✓ EgressGuard blocks write operations<br>✓ PostgreSQL for mutable state (12 migrations)<br>✓ Kafka replay for recovery<br>✓ Property-based tests validate correctness (10 formal properties)</p>
+        </div>
+    </div>
+
+    <svg viewBox="0 0 900 60" style="width: 92%; margin-top: 8px;">
+        <rect x="50" y="10" width="120" height="40" rx="6" fill="#f1f5f9" stroke="#94a3b8"/><text x="110" y="34" text-anchor="middle" font-size="9" fill="#475569">Builder Systems</text>
+        <path d="M 175 30 L 210 30" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+        <rect x="215" y="10" width="110" height="40" rx="6" fill="#eff6ff" stroke="#2563eb"/><text x="270" y="34" text-anchor="middle" font-size="9" fill="#2563eb">Ingestion</text>
+        <path d="M 330 30 L 360 30" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+        <rect x="365" y="10" width="80" height="40" rx="6" fill="#eff6ff" stroke="#2563eb"/><text x="405" y="34" text-anchor="middle" font-size="9" fill="#2563eb">Kafka</text>
+        <path d="M 450 30 L 480 30" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+        <rect x="485" y="10" width="120" height="40" rx="6" fill="#eff6ff" stroke="#2563eb"/><text x="545" y="34" text-anchor="middle" font-size="9" fill="#2563eb">Graph Engine</text>
+        <path d="M 610 30 L 640 30" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+        <rect x="645" y="10" width="100" height="40" rx="6" fill="#eff6ff" stroke="#2563eb"/><text x="695" y="34" text-anchor="middle" font-size="9" fill="#2563eb">PostgreSQL</text>
+        <path d="M 750 30 L 775 30" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+        <rect x="780" y="10" width="80" height="40" rx="6" fill="#dbeafe" stroke="#1d4ed8"/><text x="820" y="34" text-anchor="middle" font-size="9" fill="#1d4ed8" font-weight="600">API</text>
+    </svg>
+    <aside class="notes">
+        This is the ETL pipeline. Step 1: our YAML-driven connectors extract data from builder systems via webhooks, REST polling, or event streams. Step 2: we normalize raw events into our 51 typed signals with deduplication. Step 3: signals flow through Kafka, keyed by deal ID, with a dead-letter queue for failures. Step 4: the Graph Engine routes each signal, updates the DAG, recalculates critical path, and emits downstream events. On top of this sits the analytics layer — the confidence score calculator that weights categories at 35% construction, 40% mortgage, 25% title, minus staleness penalties. And the escalation engine that fires alerts when scores drop or milestones stall. All of this is backed by guarantees: idempotent processing, read-only enforcement, Kafka replay for recovery, and 10 formal correctness properties validated by property-based tests.
+    </aside>
+</section>
+
+<!-- SLIDE 6B: Training Data — Industry-Calibrated Dataset -->
+<section>
+    <p class="eyebrow">Data Foundation</p>
+    <h2>Trained on real industry patterns — not guesswork.</h2>
+    <p>Our AI learns from 500 simulated homes whose outcomes mirror published industry statistics. Every number is sourced from builder surveys, mortgage data, and transaction records.</p>
+
+    <div class="grid-3" style="margin-top: 14px;">
+        <div class="card" style="border-top: 3px solid var(--green); text-align: center; padding: 16px;">
+            <div class="stat stat-green" style="font-size: 1.6em;">55%</div>
+            <p style="font-weight: 600; margin-top: 4px;">Close On Time</p>
+            <p style="font-size: 0.58em;">Industry benchmark: 61% (ProBuilder)<br>We train conservatively for better predictions</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--orange); text-align: center; padding: 16px;">
+            <div class="stat stat-orange" style="font-size: 1.6em;">30%</div>
+            <p style="font-weight: 600; margin-top: 4px;">Delayed</p>
+            <p style="font-size: 0.58em;">Industry benchmark: 35–39% (ProBuilder/APB)<br>Average delay when late: 69 days</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--red); text-align: center; padding: 16px;">
+            <div class="stat stat-red" style="font-size: 1.6em;">15%</div>
+            <p style="font-weight: 600; margin-top: 4px;">Cancelled</p>
+            <p style="font-size: 0.58em;">Industry benchmark: 13–16% (Redfin 2024–2026)<br>Matches published cancellation rates exactly</p>
+        </div>
+    </div>
+
+    <div class="grid-2" style="margin-top: 12px;">
+        <div class="card" style="padding: 14px;">
+            <h3 style="font-size: 0.78em;">Why homes get delayed</h3>
+            <p style="font-size: 0.64em; line-height: 1.7;">
+                <strong>35%</strong> — Inspection failures (45% of inspections have violations)<br>
+                <strong>25%</strong> — Weather delays (seasonal, hurricane impact)<br>
+                <strong>15%</strong> — Buyer change orders<br>
+                <strong>10%</strong> — Appraisal came in low<br>
+                <strong>10%</strong> — Title issues discovered<br>
+                <strong>5%</strong> — Rate lock expired
+            </p>
+        </div>
+        <div class="card" style="padding: 14px;">
+            <h3 style="font-size: 0.78em;">Why homes get cancelled</h3>
+            <p style="font-size: 0.64em; line-height: 1.7;">
+                <strong>30%</strong> — Buyer financing fell through<br>
+                <strong>25%</strong> — Buyer personal circumstances changed<br>
+                <strong>20%</strong> — Appraisal too low — buyer walked<br>
+                <strong>10%</strong> — Title defect unresolvable<br>
+                <strong>10%</strong> — Buyer found alternative property<br>
+                <strong>5%</strong> — Job relocation
+            </p>
+        </div>
+    </div>
+
+    <div class="highlight" style="margin-top: 10px;">
+        <p><strong>22,500+ signals</strong> across 6 source systems (BuildPro, Encompass, Qualia, Salesforce, JDE) · <strong>3 divisions</strong>, 15 communities · Average lifecycle: <strong>135 days</strong> (range: 90–210) · Prices: $250K–$800K</p>
+    </div>
+
+    <div class="source-note">
+        <strong>Sources:</strong> <a href="https://www.probuilder.com/time-closings" target="_blank">ProBuilder On-Time Closings</a> · <a href="https://blog.associationofprofessionalbuilders.com/true-cost-of-project-delay" target="_blank">APB: Cost of Project Delay</a> · <a href="https://creditxpert.com/resources/how-to-reduce-mortgage-loan-fallout/" target="_blank">CreditXpert: Mortgage Fallout</a> · <a href="https://www.teamgantt.com/guide/construction-delays" target="_blank">TeamGantt: Construction Delays</a> · Redfin / CNBC cancellation data (2024–2026)
+    </div>
+    <aside class="notes">
+        Before I show you the AI itself, let me show you what it's trained on. This matters because AI is only as good as its data. We've built a simulation engine that generates 500 homes with outcomes that match published industry statistics exactly. 55% close on time — slightly conservative versus the 61% ProBuilder reports, because we want extra negative examples for the model to learn from. 30% are delayed, matching the 35-39% range from builder surveys. 15% cancel, matching Redfin's 13-16% cancellation rate tracked since 2017. For delayed homes, the causes are weighted by real-world frequency: inspection failures are the most common at 35%, followed by weather at 25%, buyer changes at 15%, low appraisals at 10%, title issues at 10%, and expired rate locks at 5%. For cancellations, buyer financing is the top reason at 30%. These aren't invented numbers — they're calibrated against ProBuilder, APB, CreditXpert, TeamGantt, and Redfin. The dataset produces 22,500+ signals across all six source systems, covering 3 divisions, 15 communities, with home prices from $250K to $800K and lifecycles averaging 135 days. This is Phase 1. Once a builder onboards, Phase 2 retrains on their real data, and accuracy improves from there.
+    </aside>
+</section>
+
+<!-- SLIDE 7: AI/ML Capabilities Overview -->
+<section>
+    <p class="eyebrow">AI &amp; Machine Learning</p>
+    <h2>AI that tells you what's at risk, why, and what to do about it.</h2>
+    <p>Not just a score — a complete intelligence system that gets smarter with every home you close.</p>
+
+    <div class="grid-2" style="margin-top: 14px;">
+        <div class="card" style="border-top: 3px solid var(--accent); padding: 16px;">
+            <h3 style="font-size: 0.85em;">🎯 "Which homes will close on time?"</h3>
+            <p style="font-size: 0.7em;">Real-time confidence score for every home in your pipeline. Updates automatically as new information arrives from any connected system. Scores the entire pipeline in under a second.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--green); padding: 16px;">
+            <h3 style="font-size: 0.85em;">🔍 "Why is this home at risk?"</h3>
+            <p style="font-size: 0.7em;">Every score comes with a plain-language explanation. "Mortgage approval is lagging behind construction progress" — not a black box number.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--orange); padding: 16px;">
+            <h3 style="font-size: 0.85em;">💡 "What should I do right now?"</h3>
+            <p style="font-size: 0.7em;">Specific recommended actions per home: "Follow up with lender on clear-to-close," "Escalate title search delay to VP." Prioritized by impact.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--red); padding: 16px;">
+            <h3 style="font-size: 0.85em;">⚠️ "Something unusual is happening"</h3>
+            <p style="font-size: 0.7em;">Flags homes behaving unlike anything seen before — catches emerging risks before they show up in the numbers. Early warning system for your pipeline.</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 14px; display: flex; gap: 14px; align-items: stretch;">
+        <div class="card" style="flex: 1; border-left: 3px solid var(--purple); padding: 14px;">
+            <h3 style="font-size: 0.78em;">🔄 Sees What No Single System Can</h3>
+            <p style="font-size: 0.66em;">Construction at 80% but mortgage only at 20%? That's a closing risk hiding in plain sight across two different systems. We surface it automatically.</p>
+        </div>
+        <div class="card" style="flex: 1; border-left: 3px solid #64748b; padding: 14px;">
+            <h3 style="font-size: 0.78em;">📈 Gets Smarter Over Time</h3>
+            <p style="font-size: 0.66em;">Learns from your actual closing patterns. The more homes flow through, the more accurate predictions become — tailored to how your teams operate.</p>
+        </div>
+    </div>
+
+    <div class="highlight" style="margin-top: 12px;">
+        <p><strong>The difference:</strong> Existing tools show you data. We tell you what matters, why it matters, and what to do next — before problems become cancellations.</p>
+    </div>
+    <aside class="notes">
+        Let me frame our AI capabilities the way a builder would experience them. First question their ops team asks every morning: "Which deals will close on time?" We answer that with a real-time confidence score for every deal in the pipeline — updates automatically, scores 195 homes in a third of a second. Second question: "Why is this one at risk?" Every score comes with plain-language explanations — "mortgage is lagging construction" or "no title activity in 12 days." Not a black box. Third: "What should I do about it?" We generate specific next actions — follow up with lender, escalate title delay, schedule buyer walkthrough. Prioritized by impact on closing probability. Fourth: the early warning system. Anomaly detection flags deals that don't match any known pattern — something weird is happening before it shows up in the regular metrics. And two structural advantages: cross-system visibility that no single tool can provide — seeing that construction and mortgage are dangerously out of sync — and continuous learning that gets better with every deal they close. This isn't a static model. It learns their specific patterns.
+    </aside>
+</section>
+
+<!-- SLIDE 8: Blockchain Layer -->
+<section>
+    <p class="eyebrow">Layer 3 — Blockchain (Planned)</p>
+    <h2>Immutable trust layer — invisible infrastructure for every home.</h2>
+    <p>Blockchain is infrastructure, not a feature. Builders experience trusted workflows and permanent records. The technology is invisible to end users.</p>
+
+    <div class="grid-2" style="margin-top: 12px;">
+        <div>
+            <div class="card" style="margin-bottom: 10px; border-left: 3px solid var(--purple);">
+                <h3>🏠 Digital Home Passport</h3>
+                <p>Created at contract signing. Every verified milestone anchored as an immutable timestamped event. Travels with the asset through ownership changes forever.</p>
+                <p style="margin-top: 6px;"><strong>Contains:</strong> Construction history, ownership lineage, mortgage records, warranties, utility records, maintenance history.</p>
+            </div>
+            <div class="card" style="border-left: 3px solid var(--purple);">
+                <h3>🌍 Digital Land Passport (Phase 3)</h3>
+                <p>Created at land acquisition. Tracks ownership lineage, JV structures, zoning, easements, entitlements, environmental reports.</p>
+                <p style="margin-top: 6px;">Feeds forward into Home Passport when construction begins.</p>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>⚙️ Technology: Hyperledger Fabric 2.x</h3>
+                <p>• Permissioned consortium (no gas fees)<br>• Role-based access control<br>• Private data collections for confidentiality<br>• 2-org network (expandable)</p>
+            </div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>🔄 Two-Layer Trust Model</h3>
+                <p><strong>PostgreSQL:</strong> Mutable state (supports forward/backward transitions)<br><strong>Blockchain:</strong> Append-only event anchors (immutable audit trail)<br>Graph engine writes to DB freely; emits events for blockchain service to anchor asynchronously.</p>
+            </div>
+            <div class="card" style="background: var(--orange-light);">
+                <h3>📋 Status: Architecture Confirmed</h3>
+                <p>Design validated. Dev network deferred — nothing on the critical path depends on it. Async anchoring means blockchain never adds latency to operations.</p>
+            </div>
+        </div>
+    </div>
+    <aside class="notes">
+        Layer 3 is the blockchain — and I want to be clear about our philosophy here: blockchain is infrastructure, not a feature. Builders never see it. They experience trusted workflows and permanent records. Under the hood, Hyperledger Fabric — a permissioned consortium blockchain with no gas fees and role-based access. The two-layer trust model is key: PostgreSQL holds mutable state — deals can go backward, milestones can regress. The blockchain receives append-only event anchors asynchronously. It creates a Digital Home Passport at contract signing and anchors every verified milestone as an immutable timestamped event. This passport travels with the home through ownership changes — containing construction history, mortgage records, warranties, everything. The Land Passport extends this backward to land acquisition in Phase 3. Status: architecture confirmed, dev network deferred. Nothing on our critical path depends on it — we built it to be async so it never adds latency to operations.
+    </aside>
+</section>
+
+<!-- SLIDE 9: Competitive Analysis -->
+<section>
+    <p class="eyebrow">Competitive Landscape</p>
+    <h2>Nobody has built the cross-system dependency graph.</h2>
+    <p>Existing players serve individual silos or different markets entirely. We connect builder operations into a single predictive intelligence layer.</p>
+
+    <div class="grid-2" style="margin-top: 8px;">
+        <div>
+            <table class="data-table">
+                <thead>
+                    <tr><th>Category</th><th>Players</th><th>Our Differentiation</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Builder Tools (Single-Silo)</strong></td><td>BuildPro, Encompass, Qualia, Procore</td><td>Each serves ONE stage. We connect all of them.</td></tr>
+                    <tr><td><strong>Builder ERPs</strong></td><td>Cecilian Partners (The XO), Buildertrend</td><td>Internal workflow, no cross-system AI prediction.</td></tr>
+                    <tr><td><strong>Transactions/Deeds</strong></td><td>Propy, ShelterZoom, Coadjute, Ubitquity</td><td>They close deals. We <em>predict risk before</em> close.</td></tr>
+                    <tr><td><strong>Tokenization</strong></td><td>RealT, Lofty, Roofstock onChain</td><td>Investment platforms. We serve <em>production ops</em>.</td></tr>
+                    <tr><td><strong>Builder Communication</strong></td><td>Digs.com</td><td>UX layer only. No analytics or prediction.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <div class="card" style="border-left: 3px solid var(--green); margin-bottom: 8px;">
+                <h3>Porter's Five Forces — Favorable</h3>
+                <p><strong>New Entrants:</strong> Low threat — requires deep builder integration + domain expertise + blockchain infra.<br>
+                <strong>Rivalry:</strong> Low — no direct competitor combines AI prediction + multi-system integration + blockchain passport.<br>
+                <strong>Substitutes:</strong> Spreadsheets and weekly pipeline meetings. No cross-system AI alternative exists.</p>
+            </div>
+            <div class="card" style="border-left: 3px solid var(--accent);">
+                <h3>VRIO — 3 Sustained Advantages</h3>
+                <p><strong>1. Multi-system integration layer</strong> — 5+ builder systems connected; months of domain mapping each.<br>
+                <strong>2. Stale-data-resilient prediction</strong> — works even when BuildPro isn't updated (the #1 real-world problem).<br>
+                <strong>3. Cross-system feature extraction</strong> — construction/mortgage ratio, signal velocity across sources. No single-system tool can compute these.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-2" style="margin-top: 8px;">
+        <div class="card" style="border-left: 3px solid var(--purple);">
+            <h3>🏰 Moat Strategy (Ansoff: Penetration First)</h3>
+            <p>Prove wedge at 1 division → expand to all 40+ divisions → sign 2nd builder. Data moat grows with every home that flows through. Blockchain passport value compounds over time.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--green);">
+            <h3>📐 Market Position</h3>
+            <p><strong>TAM:</strong> $1B–$2B/yr (US new-home transaction SaaS)<br><strong>SAM:</strong> $300M–$600M/yr (top 100 production builders)<br><strong>SOM (Year 3):</strong> $50M–$100M ARR<br><strong>Pricing:</strong> $500–$2,000 per home transaction</p>
+        </div>
+    </div>
+    <div class="source-note">
+        Full strategic analysis (PESTLE, Porter's, SWOT, VRIO, Ansoff, Balanced Scorecard) available in strategy-frameworks document. Market sizing: NAHB, Dataintelo ($3.2B→$7.1B by 2034), Eye on Housing (top-10 = 44.7% of closings).
+    </div>
+    <aside class="notes">
+        Competitive landscape. Let's group the players by category. Builder tools like BuildPro, Encompass, Qualia — each serves ONE lifecycle stage. We connect all of them. Builder ERPs like Cecilian Partners — internal workflow, no cross-system prediction. Transaction players like Propy and Coadjute — they handle the closing itself. We predict risk BEFORE it gets to closing. Tokenization platforms like RealT — investment products, completely different market. Our Porter's Five Forces analysis shows low rivalry, low threat of new entrants because of the integration complexity, and the main substitute is literally spreadsheets in weekly meetings. VRIO analysis identifies three sustained competitive advantages: the multi-system integration layer that takes months per system, stale-data-resilient prediction that works even when BuildPro data is stale, and cross-system features that no single tool can compute. Growth strategy is Ansoff market penetration: prove at one division, expand within the builder, then sign more builders. The data moat grows with every deal. Full strategic analysis — PESTLE, Porter's, SWOT, VRIO, Ansoff, and Balanced Scorecard — is documented in the strategy frameworks document.
+    </aside>
+</section>
+
+<!-- SLIDE 11: Value Proposition Summary -->
+<section>
+    <p class="eyebrow">The Opportunity</p>
+    <h2>Real-time visibility → fewer delays → less waste → higher margins.</h2>
+
+    <div class="grid-2" style="margin-top: 14px;">
+        <div>
+            <table class="data-table">
+                <thead><tr><th>Builder Pain</th><th>Home Passport Solution</th></tr></thead>
+                <tbody>
+                    <tr><td>Can't see cross-system dependencies</td><td>Graph engine maps construction → mortgage → title → CRM</td></tr>
+                    <tr><td>Homes cancel because problems surface too late</td><td>Confidence Score predicts risk per home in real-time</td></tr>
+                    <tr><td>Operations teams waste time asking "where are we?"</td><td>Unified dashboard with milestone visibility</td></tr>
+                    <tr><td>Incentives are the only lever</td><td>AI-powered escalation triggers action before stalls</td></tr>
+                    <tr><td>No permanent record of construction</td><td>Blockchain-backed Home Passport</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <div class="card" style="text-align: center; padding: 20px;">
+                <p style="font-size: 0.6em; color: var(--text-3); margin-bottom: 4px;">Expected Impact Per Division</p>
+                <div class="stat" style="font-size: 2.2em;">$1.75M</div>
+                <p style="font-size: 0.6em; margin-top: 4px;">preventable losses per year</p>
+            </div>
+            <div class="grid-2" style="margin-top: 10px; gap: 8px;">
+                <div class="card" style="text-align: center; padding: 12px;">
+                    <div class="stat stat-green" style="font-size: 1.4em;">5–10 days</div>
+                    <p style="font-size: 0.56em;">cycle time reduction</p>
+                </div>
+                <div class="card" style="text-align: center; padding: 12px;">
+                    <div class="stat stat-green" style="font-size: 1.4em;">15–25%</div>
+                    <p style="font-size: 0.56em;">fewer cancellations</p>
+                </div>
+                <div class="card" style="text-align: center; padding: 12px;">
+                    <div class="stat stat-green" style="font-size: 1.4em;">20–30%</div>
+                    <p style="font-size: 0.56em;">fewer "where are we?" calls</p>
+                </div>
+                <div class="card" style="text-align: center; padding: 12px;">
+                    <div class="stat stat-orange" style="font-size: 1.4em;">$70M+</div>
+                    <p style="font-size: 0.56em;">exposure per top builder</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="source-note">
+        200 homes/div/month × 12% delayed × 35% preventable × $700/day × 18 days = $1.75M/yr per division. Top builders have 40+ divisions.
+    </div>
+    <aside class="notes">
+        Let me close with the value proposition mapped directly to the pain we just showed you. Can't see cross-system dependencies? Our graph engine maps them. Deals cancel because problems surface too late? Confidence score predicts risk in real-time. Operations teams waste time asking "where are we?" — unified dashboard. Incentives are the only lever? AI escalation triggers action before deals stall. No permanent record? Blockchain passport. The math: 200 homes per division per month, 12% get delayed, 35% of those are preventable with visibility, at $700 per day for 18 days average — that's $1.75 million per year per single division. D.R. Horton has 40+ divisions. Lennar has 35-40. That's $70 million in preventable losses per top builder. Our pricing: $500 to $2,000 per home transaction. At those prices, the ROI is immediate and obvious.
+    </aside>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script>
+    Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        width: 1100,
+        height: 680,
+        margin: 0.05,
+        transition: 'slide',
+        transitionSpeed: 'default',
+        backgroundTransition: 'fade',
+        plugins: [ RevealNotes ]
+    });
+</script>
+</body>
+</html>

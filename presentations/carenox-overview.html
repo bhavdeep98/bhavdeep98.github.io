@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Carenox — Building the Future of Chronic Care</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f7f4ed;
+            --bg-card: #fcfaf6;
+            --text: #20352f;
+            --text-2: #566861;
+            --text-3: #718078;
+            --accent: #397c70;
+            --teal-50: #e6f5f2;
+            --teal-100: #ccebe5;
+            --teal-700: #2d655b;
+            --teal-800: #1f4f47;
+            --border: rgba(43,75,66,0.11);
+            --r: 12px;
+        }
+        * { box-sizing: border-box; }
+        .reveal {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 16px;
+            color: var(--text);
+        }
+        .reveal .slides { text-align: left; }
+        .reveal .slides section {
+            background: var(--bg);
+            padding: 30px 44px;
+            height: 100%;
+            display: flex !important;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .reveal h1,.reveal h2,.reveal h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text);
+            font-weight: 700;
+            text-transform: none;
+            letter-spacing: -0.02em;
+            margin: 0;
+        }
+        .reveal h1 { font-size: 1.7em; margin-bottom: 0.15em; }
+        .reveal h2 { font-size: 1.35em; margin-bottom: 0.2em; }
+        .reveal h3 { font-size: 0.88em; margin-bottom: 0.15em; color: var(--teal-700); }
+        .reveal p { color: var(--text-2); font-size: 0.78em; line-height: 1.55; margin: 0 0 0.4em; }
+        .reveal a { color: var(--accent); text-decoration: underline; }
+        .eyebrow {
+            font-size: 0.62em; font-weight: 600; color: var(--accent);
+            text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;
+        }
+        .badge {
+            display: inline-block; background: var(--teal-50); color: var(--teal-700);
+            padding: 3px 10px; border-radius: 999px; font-size: 0.58em;
+            font-weight: 600; margin-right: 5px; margin-bottom: 5px;
+        }
+        .card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 14px 16px;
+        }
+        .card h3 { font-size: 0.78em; margin-bottom: 4px; }
+        .card p { font-size: 0.66em; margin: 0; color: var(--text-3); line-height: 1.45; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 10px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 10px; }
+        .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .highlight {
+            background: var(--teal-50); border-left: 3px solid var(--accent);
+            border-radius: 0 var(--r) var(--r) 0; padding: 10px 14px; margin-top: 10px;
+        }
+        .highlight p { font-size: 0.68em; color: var(--teal-800); margin: 0; font-weight: 500; }
+        /* Team */
+        .team-row { display: flex; gap: 18px; margin-top: 12px; }
+        .team-member {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 16px; flex: 1;
+            display: flex; gap: 12px; align-items: flex-start;
+        }
+        .team-member img {
+            width: 60px; height: 60px; border-radius: 50%;
+            object-fit: cover; border: 2px solid var(--teal-100); flex-shrink: 0;
+        }
+        .team-member .info h3 { font-size: 0.78em; margin-bottom: 2px; color: var(--text); }
+        .team-member .info .role { font-size: 0.6em; color: var(--accent); font-weight: 600; margin-bottom: 4px; }
+        .team-member .info p { font-size: 0.6em; color: var(--text-3); margin: 0; line-height: 1.4; }
+        .advisor-row { display: flex; gap: 14px; margin-top: 14px; }
+        .advisor {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 12px 14px; flex: 1;
+            display: flex; gap: 10px; align-items: center;
+        }
+        .advisor img {
+            width: 44px; height: 44px; border-radius: 50%;
+            object-fit: cover; border: 2px solid var(--teal-100); flex-shrink: 0;
+        }
+        .advisor .info h3 { font-size: 0.7em; margin-bottom: 1px; color: var(--text); }
+        .advisor .info p { font-size: 0.56em; color: var(--text-3); margin: 0; line-height: 1.35; }
+        /* Steps */
+        .steps { display: flex; align-items: stretch; gap: 8px; margin-top: 12px; }
+        .step {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 12px 14px; flex: 1; text-align: center;
+        }
+        .step .num { font-size: 0.58em; font-weight: 700; color: var(--accent); margin-bottom: 3px; }
+        .step h3 { font-size: 0.72em; margin: 0 0 3px; color: var(--text); }
+        .step p { font-size: 0.56em; margin: 0; color: var(--text-3); text-align: center; }
+        .step-arrow { color: var(--accent); font-size: 1em; align-self: center; }
+        /* Risk tiers */
+        .tiers { display: flex; gap: 6px; margin: 10px 0; }
+        .tier {
+            flex: 1; padding: 10px 8px; border-radius: 8px;
+            text-align: center; font-size: 0.62em; font-weight: 600;
+        }
+        .tier-low { background: #e8f5e9; color: #2e7d32; }
+        .tier-rising { background: #fff3e0; color: #e65100; }
+        .tier-high { background: #fbe9e7; color: #bf360c; }
+        .tier-vhigh { background: #ffebee; color: #b71c1c; }
+        /* Screenshot placeholder */
+        .screenshot {
+            border: 1px solid var(--border); border-radius: var(--r);
+            overflow: hidden; margin-top: 10px;
+        }
+        .screenshot img { width: 100%; display: block; }
+        /* Stat callout */
+        .stat { font-family: 'Plus Jakarta Sans',sans-serif; font-size: 2em; font-weight: 800; color: var(--accent); line-height: 1; }
+    </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 1: Title -->
+<section>
+    <img src="assets/logo-full.svg" alt="Carenox" style="height: 36px; margin-bottom: 12px;">
+    <h1>AI Care Coordination<br>for Chronic Conditions</h1>
+    <p style="font-size: 0.88em; margin-top: 6px;">Condition-specific voice conversations that find care gaps before they become ER visits.</p>
+    <div style="margin-top: 14px;">
+        <span class="badge">HIPAA Compliant</span>
+        <span class="badge">BAA Included</span>
+        <span class="badge">CCM + APCM</span>
+        <span class="badge">CMS ACCESS Ready</span>
+        <span class="badge">42+ Languages</span>
+    </div>
+</section>
+
+<!-- SLIDE 2: Our Story + Team (combined) -->
+<section>
+    <p class="eyebrow">Why We Started · Who We Are</p>
+    <h2>This is personal.</h2>
+    <div class="team-row">
+        <div class="team-member" style="flex-direction: column; align-items: center; text-align: center;">
+            <img src="assets/images/team/amandeep-kaur.jpg" alt="Amandeep Kaur">
+            <div class="info">
+                <h3>Amandeep Kaur</h3>
+                <div class="role">Co-Founder & CEO</div>
+                <p>Lost her father to chronic conditions. Spent 12 years building outpatient programs — watching patients fall through cracks that shouldn't exist. Left her full-time job and now works part-time on Carenox while driving sales, marketing, and operations.</p>
+            </div>
+        </div>
+        <div class="team-member" style="flex-direction: column; align-items: center; text-align: center;">
+            <img src="assets/images/team/bhavdeep-singh.jpg" alt="Bhavdeep Singh Sachdeva">
+            <div class="info">
+                <h3>Bhavdeep Singh Sachdeva</h3>
+                <div class="role">Co-Founder & CTO</div>
+                <p>Once a world-class athlete — represented India in Roller Hockey. Then developed obesity over years working on AWS's top security teams (GuardDuty, Security Hub) where the demand is relentless. Chronic conditions build silently. M.S. CS from ASU, 5 peer-reviewed papers (ACL, EACL, ICML). Left Amazon to work on Carenox full-time.</p>
+            </div>
+        </div>
+    </div>
+    <div class="advisor-row">
+        <div class="advisor">
+            <img src="gurpreet_singh_sachdeva.jpg" alt="Gurpreet Singh Sachdeva">
+            <div class="info">
+                <h3>Gurpreet Singh Sachdeva</h3>
+                <p>Director, Microsoft · 23+ years scaling enterprise systems at Microsoft, Flipkart, Yahoo!</p>
+            </div>
+        </div>
+        <div class="advisor">
+            <img src="SwaroopMishra.jpeg" alt="Swaroop Mishra">
+            <div class="info">
+                <h3>Swaroop Mishra</h3>
+                <p>AI Research Scientist · Authored the first instruction-tuning paper (the breakthrough behind ChatGPT). EACL Outstanding Paper Award. AI2 Lasting Impact Award.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 3: The Problem -->
+<section>
+    <p class="eyebrow">The Problem</p>
+    <h2>68% of Medicare patients have 2+ chronic conditions.<br>96% get no coordinated care.</h2>
+    <div class="grid-2" style="margin-top: 14px;">
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>🎭 Billing Theater</h3>
+                <p>Many existing CCM tools optimize for time thresholds — not patient outcomes. They game the metrics. CMS has acknowledged the fraud.</p>
+            </div>
+            <div class="card">
+                <h3>📈 Growing Crisis</h3>
+                <p>45M eligible patients. 10,000 Americans turn 65 every day. Millions more on the verge of becoming chronically ill. The population keeps growing; current tools don't scale.</p>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>🎯 Our Target</h3>
+                <p>Primary care practices — from small independent clinics launching their first CCM program to multi-location groups ready to scale. We start where the need is greatest.</p>
+            </div>
+            <div class="card">
+                <h3>🏛️ CMS ACCESS Program</h3>
+                <p>CMS launched <a href="https://www.cms.gov/priorities/innovation/innovation-models/access" target="_blank">ACCESS</a> (July 2026) — paying $90–420/patient annually for outcome improvement. Direct billing for startups willing to do this right.</p>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 10px; font-size: 0.54em; color: var(--text-3); line-height: 1.5;">
+        <strong>Sources:</strong>
+        <a href="https://stacks.cdc.gov/view/cdc/19674" target="_blank">CDC — Medicare Beneficiaries with Chronic Conditions</a> (68% with 2+ conditions) ·
+        <a href="https://pubmed.ncbi.nlm.nih.gov/38979879/" target="_blank">PubMed — CCM Utilization 2015–2019</a> (4% participation → 96% unenrolled) ·
+        <a href="https://www.medicare.gov/about-us" target="_blank">Medicare.gov</a> (67M beneficiaries) ·
+        <a href="https://fortune.com/well/2024/04/19/medicare-push-to-improve-chronic-care-attracts-businesses/" target="_blank">Fortune — Medicare CCM Adoption</a> ·
+        <a href="https://www.cms.gov/priorities/innovation/innovation-models/access" target="_blank">CMS ACCESS Model</a>
+    </div>
+</section>
+
+<!-- SLIDE 4: The Landscape -->
+<section>
+    <p class="eyebrow">The Landscape</p>
+    <h2>A saturated market — yet the problem persists.</h2>
+    <p>Prevounce, Tile Health, Hippocratic AI, ChronicCareIQ, ThoroughCare, and dozens more. The market has players. But chronic disease keeps growing.</p>
+    <div class="highlight">
+        <p>Something is still missing. With the CMS ACCESS program enabling direct billing for outcome improvement, there's a window to build something that actually scales — and we intend to leave our mark.</p>
+    </div>
+    <p style="margin-top: 10px; font-size: 0.7em; color: var(--text-3);">Our approach: keep the human touch. Condition-specific voice conversations — not dashboards and checkboxes. The product is not rigid. We're open to discussion on how to best tackle this.</p>
+    <div style="margin-top: 14px;">
+        <p class="eyebrow" style="margin-bottom: 4px;">What We've Built</p>
+        <div class="screenshot" style="max-height: 280px; display: flex; align-items: center; justify-content: center; background: #fff;">
+            <img src="assets/images/screenshots/care-gap-patient.png" alt="Carenox patient view — conditions, care gaps, measurements, risk score, timeline" style="width: 100%; max-height: 280px; object-fit: contain;">
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 5: How It Works -->
+<section>
+    <p class="eyebrow">How It Works</p>
+    <h2>Four steps. Your staff does zero of them.</h2>
+    <div class="steps">
+        <div class="step">
+            <div class="num">01</div>
+            <h3>Identify</h3>
+            <p>Flag every eligible patient — CCM (2+ conditions) and APCM (1+ condition)</p>
+        </div>
+        <span class="step-arrow">→</span>
+        <div class="step">
+            <div class="num">02</div>
+            <h3>Analyze Gaps</h3>
+            <p>Check overdue screenings, missed labs, medication adherence, care plan timelines</p>
+        </div>
+        <span class="step-arrow">→</span>
+        <div class="step">
+            <div class="num">03</div>
+            <h3>AI Calls</h3>
+            <p>Voice agent conducts condition-specific monthly check-ins in 42+ languages</p>
+        </div>
+        <span class="step-arrow">→</span>
+        <div class="step">
+            <div class="num">04</div>
+            <h3>Document</h3>
+            <p>Clinical notes, time tracking, CPT code recommendations — audit-ready</p>
+        </div>
+    </div>
+    <div class="highlight" style="margin-top: 14px;">
+        <p>Clinically urgent findings → immediate escalation to on-call team. AI handles routine. Clinicians handle exceptions.</p>
+    </div>
+</section>
+
+<!-- SLIDE 6: Risk Stratification -->
+<section>
+    <p class="eyebrow">Research · Risk Stratification</p>
+    <h2>Who needs care first? An explainable scoring system.</h2>
+    <div class="tiers">
+        <div class="tier tier-low">Low Risk<br><span style="font-weight:400;">0–4 pts</span></div>
+        <div class="tier tier-rising">Rising<br><span style="font-weight:400;">5–9 pts</span></div>
+        <div class="tier tier-high">High<br><span style="font-weight:400;">10–15 pts</span></div>
+        <div class="tier tier-vhigh">Very High<br><span style="font-weight:400;">16–33 pts</span></div>
+    </div>
+    <p style="font-size: 0.66em; margin-top: 6px;">12 weighted clinical features — each patient's score is the sum of their present factors:</p>
+    <div class="grid-4" style="margin-top: 6px;">
+        <div class="card" style="padding: 8px 10px; text-align: center;">
+            <p style="font-size: 1.2em; margin-bottom: 2px;">🏥</p>
+            <p style="font-weight: 600; font-size: 0.62em; color: var(--text);">Prior Hospitalization</p>
+            <p style="font-size: 0.56em;">hospitalization_12m · <strong>+4</strong></p>
+        </div>
+        <div class="card" style="padding: 8px 10px; text-align: center;">
+            <p style="font-size: 1.2em; margin-bottom: 2px;">❤️</p>
+            <p style="font-weight: 600; font-size: 0.62em; color: var(--text);">Heart Failure (CHF)</p>
+            <p style="font-size: 0.56em;">chf · <strong>+3</strong></p>
+        </div>
+        <div class="card" style="padding: 8px 10px; text-align: center;">
+            <p style="font-size: 1.2em; margin-bottom: 2px;">🫘</p>
+            <p style="font-weight: 600; font-size: 0.62em; color: var(--text);">Kidney Disease (CKD)</p>
+            <p style="font-size: 0.56em;">ckd · <strong>+3</strong></p>
+        </div>
+        <div class="card" style="padding: 8px 10px; text-align: center;">
+            <p style="font-size: 1.2em; margin-bottom: 2px;">🎗️</p>
+            <p style="font-weight: 600; font-size: 0.62em; color: var(--text);">Cancer</p>
+            <p style="font-size: 0.56em;">cancer · <strong>+3</strong></p>
+        </div>
+        <div class="card" style="padding: 8px 10px; text-align: center;">
+            <p style="font-size: 1.2em; margin-bottom: 2px;">🧠</p>
+            <p style="font-weight: 600; font-size: 0.62em; color: var(--text);">Cognitive Impairment</p>
+            <p style="font-size: 0.56em;">cognitive_impairment · <strong>+3</strong></p>
+        </div>
+        <div class="card" style="padding: 8px 10px; text-align: center;">
+            <p style="font-size: 1.2em; margin-bottom: 2px;">💊</p>
+            <p style="font-weight: 600; font-size: 0.62em; color: var(--text);">Polypharmacy (10+ meds)</p>
+            <p style="font-size: 0.56em;">polypharmacy · <strong>+3</strong></p>
+        </div>
+        <div class="card" style="padding: 8px 10px; text-align: center;">
+            <p style="font-size: 1.2em; margin-bottom: 2px;">🏠</p>
+            <p style="font-weight: 600; font-size: 0.62em; color: var(--text);">Social Distress</p>
+            <p style="font-size: 0.56em;">social_distress · <strong>+3</strong></p>
+        </div>
+        <div class="card" style="padding: 8px 10px; text-align: center;">
+            <p style="font-size: 1.2em; margin-bottom: 2px;">🦴</p>
+            <p style="font-weight: 600; font-size: 0.62em; color: var(--text);">Frailty</p>
+            <p style="font-size: 0.56em;">frailty · <strong>+3</strong></p>
+        </div>
+        <div class="card" style="padding: 8px 10px; text-align: center;">
+            <p style="font-size: 1.2em; margin-bottom: 2px;">👴</p>
+            <p style="font-weight: 600; font-size: 0.62em; color: var(--text);">Age 75+</p>
+            <p style="font-size: 0.56em;">age_75_plus · <strong>+2</strong></p>
+        </div>
+        <div class="card" style="padding: 8px 10px; text-align: center;">
+            <p style="font-size: 1.2em; margin-bottom: 2px;">🫁</p>
+            <p style="font-weight: 600; font-size: 0.62em; color: var(--text);">Lung Disease (COPD)</p>
+            <p style="font-size: 0.56em;">copd · <strong>+2</strong></p>
+        </div>
+        <div class="card" style="padding: 8px 10px; text-align: center;">
+            <p style="font-size: 1.2em; margin-bottom: 2px;">🩸</p>
+            <p style="font-weight: 600; font-size: 0.62em; color: var(--text);">Diabetes</p>
+            <p style="font-size: 0.56em;">diabetes · <strong>+2</strong></p>
+        </div>
+        <div class="card" style="padding: 8px 10px; text-align: center;">
+            <p style="font-size: 1.2em; margin-bottom: 2px;">🚨</p>
+            <p style="font-weight: 600; font-size: 0.62em; color: var(--text);">ER Visit (6 months)</p>
+            <p style="font-size: 0.56em;">er_6m · <strong>+2</strong></p>
+        </div>
+    </div>
+    <div style="margin-top: 8px; display: flex; gap: 14px; align-items: center;">
+        <div class="highlight" style="flex: 1; margin-top: 0;">
+            <p>Key finding: interpretable scores match black-box ML (0.002 AUC gap). Validated on UCI Diabetes 130-Hospitals (71K patients) and CMS DE-SynPUF (95K beneficiaries).</p>
+        </div>
+        <div style="font-size: 0.54em; color: var(--text-3); flex: 0.8; line-height: 1.4;">
+            <strong>References:</strong> Johnson et al. 2023 (MIMIC-IV, MIT) · Strack et al. 2014 (UCI Diabetes) · Collins et al. 2024 (TRIPOD+AI) · Wolff et al. 2019 (PROBAST) · Vickers 2006 (Decision Curve Analysis)
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 7: Voice Calling — with screenshot -->
+<section>
+    <p class="eyebrow">The Conversation</p>
+    <h2>Calls that actually help patients.</h2>
+    <div style="display: flex; gap: 16px; margin-top: 10px;">
+        <div style="flex: 1;">
+            <p>Before every call, the Care Gap Engine evaluates the patient against 69 clinical rules mapped to 10 guideline bodies (USPSTF, ADA, AHA, HEDIS, KDIGO, GOLD, ACIP, CMS, ACS, CDC).</p>
+            <div class="card" style="margin-bottom: 8px;">
+                <h3>Pre-Call Analysis</h3>
+                <p>✓ Overdue screenings (mammogram, colonoscopy, eye exam)<br>✓ Lab monitoring (HbA1c, eGFR, lipids, BP)<br>✓ Medication adherence checks<br>✓ Behavioral assessments (PHQ-9, GAD-7)<br>✓ Immunization status</p>
+            </div>
+            <div class="card" style="margin-bottom: 8px;">
+                <h3>Condition-Specific</h3>
+                <p>Diabetes → blood sugar, foot checks. CHF → daily weight, fluid. COPD → inhaler technique. Not a generic script.</p>
+            </div>
+            <div class="card" style="margin-bottom: 8px;">
+                <h3>42+ Languages</h3>
+                <p>English, Hindi, Spanish, Punjabi, Bengali, Russian, French, and 35+ more — in the patient's preferred language.</p>
+            </div>
+            <div class="card">
+                <h3>Instant Escalation</h3>
+                <p>Red flags → clinical team immediately. Everything documented with timestamps and outcomes.</p>
+            </div>
+        </div>
+        <div style="flex: 1.2;">
+            <div class="screenshot" style="max-height: 380px; overflow: hidden;">
+                <img src="assets/images/screenshots/live-call.png" alt="Carenox live call interface showing real-time transcript, clinical notes, and care plan" style="width: 100%; object-fit: cover; object-position: top;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 8: Compliance & Trust -->
+<section>
+    <p class="eyebrow">Compliance & Trust</p>
+    <h2>HIPAA compliant. Audit-ready. Physician in control.</h2>
+    <div class="grid-2" style="margin-top: 10px;">
+        <div class="card">
+            <h3>🚫 No AI in the Billing Path</h3>
+            <p>All CPT code logic is deterministic and rule-based. Fully auditable. No black-box decisions touch a Medicare claim.</p>
+        </div>
+        <div class="card">
+            <h3>🔒 Encrypted End-to-End</h3>
+            <p>AES-256 at rest. TLS 1.3 in transit. BAA-covered infrastructure. Call recordings encrypted and access-controlled.</p>
+        </div>
+        <div class="card">
+            <h3>📋 Complete Audit Trail</h3>
+            <p>Every interaction logged with timestamps, duration, outcomes. 7-year retention. Ready for Medicare audits without anyone pulling files.</p>
+        </div>
+        <div class="card">
+            <h3>👨‍⚕️ Clinical Oversight</h3>
+            <p>Physician remains the billing provider. AI operates under clinical supervision. Escalation pathways for urgent findings. You stay in control.</p>
+        </div>
+    </div>
+    <div style="margin-top: 12px; text-align: center;">
+        <span class="badge">BAA Included</span>
+        <span class="badge">HIPAA Technical Safeguards</span>
+        <span class="badge">Deterministic Billing Logic</span>
+        <span class="badge">Immutable Logs</span>
+        <span class="badge">7-Year Retention</span>
+    </div>
+</section>
+
+<!-- SLIDE 9: What We're Looking For -->
+<section>
+    <p class="eyebrow">Join Us</p>
+    <h2>We're looking for a clinical partner.</h2>
+    <p style="font-size: 0.82em; color: var(--text); line-height: 1.6; margin-top: 6px;">We have the engineering. We have the operations. We have working MVPs. But we believe there's a version of this software that works even better — and we need clinical expertise to find it.</p>
+    <div class="grid-2" style="margin-top: 14px;">
+        <div class="card" style="border-left: 3px solid var(--accent);">
+            <h3>What We Need</h3>
+            <p>Clinical validation of our workflows. Feedback on our risk stratification model. Guidance on what matters most at the bedside. A perspective we can't get from engineering alone.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent);">
+            <h3>What We Offer</h3>
+            <p>A seat at the table from day one. Shape the product direction. We're genuinely open to feedback — the platform is not rigid, and we know clinical insight will make it meaningfully better.</p>
+        </div>
+    </div>
+    <div class="highlight" style="margin-top: 14px;">
+        <p>This isn't a "rubber stamp" ask. We want someone who builds with us — who sees what we see and helps us get it right.</p>
+    </div>
+    <div style="margin-top: 16px; text-align: center;">
+        <p style="font-size: 0.7em; color: var(--text-3);">hello@carenox.ai · (480) 408-0760 · <a href="https://carenox.ai">carenox.ai</a></p>
+    </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+    Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        width: 1100,
+        height: 680,
+        margin: 0.05,
+        transition: 'slide',
+        transitionSpeed: 'default',
+        backgroundTransition: 'fade'
+    });
+</script>
+</body>
+</html>

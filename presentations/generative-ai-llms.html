@@ -1,0 +1,1091 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Generative AI &amp; LLMs: From Foundations to Innovation</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+  <style>
+    :root {
+      --heading: #1a1a2e;
+      --text: #2d2d2d;
+      --accent: #6c5ce7;
+      --accent2: #0984e3;
+      --green: #00b894;
+      --orange: #f39c12;
+      --red: #e74c3c;
+      --pink: #e84393;
+      --bg-light: #fafafa;
+    }
+    .reveal { font-family: 'Segoe UI', system-ui, sans-serif; }
+    .reveal h1 { font-size: 1.9em; font-weight: 700; color: var(--heading); }
+    .reveal h2 { font-size: 1.35em; font-weight: 600; color: var(--heading); margin-bottom: 0.3em; }
+    .reveal h3 { font-size: 0.95em; font-weight: 600; color: #444; }
+    .reveal p, .reveal li { font-size: 0.63em; line-height: 1.5; }
+    .reveal ul { margin-left: 0.5em; }
+    .reveal .subtitle { font-size: 0.8em; color: #666; }
+    .reveal .citation { font-size: 0.48em; color: #aaa; font-style: italic; margin-top: 1em; }
+    .reveal .formula { font-family: 'Courier New', monospace; background: #f0f4f8; padding: 0.5em 0.9em; border-radius: 6px; font-size: 0.72em; display: inline-block; margin: 0.3em 0; }
+    .reveal .analogy { background: #f8f6ff; border-left: 4px solid var(--accent); padding: 0.5em 0.9em; border-radius: 0 6px 6px 0; margin: 0.5em 0; font-size: 0.64em; text-align: left; }
+    .reveal .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2em; text-align: left; }
+    .reveal .highlight-box { background: #e8f4fd; border-radius: 6px; padding: 0.4em 0.6em; margin: 0.3em 0; font-size: 0.58em; }
+    .reveal .warn-box { background: #fff3e0; border-left: 4px solid var(--orange); padding: 0.4em 0.6em; border-radius: 0 6px 6px 0; margin: 0.3em 0; font-size: 0.58em; }
+    .reveal .section-label { color: var(--accent); font-size: 0.6em; text-transform: uppercase; letter-spacing: 3px; }
+    .reveal table { font-size: 0.55em; margin: 0.3em auto; border-collapse: collapse; }
+    .reveal table th { background: var(--heading); color: white; padding: 0.35em 0.6em; }
+    .reveal table td { padding: 0.3em 0.6em; border-bottom: 1px solid #eee; }
+    .reveal code { font-size: 0.82em; background: #f0f4f8; padding: 0.1em 0.3em; border-radius: 3px; }
+    .reveal pre code { background: #1a1a2e; color: #e0e0e0; padding: 0.7em; border-radius: 6px; display: block; }
+    .reveal .flow { color: var(--accent); font-size: 1.3em; margin: 0 0.15em; }
+    .reveal svg text { font-family: 'Segoe UI', system-ui, sans-serif; }
+    .reveal .speaker-intro { display: grid; grid-template-columns: auto 1fr; gap: 1.5em; align-items: center; text-align: left; }
+    .reveal .speaker-intro img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); }
+    .reveal section { overflow-y: auto; max-height: 100%; }
+    .reveal .slides section { box-sizing: border-box; padding: 20px 40px; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+
+<!-- SPEAKER INTRO -->
+<section>
+  <div class="speaker-intro">
+    <img src="https://bhavdeep98.github.io/images/profile-new-optimized.jpg" alt="Bhavdeep Singh Sachdeva">
+    <div>
+      <h2 style="margin-bottom:0.1em;">Bhavdeep Singh Sachdeva</h2>
+      <p style="font-size:0.75em; color:#666; margin:0.2em 0;">CTO @ Stealth Startup | Previously Software Engineer @ AWS Security Services | AI Researcher</p>
+      <p style="font-size:0.65em; margin:0.5em 0;">M.S. Computer Science, Arizona State University</p>
+      <p style="font-size:0.55em; color:#999; margin-top:0.6em;">bhavdeepsachdeva@gmail.com | scholar.google.com | linkedin.com/in/bssachde</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- SECTION 1 HEADER -->
+<section>
+  <p class="section-label">Section 1</p>
+  <h1>The Foundation</h1>
+  <h2 style="color:var(--accent);">Language Models &amp; the Transformer Architecture</h2>
+  <p style="font-size:0.65em; color:#666; margin-top:0.8em;">What is language modeling? How did we get to GPT, Llama, and Claude? What's actually inside?</p>
+</section>
+
+<!-- WHAT IS LANGUAGE MODELING -->
+<section>
+  <h2>What Is Language Modeling?</h2>
+  <p style="font-size:0.75em;">Learning to distinguish probable sequences from improbable ones.</p>
+  <div class="formula">P(w1, w2, ..., wn) = Product of P(wi | w1, ..., wi-1)</div>
+  <p style="font-size:0.65em;">The dominant approach today: predict the next token given all previous tokens. This powers GPT, Llama, Claude, and Gemini.</p>
+  <div class="two-col" style="margin-top:0.8em;">
+    <div>
+      <h3>The History</h3>
+      <table>
+        <tr><th>Era</th><th>Approach</th><th>Example</th></tr>
+        <tr><td>1990s</td><td>N-gram models</td><td>Bigram/trigram counts</td></tr>
+        <tr><td>2013</td><td>Neural LMs</td><td>Word2Vec, NNLM</td></tr>
+        <tr><td>2015-17</td><td>RNN/LSTM LMs</td><td>ELMo</td></tr>
+        <tr><td>2017+</td><td>Transformers</td><td>BERT, GPT, Llama</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>What "Large" Means Today</h3>
+      <table>
+        <tr><th>Model</th><th>Params</th><th>Lab</th></tr>
+        <tr><td>BERT (2018)</td><td>340M</td><td>Google</td></tr>
+        <tr><td>GPT-3 (2020)</td><td>175B</td><td>OpenAI</td></tr>
+        <tr><td>Llama 3 (2024)</td><td>405B</td><td>Meta</td></tr>
+        <tr><td>GPT-4 (2023)</td><td>~1.8T (MoE)</td><td>OpenAI</td></tr>
+        <tr><td>Claude 3.5 (2024)</td><td>undisclosed</td><td>Anthropic</td></tr>
+        <tr><td>Gemini (2024)</td><td>undisclosed</td><td>Google</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="citation">Shannon, 1948, "A Mathematical Theory of Communication" | Bengio et al., 2003, "A Neural Probabilistic Language Model" | Mikolov et al., 2010</p>
+</section>
+
+<!-- LLMs TODAY -->
+<section>
+  <h2>Large Language Models Today</h2>
+  <p style="font-size:0.7em;">All modern LLMs share one core design: a <strong>Transformer</strong> trained on next-token prediction at massive scale.</p>
+  <svg viewBox="0 0 900 230" style="width:90%; margin-top:0.3em;">
+    <rect x="30" y="30" width="250" height="90" rx="8" fill="#e8f4fd" stroke="#2980b9" stroke-width="1.5"/>
+    <text x="155" y="55" text-anchor="middle" font-size="11" fill="#2980b9" font-weight="bold">Encoder-Only</text>
+    <text x="155" y="75" text-anchor="middle" font-size="10" fill="#333">Bidirectional context</text>
+    <text x="155" y="95" text-anchor="middle" font-size="9" fill="#666">BERT, RoBERTa, DeBERTa</text>
+    <text x="155" y="112" text-anchor="middle" font-size="9" fill="#999">Understanding tasks (classification, NER)</text>
+    <rect x="320" y="30" width="250" height="90" rx="8" fill="#e8f8f5" stroke="#00b894" stroke-width="1.5"/>
+    <text x="445" y="55" text-anchor="middle" font-size="11" fill="#00b894" font-weight="bold">Decoder-Only *</text>
+    <text x="445" y="75" text-anchor="middle" font-size="10" fill="#333">Autoregressive (left-to-right)</text>
+    <text x="445" y="95" text-anchor="middle" font-size="9" fill="#666">GPT, Llama, Claude, Gemini, Mistral</text>
+    <text x="445" y="112" text-anchor="middle" font-size="9" fill="#999">Generation tasks (chat, code, reasoning)</text>
+    <rect x="610" y="30" width="260" height="90" rx="8" fill="#fff9e6" stroke="#f39c12" stroke-width="1.5"/>
+    <text x="740" y="55" text-anchor="middle" font-size="11" fill="#f39c12" font-weight="bold">Encoder-Decoder</text>
+    <text x="740" y="75" text-anchor="middle" font-size="10" fill="#333">Full seq-to-seq</text>
+    <text x="740" y="95" text-anchor="middle" font-size="9" fill="#666">T5, BART, Flan-T5</text>
+    <text x="740" y="112" text-anchor="middle" font-size="9" fill="#999">Translation, summarization</text>
+    <rect x="320" y="135" width="250" height="30" rx="4" fill="#00b894" opacity="0.1" stroke="#00b894"/>
+    <text x="445" y="155" text-anchor="middle" font-size="10" fill="#00b894" font-weight="bold">* This is what all frontier LLMs use today</text>
+    <text x="450" y="195" text-anchor="middle" font-size="12" fill="#333">The architecture is from <tspan font-weight="bold">one paper</tspan> (Vaswani et al., 2017).</text>
+    <text x="450" y="215" text-anchor="middle" font-size="11" fill="#666">Everything since then is primarily about <tspan font-weight="bold" fill="#6c5ce7">scale, data, and training methodology</tspan>.</text>
+  </svg>
+  <p class="citation">Vaswani et al., 2017 | Devlin et al., 2018 (BERT) | Radford et al., 2018 (GPT) | Touvron et al., 2023 (Llama) | Raffel et al., 2019 (T5)</p>
+</section>
+
+<!-- NEXT TOKEN PREDICTION -->
+<section>
+  <h2>The Core Task: Next-Token Prediction</h2>
+  <p style="font-size:0.7em;">Given all tokens so far, output a probability distribution over the <strong>entire vocabulary</strong> (~50K-100K+ tokens).</p>
+  <svg viewBox="0 0 900 250" style="width:90%;">
+    <rect x="30" y="30" width="520" height="60" rx="6" fill="#f8f6ff" stroke="#6c5ce7" stroke-width="1.5"/>
+    <text x="50" y="55" font-size="10" fill="#6c5ce7" font-weight="bold">Context (all previous tokens):</text>
+    <text x="50" y="75" font-size="11" fill="#333">"The detective examined the evidence and concluded that the murderer is"</text>
+    <path d="M 560 60 L 610 60" stroke="#6c5ce7" stroke-width="2" marker-end="url(#a1)"/>
+    <defs><marker id="a1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#6c5ce7"/></marker></defs>
+    <rect x="620" y="20" width="260" height="120" rx="6" fill="#e8f8f5" stroke="#00b894" stroke-width="1.5"/>
+    <text x="750" y="42" text-anchor="middle" font-size="10" fill="#00b894" font-weight="bold">P(next token | context)</text>
+    <rect x="640" y="52" width="150" height="14" rx="3" fill="#00b894" opacity="0.8"/><text x="800" y="63" font-size="9" fill="#333">"Colonel" - 34%</text>
+    <rect x="640" y="70" width="85" height="14" rx="3" fill="#00b894" opacity="0.5"/><text x="800" y="81" font-size="9" fill="#333">"the" - 18%</text>
+    <rect x="640" y="88" width="55" height="14" rx="3" fill="#00b894" opacity="0.35"/><text x="800" y="99" font-size="9" fill="#333">"Professor" - 12%</text>
+    <rect x="640" y="106" width="30" height="14" rx="3" fill="#00b894" opacity="0.2"/><text x="800" y="117" font-size="9" fill="#666">... 50K others</text>
+    <rect x="30" y="155" width="550" height="40" rx="6" fill="#fff9e6" stroke="#f39c12" stroke-width="1"/>
+    <text x="305" y="173" text-anchor="middle" font-size="10" fill="#f39c12" font-weight="bold">The architecture's job:</text>
+    <text x="305" y="188" text-anchor="middle" font-size="10" fill="#333">Figure out which parts of the context are most relevant to this prediction.</text>
+    <rect x="100" y="210" width="700" height="30" rx="6" fill="#f0f4f8"/>
+    <text x="450" y="229" text-anchor="middle" font-size="10" fill="#333"><tspan font-weight="bold">Training:</tspan> Minimize cross-entropy loss over trillions of tokens. All capabilities emerge from this single objective.</text>
+  </svg>
+  <p class="citation">Radford et al., 2018 (GPT-1) | Brown et al., 2020 (GPT-3) | This is the foundation ALL modern LLMs share</p>
+</section>
+
+<!-- THREE THINGS PIPELINE -->
+<section>
+  <h2>To Predict Well, You Need Three Things</h2>
+  <p style="font-size:0.7em;">The Transformer solves next-token prediction through a pipeline of three learned operations:</p>
+  <svg viewBox="0 0 900 220" style="width:90%; margin-top:0.5em;">
+    <rect x="30" y="40" width="240" height="130" rx="10" fill="#f8f6ff" stroke="#6c5ce7" stroke-width="2"/>
+    <text x="150" y="70" text-anchor="middle" font-size="13" fill="#6c5ce7" font-weight="bold">1. Represent</text>
+    <text x="150" y="92" text-anchor="middle" font-size="10" fill="#333">Convert words to vectors</text>
+    <text x="150" y="108" text-anchor="middle" font-size="10" fill="#333">where meaning = geometry</text>
+    <text x="150" y="130" text-anchor="middle" font-size="9" fill="#666">"cat" = [0.2, -0.8, 1.1, ...]</text>
+    <text x="150" y="150" text-anchor="middle" font-size="9" fill="#999">Embeddings</text>
+    <path d="M 280 105 L 320 105" stroke="#999" stroke-width="2" marker-end="url(#a2)"/>
+    <rect x="330" y="40" width="240" height="130" rx="10" fill="#fff9e6" stroke="#f39c12" stroke-width="2"/>
+    <text x="450" y="70" text-anchor="middle" font-size="13" fill="#f39c12" font-weight="bold">2. Contextualize</text>
+    <text x="450" y="92" text-anchor="middle" font-size="10" fill="#333">Each token looks at all others</text>
+    <text x="450" y="108" text-anchor="middle" font-size="10" fill="#333">to understand context</text>
+    <text x="450" y="130" text-anchor="middle" font-size="9" fill="#666">"bank" in "river bank" != "bank account"</text>
+    <text x="450" y="150" text-anchor="middle" font-size="9" fill="#999">Attention mechanism</text>
+    <path d="M 580 105 L 620 105" stroke="#999" stroke-width="2" marker-end="url(#a2)"/>
+    <rect x="630" y="40" width="240" height="130" rx="10" fill="#e8f8f5" stroke="#00b894" stroke-width="2"/>
+    <text x="750" y="70" text-anchor="middle" font-size="13" fill="#00b894" font-weight="bold">3. Transform</text>
+    <text x="750" y="92" text-anchor="middle" font-size="10" fill="#333">Apply stored knowledge</text>
+    <text x="750" y="108" text-anchor="middle" font-size="10" fill="#333">and learned patterns</text>
+    <text x="750" y="130" text-anchor="middle" font-size="9" fill="#666">"Eiffel Tower" + "located" = "Paris"</text>
+    <text x="750" y="150" text-anchor="middle" font-size="9" fill="#999">MLP / Feed-Forward layers</text>
+    <defs><marker id="a2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#999"/></marker></defs>
+    <text x="450" y="200" text-anchor="middle" font-size="11" fill="#333">Repeat steps 2+3 for <tspan font-weight="bold">32-128 layers</tspan> = progressively richer representation = final prediction</text>
+  </svg>
+  <p class="citation">Vaswani et al., 2017, "Attention Is All You Need," arXiv:1706.03762 - introduced all three components in one architecture</p>
+</section>
+
+<!-- EMBEDDINGS -->
+<section>
+  <h2>Step 1: Embeddings - Words Become Vectors</h2>
+  <p style="font-size:0.68em;">Each token is mapped to a <strong>vector</strong> in high-dimensional space. Direction and magnitude encode meaning.</p>
+  <svg viewBox="0 0 900 250" style="width:90%;">
+    <line x1="60" y1="220" x2="60" y2="30" stroke="#ccc" stroke-width="1.5"/>
+    <line x1="60" y1="220" x2="340" y2="220" stroke="#ccc" stroke-width="1.5"/>
+    <circle cx="60" cy="220" r="3" fill="#999"/>
+    <line x1="60" y1="220" x2="130" y2="155" stroke="#e74c3c" stroke-width="2" marker-end="url(#va)"/><text x="135" y="150" font-size="9" fill="#e74c3c">cat</text>
+    <line x1="60" y1="220" x2="155" y2="165" stroke="#e74c3c" stroke-width="2" marker-end="url(#va)"/><text x="160" y="162" font-size="9" fill="#e74c3c">dog</text>
+    <line x1="60" y1="220" x2="115" y2="140" stroke="#e74c3c" stroke-width="2" marker-end="url(#va)"/><text x="90" y="135" font-size="9" fill="#e74c3c">lion</text>
+    <line x1="60" y1="220" x2="235" y2="65" stroke="#2980b9" stroke-width="2" marker-end="url(#vb)"/><text x="240" y="62" font-size="9" fill="#2980b9">France</text>
+    <line x1="60" y1="220" x2="260" y2="85" stroke="#2980b9" stroke-width="2" marker-end="url(#vb)"/><text x="265" y="82" font-size="9" fill="#2980b9">Italy</text>
+    <line x1="60" y1="220" x2="220" y2="80" stroke="#2980b9" stroke-width="2" marker-end="url(#vb)"/><text x="195" y="75" font-size="9" fill="#2980b9">Japan</text>
+    <defs>
+      <marker id="va" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#e74c3c"/></marker>
+      <marker id="vb" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2980b9"/></marker>
+      <marker id="vp" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#6c5ce7"/></marker>
+      <marker id="vpk" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#e84393"/></marker>
+      <marker id="vdir" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#f39c12"/></marker>
+    </defs>
+    <text x="100" y="175" font-size="8" fill="#e74c3c" font-style="italic">animals cluster</text>
+    <text x="210" y="100" font-size="8" fill="#2980b9" font-style="italic">countries cluster</text>
+    <!-- King-Queen analogy -->
+    <circle cx="450" cy="200" r="3" fill="#999"/>
+    <line x1="450" y1="200" x2="510" y2="60" stroke="#6c5ce7" stroke-width="2.5" marker-end="url(#vp)"/><text x="518" y="55" font-size="10" fill="#6c5ce7" font-weight="bold">King</text>
+    <line x1="450" y1="200" x2="530" y2="140" stroke="#6c5ce7" stroke-width="2.5" marker-end="url(#vp)"/><text x="538" y="138" font-size="10" fill="#6c5ce7" font-weight="bold">Man</text>
+    <line x1="450" y1="200" x2="730" y2="60" stroke="#e84393" stroke-width="2.5" marker-end="url(#vpk)"/><text x="738" y="55" font-size="10" fill="#e84393" font-weight="bold">Queen</text>
+    <line x1="450" y1="200" x2="750" y2="140" stroke="#e84393" stroke-width="2.5" marker-end="url(#vpk)"/><text x="758" y="138" font-size="10" fill="#e84393" font-weight="bold">Woman</text>
+    <path d="M 515 63 L 725 63" stroke="#f39c12" stroke-width="2" stroke-dasharray="5" marker-end="url(#vdir)"/>
+    <text x="620" y="52" text-anchor="middle" font-size="9" fill="#f39c12" font-weight="bold">same offset = "royalty"</text>
+    <rect x="500" y="210" width="340" height="32" rx="5" fill="#f0f4f8" stroke="#6c5ce7" stroke-width="1"/>
+    <text x="670" y="231" text-anchor="middle" font-size="11" fill="#333" font-weight="bold">vec(King) - vec(Man) + vec(Woman) = vec(Queen)</text>
+  </svg>
+  <p class="citation">Mikolov et al., 2013, "Efficient Estimation of Word Representations in Vector Space," arXiv:1301.3781 | Pennington et al., 2014, "GloVe"</p>
+</section>
+
+<!-- CONTEXTUAL EMBEDDINGS -->
+<section>
+  <h2>Static to Contextual Embeddings</h2>
+  <div class="two-col" style="margin-top:0.3em;">
+    <div>
+      <h3 style="color:var(--red);">Problem</h3>
+      <p>"I sat by the river <strong>bank</strong>" = terrain</p>
+      <p>"I went to the <strong>bank</strong> to deposit" = financial</p>
+      <p style="margin-top:0.3em;">Word2Vec: same vector for both. <strong>Wrong.</strong></p>
+    </div>
+    <div>
+      <h3 style="color:var(--green);">Solution: Attention</h3>
+      <p>Each word looks at surrounding words to <strong>adapt its vector</strong> to context.</p>
+      <p style="margin-top:0.3em;">Transformers do this in <strong>parallel</strong> for all tokens at once.</p>
+    </div>
+  </div>
+  <table style="margin-top:0.5em;">
+    <tr><th>Method</th><th>Year</th><th>Context?</th><th>Speed</th></tr>
+    <tr><td>Word2Vec / GloVe</td><td>2013-14</td><td>No (static)</td><td>Fast</td></tr>
+    <tr><td>ELMo (BiLSTM)</td><td>2018</td><td>Yes (contextual)</td><td>Slow (sequential)</td></tr>
+    <tr><td>Transformer</td><td>2017+</td><td>Yes (contextual)</td><td>Fast (parallel)</td></tr>
+  </table>
+  <p class="citation">Peters et al., 2018, "ELMo" | Devlin et al., 2018, "BERT" | Vaswani et al., 2017</p>
+</section>
+
+<!-- ATTENTION Q K V -->
+<section>
+  <h2>Step 2: Attention - The Q, K, V Mechanism</h2>
+  <p style="font-size:0.68em;">For each token, compute: "Which other tokens are <strong>relevant</strong> to me? How much should I listen to each?"</p>
+  <svg viewBox="0 0 900 180" style="width:88%; margin-top:0.3em;">
+    <rect x="20" y="20" width="260" height="70" rx="8" fill="#e8f4fd" stroke="#2980b9" stroke-width="2"/>
+    <text x="150" y="45" text-anchor="middle" font-size="12" fill="#2980b9" font-weight="bold">Query (Q)</text>
+    <text x="150" y="65" text-anchor="middle" font-size="10" fill="#333">"What information am I looking for?"</text>
+    <text x="150" y="82" text-anchor="middle" font-size="9" fill="#666">Each token asks a question about what it needs</text>
+    <rect x="320" y="20" width="260" height="70" rx="8" fill="#fff9e6" stroke="#f39c12" stroke-width="2"/>
+    <text x="450" y="45" text-anchor="middle" font-size="12" fill="#f39c12" font-weight="bold">Key (K)</text>
+    <text x="450" y="65" text-anchor="middle" font-size="10" fill="#333">"What information do I contain?"</text>
+    <text x="450" y="82" text-anchor="middle" font-size="9" fill="#666">Each token advertises its content</text>
+    <rect x="620" y="20" width="260" height="70" rx="8" fill="#e8f8f5" stroke="#00b894" stroke-width="2"/>
+    <text x="750" y="45" text-anchor="middle" font-size="12" fill="#00b894" font-weight="bold">Value (V)</text>
+    <text x="750" y="65" text-anchor="middle" font-size="10" fill="#333">"Here's my actual information."</text>
+    <text x="750" y="82" text-anchor="middle" font-size="9" fill="#666">The content that gets transferred if selected</text>
+    <rect x="100" y="110" width="700" height="50" rx="6" fill="#f0f4f8"/>
+    <text x="450" y="130" text-anchor="middle" font-size="10" fill="#333"><tspan font-weight="bold">Step 1:</tspan> Score = Q * K^T (dot product: how well does my question match your content?)</text>
+    <text x="450" y="145" text-anchor="middle" font-size="10" fill="#333"><tspan font-weight="bold">Step 2:</tspan> Weights = softmax(Score / sqrt(d)) = probability distribution over all tokens</text>
+    <text x="450" y="160" text-anchor="middle" font-size="10" fill="#333"><tspan font-weight="bold">Step 3:</tspan> Output = Weights * V = weighted sum of values (relevant info extracted)</text>
+  </svg>
+  <div class="formula" style="margin-top:0.3em;">Attention(Q, K, V) = softmax(QK^T / sqrt(dk)) * V</div>
+  <p class="citation">Vaswani et al., 2017, arXiv:1706.03762 | Intuition credit: 3Blue1Brown, "Attention in transformers, step-by-step" (2024)</p>
+</section>
+
+<!-- MULTI-HEAD ATTENTION -->
+<section>
+  <h2>Multi-Head Attention</h2>
+  <p style="font-size:0.6em;">One attention head captures ONE relationship type. Multiple heads = multiple perspectives simultaneously.</p>
+  <svg viewBox="0 0 900 170" style="width:92%; margin-top:0.3em;">
+    <!-- Input embedding -->
+    <rect x="30" y="70" width="100" height="35" rx="5" fill="#f0f4f8" stroke="#999"/>
+    <text x="80" y="92" text-anchor="middle" font-size="9" fill="#333">Embedding</text>
+    <!-- Split arrows -->
+    <path d="M 135 80 L 180 40" stroke="#6c5ce7" stroke-width="1.5" marker-end="url(#mh1)"/>
+    <path d="M 135 87 L 180 70" stroke="#2980b9" stroke-width="1.5" marker-end="url(#mh1)"/>
+    <path d="M 135 94 L 180 100" stroke="#00b894" stroke-width="1.5" marker-end="url(#mh1)"/>
+    <path d="M 135 101 L 180 130" stroke="#f39c12" stroke-width="1.5" marker-end="url(#mh1)"/>
+    <!-- Heads -->
+    <rect x="185" y="25" width="130" height="30" rx="5" fill="#f8f6ff" stroke="#6c5ce7" stroke-width="1.5"/>
+    <text x="250" y="44" text-anchor="middle" font-size="8" fill="#6c5ce7" font-weight="bold">Head 1: Syntax</text>
+    <rect x="185" y="58" width="130" height="30" rx="5" fill="#e8f4fd" stroke="#2980b9" stroke-width="1.5"/>
+    <text x="250" y="77" text-anchor="middle" font-size="8" fill="#2980b9" font-weight="bold">Head 2: Coreference</text>
+    <rect x="185" y="91" width="130" height="30" rx="5" fill="#e8f8f5" stroke="#00b894" stroke-width="1.5"/>
+    <text x="250" y="110" text-anchor="middle" font-size="8" fill="#00b894" font-weight="bold">Head 3: Semantic</text>
+    <rect x="185" y="124" width="130" height="30" rx="5" fill="#fff9e6" stroke="#f39c12" stroke-width="1.5"/>
+    <text x="250" y="143" text-anchor="middle" font-size="8" fill="#f39c12" font-weight="bold">Head 4: Position</text>
+    <!-- Concat arrows -->
+    <path d="M 320 40 L 370 80" stroke="#6c5ce7" stroke-width="1.5" marker-end="url(#mh1)"/>
+    <path d="M 320 73 L 370 83" stroke="#2980b9" stroke-width="1.5" marker-end="url(#mh1)"/>
+    <path d="M 320 106 L 370 90" stroke="#00b894" stroke-width="1.5" marker-end="url(#mh1)"/>
+    <path d="M 320 139 L 370 95" stroke="#f39c12" stroke-width="1.5" marker-end="url(#mh1)"/>
+    <!-- Concat box -->
+    <rect x="375" y="65" width="80" height="40" rx="5" fill="#ffeef0" stroke="#e74c3c" stroke-width="1.5"/>
+    <text x="415" y="83" text-anchor="middle" font-size="8" fill="#e74c3c" font-weight="bold">Concat</text>
+    <text x="415" y="97" text-anchor="middle" font-size="7" fill="#666">+ project</text>
+    <!-- Output -->
+    <path d="M 460 85 L 500 85" stroke="#999" stroke-width="1.5" marker-end="url(#mh1)"/>
+    <rect x="505" y="68" width="90" height="35" rx="5" fill="#6c5ce7" opacity="0.15" stroke="#6c5ce7"/>
+    <text x="550" y="90" text-anchor="middle" font-size="9" fill="#6c5ce7" font-weight="bold">Output</text>
+    <defs><marker id="mh1" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto"><polygon points="0 0, 6 2, 0 4" fill="#666"/></marker></defs>
+    <!-- Right side: scale info -->
+    <rect x="640" y="20" width="240" height="140" rx="8" fill="#f0f4f8" stroke="#ddd"/>
+    <text x="760" y="42" text-anchor="middle" font-size="9" fill="#333" font-weight="bold">Scale Across Models</text>
+    <text x="660" y="65" font-size="9" fill="#6c5ce7">Original (2017):</text><text x="790" y="65" font-size="9" fill="#333">8 heads, d=512</text>
+    <text x="660" y="85" font-size="9" fill="#2980b9">GPT-3 (2020):</text><text x="790" y="85" font-size="9" fill="#333">96 heads, d=12,288</text>
+    <text x="660" y="105" font-size="9" fill="#00b894">Llama 3 (2024):</text><text x="790" y="105" font-size="9" fill="#333">128 heads, d=16,384</text>
+    <line x1="655" y1="118" x2="865" y2="118" stroke="#eee" stroke-width="1"/>
+    <text x="760" y="138" text-anchor="middle" font-size="8" fill="#666">Each head sees d/h dimensions</text>
+    <text x="760" y="152" text-anchor="middle" font-size="8" fill="#666">Llama 3: 16384/128 = 128 dims per head</text>
+  </svg>
+  <div class="analogy">
+    <strong>Analogy:</strong> Like having 8-128 detectives at a crime scene, each following a different line of investigation (grammar, meaning, references, distance). They share notes at the end to form a complete picture.
+  </div>
+  <p class="citation">Vaswani et al., 2017 | Clark et al., 2019, "What Does BERT Look At?" arXiv:1906.04341 | Voita et al., 2019, ACL</p>
+</section>
+
+<!-- MLP LAYERS -->
+<section>
+  <h2>Step 3: MLP Layers - The Knowledge Store</h2>
+  <div class="two-col">
+    <div>
+      <h3>Attention = routing</h3>
+      <p>"Which tokens should talk to which?"</p>
+      <h3 style="margin-top:0.5em;">MLP = content</h3>
+      <p>"What factual knowledge to apply?"</p>
+      <div class="formula" style="font-size:0.8em; margin-top:0.5em;">MLP(x) = W2 * activation(W1 * x)</div>
+      <p style="font-size:0.8em;">W1 detects patterns ("keys")<br>W2 outputs info ("values")</p>
+      <p style="font-size:0.8em; margin-top:0.3em;"><strong>~66% of GPT-3's 175B params</strong> are in MLPs.</p>
+      <div class="highlight-box" style="margin-top:0.5em;">
+        <strong>Analogy:</strong><br>
+        Attention = telephone switchboard<br>
+        MLP = the conversations themselves
+      </div>
+    </div>
+    <div>
+      <h3>Example: "Kobe Bryant" triggers stored knowledge</h3>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Kobe_Bryant_2014.jpg" alt="Kobe Bryant" style="width:140px; border-radius:8px; border:2px solid var(--accent); margin:0.3em auto; display:block;">
+      <p style="font-size:0.75em; text-align:center; color:#666; margin-top:0.2em;">The GOAT - stored in MLP weights</p>
+      <ul>
+        <li><strong>Knowledge Neurons</strong> fire for "Kobe" and retrieve: Lakers, 81 points, 5 rings, Mamba Mentality</li>
+        <li><strong>Fact editing</strong> - modify MLP weights = model changes its answers about any entity</li>
+      </ul>
+    </div>
+  </div>
+  <p class="citation">Geva et al., 2021, "Transformer FFN Layers Are Key-Value Memories," EMNLP, arXiv:2012.14913 | Dai et al., 2022, "Knowledge Neurons," ACL, arXiv:2104.08696 | Image: Wikimedia Commons</p>
+</section>
+
+<!-- THE TRANSFORMER ARCHITECTURE (ENCODER-DECODER) -->
+<section>
+  <h2>The Original Transformer Architecture</h2>
+  <p style="font-size:0.65em;">Vaswani et al., 2017 - the paper that started it all. Two stacks: Encoder (understands input) + Decoder (generates output).</p>
+  <svg viewBox="0 0 900 340" style="width:88%; margin-top:0.2em;">
+    <!-- Encoder stack -->
+    <rect x="60" y="10" width="280" height="280" rx="10" fill="#e8f4fd" stroke="#2980b9" stroke-width="2"/>
+    <text x="200" y="32" text-anchor="middle" font-size="12" fill="#2980b9" font-weight="bold">ENCODER (x6)</text>
+    <!-- Encoder block -->
+    <rect x="90" y="45" width="220" height="35" rx="4" fill="#fff" stroke="#2980b9"/>
+    <text x="200" y="67" text-anchor="middle" font-size="9" fill="#2980b9">Multi-Head Self-Attention</text>
+    <text x="200" y="88" text-anchor="middle" font-size="7" fill="#666">+ Add &amp; Norm</text>
+    <rect x="90" y="95" width="220" height="35" rx="4" fill="#fff" stroke="#2980b9"/>
+    <text x="200" y="117" text-anchor="middle" font-size="9" fill="#2980b9">Feed-Forward (MLP)</text>
+    <text x="200" y="138" text-anchor="middle" font-size="7" fill="#666">+ Add &amp; Norm</text>
+    <!-- Repeat indicator -->
+    <text x="200" y="158" text-anchor="middle" font-size="8" fill="#999">--- repeat x6 ---</text>
+    <!-- Input -->
+    <rect x="110" y="240" width="180" height="30" rx="4" fill="#f8f6ff" stroke="#6c5ce7"/>
+    <text x="200" y="259" text-anchor="middle" font-size="8" fill="#6c5ce7">Input Embedding + Positional Encoding</text>
+    <path d="M 200 240 L 200 135" stroke="#2980b9" stroke-width="1" stroke-dasharray="3"/>
+    <text x="200" y="285" text-anchor="middle" font-size="9" fill="#333">"The cat sat on"</text>
+
+    <!-- Decoder stack -->
+    <rect x="440" y="10" width="300" height="280" rx="10" fill="#e8f8f5" stroke="#00b894" stroke-width="2"/>
+    <text x="590" y="32" text-anchor="middle" font-size="12" fill="#00b894" font-weight="bold">DECODER (x6)</text>
+    <!-- Decoder blocks -->
+    <rect x="470" y="45" width="240" height="30" rx="4" fill="#fff" stroke="#00b894"/>
+    <text x="590" y="65" text-anchor="middle" font-size="8" fill="#00b894">Masked Self-Attention (causal)</text>
+    <text x="590" y="82" text-anchor="middle" font-size="7" fill="#666">+ Add &amp; Norm</text>
+    <rect x="470" y="88" width="240" height="30" rx="4" fill="#fff9e6" stroke="#f39c12"/>
+    <text x="590" y="108" text-anchor="middle" font-size="8" fill="#f39c12">Cross-Attention (attend to encoder)</text>
+    <text x="590" y="125" text-anchor="middle" font-size="7" fill="#666">+ Add &amp; Norm</text>
+    <rect x="470" y="131" width="240" height="30" rx="4" fill="#fff" stroke="#00b894"/>
+    <text x="590" y="151" text-anchor="middle" font-size="8" fill="#00b894">Feed-Forward (MLP)</text>
+    <text x="590" y="168" text-anchor="middle" font-size="7" fill="#666">+ Add &amp; Norm</text>
+    <!-- Repeat -->
+    <text x="590" y="185" text-anchor="middle" font-size="8" fill="#999">--- repeat x6 ---</text>
+    <!-- Output -->
+    <rect x="490" y="240" width="200" height="30" rx="4" fill="#f8f6ff" stroke="#6c5ce7"/>
+    <text x="590" y="259" text-anchor="middle" font-size="8" fill="#6c5ce7">Output Embedding + Positional Encoding</text>
+    <text x="590" y="285" text-anchor="middle" font-size="9" fill="#333">"Le chat etait sur"</text>
+    <!-- Cross-attention arrow from encoder to decoder -->
+    <path d="M 340 80 L 468 100" stroke="#f39c12" stroke-width="2" marker-end="url(#ca1)"/>
+    <text x="390" y="75" text-anchor="middle" font-size="7" fill="#f39c12" font-weight="bold">cross-attend</text>
+    <defs><marker id="ca1" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0, 7 2.5, 0 5" fill="#f39c12"/></marker></defs>
+    <!-- Output head -->
+    <rect x="490" y="195" width="200" height="25" rx="4" fill="#6c5ce7" opacity="0.15" stroke="#6c5ce7"/>
+    <text x="590" y="212" text-anchor="middle" font-size="8" fill="#6c5ce7">Linear + Softmax = next token probs</text>
+    <!-- Bottom: evolution note -->
+    <rect x="60" y="300" width="680" height="32" rx="5" fill="#fff9e6" stroke="#f39c12"/>
+    <text x="400" y="315" text-anchor="middle" font-size="9" fill="#333"><tspan font-weight="bold">Modern LLMs (GPT, Llama, Claude):</tspan> Use ONLY the decoder stack. Drop the encoder + cross-attention entirely.</text>
+    <text x="400" y="328" text-anchor="middle" font-size="8" fill="#666">Why? Autoregressive generation only needs left-to-right context. Simpler and scales better.</text>
+  </svg>
+  <p class="citation">Vaswani et al., 2017, "Attention Is All You Need," arXiv:1706.03762, Figure 1 | Original used for machine translation (English to German/French)</p>
+</section>
+
+<!-- WHY TRANSFORMERS WON -->
+<section>
+  <h2>Transformers Won - But Have Fundamental Limits</h2>
+  <div class="two-col">
+    <div>
+      <h3 style="color:var(--green);">Why they dominate</h3>
+      <ul>
+        <li>Fully parallelizable (100x vs. RNNs)</li>
+        <li>O(1) path between any two tokens</li>
+        <li>Scales predictably (power laws)</li>
+        <li>One design = GPT, BERT, Llama, Claude</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="color:var(--red);">What they cannot do</h3>
+      <ul>
+        <li><strong>Cannot plan</strong> (Kambhampati, ICML 2024)</li>
+        <li><strong>Cannot self-verify</strong> outputs</li>
+        <li><strong>No world model</strong> (LeCun, 2024)</li>
+        <li><strong>O(n^2) memory</strong> limits context</li>
+      </ul>
+    </div>
+  </div>
+  <div class="warn-box" style="margin-top:0.4em;">
+    <strong>Kambhampati:</strong> "Auto-regressive LLMs cannot do planning or self-verification. Perceived reasoning stems from approximate retrieval, not inference."<br>
+    <strong>LeCun:</strong> "Current LLMs lack the ability to understand the physical world, remember, reason, and plan."
+  </div>
+  <p style="margin-top:0.4em; font-size:0.72em; color:var(--accent);"><strong>But in 2017-2018, the problem was even more basic:</strong> these early Transformers couldn't reliably answer a factual question, summarize a paragraph, or follow a simple instruction. The architecture was right — it just needed <em>scale</em>.</p>
+  <p class="citation">Kambhampati, 2024, "LLMs Can't Plan," ICML, arXiv:2402.01817 | LeCun, 2024, Harvard Ding Shum Lecture</p>
+</section>
+
+
+<!-- SECTION 2 HEADER -->
+<section>
+  <p class="section-label">Section 2</p>
+  <h1>Scaling</h1>
+  <h2 style="color:var(--accent);">The GPT Story &amp; The Science of "Bigger"</h2>
+  <p style="font-size:0.65em; color:#666; margin-top:0.8em;">How did 117M parameters become 1.8 trillion? What laws govern scaling? And why did a 70B model beat a 280B one?</p>
+</section>
+
+<!-- PRE-TRAIN + FINE-TUNE PARADIGM -->
+<section>
+  <h2>The Pre-train + Fine-tune Paradigm (GPT-1)</h2>
+  <p style="font-size:0.68em;">GPT-1 (2018): One pre-trained model, fine-tuned to many tasks — replacing custom models built from scratch.</p>
+  <svg viewBox="0 0 900 200" style="width:90%; margin-top:0.3em;">
+    <text x="150" y="20" text-anchor="middle" font-size="11" fill="#e74c3c" font-weight="bold">Before GPT-1</text>
+    <rect x="30" y="30" width="240" height="75" rx="6" fill="#ffeef0" stroke="#e74c3c" stroke-width="1"/>
+    <text x="150" y="50" text-anchor="middle" font-size="9" fill="#333">Task A Data = Model A (from scratch)</text>
+    <text x="150" y="66" text-anchor="middle" font-size="9" fill="#333">Task B Data = Model B (from scratch)</text>
+    <text x="150" y="82" text-anchor="middle" font-size="9" fill="#333">Task C Data = Model C (from scratch)</text>
+    <text x="150" y="98" text-anchor="middle" font-size="8" fill="#e74c3c">Each task: separate architecture + data</text>
+    <text x="620" y="20" text-anchor="middle" font-size="11" fill="#00b894" font-weight="bold">After GPT-1</text>
+    <rect x="430" y="30" width="380" height="100" rx="6" fill="#e8f8f5" stroke="#00b894" stroke-width="1.5"/>
+    <rect x="450" y="45" width="140" height="35" rx="4" fill="#fff" stroke="#2980b9"/>
+    <text x="520" y="60" text-anchor="middle" font-size="9" fill="#2980b9" font-weight="bold">Pre-train</text>
+    <text x="520" y="73" text-anchor="middle" font-size="8" fill="#666">Unlabeled text (books)</text>
+    <path d="M 595 62 L 640 47" stroke="#00b894" stroke-width="1.5" marker-end="url(#s2a)"/>
+    <path d="M 595 62 L 640 62" stroke="#00b894" stroke-width="1.5" marker-end="url(#s2a)"/>
+    <path d="M 595 62 L 640 77" stroke="#00b894" stroke-width="1.5" marker-end="url(#s2a)"/>
+    <text x="720" y="50" text-anchor="middle" font-size="8" fill="#333">Fine-tune = Task A</text>
+    <text x="720" y="65" text-anchor="middle" font-size="8" fill="#333">Fine-tune = Task B</text>
+    <text x="720" y="80" text-anchor="middle" font-size="8" fill="#333">Fine-tune = Task C</text>
+    <text x="620" y="120" text-anchor="middle" font-size="8" fill="#00b894">One foundation, many tasks</text>
+    <defs><marker id="s2a" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto"><polygon points="0 0, 6 2, 0 4" fill="#00b894"/></marker></defs>
+    <rect x="30" y="140" width="840" height="45" rx="6" fill="#f0f4f8"/>
+    <text x="450" y="158" text-anchor="middle" font-size="10" fill="#333"><tspan font-weight="bold">GPT-1:</tspan> 12 layers | 117M params | 768-dim | 512-token context | BPE tokenization</text>
+    <text x="450" y="175" text-anchor="middle" font-size="9" fill="#666">Trained on BooksCorpus (~800M words) | Beat task-specific models on 9/12 NLP benchmarks</text>
+  </svg>
+  <p class="citation">Radford et al., 2018, "Improving Language Understanding by Generative Pre-Training" | First decoder-only Transformer for NLP transfer</p>
+</section>
+
+<!-- SCALE UNLOCKS CAPABILITIES -->
+<section>
+  <h2>Scale Unlocks Capabilities (GPT-2 to GPT-3)</h2>
+  <p style="font-size:0.65em;">Same architecture. More parameters. Qualitatively new abilities appear.</p>
+  <svg viewBox="0 0 900 220" style="width:90%; margin-top:0.3em;">
+    <line x1="80" y1="50" x2="820" y2="50" stroke="#ddd" stroke-width="3"/>
+    <circle cx="130" cy="50" r="12" fill="#6c5ce7"/><text x="130" y="54" text-anchor="middle" font-size="8" fill="white" font-weight="bold">1</text>
+    <text x="130" y="30" text-anchor="middle" font-size="9" fill="#333" font-weight="bold">GPT-1</text>
+    <text x="130" y="75" text-anchor="middle" font-size="8" fill="#666">117M</text>
+    <text x="130" y="87" text-anchor="middle" font-size="7" fill="#999">2018</text>
+    <circle cx="320" cy="50" r="18" fill="#2980b9"/><text x="320" y="54" text-anchor="middle" font-size="8" fill="white" font-weight="bold">2</text>
+    <text x="320" y="25" text-anchor="middle" font-size="9" fill="#333" font-weight="bold">GPT-2</text>
+    <text x="320" y="80" text-anchor="middle" font-size="8" fill="#666">1.5B (13x)</text>
+    <text x="320" y="92" text-anchor="middle" font-size="7" fill="#999">2019</text>
+    <circle cx="540" cy="50" r="28" fill="#00b894"/><text x="540" y="54" text-anchor="middle" font-size="8" fill="white" font-weight="bold">3</text>
+    <text x="540" y="15" text-anchor="middle" font-size="9" fill="#333" font-weight="bold">GPT-3</text>
+    <text x="540" y="90" text-anchor="middle" font-size="8" fill="#666">175B (117x)</text>
+    <text x="540" y="102" text-anchor="middle" font-size="7" fill="#999">2020</text>
+    <circle cx="750" cy="50" r="36" fill="#e74c3c"/><text x="750" y="54" text-anchor="middle" font-size="8" fill="white" font-weight="bold">4</text>
+    <text x="750" y="8" text-anchor="middle" font-size="9" fill="#333" font-weight="bold">GPT-4</text>
+    <text x="750" y="98" text-anchor="middle" font-size="8" fill="#666">~1.8T MoE</text>
+    <text x="750" y="110" text-anchor="middle" font-size="7" fill="#999">2023</text>
+    <rect x="80" y="125" width="180" height="30" rx="4" fill="#f8f6ff" stroke="#6c5ce7"/>
+    <text x="170" y="144" text-anchor="middle" font-size="8" fill="#6c5ce7">Fine-tune per task</text>
+    <rect x="255" y="125" width="180" height="30" rx="4" fill="#e8f4fd" stroke="#2980b9"/>
+    <text x="345" y="144" text-anchor="middle" font-size="8" fill="#2980b9">Zero-shot emergence</text>
+    <rect x="445" y="125" width="210" height="30" rx="4" fill="#e8f8f5" stroke="#00b894"/>
+    <text x="550" y="144" text-anchor="middle" font-size="8" fill="#00b894">In-context learning (few-shot)</text>
+    <rect x="645" y="125" width="190" height="30" rx="4" fill="#ffeef0" stroke="#e74c3c"/>
+    <text x="740" y="144" text-anchor="middle" font-size="8" fill="#e74c3c">Multimodal + reasoning</text>
+    <rect x="150" y="170" width="600" height="35" rx="6" fill="#fff9e6" stroke="#f39c12"/>
+    <text x="450" y="188" text-anchor="middle" font-size="10" fill="#333"><tspan font-weight="bold">Key insight:</tspan> The architecture barely changed. Scale drove ALL breakthroughs.</text>
+    <text x="450" y="202" text-anchor="middle" font-size="9" fill="#666">Same decoder-only Transformer, same GELU, same multi-head attention.</text>
+  </svg>
+  <p class="citation">Radford et al., 2018 (GPT-1) | Radford et al., 2019 (GPT-2) | Brown et al., 2020, arXiv:2005.14165 (GPT-3)</p>
+</section>
+
+<!-- IN-CONTEXT LEARNING -->
+<section>
+  <h2>GPT-3's Breakthrough: In-Context Learning</h2>
+  <p style="font-size:0.65em;">No fine-tuning. No gradient updates. Just <strong>examples in the prompt</strong>.</p>
+  <div class="two-col" style="margin-top:0.4em;">
+    <div>
+      <h3 style="color:var(--accent2);">Few-Shot Prompt</h3>
+      <pre><code>Translate English to French:
+sea otter = loutre de mer
+cheese = fromage
+plaid shirt =</code></pre>
+      <p style="font-size:0.8em; margin-top:0.3em;"><strong>Output:</strong> "chemise a carreaux" (correct!)</p>
+      <p style="font-size:0.75em; color:#666;">Model learns the pattern from examples in real-time.</p>
+    </div>
+    <div>
+      <h3 style="color:var(--accent2);">Three Evaluation Modes</h3>
+      <table>
+        <tr><th>Mode</th><th>What's given</th><th>Quality</th></tr>
+        <tr><td>Zero-shot</td><td>Task description only</td><td>Inconsistent</td></tr>
+        <tr><td>One-shot</td><td>1 example</td><td>Much better</td></tr>
+        <tr><td>Few-shot</td><td>10-100 examples</td><td>Near fine-tuned</td></tr>
+      </table>
+      <div class="highlight-box" style="margin-top:0.5em;">
+        <strong>Why this matters:</strong> No training needed per task. One API call does translation, QA, coding, math...
+      </div>
+    </div>
+  </div>
+  <p class="citation">Brown et al., 2020, "Language Models are Few-Shot Learners," arXiv:2005.14165 | Cost: ~$4.6M to train (2020 estimate)</p>
+</section>
+
+<!-- SCALING LAWS -->
+<section>
+  <h2>Scaling Laws - The Science of "Bigger"</h2>
+  <p style="font-size:0.65em;">Performance follows <strong>smooth power-law relationships</strong> with model size, data, and compute.</p>
+  <svg viewBox="0 0 900 200" style="width:90%; margin-top:0.3em;">
+    <rect x="30" y="15" width="380" height="175" rx="6" fill="#fafafa" stroke="#ddd"/>
+    <text x="220" y="12" text-anchor="middle" font-size="9" fill="#333" font-weight="bold">Loss vs. Compute (log-log scale)</text>
+    <line x1="70" y1="170" x2="380" y2="170" stroke="#999" stroke-width="1"/>
+    <line x1="70" y1="170" x2="70" y2="30" stroke="#999" stroke-width="1"/>
+    <line x1="90" y1="40" x2="370" y2="155" stroke="#6c5ce7" stroke-width="2.5"/>
+    <circle cx="110" cy="55" r="4" fill="#6c5ce7"/><text x="125" y="52" font-size="7" fill="#666">GPT-1</text>
+    <circle cx="180" cy="85" r="5" fill="#2980b9"/><text x="195" y="82" font-size="7" fill="#666">GPT-2</text>
+    <circle cx="280" cy="120" r="7" fill="#00b894"/><text x="298" y="118" font-size="7" fill="#666">GPT-3</text>
+    <circle cx="355" cy="148" r="8" fill="#e74c3c"/><text x="345" y="140" font-size="7" fill="#666">GPT-4</text>
+    <text x="220" y="70" font-size="8" fill="#6c5ce7" font-style="italic">Remarkably linear on log-log!</text>
+    <rect x="450" y="25" width="420" height="160" rx="8" fill="#f8f6ff" stroke="#6c5ce7" stroke-width="1.5"/>
+    <text x="660" y="48" text-anchor="middle" font-size="10" fill="#6c5ce7" font-weight="bold">The Three Power Laws (Kaplan, 2020)</text>
+    <text x="480" y="78" font-size="10" fill="#333">L(N): loss scales with model size</text>
+    <text x="680" y="78" font-size="9" fill="#666">10x params = 17% less loss</text>
+    <text x="480" y="103" font-size="10" fill="#333">L(D): loss scales with data size</text>
+    <text x="680" y="103" font-size="9" fill="#666">10x data = 20% less loss</text>
+    <text x="480" y="128" font-size="10" fill="#333">L(C): loss scales with compute</text>
+    <text x="680" y="128" font-size="9" fill="#666">10x compute = 11% less loss</text>
+    <line x1="470" y1="143" x2="850" y2="143" stroke="#eee" stroke-width="1"/>
+    <text x="660" y="162" text-anchor="middle" font-size="9" fill="#444">Holds across 7+ orders of magnitude.</text>
+    <text x="660" y="177" text-anchor="middle" font-size="9" fill="#666">You can <tspan font-weight="bold">predict</tspan> training loss before spending the compute.</text>
+  </svg>
+  <p class="citation">Kaplan et al., 2020, "Scaling Laws for Neural Language Models," arXiv:2001.08361</p>
+</section>
+
+<!-- CHINCHILLA & TRAINING REGIMES -->
+<section>
+  <h2>The Chinchilla Moment — Smarter Scaling</h2>
+  <p style="font-size:0.65em;">DeepMind showed the industry was building models <strong>too large</strong> and training them <strong>too little</strong>. Then Meta flipped the script.</p>
+  <svg viewBox="0 0 900 280" style="width:92%; margin-top:0.3em;">
+    <!-- The key comparison -->
+    <rect x="30" y="10" width="380" height="80" rx="6" fill="#ffeef0" stroke="#e74c3c" stroke-width="1.5"/>
+    <text x="220" y="30" text-anchor="middle" font-size="10" fill="#e74c3c" font-weight="bold">Gopher (280B params, 300B tokens)</text>
+    <text x="220" y="48" text-anchor="middle" font-size="9" fill="#333">MMLU: 60.0%</text>
+    <text x="220" y="65" text-anchor="middle" font-size="8" fill="#e74c3c">1.07 tokens/param — massively undertrained</text>
+    <text x="220" y="82" text-anchor="middle" font-size="8" fill="#999">4x bigger, 4.7x less data</text>
+    <text x="440" y="50" text-anchor="middle" font-size="16" fill="#00b894">→</text>
+    <rect x="470" y="10" width="400" height="80" rx="6" fill="#e8f8f5" stroke="#00b894" stroke-width="2"/>
+    <text x="670" y="30" text-anchor="middle" font-size="10" fill="#00b894" font-weight="bold">Chinchilla (70B params, 1.4T tokens)</text>
+    <text x="670" y="48" text-anchor="middle" font-size="9" fill="#333">MMLU: 67.6% &#x1F3C6;</text>
+    <text x="670" y="65" text-anchor="middle" font-size="8" fill="#00b894">20 tokens/param — compute-optimal</text>
+    <text x="670" y="82" text-anchor="middle" font-size="8" fill="#00b894" font-weight="bold">Same compute budget, better results</text>
+    <!-- Training regimes spectrum -->
+    <line x1="80" y1="145" x2="860" y2="145" stroke="#999" stroke-width="1.5"/>
+    <text x="470" y="168" text-anchor="middle" font-size="8" fill="#999">Tokens per Parameter (log scale)</text>
+    <text x="140" y="160" text-anchor="middle" font-size="7" fill="#aaa">1.7</text>
+    <text x="340" y="160" text-anchor="middle" font-size="7" fill="#aaa">20</text>
+    <text x="780" y="160" text-anchor="middle" font-size="7" fill="#aaa">1,875</text>
+    <!-- Chinchilla optimal line -->
+    <line x1="340" y1="100" x2="340" y2="145" stroke="#00b894" stroke-width="2" stroke-dasharray="4"/>
+    <text x="340" y="97" text-anchor="middle" font-size="7" fill="#00b894" font-weight="bold">Optimal (~20x)</text>
+    <!-- Zones -->
+    <rect x="80" y="105" width="255" height="38" rx="4" fill="#ffeef0" opacity="0.4"/>
+    <text x="207" y="120" text-anchor="middle" font-size="8" fill="#e74c3c" font-weight="bold">UNDERTRAINED</text>
+    <rect x="345" y="105" width="520" height="38" rx="4" fill="#e8f8f5" opacity="0.4"/>
+    <text x="605" y="120" text-anchor="middle" font-size="8" fill="#00b894" font-weight="bold">OVER-TRAINED (cheaper inference)</text>
+    <!-- Model dots on the spectrum -->
+    <circle cx="140" cy="145" r="10" fill="#e74c3c"/><text x="140" y="149" text-anchor="middle" font-size="6" fill="white" font-weight="bold">GPT-3</text>
+    <text x="140" y="182" text-anchor="middle" font-size="7" fill="#666">175B | 1.7x</text>
+    <circle cx="340" cy="145" r="10" fill="#00b894"/><text x="340" y="149" text-anchor="middle" font-size="6" fill="white" font-weight="bold">Chinch.</text>
+    <text x="340" y="182" text-anchor="middle" font-size="7" fill="#666">70B | 20x</text>
+    <circle cx="420" cy="145" r="10" fill="#2980b9"/><text x="420" y="149" text-anchor="middle" font-size="6" fill="white" font-weight="bold">Llama1</text>
+    <text x="420" y="182" text-anchor="middle" font-size="7" fill="#666">65B | 21.5x</text>
+    <circle cx="500" cy="145" r="10" fill="#f39c12"/><text x="500" y="149" text-anchor="middle" font-size="6" fill="white" font-weight="bold">Llama2</text>
+    <text x="500" y="182" text-anchor="middle" font-size="7" fill="#666">70B | 28.6x</text>
+    <circle cx="780" cy="145" r="14" fill="#6c5ce7"/><text x="780" y="149" text-anchor="middle" font-size="6" fill="white" font-weight="bold">Llama3</text>
+    <text x="780" y="182" text-anchor="middle" font-size="7" fill="#666">8B | 1,875x</text>
+    <!-- Bottom insight -->
+    <rect x="100" y="200" width="700" height="65" rx="6" fill="#f0f4f8" stroke="#6c5ce7" stroke-width="1.5"/>
+    <text x="450" y="220" text-anchor="middle" font-size="9" fill="#6c5ce7" font-weight="bold">The Industry Shift</text>
+    <text x="450" y="238" text-anchor="middle" font-size="9" fill="#333">Chinchilla: "balance params and data for cheapest <tspan font-weight="bold">training</tspan>"</text>
+    <text x="450" y="254" text-anchor="middle" font-size="9" fill="#333">Llama 3: "over-train smaller models because <tspan font-weight="bold">inference is the real cost</tspan>"</text>
+  </svg>
+  <p class="citation">Hoffmann et al., 2022, "Training Compute-Optimal LLMs," arXiv:2203.15556 | Touvron et al., 2023 (Llama) | Meta, 2024, "The Llama 3 Herd of Models"</p>
+</section>
+
+<!-- INSTRUCTION TUNING -->
+<section>
+  <h2>The Missing Link: Instruction-Tuning</h2>
+  <p style="font-size:0.65em;">Scale gave us capable models. But scale alone didn't make them <strong>usable</strong>.</p>
+  <svg viewBox="0 0 900 180" style="width:90%; margin-top:0.3em;">
+    <rect x="30" y="20" width="380" height="70" rx="6" fill="#ffeef0" stroke="#e74c3c" stroke-width="1.5"/>
+    <text x="220" y="42" text-anchor="middle" font-size="10" fill="#e74c3c" font-weight="bold">GPT-3 without instruction-tuning:</text>
+    <text x="220" y="60" text-anchor="middle" font-size="9" fill="#333">"What is the capital of France?"</text>
+    <text x="220" y="76" text-anchor="middle" font-size="9" fill="#e74c3c">= "What is the capital of Germany? What is..." (keeps going)</text>
+    <rect x="450" y="20" width="420" height="70" rx="6" fill="#e8f8f5" stroke="#00b894" stroke-width="1.5"/>
+    <text x="660" y="42" text-anchor="middle" font-size="10" fill="#00b894" font-weight="bold">After instruction-tuning:</text>
+    <text x="660" y="60" text-anchor="middle" font-size="9" fill="#333">"What is the capital of France?"</text>
+    <text x="660" y="76" text-anchor="middle" font-size="9" fill="#00b894">= "Paris." (correct!)</text>
+    <line x1="60" y1="130" x2="840" y2="130" stroke="#ddd" stroke-width="2"/>
+    <circle cx="100" cy="130" r="6" fill="#f39c12"/><text x="100" y="150" text-anchor="middle" font-size="7" fill="#333">DQI: Data Quality in NLP</text><text x="100" y="162" text-anchor="middle" font-size="7" fill="#999"><tspan font-weight="bold">Mishra</tspan>, <tspan font-weight="bold">Sachdeva</tspan> et al., 2020</text>
+    <circle cx="260" cy="130" r="6" fill="#6c5ce7"/><text x="260" y="150" text-anchor="middle" font-size="7" fill="#333">Natural Instructions</text><text x="260" y="162" text-anchor="middle" font-size="7" fill="#999"><tspan font-weight="bold">Mishra</tspan> et al., 2021</text>
+    <circle cx="430" cy="130" r="6" fill="#2980b9"/><text x="430" y="150" text-anchor="middle" font-size="7" fill="#333">Super-NaturalInstructions</text><text x="430" y="162" text-anchor="middle" font-size="7" fill="#999"><tspan font-weight="bold">Mishra</tspan>, Wang et al., 2022</text>
+    <circle cx="610" cy="130" r="6" fill="#00b894"/><text x="610" y="150" text-anchor="middle" font-size="7" fill="#333">Self-Instruct</text><text x="610" y="162" text-anchor="middle" font-size="7" fill="#999">Wang, <tspan font-weight="bold">Mishra</tspan> et al., 2023</text>
+    <circle cx="790" cy="130" r="6" fill="#e74c3c"/><text x="790" y="150" text-anchor="middle" font-size="7" fill="#333">InstructGPT / ChatGPT</text><text x="790" y="162" text-anchor="middle" font-size="7" fill="#999">Ouyang et al., 2022</text>
+    <path d="M 108 130 L 252 130" stroke="#f39c12" stroke-width="1.5" marker-end="url(#s2b)"/>
+    <path d="M 268 130 L 422 130" stroke="#6c5ce7" stroke-width="1.5" marker-end="url(#s2b)"/>
+    <path d="M 438 130 L 602 130" stroke="#2980b9" stroke-width="1.5" marker-end="url(#s2b)"/>
+    <path d="M 618 130 L 782 130" stroke="#00b894" stroke-width="1.5" marker-end="url(#s2b)"/>
+    <defs><marker id="s2b" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto"><polygon points="0 0, 6 2, 0 4" fill="#666"/></marker></defs>
+  </svg>
+  <div class="analogy">
+    <strong>Key finding (<b>Mishra</b> et al., 2023):</strong> 1 well-written instruction is equivalent to ~200 training examples in terms of performance gain. Instructions are an extremely efficient form of scaling.
+  </div>
+  <p class="citation"><b>Mishra</b>, Arunkumar, <b>Sachdeva</b>, Bryan, Baral, 2020, arXiv:2005.00816 (DQI) | <b>Mishra</b> et al., 2021, arXiv:2104.08773 (First instruction-tuning paper) | Wang, <b>Mishra</b> et al., 2022, EMNLP | AI2 Lasting Impact Paper Award</p>
+</section>
+
+<!-- EMERGENCE: OUR RESEARCH -->
+<section>
+  <h2>Emergence: What Our Research Found</h2>
+  <p style="font-size:0.65em;">Does scale magically solve reasoning? We tested this. The answer: <strong>not yet</strong>.</p>
+  <svg viewBox="0 0 900 370" style="width:92%; margin-top:0.2em;">
+    <!-- LEFT: NumGLUE -->
+    <text x="200" y="18" text-anchor="middle" font-size="11" fill="#333" font-weight="bold">NumGLUE: Math Reasoning (ACL 2022)</text>
+    <text x="200" y="32" text-anchor="middle" font-size="8" fill="#666"><tspan font-weight="bold">Mishra</tspan>, <tspan font-weight="bold">Sachdeva</tspan> et al. | arXiv:2204.05660</text>
+    <!-- Human bar -->
+    <text x="60" y="58" font-size="9" fill="#333" font-weight="bold">Humans</text>
+    <rect x="120" y="45" width="220" height="22" rx="4" fill="#00b894"/>
+    <text x="350" y="60" font-size="10" fill="#00b894" font-weight="bold">86%</text>
+    <!-- GPT-3 bar -->
+    <text x="60" y="88" font-size="9" fill="#333" font-weight="bold">GPT-3 175B</text>
+    <rect x="120" y="75" width="102" height="22" rx="4" fill="#e74c3c"/>
+    <text x="232" y="90" font-size="10" fill="#e74c3c" font-weight="bold">40%</text>
+    <!-- Gap bracket -->
+    <line x1="370" y1="50" x2="380" y2="50" stroke="#f39c12" stroke-width="2"/>
+    <line x1="380" y1="50" x2="380" y2="90" stroke="#f39c12" stroke-width="2"/>
+    <line x1="370" y1="90" x2="380" y2="90" stroke="#f39c12" stroke-width="2"/>
+    <text x="395" y="74" font-size="11" fill="#f39c12" font-weight="bold">46.4%</text>
+    <text x="395" y="87" font-size="9" fill="#f39c12">gap</text>
+
+    <!-- RIGHT: Self-Discover box - made taller to fit content -->
+    <rect x="470" y="5" width="410" height="155" rx="8" fill="#f8f6ff" stroke="#6c5ce7" stroke-width="1.5"/>
+    <text x="630" y="28" text-anchor="middle" font-size="11" fill="#6c5ce7" font-weight="bold">Self-Discover (DeepMind, 2024)</text>
+    <text x="630" y="42" text-anchor="middle" font-size="8" fill="#666">Zhou, <tspan font-weight="bold">Mishra</tspan> et al. | arXiv:2402.03620</text>
+
+    <!-- IMO Silver Badge - top right corner of box -->
+    <circle cx="840" cy="25" r="16" fill="#C0C0C0" stroke="#888" stroke-width="1.5"/>
+    <text x="840" y="23" text-anchor="middle" font-size="5.5" fill="#333" font-weight="bold">IMO</text>
+    <text x="840" y="31" text-anchor="middle" font-size="5" fill="#555">SILVER</text>
+    <!-- IMO Gold Badge - top right corner of box -->
+    <circle cx="868" cy="45" r="16" fill="#FFD700" stroke="#DAA520" stroke-width="1.5"/>
+    <text x="868" y="43" text-anchor="middle" font-size="5.5" fill="#333" font-weight="bold">IMO</text>
+    <text x="868" y="51" text-anchor="middle" font-size="5" fill="#555">GOLD</text>
+
+    <text x="490" y="62" font-size="8" fill="#333">Instead of hoping scale solves reasoning:</text>
+    <text x="490" y="80" font-size="9" fill="#6c5ce7" font-weight="bold">Let the model DISCOVER its own reasoning structure</text>
+    <!-- Steps -->
+    <rect x="490" y="90" width="100" height="22" rx="3" fill="#e8f4fd" stroke="#2980b9"/>
+    <text x="540" y="105" text-anchor="middle" font-size="7" fill="#2980b9">1. SELECT</text>
+    <path d="M 593 101 L 608 101" stroke="#999" stroke-width="1" marker-end="url(#sd1)"/>
+    <rect x="610" y="90" width="100" height="22" rx="3" fill="#e8f8f5" stroke="#00b894"/>
+    <text x="660" y="105" text-anchor="middle" font-size="7" fill="#00b894">2. ADAPT</text>
+    <path d="M 713 101 L 728 101" stroke="#999" stroke-width="1" marker-end="url(#sd1)"/>
+    <rect x="730" y="90" width="120" height="22" rx="3" fill="#fff9e6" stroke="#f39c12"/>
+    <text x="790" y="105" text-anchor="middle" font-size="7" fill="#f39c12">3. IMPLEMENT</text>
+    <defs><marker id="sd1" markerWidth="5" markerHeight="4" refX="4" refY="2" orient="auto"><polygon points="0 0, 5 2, 0 4" fill="#999"/></marker></defs>
+    <text x="650" y="132" text-anchor="middle" font-size="9" fill="#333">Result: +32% on BBH tasks over Chain-of-Thought</text>
+    <text x="650" y="150" text-anchor="middle" font-size="10" fill="#00b894" font-weight="bold">Better methods beat bigger models.</text>
+
+    <!-- Bottom unified message - with 30px gap -->
+    <rect x="30" y="190" width="840" height="50" rx="6" fill="#fff9e6" stroke="#f39c12" stroke-width="1.5"/>
+    <text x="450" y="212" text-anchor="middle" font-size="10" fill="#333" font-weight="bold">The lesson from our research:</text>
+    <text x="450" y="230" text-anchor="middle" font-size="9" fill="#333">NumGLUE proved scale alone fails at math (46.4% gap). Self-Discover proved <tspan font-weight="bold" fill="#6c5ce7">better reasoning methods</tspan> close that gap.</text>
+
+    <!-- Bottom badges row - with 30px gap -->
+    <rect x="80" y="270" width="150" height="55" rx="6" fill="#e8f4fd" stroke="#2980b9"/>
+    <text x="155" y="290" text-anchor="middle" font-size="8" fill="#2980b9" font-weight="bold">ACL 2022</text>
+    <text x="155" y="305" text-anchor="middle" font-size="8" fill="#333">NumGLUE Benchmark</text>
+    <text x="155" y="318" text-anchor="middle" font-size="7" fill="#666"><tspan font-weight="bold">Sachdeva</tspan>, <tspan font-weight="bold">Mishra</tspan> et al.</text>
+
+    <rect x="270" y="270" width="150" height="55" rx="6" fill="#f8f6ff" stroke="#6c5ce7"/>
+    <text x="345" y="290" text-anchor="middle" font-size="8" fill="#6c5ce7" font-weight="bold">Google DeepMind</text>
+    <text x="345" y="305" text-anchor="middle" font-size="8" fill="#333">Self-Discover</text>
+    <text x="345" y="318" text-anchor="middle" font-size="7" fill="#666">Zhou, <tspan font-weight="bold">Mishra</tspan> et al.</text>
+
+    <rect x="460" y="270" width="150" height="55" rx="6" fill="#e8f8f5" stroke="#00b894"/>
+    <text x="535" y="290" text-anchor="middle" font-size="8" fill="#00b894" font-weight="bold">EMNLP 2022</text>
+    <text x="535" y="305" text-anchor="middle" font-size="8" fill="#333">LILA (20 math datasets)</text>
+    <text x="535" y="318" text-anchor="middle" font-size="7" fill="#666"><tspan font-weight="bold">Mishra</tspan> et al.</text>
+
+    <rect x="650" y="270" width="180" height="55" rx="6" fill="#fff9e6" stroke="#f39c12"/>
+    <text x="740" y="290" text-anchor="middle" font-size="8" fill="#f39c12" font-weight="bold">AI2 Lasting Impact Award</text>
+    <text x="740" y="305" text-anchor="middle" font-size="8" fill="#333">Natural Instructions</text>
+    <text x="740" y="318" text-anchor="middle" font-size="7" fill="#666"><tspan font-weight="bold">Mishra</tspan> et al., 2021</text>
+  </svg>
+  <p class="citation"><b>Mishra</b>, <b>Sachdeva</b> et al., 2022, "NumGLUE," ACL 2022 | Zhou, <b>Mishra</b> et al., 2024, "Self-Discover," DeepMind | Schaeffer et al., 2023, arXiv:2304.15004</p>
+</section>
+
+
+<!-- ============================================================ -->
+<!-- SECTION 3: ALIGNMENT — MAKING MODELS USEFUL                  -->
+<!-- ============================================================ -->
+
+<!-- SECTION 3 HEADER -->
+<section>
+  <p class="section-label">Section 3</p>
+  <h1>Alignment</h1>
+  <h2 style="color:var(--accent);">Making Models Actually Useful</h2>
+  <p style="font-size:0.65em; color:#666; margin-top:0.8em;">175B parameters doesn't mean helpful. How do we get models to do what users actually want?</p>
+</section>
+
+<!-- THE ALIGNMENT PROBLEM -->
+<section>
+  <h2>The Alignment Problem</h2>
+  <p style="font-size:0.68em;">A model can be incredibly capable but completely <strong>unhelpful</strong>. Alignment bridges that gap.</p>
+  <img src="images/alignment-meme.jpg" alt="You are a good question but your question hurts me" style="max-height:130px; border-radius:8px; margin-bottom:0.3em;">
+  <div class="two-col" style="margin-top:0.4em;">
+    <div>
+      <h3 style="color:var(--red);">Raw GPT-3 (175B, unaligned)</h3>
+      <pre><code>User: "What is the capital of France?"
+
+GPT-3: "What is the capital of France?
+This is a question that many students
+ask in geography class. The capital
+of a country is typically the city
+where..." (never answers)</code></pre>
+    </div>
+    <div>
+      <h3 style="color:var(--green);">InstructGPT (1.3B, aligned)</h3>
+      <pre><code>User: "What is the capital of France?"
+
+InstructGPT: "The capital of France
+is Paris."</code></pre>
+      <div class="highlight-box" style="margin-top:0.5em;">
+        <strong>135x fewer parameters.</strong><br>
+        Dramatically more useful.
+      </div>
+    </div>
+  </div>
+  <svg viewBox="0 0 900 100" style="width:90%; margin-top:0.4em;">
+    <rect x="30" y="10" width="840" height="80" rx="8" fill="#fff9e6" stroke="#f39c12" stroke-width="1.5"/>
+    <text x="450" y="35" text-anchor="middle" font-size="11" fill="#f39c12" font-weight="bold">The Three Faces of Alignment</text>
+    <rect x="60" y="48" width="230" height="32" rx="5" fill="#e8f8f5" stroke="#00b894"/>
+    <text x="175" y="69" text-anchor="middle" font-size="10" fill="#00b894" font-weight="bold">Helpful</text>
+    <rect x="320" y="48" width="230" height="32" rx="5" fill="#e8f4fd" stroke="#2980b9"/>
+    <text x="435" y="69" text-anchor="middle" font-size="10" fill="#2980b9" font-weight="bold">Harmless</text>
+    <rect x="580" y="48" width="230" height="32" rx="5" fill="#f8f6ff" stroke="#6c5ce7"/>
+    <text x="695" y="69" text-anchor="middle" font-size="10" fill="#6c5ce7" font-weight="bold">Honest</text>
+  </svg>
+  <p class="citation">Ouyang et al., 2022, "Training Language Models to Follow Instructions," arXiv:2203.02155 | Askell et al., 2021 (HHH criteria)</p>
+</section>
+
+
+<!-- ALIGNMENT METHODS LANDSCAPE -->
+<section>
+  <h2>The Alignment Methods Landscape (2022-2026)</h2>
+  <p style="font-size:0.65em;">From complex RL to simple classification losses. The trend: simpler training, same quality.</p>
+  <svg viewBox="0 0 900 200" style="width:92%; margin-top:0.3em;">
+    <line x1="60" y1="170" x2="860" y2="170" stroke="#ddd" stroke-width="2"/>
+    <text x="130" y="190" text-anchor="middle" font-size="8" fill="#999">2022</text>
+    <text x="350" y="190" text-anchor="middle" font-size="8" fill="#999">2023</text>
+    <text x="580" y="190" text-anchor="middle" font-size="8" fill="#999">2024</text>
+    <text x="800" y="190" text-anchor="middle" font-size="8" fill="#999">2025+</text>
+    <rect x="70" y="30" width="120" height="55" rx="5" fill="#e8f4fd" stroke="#2980b9" stroke-width="1.5"/>
+    <text x="130" y="50" text-anchor="middle" font-size="9" fill="#2980b9" font-weight="bold">RLHF (PPO)</text>
+    <text x="130" y="64" text-anchor="middle" font-size="7" fill="#666">3 models, complex</text>
+    <text x="130" y="78" text-anchor="middle" font-size="7" fill="#666">Industry standard</text>
+    <rect x="200" y="30" width="120" height="55" rx="5" fill="#fff9e6" stroke="#f39c12" stroke-width="1.5"/>
+    <text x="260" y="50" text-anchor="middle" font-size="9" fill="#f39c12" font-weight="bold">Constitutional AI</text>
+    <text x="260" y="64" text-anchor="middle" font-size="7" fill="#666">AI self-critique</text>
+    <text x="260" y="78" text-anchor="middle" font-size="7" fill="#666">Explicit principles</text>
+    <rect x="330" y="95" width="110" height="55" rx="5" fill="#e8f8f5" stroke="#00b894" stroke-width="2"/>
+    <text x="385" y="115" text-anchor="middle" font-size="9" fill="#00b894" font-weight="bold">DPO</text>
+    <text x="385" y="129" text-anchor="middle" font-size="7" fill="#666">No RM needed</text>
+    <text x="385" y="143" text-anchor="middle" font-size="7" fill="#666">1 hyperparameter</text>
+    <rect x="450" y="95" width="100" height="55" rx="5" fill="#f8f6ff" stroke="#6c5ce7" stroke-width="1.5"/>
+    <text x="500" y="115" text-anchor="middle" font-size="9" fill="#6c5ce7" font-weight="bold">RLAIF</text>
+    <text x="500" y="129" text-anchor="middle" font-size="7" fill="#666">AI generates</text>
+    <text x="500" y="143" text-anchor="middle" font-size="7" fill="#666">preferences</text>
+    <rect x="560" y="30" width="100" height="55" rx="5" fill="#ffeef0" stroke="#e74c3c" stroke-width="1.5"/>
+    <text x="610" y="50" text-anchor="middle" font-size="9" fill="#e74c3c" font-weight="bold">KTO</text>
+    <text x="610" y="64" text-anchor="middle" font-size="7" fill="#666">Binary feedback only</text>
+    <text x="610" y="78" text-anchor="middle" font-size="7" fill="#666">thumbs up/down</text>
+    <rect x="670" y="30" width="100" height="55" rx="5" fill="#e8f8f5" stroke="#00b894" stroke-width="1.5"/>
+    <text x="720" y="50" text-anchor="middle" font-size="9" fill="#00b894" font-weight="bold">ORPO</text>
+    <text x="720" y="64" text-anchor="middle" font-size="7" fill="#666">No reference model</text>
+    <text x="720" y="78" text-anchor="middle" font-size="7" fill="#666">Single-stage</text>
+    <rect x="780" y="95" width="95" height="55" rx="5" fill="#fff9e6" stroke="#f39c12" stroke-width="1.5"/>
+    <text x="827" y="115" text-anchor="middle" font-size="9" fill="#f39c12" font-weight="bold">Online DPO</text>
+    <text x="827" y="129" text-anchor="middle" font-size="7" fill="#666">Iterative refinement</text>
+    <text x="827" y="143" text-anchor="middle" font-size="7" fill="#666">+ on-policy data</text>
+  </svg>
+  <div class="highlight-box">
+    <strong>Trend:</strong> Fewer models needed &#x2192; fewer hyperparameters &#x2192; simpler feedback signals &#x2192; toward single-stage alignment.
+  </div>
+  <p class="citation">Bai et al., 2022 (CAI) | Rafailov 2023 (DPO) | Lee et al., 2023 (RLAIF) | Ethayarajh 2024 (KTO) | Hong et al., 2024 (ORPO)</p>
+</section>
+
+
+<!-- ALIGNMENT LIMITATIONS -->
+<section>
+  <h2>Alignment Limitations &#x2014; An Honest Assessment</h2>
+  <p style="font-size:0.65em;">RLHF/DPO make models more useful, but they do NOT solve alignment in any deep sense.</p>
+  <div style="display:flex; align-items:flex-start; gap:1.2em; margin-top:0.4em;">
+    <img src="images/clever-hans.jpg" alt="Clever Hans (1904) — appeared intelligent but was reading body language cues" style="max-height:160px; border-radius:8px; border:2px solid #f39c12; flex-shrink:0;" title="Clever Hans (1904): Appeared to solve math, actually exploited shortcuts.">
+    <div style="flex:1;">
+      <svg viewBox="0 0 700 160" style="width:100%;">
+        <!-- Left: What alignment DOES -->
+        <rect x="0" y="0" width="330" height="155" rx="8" fill="#e8f8f5" stroke="#00b894" stroke-width="1.5"/>
+        <text x="165" y="20" text-anchor="middle" font-size="11" fill="#00b894" font-weight="bold">&#x2705; What Alignment DOES</text>
+        <line x1="15" y1="28" x2="315" y2="28" stroke="#00b894" stroke-width="0.5" opacity="0.5"/>
+        <text x="20" y="48" font-size="9" fill="#333">&#x2022; Makes outputs more helpful</text>
+        <text x="20" y="66" font-size="9" fill="#333">&#x2022; Reduces obvious toxicity</text>
+        <text x="20" y="84" font-size="9" fill="#333">&#x2022; Improves instruction following</text>
+        <text x="20" y="102" font-size="9" fill="#333">&#x2022; Makes models more predictable</text>
+        <text x="20" y="125" font-size="8" fill="#00b894" font-weight="bold">= Surface-level behavior control</text>
+        <text x="20" y="145" font-size="8" fill="#666">Makes models usable, not deeply safe</text>
+        <!-- Right: What alignment does NOT do -->
+        <rect x="350" y="0" width="345" height="155" rx="8" fill="#ffeef0" stroke="#e74c3c" stroke-width="1.5"/>
+        <text x="522" y="20" text-anchor="middle" font-size="11" fill="#e74c3c" font-weight="bold">&#x274C; What Alignment Does NOT Do</text>
+        <line x1="365" y1="28" x2="680" y2="28" stroke="#e74c3c" stroke-width="0.5" opacity="0.5"/>
+        <text x="365" y="48" font-size="9" fill="#333">&#x2022; Make models truthful</text>
+        <text x="365" y="66" font-size="9" fill="#333">&#x2022; Eliminate hallucination</text>
+        <text x="365" y="84" font-size="9" fill="#333">&#x2022; Give models values or understanding</text>
+        <text x="365" y="102" font-size="9" fill="#333">&#x2022; Solve safety (jailbreaks are trivial)</text>
+        <text x="365" y="125" font-size="8" fill="#e74c3c" font-weight="bold">= Deep problems remain unsolved</text>
+        <text x="365" y="145" font-size="8" fill="#666">Like Clever Hans &#x2014; appears smart, exploits shortcuts</text>
+      </svg>
+    </div>
+  </div>
+  <p class="citation">Casper et al., 2023, "Open Problems and Fundamental Limitations of RLHF," arXiv:2307.15217 | Clever Hans photo: Britannica, 1904</p>
+</section>
+
+
+<!-- ============================================================ -->
+<!-- SECTION 4: FINE-TUNING — MAKING MODELS YOUR OWN             -->
+<!-- ============================================================ -->
+
+<!-- SECTION 4 HEADER -->
+<section>
+  <p class="section-label">Section 4</p>
+  <h1>Fine-Tuning</h1>
+  <h2 style="color:var(--accent);">Making Models Your Own</h2>
+  <p style="font-size:0.65em; color:#666; margin-top:0.8em;">Pre-trained models know language. Fine-tuning teaches them YOUR task, domain, and style. But how do you do it without breaking the bank?</p>
+</section>
+
+<!-- WHY FINE-TUNE: THE PROBLEM -->
+<section>
+  <h2>Why Fine-Tune? A Real-World Example</h2>
+  <p style="font-size:0.65em;">From my experience at AWS Security Services: How do you teach a model to reason about attack paths?</p>
+  <img src="images/security-hub-attack-path.png" alt="AWS Security Hub attack path visualization" style="max-height:220px; border-radius:8px; border:1px solid #ddd; display:block; margin:0.4em auto;">
+  <div style="margin-top:0.4em; font-size:0.65em; max-width:90%; margin-left:auto; margin-right:auto;">
+    <p><strong>What this shows:</strong> Security Hub maps an EC2 instance's full blast radius — from its VPC/Subnet topology, through Security Groups and IAM Roles, down to individual permission policies.</p>
+    <p style="margin-top:0.3em;"><strong>The challenge:</strong> Train a model on disparate multi-source telemetry (CloudWatch logs, AWS Config state, network flows) to automatically trace attack paths and output root-cause analysis like a seasoned security engineer would.</p>
+  </div>
+  <p class="citation">AWS Security Hub Extended, 2026 | Attack path visualization from Security Hub console</p>
+</section>
+
+<!-- WHY FINE-TUNE: THE SOLUTION -->
+<section>
+  <h2>The Engineering Workflow: Graph → LoRA → CoT</h2>
+  <p style="font-size:0.65em;">Treat this as a Multimodal Sequence-to-Sequence Graph problem, not standard text fine-tuning.</p>
+  <svg viewBox="0 0 900 300" style="width:92%; margin-top:0.3em;">
+    <!-- Step 1 -->
+    <rect x="30" y="10" width="400" height="60" rx="8" fill="#e8f4fd" stroke="#2980b9" stroke-width="1.5"/>
+    <text x="230" y="32" text-anchor="middle" font-size="11" fill="#2980b9" font-weight="bold">1. Normalize to OCSF</text>
+    <text x="230" y="50" text-anchor="middle" font-size="9" fill="#333">Raw CloudWatch text + JSON Config snapshots → unified structured timeline</text>
+    <text x="230" y="64" text-anchor="middle" font-size="8" fill="#666">Don't waste context window on raw logs</text>
+    <!-- Step 2 -->
+    <rect x="460" y="10" width="410" height="60" rx="8" fill="#e8f8f5" stroke="#00b894" stroke-width="1.5"/>
+    <text x="665" y="32" text-anchor="middle" font-size="11" fill="#00b894" font-weight="bold">2. Construct Graph G=(V,E)</text>
+    <text x="665" y="50" text-anchor="middle" font-size="9" fill="#333">Vertices = AWS resources (EC2, IAM, SG) | Edges = access paths</text>
+    <text x="665" y="64" text-anchor="middle" font-size="8" fill="#666">Flatten chronologically into model context</text>
+    <!-- Step 3 -->
+    <rect x="30" y="85" width="400" height="60" rx="8" fill="#fff9e6" stroke="#f39c12" stroke-width="1.5"/>
+    <text x="230" y="107" text-anchor="middle" font-size="11" fill="#f39c12" font-weight="bold">3. LoRA Fine-Tune (W = W₀ + BA)</text>
+    <text x="230" y="125" text-anchor="middle" font-size="9" fill="#333">Freeze base model weights. Train only low-rank adapter matrices.</text>
+    <text x="230" y="139" text-anchor="middle" font-size="8" fill="#666">Hours not weeks, $50 not $millions</text>
+    <!-- Step 4 -->
+    <rect x="460" y="85" width="410" height="60" rx="8" fill="#f8f6ff" stroke="#6c5ce7" stroke-width="1.5"/>
+    <text x="665" y="107" text-anchor="middle" font-size="11" fill="#6c5ce7" font-weight="bold">4. Human-in-the-Loop CoT Dataset</text>
+    <text x="665" y="125" text-anchor="middle" font-size="9" fill="#333">Senior engineers write: log sequence → step-by-step reasoning → verdict</text>
+    <text x="665" y="139" text-anchor="middle" font-size="8" fill="#666">Model learns their mental models, not just labels</text>
+    <!-- Training format -->
+    <rect x="100" y="165" width="700" height="120" rx="8" fill="#f0f4f8" stroke="#333" stroke-width="1.5"/>
+    <text x="450" y="188" text-anchor="middle" font-size="10" fill="#333" font-weight="bold">Training Data Format (Instruction Tuning + Chain-of-Thought)</text>
+    <text x="130" y="210" font-size="9" fill="#6c5ce7" font-family="monospace">{</text>
+    <text x="150" y="228" font-size="9" fill="#333" font-family="monospace">"instruction": "Analyze this sequence of AWS Config and CloudWatch logs.",</text>
+    <text x="150" y="246" font-size="9" fill="#333" font-family="monospace">"input": "[Normalized OCSF Log Sequence + Topology State]",</text>
+    <text x="150" y="264" font-size="9" fill="#333" font-family="monospace">"output": "Thinking: [attack path mapping] → Verdict: [root cause]"</text>
+    <text x="130" y="280" font-size="9" fill="#6c5ce7" font-family="monospace">}</text>
+  </svg>
+  <p style="font-size:0.6em; color:#555; margin-top:0.2em;"><strong>Result:</strong> Model outputs reasoning before verdict → drastically reduces false positives, aligns with team's mental models.</p>
+  <p style="font-size:0.52em; color:#999; margin-top:0.2em; font-style:italic;">Note: This is not exactly how AWS trained this internally, but given current public context it's a good approximation of the approach.</p>
+  <p class="citation">OCSF (ocsf.io) | LoRA: Hu et al., 2021, arXiv:2106.09685 | Chain-of-Thought: Wei et al., 2022</p>
+</section>
+
+<!-- LORA INTUITION -->
+<section>
+  <h2>LoRA — The Intuition</h2>
+  <p style="font-size:0.65em;">Don't update the whole brain. Just add a small, focused "patch" that teaches the new skill.</p>
+  <svg viewBox="0 0 900 320" style="width:92%; margin-top:0.3em;">
+    <!-- Analogy: the highway -->
+    <text x="450" y="20" text-anchor="middle" font-size="11" fill="#6c5ce7" font-weight="bold">Analogy: Adapting a Highway System</text>
+    <!-- Left: full fine-tuning = rebuild everything -->
+    <rect x="30" y="35" width="380" height="100" rx="8" fill="#ffeef0" stroke="#e74c3c" stroke-width="1.5"/>
+    <text x="220" y="55" text-anchor="middle" font-size="10" fill="#e74c3c" font-weight="bold">Full Fine-Tuning = Rebuild Every Road</text>
+    <text x="50" y="75" font-size="9" fill="#333">&#x2022; Tear up all 175 billion lanes</text>
+    <text x="50" y="93" font-size="9" fill="#333">&#x2022; Repave everything from scratch</text>
+    <text x="50" y="111" font-size="9" fill="#333">&#x2022; Costs $millions, takes weeks</text>
+    <text x="50" y="129" font-size="9" fill="#e74c3c" font-weight="bold">&#x2022; Just to add one exit ramp</text>
+    <!-- Right: LoRA = add a side road -->
+    <rect x="450" y="35" width="420" height="100" rx="8" fill="#e8f8f5" stroke="#00b894" stroke-width="2"/>
+    <text x="660" y="55" text-anchor="middle" font-size="10" fill="#00b894" font-weight="bold">LoRA = Add a Small Side Road</text>
+    <text x="470" y="75" font-size="9" fill="#333">&#x2022; Keep the highway frozen (working fine!)</text>
+    <text x="470" y="93" font-size="9" fill="#333">&#x2022; Build a tiny detour that merges back in</text>
+    <text x="470" y="111" font-size="9" fill="#333">&#x2022; Costs $5-50, takes hours</text>
+    <text x="470" y="129" font-size="9" fill="#00b894" font-weight="bold">&#x2022; Same destination, 37,000x less construction</text>
+    <!-- The math visual -->
+    <text x="450" y="165" text-anchor="middle" font-size="10" fill="#333" font-weight="bold">The Core Idea</text>
+    <rect x="100" y="178" width="700" height="55" rx="6" fill="#f8f6ff" stroke="#6c5ce7" stroke-width="1.5"/>
+    <text x="450" y="200" text-anchor="middle" font-size="12" fill="#6c5ce7" font-weight="bold">W' = W (frozen) + B × A (tiny trainable patch)</text>
+    <text x="450" y="222" text-anchor="middle" font-size="9" fill="#666">Original weights stay untouched. Two small matrices (rank r) capture the entire adaptation.</text>
+    <!-- Key numbers -->
+    <rect x="80" y="250" width="220" height="60" rx="6" fill="#e8f4fd" stroke="#2980b9"/>
+    <text x="190" y="270" text-anchor="middle" font-size="9" fill="#2980b9" font-weight="bold">GPT-3 Full FT</text>
+    <text x="190" y="290" text-anchor="middle" font-size="11" fill="#2980b9">175,000,000,000 params</text>
+    <text x="190" y="305" text-anchor="middle" font-size="8" fill="#666">2.1 TB memory, $millions</text>
+    <!-- Arrow -->
+    <text x="360" y="285" text-anchor="middle" font-size="18" fill="#00b894">→</text>
+    <!-- LoRA -->
+    <rect x="400" y="250" width="220" height="60" rx="6" fill="#e8f8f5" stroke="#00b894" stroke-width="2"/>
+    <text x="510" y="270" text-anchor="middle" font-size="9" fill="#00b894" font-weight="bold">LoRA (rank 4)</text>
+    <text x="510" y="290" text-anchor="middle" font-size="11" fill="#00b894">4,700,000 params</text>
+    <text x="510" y="305" text-anchor="middle" font-size="8" fill="#666">37,000x fewer, &lt;0.3% quality gap</text>
+    <!-- Zero latency -->
+    <rect x="660" y="250" width="200" height="60" rx="6" fill="#fff9e6" stroke="#f39c12"/>
+    <text x="760" y="270" text-anchor="middle" font-size="9" fill="#f39c12" font-weight="bold">At Inference</text>
+    <text x="760" y="290" text-anchor="middle" font-size="10" fill="#333">Merge back: W' = W + BA</text>
+    <text x="760" y="305" text-anchor="middle" font-size="8" fill="#f39c12" font-weight="bold">Zero extra latency</text>
+  </svg>
+  <p class="citation">Hu et al., 2021, "LoRA: Low-Rank Adaptation of Large Language Models," arXiv:2106.09685 (Microsoft)</p>
+</section>
+
+<!-- DATA QUALITY: THE REAL BOTTLENECK -->
+<section>
+  <h2>The Real Bottleneck: Data Quality</h2>
+  <p style="font-size:0.65em;">LoRA made fine-tuning cheap and fast. Now the dominant factor is <strong>what you fine-tune ON</strong>.</p>
+  <svg viewBox="0 0 900 130" style="width:90%; margin-top:0.3em;">
+    <text x="450" y="18" text-anchor="middle" font-size="10" fill="#333" font-weight="bold">What Matters Most in Fine-Tuning?</text>
+    <!-- Pie chart approximation using bars -->
+    <rect x="100" y="30" width="480" height="28" rx="5" fill="#6c5ce7"/>
+    <text x="340" y="49" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Data Quality (60%)</text>
+    <rect x="100" y="62" width="200" height="28" rx="5" fill="#2980b9"/>
+    <text x="200" y="81" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Data Diversity (25%)</text>
+    <rect x="100" y="94" width="120" height="28" rx="5" fill="#00b894"/>
+    <text x="160" y="113" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Method (15%)</text>
+    <rect x="620" y="30" width="260" height="92" rx="6" fill="#f8f6ff" stroke="#6c5ce7" stroke-width="1.5"/>
+    <text x="750" y="52" text-anchor="middle" font-size="9" fill="#6c5ce7" font-weight="bold">From Our Research</text>
+    <text x="640" y="70" font-size="8" fill="#333">&#x2022; 1 instruction = 200 examples</text>
+    <text x="640" y="85" font-size="8" fill="#333">&#x2022; TarGEN: synthetic > original (+1-2%)</text>
+    <text x="640" y="100" font-size="8" fill="#333">&#x2022; VAIDA: 45.8% artifact reduction</text>
+    <text x="640" y="115" font-size="8" fill="#333">&#x2022; Quality > quantity always</text>
+  </svg>
+  <div class="warn-box" style="margin-top:0.3em;">
+    <strong>Practical implication:</strong> Before optimizing your LoRA rank, learning rate, or adapter placement &#x2014; first optimize your training DATA. A LoRA adapter trained on 1,000 high-quality examples outperforms one trained on 10,000 noisy examples.
+  </div>
+  <p class="citation"><b>Mishra</b>, <b>Sachdeva</b>, 2020, "Do We Need to Create Big Datasets to Learn a Task?," SustaiNLP | Gupta, <b>Mishra</b> et al., 2023, "TarGEN" | Arunkumar, <b>Mishra</b>, <b>Sachdeva</b> et al., 2023, "VAIDA," EACL</p>
+</section>
+
+
+
+<!-- CLOSING: HARD PROBLEMS WORTH CHASING -->
+<section data-background-color="#1a1a2e">
+  <h2 style="color:#fff; font-size:1.3em; margin-bottom:0.4em;">Hard Problems People Are Chasing Right Now</h2>
+  <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:0.5em; margin:0.3em auto; max-width:95%;">
+    <!-- LeCun JEPA -->
+    <a href="https://www.youtube.com/watch?v=kYkIdXwW2AE&t=1738s" style="text-decoration:none;">
+      <img src="images/lecun-jepa.jpg" style="width:100%; border-radius:6px; border:2px solid #6c5ce7;">
+      <p style="color:#6c5ce7; font-size:0.45em; margin:0.2em 0 0;">World Models (JEPA)</p>
+    </a>
+    <!-- Ilya Sutskever -->
+    <a href="https://www.youtube.com/watch?v=d6Ed5bZAtrM&t=312s" style="text-decoration:none;">
+      <img src="images/ilya-sutskever.jpg" style="width:100%; border-radius:6px; border:2px solid #00b894;">
+      <p style="color:#00b894; font-size:0.45em; margin:0.2em 0 0;">Safe Superintelligence</p>
+    </a>
+    <!-- Thinking Fast & Slow -->
+    <a href="https://www.youtube.com/watch?v=zHECSAdJjTQ" style="text-decoration:none;">
+      <img src="images/subconscious-hack.jpg" style="width:100%; border-radius:6px; border:2px solid #f39c12;">
+      <p style="color:#f39c12; font-size:0.45em; margin:0.2em 0 0;">Thinking Fast & Slow</p>
+    </a>
+    <!-- Data Quality -->
+    <a href="https://www.youtube.com/watch?v=HXfR4yfK6_M" style="text-decoration:none;">
+      <img src="images/data-quality.jpg" style="width:100%; border-radius:6px; border:2px solid #e74c3c;">
+      <p style="color:#e74c3c; font-size:0.45em; margin:0.2em 0 0;">Data at Scale</p>
+    </a>
+    <!-- Punjab Water -->
+    <a href="https://www.youtube.com/watch?v=7CVk94W4dEI&t=5s" style="text-decoration:none;">
+      <img src="images/punjab-water.jpg" style="width:100%; border-radius:6px; border:2px solid #2980b9;">
+      <p style="color:#2980b9; font-size:0.45em; margin:0.2em 0 0;">Punjab Water Crisis</p>
+    </a>
+    <!-- Punjab Water 2 -->
+    <a href="https://www.youtube.com/watch?v=iSlezXU-I90" style="text-decoration:none;">
+      <img src="images/punjab-water2.jpg" style="width:100%; border-radius:6px; border:2px solid #2980b9;">
+      <p style="color:#2980b9; font-size:0.45em; margin:0.2em 0 0;">Solving Water Access</p>
+    </a>
+    <!-- AgentMail with logo -->
+    <a href="https://www.agentmail.to/" style="text-decoration:none;">
+      <img src="images/agentmail-logo.svg" style="width:100%; aspect-ratio:320/180; object-fit:contain; border-radius:6px; border:2px solid #00b894; background:#111;">
+      <p style="color:#00b894; font-size:0.45em; margin:0.2em 0 0;">Email Inboxes for AI Agents</p>
+    </a>
+    <!-- MCP-Use with logo -->
+    <a href="https://docs.mcp-use.com/home" style="text-decoration:none;">
+      <img src="images/mcp-use-logo.svg" style="width:100%; aspect-ratio:320/180; object-fit:contain; border-radius:6px; border:2px solid #6c5ce7; background:#111;">
+      <p style="color:#6c5ce7; font-size:0.45em; margin:0.2em 0 0;">Open Protocol for AI Tool Use</p>
+    </a>
+  </div>
+  <p style="color:#e8e8e8; font-size:0.7em; margin-top:0.4em;">Go chase hard problems of your own.</p>
+</section>
+
+
+</div><!-- end .slides -->
+</div><!-- end .reveal -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    transition: 'slide',
+    transitionSpeed: 'default',
+    center: true,
+    width: 1100,
+    height: 700,
+    margin: 0.12
+  });
+</script>
+</body>
+</html>

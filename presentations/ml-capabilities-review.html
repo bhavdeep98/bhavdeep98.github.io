@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Home Passport — ML Capabilities Review</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f7f4ed;
+            --bg-card: #fcfaf6;
+            --text: #20352f;
+            --text-2: #566861;
+            --text-3: #718078;
+            --accent: #397c70;
+            --teal-50: #e6f5f2;
+            --teal-100: #ccebe5;
+            --teal-700: #2d655b;
+            --teal-800: #1f4f47;
+            --border: rgba(43,75,66,0.11);
+            --r: 12px;
+        }
+        * { box-sizing: border-box; }
+        .reveal {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 16px;
+            color: var(--text);
+        }
+        .reveal .slides { text-align: left; }
+        .reveal .slides section {
+            background: var(--bg);
+            padding: 30px 44px;
+            height: 100%;
+            display: flex !important;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .reveal h1,.reveal h2,.reveal h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text);
+            font-weight: 700;
+            text-transform: none;
+            letter-spacing: -0.02em;
+            margin: 0;
+        }
+        .reveal h1 { font-size: 1.7em; margin-bottom: 0.15em; }
+        .reveal h2 { font-size: 1.35em; margin-bottom: 0.2em; }
+        .reveal h3 { font-size: 0.88em; margin-bottom: 0.15em; color: var(--teal-700); }
+        .reveal p { color: var(--text-2); font-size: 0.78em; line-height: 1.55; margin: 0 0 0.4em; }
+        .reveal a { color: var(--accent); text-decoration: underline; }
+        .eyebrow {
+            font-size: 0.62em; font-weight: 600; color: var(--accent);
+            text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;
+        }
+        .badge {
+            display: inline-block; background: var(--teal-50); color: var(--teal-700);
+            padding: 3px 10px; border-radius: 999px; font-size: 0.58em;
+            font-weight: 600; margin-right: 5px; margin-bottom: 5px;
+        }
+        .badge-orange {
+            display: inline-block; background: #fff3e0; color: #e65100;
+            padding: 3px 10px; border-radius: 999px; font-size: 0.58em;
+            font-weight: 600; margin-right: 5px; margin-bottom: 5px;
+        }
+        .badge-red {
+            display: inline-block; background: #ffebee; color: #b71c1c;
+            padding: 3px 10px; border-radius: 999px; font-size: 0.58em;
+            font-weight: 600; margin-right: 5px; margin-bottom: 5px;
+        }
+        .badge-blue {
+            display: inline-block; background: #e3f2fd; color: #1565c0;
+            padding: 3px 10px; border-radius: 999px; font-size: 0.58em;
+            font-weight: 600; margin-right: 5px; margin-bottom: 5px;
+        }
+        .card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 14px 16px;
+        }
+        .card h3 { font-size: 0.78em; margin-bottom: 4px; }
+        .card p { font-size: 0.66em; margin: 0; color: var(--text-3); line-height: 1.45; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 10px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 10px; }
+        .highlight {
+            background: var(--teal-50); border-left: 3px solid var(--accent);
+            border-radius: 0 var(--r) var(--r) 0; padding: 10px 14px; margin-top: 10px;
+        }
+        .highlight p { font-size: 0.68em; color: var(--teal-800); margin: 0; font-weight: 500; }
+        .warning {
+            background: #fff3e0; border-left: 3px solid #e65100;
+            border-radius: 0 var(--r) var(--r) 0; padding: 10px 14px; margin-top: 10px;
+        }
+        .warning p { font-size: 0.68em; color: #bf360c; margin: 0; font-weight: 500; }
+        .danger {
+            background: #ffebee; border-left: 3px solid #b71c1c;
+            border-radius: 0 var(--r) var(--r) 0; padding: 10px 14px; margin-top: 10px;
+        }
+        .danger p { font-size: 0.68em; color: #b71c1c; margin: 0; font-weight: 500; }
+        .stat { font-family: 'Plus Jakarta Sans',sans-serif; font-size: 2em; font-weight: 800; color: var(--accent); line-height: 1; }
+        table.metrics { width: 100%; border-collapse: collapse; font-size: 0.66em; margin-top: 8px; }
+        table.metrics th { background: var(--teal-50); color: var(--teal-700); padding: 6px 10px; text-align: left; font-weight: 600; }
+        table.metrics td { padding: 6px 10px; border-bottom: 1px solid var(--border); color: var(--text-2); }
+        table.metrics tr:last-child td { border-bottom: none; }
+        .pipeline-flow { display: flex; align-items: center; gap: 6px; margin-top: 12px; flex-wrap: wrap; }
+        .pipeline-step {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--r); padding: 8px 12px; text-align: center;
+        }
+        .pipeline-step h3 { font-size: 0.68em; margin: 0 0 2px; color: var(--text); }
+        .pipeline-step p { font-size: 0.54em; margin: 0; color: var(--text-3); }
+        .pipeline-arrow { color: var(--accent); font-size: 1em; font-weight: 700; }
+        .feature-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+        .feature-bar .label { font-size: 0.58em; color: var(--text-2); width: 160px; text-align: right; }
+        .feature-bar .bar-bg { flex: 1; height: 14px; background: var(--teal-50); border-radius: 7px; overflow: hidden; }
+        .feature-bar .bar-fill { height: 100%; background: var(--accent); border-radius: 7px; }
+        .feature-bar .value { font-size: 0.56em; color: var(--text-3); width: 40px; }
+    </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 1: Title -->
+<section>
+    <p class="eyebrow">Internal Review &middot; July 2026</p>
+    <h1>ML Intelligence Layer<br>Capabilities Review</h1>
+    <p style="font-size: 0.88em; margin-top: 6px;">How Home Passport predicts whether a deal will close on time, close late, or fall apart — and what it tells users about why.</p>
+    <div style="margin-top: 14px;">
+        <span class="badge">Closing Confidence Score</span>
+        <span class="badge">Anomaly Detection</span>
+        <span class="badge">Explainable Predictions</span>
+        <span class="badge">21 Predictive Features</span>
+    </div>
+    <div style="margin-top: 14px;">
+        <p style="font-size: 0.62em; color: var(--text-3);">Current model: v0.2.0-synthetic &middot; ML scoring is the active engine (rule-based fallback DISABLED)</p>
+    </div>
+</section>
+
+<!-- SLIDE 2: What Problem Does ML Solve -->
+<section>
+    <p class="eyebrow">The Problem We Solve</p>
+    <h2>Every deal has a path to close. ML tells you if that path is breaking.</h2>
+    <p>Homebuilders manage 50-500 active deals simultaneously across 6+ systems. Each deal has ~51 milestones that must complete before closing day. The ML layer answers three questions for every deal, every day:</p>
+    <div class="grid-3" style="margin-top: 14px;">
+        <div class="card" style="border-top: 3px solid #2e7d32;">
+            <h3>Will this deal close on time?</h3>
+            <p>The Closing Confidence Score (0-100) predicts the probability that a deal closes by its target date. Drives the traffic-light system in the portal: HEALTHY / AT_RISK / CRITICAL.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid #e65100;">
+            <h3>Is this deal stuck?</h3>
+            <p>Anomaly detection flags deals with unusual patterns — even when they haven't formally crossed a risk threshold yet. Catches "silently dying" deals before they become emergencies.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid #1565c0;">
+            <h3>WHY is it at risk?</h3>
+            <p>Every prediction comes with ranked explanations: "This deal is at risk because mortgage has been silent for 12 days and construction is 40% ahead of lending." Actionable, not a black box.</p>
+        </div>
+    </div>
+    <div class="highlight" style="margin-top: 12px;">
+        <p>ML is now the ONLY scoring engine. The old rule-based calculator (static category weights) is disabled. If the ML service is unavailable, scoring returns "unavailable" — it does NOT silently fall back to a worse model. We fail loud.</p>
+    </div>
+</section>
+
+<!-- SLIDE 3: What Models and What They Do -->
+<section>
+    <p class="eyebrow">The Models</p>
+    <h2>Two deployed models. Each answers a different question.</h2>
+    <div class="grid-2" style="margin-top: 14px;">
+        <div class="card" style="border-left: 3px solid var(--accent);">
+            <h3>Model 1: XGBoost Multi-Class Classifier</h3>
+            <p style="font-size: 0.64em; line-height: 1.6;"><strong>What it is:</strong> A gradient-boosted decision tree. Learns patterns from historical deals and their outcomes. Proven best-in-class for structured/tabular data problems like ours.<br><br><strong>What it predicts:</strong> Given a deal's current state (features), it outputs three probabilities:<br>&bull; P(on_time) — probability deal closes by target date<br>&bull; P(delayed) — probability deal closes, but late<br>&bull; P(cancelled) — probability deal falls through entirely<br><br><strong>Why XGBoost:</strong> Compatible with SHAP explainability (we can show users WHY). Handles non-linear relationships between features. Industry standard for tabular ML.</p>
+            <div style="margin-top: 6px;">
+                <span class="badge">ACTIVE &middot; PRODUCES THE CONFIDENCE SCORE</span>
+            </div>
+        </div>
+        <div class="card" style="border-left: 3px solid #1565c0;">
+            <h3>Model 2: Isolation Forest (Anomaly Detector)</h3>
+            <p style="font-size: 0.64em; line-height: 1.6;"><strong>What it is:</strong> An unsupervised model that learns what "normal" deals look like. It doesn't need labels — it identifies deals that deviate from the norm.<br><br><strong>What it detects:</strong> Deals with unusual feature patterns — e.g., a deal that has high construction progress but zero mortgage activity, or one that suddenly stopped receiving signals from all systems.<br><br><strong>Why Isolation Forest:</strong> No labeled anomalies needed to train. Works alongside XGBoost — sometimes a deal isn't "at risk" by the classifier but IS anomalous (early warning signal).</p>
+            <div style="margin-top: 6px;">
+                <span class="badge-blue">ACTIVE &middot; FLAGS UNUSUAL DEALS</span>
+            </div>
+        </div>
+    </div>
+    <div class="warning" style="margin-top: 12px;">
+        <p><strong>Baseline tested:</strong> Logistic Regression (simple linear model) was trained on the same data to ensure XGBoost adds real value over a trivial approach. On synthetic data, LR actually scored 2% higher (78% vs 76%) — expected with small data. XGBoost is retained because it will outperform at production scale and enables SHAP explanations. This gap must close when we move to real data.</p>
+    </div>
+</section>
+
+<!-- SLIDE 4: How Accurate Are They? -->
+<section>
+    <p class="eyebrow">Model Performance</p>
+    <h2>How good is the model at predicting deal outcomes?</h2>
+    <p>Trained on 915 synthetic deal observations. The numbers below mean: if we look at 100 deals, how many does the model classify correctly?</p>
+    <div class="grid-2" style="margin-top: 10px;">
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>Overall Performance</h3>
+                <p style="font-size: 0.64em; line-height: 1.7;">
+                    <strong>76% accuracy</strong> — out of 183 test deals, the model correctly classified 139.<br><br>
+                    <strong>75.3% cross-validated</strong> — trained 5 times on different data splits, consistently performs at ~75%. Low variance (&plusmn;2.6%) means the model is stable, not getting lucky on one split.<br><br>
+                    <strong>F1 = 0.73</strong> — balances precision (of the deals I flagged as delayed, how many actually were?) and recall (of all delayed deals, how many did I catch?). 0.73 means reasonable on both.
+                </p>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>Per-Outcome Accuracy</h3>
+                <table class="metrics">
+                    <tr><th>Outcome</th><th>Precision</th><th>Recall</th><th>Meaning</th></tr>
+                    <tr><td><strong>On Time</strong></td><td>75%</td><td>89%</td><td>Catches most on-time deals correctly</td></tr>
+                    <tr><td><strong>Delayed</strong></td><td>74%</td><td>60%</td><td>Misses 40% of delays — must improve</td></tr>
+                    <tr><td><strong>Cancelled</strong></td><td>83%</td><td>63%</td><td>When it flags a cancel, it's usually right</td></tr>
+                </table>
+                <p style="margin-top: 8px;"><strong>Key weakness:</strong> The model misses 40% of delayed deals. This is the class that matters most to builders — a deal slipping without warning. Priority fix when real data arrives.</p>
+            </div>
+            <div class="card">
+                <h3>Anomaly Detector</h3>
+                <p>Flags 15% of deals as anomalous (matching the ~15% cancellation rate). Unsupervised — no accuracy metric possible until we validate against real stuck deals.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 5: Features — The Data That Drives Predictions -->
+<section>
+    <p class="eyebrow">Feature Engineering</p>
+    <h2>What data does the model look at to make predictions?</h2>
+    <p>21 features are computed for each deal, drawn from signals flowing in from all 5 builder systems. Think of these as the "vital signs" of a deal.</p>
+    <div class="grid-2" style="margin-top: 10px;">
+        <div>
+            <div class="card" style="margin-bottom: 8px; border-left: 3px solid var(--accent);">
+                <h3>Category Completion (6 features)</h3>
+                <p>"How much of each category is done?"<br><br>
+                &bull; construction: 5/12 milestones complete = 0.42<br>
+                &bull; mortgage: 3/10 = 0.30<br>
+                &bull; title: 0/8 = 0.0<br>
+                &bull; financial, sales, utility (same logic)<br><br>
+                <strong>Used by:</strong> XGBoost (outcome prediction) + Isolation Forest (anomaly detection)<br>
+                <strong>Source systems:</strong> BuildPro, Encompass, Qualia, JDE, Salesforce</p>
+            </div>
+            <div class="card" style="margin-bottom: 8px; border-left: 3px solid var(--accent);">
+                <h3>Signal Velocity (3 features)</h3>
+                <p>"How active is this deal right now?"<br><br>
+                Count of ALL signals received in the last 7 / 14 / 30 days. A deal getting 15 signals/week that drops to 0 is a red flag.<br><br>
+                <strong>Used by:</strong> XGBoost + Isolation Forest<br>
+                <strong>Top predictor:</strong> signals_last_30d is the #1 SHAP feature — signal velocity is more predictive than completion percentage.</p>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 8px; border-left: 3px solid var(--accent);">
+                <h3>Days Since Last Activity (6 features)</h3>
+                <p>"How long has each category been silent?"<br><br>
+                Calendar days since the last signal per category. A construction gap of 3 days is normal; 21 days means something is wrong.<br><br>
+                <strong>Used by:</strong> XGBoost + Isolation Forest<br>
+                <strong>Source systems:</strong> Each category maps to a source system</p>
+            </div>
+            <div class="card" style="margin-bottom: 8px; border-left: 3px solid var(--accent);">
+                <h3>Time Pressure + Cross-System + Metadata (6 features)</h3>
+                <p>&bull; <strong>days_to_target_close:</strong> urgency (negative = past due)<br>
+                &bull; <strong>days_since_contract:</strong> deal age<br>
+                &bull; <strong>construction_mortgage_ratio:</strong> are these two in sync?<br>
+                &bull; <strong>price_tier:</strong> deal complexity proxy<br>
+                &bull; <strong>community_avg_velocity:</strong> peer comparison<br>
+                &bull; <strong>division_deals_active:</strong> workload context<br><br>
+                <strong>Used by:</strong> XGBoost + Isolation Forest</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 6: Why Staleness Is NOT a Model Feature -->
+<section>
+    <p class="eyebrow">Design Decision</p>
+    <h2>Staleness: a system health signal, NOT a prediction feature.</h2>
+    <p>We extract 5 additional staleness flags (stale_salesforce, stale_buildpro, stale_encompass, stale_qualia, stale_jde). These are deliberately excluded from the ML model.</p>
+    <div class="grid-2" style="margin-top: 12px;">
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>Why Excluded From the Model</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    Staleness is a <strong>data pipeline problem</strong>, not a deal problem.<br><br>
+                    If Salesforce hasn't sent data in 8 business days, that could mean:<br>
+                    &bull; Our connector is broken<br>
+                    &bull; The builder's Salesforce instance is down<br>
+                    &bull; A weekend + holiday<br><br>
+                    None of these predict whether the DEAL will close on time. If we trained the model on staleness, it would learn "when data stops flowing, deals fail" — but that's an artifact of our system, not a real signal about the home.
+                </p>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>What We DO With Staleness</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    <strong>Alert the user.</strong> Staleness flags are exposed via the /features endpoint and consumed by:<br><br>
+                    &bull; <strong>Pattern Detector:</strong> "3+ homes with stale Encompass data" &rarr; systemic integration issue<br>
+                    &bull; <strong>Next Best Action:</strong> prepends "Data may be stale from BuildPro" to action recommendations<br>
+                    &bull; <strong>Portal:</strong> shows freshness warnings when a source is silent<br><br>
+                    This is the user's responsibility to resolve — they need to ensure data is flowing. We surface the problem; we don't hide it inside a score.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="highlight">
+        <p>Total features extracted: 26 (21 to model, 5 to alerting). The model only sees real deal health signals. Data pipeline issues are surfaced separately as operational warnings.</p>
+    </div>
+</section>
+
+<!-- SLIDE 7: What Drives Predictions (SHAP) -->
+<section>
+    <p class="eyebrow">Explainability</p>
+    <h2>What matters most? Signal velocity beats completion.</h2>
+    <p>SHAP analysis reveals the features that most influence predictions. The top insight: how ACTIVE a deal is matters more than how COMPLETE it is.</p>
+    <div style="margin-top: 12px;">
+        <div class="feature-bar"><span class="label">signals_last_30d</span><div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div><span class="value">10.5%</span></div>
+        <div class="feature-bar"><span class="label">days_since_last_sales</span><div class="bar-bg"><div class="bar-fill" style="width: 89%;"></div></div><span class="value">9.4%</span></div>
+        <div class="feature-bar"><span class="label">completion_utility</span><div class="bar-bg"><div class="bar-fill" style="width: 80%;"></div></div><span class="value">8.4%</span></div>
+        <div class="feature-bar"><span class="label">completion_construction</span><div class="bar-bg"><div class="bar-fill" style="width: 67%;"></div></div><span class="value">7.1%</span></div>
+        <div class="feature-bar"><span class="label">days_to_target_close</span><div class="bar-bg"><div class="bar-fill" style="width: 64%;"></div></div><span class="value">6.7%</span></div>
+        <div class="feature-bar"><span class="label">days_since_contract</span><div class="bar-bg"><div class="bar-fill" style="width: 62%;"></div></div><span class="value">6.5%</span></div>
+        <div class="feature-bar"><span class="label">days_since_last_construction</span><div class="bar-bg"><div class="bar-fill" style="width: 55%;"></div></div><span class="value">5.8%</span></div>
+        <div class="feature-bar"><span class="label">signals_last_14d</span><div class="bar-bg"><div class="bar-fill" style="width: 52%;"></div></div><span class="value">5.5%</span></div>
+        <div class="feature-bar"><span class="label">signals_last_7d</span><div class="bar-bg"><div class="bar-fill" style="width: 46%;"></div></div><span class="value">4.8%</span></div>
+        <div class="feature-bar"><span class="label">construction_mortgage_ratio</span><div class="bar-bg"><div class="bar-fill" style="width: 35%;"></div></div><span class="value">3.7%</span></div>
+    </div>
+    <div class="grid-2" style="margin-top: 10px;">
+        <div class="highlight" style="margin-top: 0;">
+            <p><strong>Insight 1:</strong> A deal that stops receiving signals (from any system) is the strongest early warning. Silence predicts failure.</p>
+        </div>
+        <div class="highlight" style="margin-top: 0;">
+            <p><strong>Insight 2:</strong> Sales activity gap (#2) suggests buyer/contract issues are a leading indicator — even before construction stalls.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 8: How It Integrates With The System -->
+<section>
+    <p class="eyebrow">System Integration</p>
+    <h2>How ML fits into the existing data flow</h2>
+    <p>The ML prediction service sits alongside the existing API. It reads from the same PostgreSQL database that the graph engine writes to. No new data paths — same source of truth.</p>
+    <div class="pipeline-flow" style="margin-top: 14px;">
+        <div class="pipeline-step" style="border: 2px solid var(--border);">
+            <h3>Builder Systems</h3>
+            <p>Salesforce, BuildPro, Encompass, Qualia, JDE</p>
+        </div>
+        <span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step" style="border: 2px solid var(--border);">
+            <h3>Ingestion + Kafka</h3>
+            <p>YAML connectors, signals topic</p>
+        </div>
+        <span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step" style="border: 2px solid var(--border);">
+            <h3>Graph Engine</h3>
+            <p>Updates milestone DAG in PostgreSQL</p>
+        </div>
+        <span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step" style="border: 2px solid var(--accent); background: var(--teal-50);">
+            <h3>ML Prediction Service</h3>
+            <p>Reads milestones + signals from PG<br>Extracts features, runs XGBoost + IF</p>
+        </div>
+        <span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step" style="border: 2px solid var(--border);">
+            <h3>API (port 3004)</h3>
+            <p>Requests predictions, serves Portal</p>
+        </div>
+        <span class="pipeline-arrow">&rarr;</span>
+        <div class="pipeline-step" style="border: 2px solid var(--border);">
+            <h3>Portal</h3>
+            <p>Shows scores, risk factors, anomalies</p>
+        </div>
+    </div>
+    <div class="grid-2" style="margin-top: 14px;">
+        <div class="card">
+            <h3>What the API gets from ML (per deal)</h3>
+            <p style="font-size: 0.64em; line-height: 1.6;">
+                &bull; <strong>confidence_score</strong> (0-100): drives the traffic light<br>
+                &bull; <strong>risk_level</strong>: HEALTHY / AT_RISK / CRITICAL<br>
+                &bull; <strong>outcome_probabilities</strong>: {on_time, delayed, cancelled}<br>
+                &bull; <strong>anomaly_score</strong> + <strong>is_anomaly</strong> flag<br>
+                &bull; <strong>risk_factors</strong>: top-5 SHAP explanations with direction<br>
+                &bull; <strong>model_version</strong>: which model produced this
+            </p>
+        </div>
+        <div class="card">
+            <h3>How the API uses it</h3>
+            <p style="font-size: 0.64em; line-height: 1.6;">
+                &bull; <strong>Confidence Score Calculator:</strong> converts ML output to ConfidenceResult<br>
+                &bull; <strong>Velocity Calculator:</strong> uses feature vectors to compute trends<br>
+                &bull; <strong>Next Best Action:</strong> reads risk_factors to suggest actions<br>
+                &bull; <strong>Escalation System:</strong> anomaly flags trigger escalations<br>
+                &bull; <strong>Portal Dashboard:</strong> displays score + "why" cards
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 9: Model Replacement Strategy -->
+<section>
+    <p class="eyebrow">Model Lifecycle</p>
+    <h2>How new models replace old ones</h2>
+    <p>When we retrain with new data, here's the process for swapping the active model. This is critical — a bad model in this domain means a VP ignores a failing deal or panics about a healthy one.</p>
+    <div class="grid-2" style="margin-top: 12px;">
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>Training Pipeline (Offline — runs on demand)</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    <strong>1. Extract:</strong> python -m prediction.training_pipeline<br>
+                    &nbsp;&nbsp;&nbsp;Queries all homes from PostgreSQL<br>
+                    &nbsp;&nbsp;&nbsp;Extracts features at 25%, 50%, 75% of lifecycle<br>
+                    &nbsp;&nbsp;&nbsp;Produces Parquet file with labels<br><br>
+                    <strong>2. Train:</strong> python -m prediction.models.train<br>
+                    &nbsp;&nbsp;&nbsp;Trains XGBoost + Isolation Forest + LR baseline<br>
+                    &nbsp;&nbsp;&nbsp;80/20 stratified split + 5-fold cross-validation<br>
+                    &nbsp;&nbsp;&nbsp;SHAP feature importance computed<br>
+                    &nbsp;&nbsp;&nbsp;Outputs: .json model + .joblib artifacts + training_report.json<br><br>
+                    <strong>3. Validate:</strong> Compare metrics against previous model<br>
+                    &nbsp;&nbsp;&nbsp;F1 macro must not regress<br>
+                    &nbsp;&nbsp;&nbsp;Per-class recall must not drop &gt;5%
+                </p>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>Deployment (Model Swap)</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    <strong>Current process:</strong><br>
+                    &bull; New model artifacts placed in /app/models/<br>
+                    &bull; Prediction service restarted (picks up new model at startup)<br>
+                    &bull; model_version field updates automatically from training_report.json<br>
+                    &bull; Portal shows which model version produced each score<br><br>
+                    <strong>Criteria for replacing the current model:</strong><br>
+                    &bull; Must exceed current F1 macro (0.7315)<br>
+                    &bull; Must improve delayed-class recall (currently 60% — the weak point)<br>
+                    &bull; Must pass on the same cross-validation stability threshold (&lt;3% std)<br>
+                    &bull; Must not change anomaly detection rate by more than &plusmn;5%
+                </p>
+            </div>
+            <div class="warning">
+                <p><strong>Not yet built:</strong> Shadow scoring (running new model alongside old), automated drift detection, and canary rollout. These come when we have enough real data to justify the infrastructure.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 10: Failure Behavior — Critical Review -->
+<section>
+    <p class="eyebrow">Failure Behavior &middot; Critical Review</p>
+    <h2>What happens when ML is unavailable?</h2>
+    <p>This domain is land — deals worth $300K-$1.5M. A VP who trusts a score that silently came from a worse model makes bad decisions. Our policy: <strong>fail loud, never silently degrade.</strong></p>
+    <div class="grid-2" style="margin-top: 12px;">
+        <div>
+            <div class="card" style="margin-bottom: 10px; border-left: 3px solid #2e7d32;">
+                <h3>Current Behavior (Correct)</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    <strong>USE_ML_SCORING = true</strong><br>
+                    <strong>DISABLE_RULE_BASED_SCORING = true</strong><br><br>
+                    When ML service is reachable: &rarr; ML prediction returned<br>
+                    When ML service is DOWN: &rarr; Returns scoring_unavailable = true, score = 0, risk_level = CRITICAL<br><br>
+                    The portal sees scoring_unavailable and shows a clear "Scoring temporarily unavailable" state — NOT a fake number.
+                </p>
+            </div>
+            <div class="highlight" style="margin-top: 0;">
+                <p>This is the right design. A Division VP seeing "unavailable" will call operations. A VP seeing a stale rule-based number might make a $500K decision on bad data.</p>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 10px; border-left: 3px solid #b71c1c;">
+                <h3>What We Removed (and Why)</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    The old "graceful degradation" pattern:<br>
+                    &bull; ML down &rarr; fall back to rule-based weights<br>
+                    &bull; Rule-based is 35/25/20/5/10/5 static allocation<br><br>
+                    <strong>Problem:</strong> A rule-based score of 72 and an ML score of 72 mean completely different things. The rule-based number has no predictive validation. Mixing them silently is dangerous.<br><br>
+                    <strong>Decision:</strong> Rule-based fallback is DISABLED. If someone re-enables it, they're accepting liability for decisions made on unvalidated numbers.
+                </p>
+            </div>
+            <div class="danger">
+                <p><strong>Open risk:</strong> If the ML service has extended downtime (&gt;1 hour), the entire pipeline shows "scoring unavailable" for all deals. We need alerting + fast restart, not a silent fallback.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 11: The Score Formula -->
+<section>
+    <p class="eyebrow">Score Derivation</p>
+    <h2>How probabilities become a Closing Confidence Score</h2>
+    <p>XGBoost outputs three probabilities that sum to 1.0. We convert these into a single 0-100 score that builders understand.</p>
+    <div class="grid-2" style="margin-top: 12px;">
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>The Formula</h3>
+                <p style="font-size: 0.72em; font-family: monospace; color: var(--text); line-height: 2;">
+                    score = P(on_time) &times; 100<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- P(cancelled) &times; 30<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- P(delayed) &times; 10<br>
+                    <br>
+                    clamped to [0, 100]
+                </p>
+                <p style="margin-top: 8px;"><strong>Why asymmetric penalties?</strong><br>A cancelled deal is a total loss ($300K+ revenue gone). A delayed deal still closes — it's a cost and reputation hit, but recoverable. Cancellation risk gets 3x the penalty.</p>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>Risk Level Thresholds</h3>
+                <p style="font-size: 0.72em; line-height: 2;">
+                    Score &ge; 75 &rarr; <span style="color: #2e7d32; font-weight: 700;">HEALTHY</span> &mdash; on track<br>
+                    50 &le; Score &lt; 75 &rarr; <span style="color: #e65100; font-weight: 700;">AT_RISK</span> &mdash; needs attention<br>
+                    Score &lt; 50 &rarr; <span style="color: #b71c1c; font-weight: 700;">CRITICAL</span> &mdash; intervention required
+                </p>
+            </div>
+            <div class="card">
+                <h3>What Users See Per Prediction</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    &bull; The confidence score (the number on the dashboard)<br>
+                    &bull; The risk level (the color/badge)<br>
+                    &bull; Top-5 risk factors with plain-English labels: "Mortgage activity has been silent for 12 days" rather than "days_since_last_mortgage = 12"<br>
+                    &bull; Anomaly flag if Isolation Forest fires<br>
+                    &bull; Velocity trend (improving/steady/declining)
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 12: API Consumers — Who Uses What -->
+<section>
+    <p class="eyebrow">API Surface</p>
+    <h2>Who calls the ML service and what they get</h2>
+    <p>The ML service exposes 4 endpoints. The TypeScript API (port 3004) is the only consumer — it proxies results to the Portal and internal services.</p>
+    <div style="margin-top: 12px;">
+        <table class="metrics">
+            <tr><th>Endpoint</th><th>Consumer</th><th>What It Returns</th><th>When Called</th></tr>
+            <tr>
+                <td><strong>GET /features/{deal_id}</strong></td>
+                <td>Velocity Calculator, Next Best Action</td>
+                <td>26-feature vector (all features including staleness)</td>
+                <td>On every deal detail page load</td>
+            </tr>
+            <tr>
+                <td><strong>GET /predict/{deal_id}</strong></td>
+                <td>Confidence Score Calculator</td>
+                <td>Score + probabilities + risk_factors + anomaly</td>
+                <td>On deal page load, dashboard refresh</td>
+            </tr>
+            <tr>
+                <td><strong>POST /predict/batch</strong></td>
+                <td>Pipeline/Dashboard (portfolio view)</td>
+                <td>Scores for N deals in one request</td>
+                <td>On pipeline page load (all active deals)</td>
+            </tr>
+            <tr>
+                <td><strong>GET /model/info</strong></td>
+                <td>Settings page, diagnostics</td>
+                <td>Model version, metrics, SHAP importances</td>
+                <td>On settings/diagnostics page</td>
+            </tr>
+        </table>
+    </div>
+    <div class="grid-2" style="margin-top: 14px;">
+        <div class="card">
+            <h3>Latency</h3>
+            <p>Single prediction: &lt;500ms (p95). Includes DB query for features + XGBoost inference + SHAP computation for top-5 factors. Batch skips SHAP (too expensive for N deals) — factors populated on drill-down only.</p>
+        </div>
+        <div class="card">
+            <h3>Availability Requirement</h3>
+            <p>If this service is down, the portal shows "scoring unavailable" for ALL deals. This makes it a critical-path service. Current mitigation: Docker restart policy + health checks. Future: redundancy.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 13: Known Gaps & What's Next -->
+<section>
+    <p class="eyebrow">Gaps &amp; Roadmap</p>
+    <h2>What's missing. What comes next.</h2>
+    <div class="grid-2" style="margin-top: 10px;">
+        <div>
+            <div class="card" style="margin-bottom: 10px; border-left: 3px solid #b71c1c;">
+                <h3>Known Gaps (Must Fix)</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    <strong>1. Trained on synthetic data only.</strong><br>
+                    915 samples from a simulator. The model has never seen a real deal. Performance on real data is unknown. Priority #1.<br><br>
+                    <strong>2. Delayed-class recall is 60%.</strong><br>
+                    We miss 40% of deals that will end up delayed. For builders, a false "HEALTHY" on a deal that slips is worse than a false alarm. Must improve with real data.<br><br>
+                    <strong>3. No automated retraining.</strong><br>
+                    Model swap is manual. No drift detection. No shadow scoring. No canary deploys.<br><br>
+                    <strong>4. Anomaly detection not yet integrated with escalations.</strong><br>
+                    Isolation Forest runs and flags, but Task 032 (auto-escalation from anomaly scores) is still backlog.<br><br>
+                    <strong>5. No model monitoring/observability.</strong><br>
+                    No tracking of prediction distribution drift over time. No alerting when model confidence drops.
+                </p>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 10px; border-left: 3px solid var(--accent);">
+                <h3>Roadmap</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    <strong>Next: Real data transition</strong><br>
+                    &bull; Ingest real deals from live builders<br>
+                    &bull; Re-extract training data, re-train<br>
+                    &bull; Expect XGBoost to outperform LR at scale<br>
+                    &bull; Validate delayed-class recall improvement<br><br>
+                    <strong>Then: Task 032 — Stuck Deal Detection</strong><br>
+                    &bull; Peer cohort comparison (Z-score vs community)<br>
+                    &bull; Isolation Forest v2 (weekly retrain on active deals)<br>
+                    &bull; Auto-escalation when anomaly_score &gt; 0.7<br><br>
+                    <strong>Later: Production ML Ops</strong><br>
+                    &bull; Shadow scoring (new model alongside old)<br>
+                    &bull; Drift detection on SHAP distributions<br>
+                    &bull; Per-division model fine-tuning<br>
+                    &bull; Confidence calibration (Platt scaling)
+                </p>
+            </div>
+            <div class="card" style="border-left: 3px solid #6a1b9a;">
+                <h3>Models Under Consideration (Future)</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    Only when data volume justifies complexity:<br>
+                    &bull; <strong>LightGBM:</strong> if training speed becomes an issue<br>
+                    &bull; <strong>Survival Analysis:</strong> "when will this deal close?" (time-to-event)<br>
+                    &bull; <strong>Sequence Models:</strong> signal ordering patterns (needs 10K+ deals)
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 14: Summary -->
+<section>
+    <p class="eyebrow">Summary</p>
+    <h2>Where we are today</h2>
+    <div class="grid-2" style="margin-top: 12px;">
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>What's Live</h3>
+                <p style="font-size: 0.64em; line-height: 1.7;">
+                    &#10003; XGBoost classifier predicting on_time / delayed / cancelled<br>
+                    &#10003; Isolation Forest flagging anomalous deals<br>
+                    &#10003; 21 features from 5 source systems, extracted in real-time<br>
+                    &#10003; SHAP explanations for every prediction<br>
+                    &#10003; ML is the sole scoring engine (rule-based disabled)<br>
+                    &#10003; Fail-loud behavior when ML is unavailable<br>
+                    &#10003; Velocity trends from ML feature vectors<br>
+                    &#10003; Community pattern detection (shared blockers, bottlenecks)<br>
+                    &#10003; Next Best Action using ML risk factors<br>
+                    &#10003; Batch prediction for portfolio-level scoring
+                </p>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>Key Numbers</h3>
+                <table class="metrics">
+                    <tr><td>Models deployed</td><td><strong>2</strong> (XGBoost + Isolation Forest)</td></tr>
+                    <tr><td>Features to model</td><td><strong>21</strong></td></tr>
+                    <tr><td>XGBoost accuracy</td><td><strong>76%</strong> (synthetic)</td></tr>
+                    <tr><td>Delayed recall</td><td><strong>60%</strong> (needs improvement)</td></tr>
+                    <tr><td>Anomaly rate</td><td><strong>15%</strong></td></tr>
+                    <tr><td>Inference latency</td><td><strong>&lt;500ms</strong></td></tr>
+                    <tr><td>Source systems</td><td><strong>5</strong> (SF, BP, EN, QU, JDE)</td></tr>
+                    <tr><td>Model version</td><td><strong>v0.2.0-synthetic</strong></td></tr>
+                </table>
+            </div>
+            <div class="danger">
+                <p><strong>Critical path to production:</strong> Real data. Everything else is validated on synthetic. The model's true performance is unknown until it sees real builder deals.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+    Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        width: 1100,
+        height: 680,
+        margin: 0.05,
+        transition: 'slide',
+        transitionSpeed: 'default',
+        backgroundTransition: 'fade'
+    });
+</script>
+</body>
+</html>
