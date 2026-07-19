@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Passport — Internal Investment Strategy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --bg-card: #f8fafc;
+            --text: #1e293b;
+            --text-2: #475569;
+            --text-3: #64748b;
+            --accent: #2563eb;
+            --accent-light: #eff6ff;
+            --accent-mid: #dbeafe;
+            --accent-dark: #1d4ed8;
+            --green: #059669;
+            --green-light: #ecfdf5;
+            --orange: #d97706;
+            --orange-light: #fffbeb;
+            --red: #dc2626;
+            --red-light: #fef2f2;
+            --purple: #7c3aed;
+            --purple-light: #f5f3ff;
+            --border: rgba(0,0,0,0.08);
+            --r: 12px;
+        }
+        * { box-sizing: border-box; }
+        .reveal { font-family: 'Inter', -apple-system, sans-serif; font-size: 16px; color: var(--text); }
+        .reveal .slides { text-align: left; }
+        .reveal .slides section { background: var(--bg); padding: 30px 44px; height: 100%; display: flex !important; flex-direction: column; justify-content: center; }
+        .reveal h1,.reveal h2,.reveal h3 { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); font-weight: 700; text-transform: none; letter-spacing: -0.02em; margin: 0; }
+        .reveal h1 { font-size: 1.7em; margin-bottom: 0.15em; }
+        .reveal h2 { font-size: 1.35em; margin-bottom: 0.2em; }
+        .reveal h3 { font-size: 0.88em; margin-bottom: 0.15em; color: var(--accent-dark); }
+        .reveal p { color: var(--text-2); font-size: 0.78em; line-height: 1.55; margin: 0 0 0.4em; }
+        .eyebrow { font-size: 0.62em; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+        .badge { display: inline-block; background: var(--accent-light); color: var(--accent-dark); padding: 3px 10px; border-radius: 999px; font-size: 0.58em; font-weight: 600; margin-right: 5px; margin-bottom: 5px; }
+        .badge-green { background: var(--green-light); color: var(--green); }
+        .badge-orange { background: var(--orange-light); color: var(--orange); }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r); padding: 14px 16px; }
+        .card h3 { font-size: 0.78em; margin-bottom: 4px; }
+        .card p { font-size: 0.66em; margin: 0; color: var(--text-3); line-height: 1.45; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 10px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 10px; }
+        .highlight { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--r) var(--r) 0; padding: 10px 14px; margin-top: 10px; }
+        .highlight p { font-size: 0.68em; color: var(--accent-dark); margin: 0; font-weight: 500; }
+        .warning { background: var(--orange-light); border-left: 3px solid var(--orange); border-radius: 0 var(--r) var(--r) 0; padding: 10px 14px; margin-top: 10px; }
+        .warning p { font-size: 0.68em; color: #92400e; margin: 0; font-weight: 500; }
+        .stat { font-family: 'Plus Jakarta Sans',sans-serif; font-size: 2em; font-weight: 800; color: var(--accent); line-height: 1; }
+        .stat-red { color: var(--red); }
+        .stat-green { color: var(--green); }
+        table.metrics { width: 100%; border-collapse: collapse; font-size: 0.66em; margin-top: 8px; }
+        table.metrics th { background: var(--accent-light); color: var(--accent-dark); padding: 6px 10px; text-align: left; font-weight: 600; }
+        table.metrics td { padding: 6px 10px; border-bottom: 1px solid var(--border); color: var(--text-2); }
+        table.metrics tr:last-child td { border-bottom: none; }
+        .source-quote { background: #f8fafc; border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 10px 14px; margin-bottom: 8px; }
+        .source-quote .quote-text { font-size: 0.62em; color: var(--text); line-height: 1.5; font-style: italic; margin: 0 0 4px; }
+        .source-quote .quote-text mark { background: #fef08a; color: var(--text); font-weight: 700; font-style: italic; padding: 1px 3px; border-radius: 3px; }
+        .source-quote .quote-source { font-size: 0.5em; color: var(--text-3); margin: 0; }
+        .source-quote.green { border-left-color: var(--green); }
+        .source-quote.orange { border-left-color: var(--orange); }
+        .source-quote.red { border-left-color: var(--red); }
+        .source-note { margin-top: 8px; font-size: 0.5em; color: var(--text-3); line-height: 1.4; }
+    </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 1: Title -->
+<section>
+    <p class="eyebrow">Internal Strategy Session &middot; July 2026</p>
+    <h1>Investment Strategy &amp;<br>Open Questions</h1>
+    <p style="font-size: 0.88em; margin-top: 6px;">Aligning on what we take to investors, what we defer, and how we frame the ask.</p>
+    <div style="margin-top: 14px;">
+        <span class="badge">Funding Amount</span>
+        <span class="badge">Valuation Framework</span>
+        <span class="badge">Blockchain Decision</span>
+        <span class="badge">Pricing Model</span>
+    </div>
+    <div class="highlight" style="margin-top: 18px;">
+        <p><strong>Agenda:</strong> Refresher &rarr; Data integration safety &rarr; Prediction mechanics &rarr; Financial tracking &rarr; Blockchain position &rarr; Market sizing &rarr; Revenue model &rarr; Valuation &amp; ask &rarr; Team &amp; use of funds &rarr; Exit &amp; risks</p>
+    </div>
+</section>
+
+<!-- SLIDE 2: Problem & Solution Refresher -->
+<section>
+    <p class="eyebrow">The 60-Second Refresher</p>
+    <h2>$10.8B/year lost to delays &amp; cancellations.<br>No one connects the systems that could prevent it.</h2>
+    <div class="grid-2" style="margin-top: 14px;">
+        <div>
+            <div class="source-quote red" style="margin-bottom: 8px;">
+                <p class="quote-text">"The study estimates an aggregate economic impact of <mark>$10.806 billion per year</mark> due to longer construction times. Higher carrying costs: <mark>$2.663 billion annually</mark>."</p>
+                <p class="quote-source">NAHB/HBI Study, June 2025</p>
+            </div>
+            <div class="source-quote orange">
+                <p class="quote-text">"More than <mark>40,000</mark> signed purchase agreements canceled in December, representing <mark>16.3% of all homes</mark> under contract."</p>
+                <p class="quote-source">Redfin / CNBC, Jan 2026</p>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="border-left: 3px solid var(--accent);">
+                <h3>Home Passport = The Intelligence Layer</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    Read-only integration across all builder systems &rarr; ML-powered Closing Confidence Score per deal.<br><br>
+                    <strong>Architecture:</strong><br>
+                    Builder Systems &rarr; YAML Connectors &rarr; Kafka &rarr; Graph Engine &rarr; ML Prediction &rarr; API &rarr; Portal<br><br>
+                    <strong>Key invariant:</strong> Never writes back. Never modifies builder data.
+                </p>
+            </div>
+            <div class="highlight" style="margin-top: 10px;">
+                <p>Demo is separate. This deck focuses on the business decisions we need to make as a founding team before going to investors.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 3: Data Integration Safety + Startup Validation -->
+<section>
+    <p class="eyebrow">Open Question Addressed</p>
+    <h2>No legal barrier to integrating these systems.<br>Others are already doing it &mdash; not at our scale or depth.</h2>
+    <div class="grid-2" style="margin-top: 12px;">
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>Why It's Legally Safe</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    <strong>RESPA:</strong> Prohibits kickbacks between affiliated businesses &mdash; NOT analytics or visibility across systems.<br><br>
+                    <strong>Mortgage data (ECOA/HMDA):</strong> Regulates fair lending decisions. We don't make lending decisions &mdash; we read status data.<br><br>
+                    <strong>Affiliated mortgage arms:</strong> A builder knowing "plumbing is 3 weeks late" doesn't violate lending regulations. That's operational intelligence, not a loan decision.<br><br>
+                    <strong>Our design:</strong> Read-only APIs. Source systems don't know we're correlating. No write-back.
+                </p>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 10px; border-left: 3px solid var(--green);">
+                <h3>Startup Validation: Cross-System Integration Is Funded</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    &bull; <strong>Cecilian Partners (The XO)</strong> &mdash; ERP digitizing lots + sales + closings for builders. Same data domains, workflow angle.<br><br>
+                    &bull; <strong>Digs.com</strong> &mdash; Builder-buyer communication pulling from construction + sales. Transparency layer, no analytics.<br><br>
+                    &bull; <strong>Mastt</strong> ($10M raised) &mdash; AI dashboards from multiple project systems. Commercial, not residential.<br><br>
+                    &bull; <strong>ALICE Technologies</strong> ($30M+ raised) &mdash; AI schedule optimization from BIM + construction data.
+                </p>
+            </div>
+            <div class="highlight" style="margin-top: 0;">
+                <p><strong>None target our question</strong> (on-time close probability) and none connect 5 systems across the full lifecycle to close. The integration itself is validated &mdash; our differentiation is the <em>question</em> and the <em>breadth</em>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 4: How the Prediction Engine Works -->
+<section>
+    <p class="eyebrow">Open Question Addressed</p>
+    <h2>"We tell you there's a problem before you know you have a problem."</h2>
+    <p>How does the system flag a delay before BuildPro marks it late?</p>
+    <div class="grid-2" style="margin-top: 12px;">
+        <div>
+            <div class="card" style="margin-bottom: 10px; border-top: 3px solid var(--accent);">
+                <h3>1. Comparative Neighborhood Metrics</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    Homes in the same community follow similar sequences. If homes 1&ndash;15 started plumbing by day 45 and home 16 hasn't by day 52 &mdash; something is wrong, even if no one marked it "late" yet.<br><br>
+                    <strong>Baseline = the builder's own historical data.</strong>
+                </p>
+            </div>
+            <div class="card" style="border-top: 3px solid var(--accent);">
+                <h3>2. Signal Velocity (Silence = Danger)</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    We track data updates per deal per week across all 5 systems. A healthy deal: 10&ndash;20 signals/week. A deal that drops to 0 for 7+ days is dying quietly.<br><br>
+                    <strong>Our #1 predictive feature.</strong> More predictive than % complete.
+                </p>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 10px; border-top: 3px solid var(--accent);">
+                <h3>3. Cross-System Sync Detection</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    Construction at 70% but mortgage at 20%? The house finishes before the loan is ready &mdash; closing slips.<br><br>
+                    <strong>No single-system tool can detect this.</strong> Unique to our architecture.
+                </p>
+            </div>
+            <div class="card" style="margin-bottom: 10px; border-top: 3px solid var(--green);">
+                <h3>4. Explainable ML (Not a Black Box)</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    Every prediction comes with ranked SHAP explanations:<br>
+                    "Mortgage silent 12 days" &bull; "Construction/mortgage out of sync"<br><br>
+                    Portal shows BOTH: ML confidence score AND real milestone completion per category. Users see <em>why</em>.
+                </p>
+            </div>
+            <div class="source-quote green">
+                <p class="quote-text">"We're telling you, you have a problem before you know you have a problem. Okay, great. Thank you."</p>
+                <p class="quote-source">Validated during founding team demo session</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 5: Financial Impact Tracking -->
+<section>
+    <p class="eyebrow">Open Question Addressed</p>
+    <h2>How we calculate preventable loss &mdash; the live equation.</h2>
+    <p>Is there a running ticker showing what a builder is losing? Yes. Here's how it works in the code today.</p>
+    <div class="grid-2" style="margin-top: 12px;">
+        <div>
+            <div class="card" style="margin-bottom: 10px; border-left: 3px solid var(--accent);">
+                <h3>The Formula (From Production Code)</h3>
+                <p style="font-size: 0.72em; font-family: monospace; color: var(--text); line-height: 2.2;">
+                    Preventable Loss =<br>
+                    &nbsp;&nbsp;&Sigma; max(0, target_close &minus; original_close)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&times; $500/day
+                </p>
+                <p style="font-size: 0.64em; line-height: 1.6; margin-top: 8px;">
+                    <strong>target_close_date:</strong> current projected close<br>
+                    <strong>original_close_date:</strong> date at contract signing<br>
+                    <strong>Positive diff = actual delay days</strong> (close date pushed back)<br><br>
+                    We use <strong>$500/day</strong> &mdash; conservative vs. industry data ($670/day, APB). Defensible in investor conversations.
+                </p>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>The Full Builder Pain Math (Verified)</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    Per verified industry data + founder discovery:<br><br>
+                    &bull; One division &asymp; <strong>200 homes/month</strong> (NAHB/DHI data)<br>
+                    &bull; <strong>12%</strong> get delayed<br>
+                    &bull; <strong>35%</strong> of those are preventable with visibility<br>
+                    &bull; Fully-loaded carry: <strong>$700/day</strong><br>
+                    &bull; Average preventable delay: <strong>18 days</strong>
+                </p>
+                <div style="text-align: center; margin-top: 8px; padding: 10px; background: var(--accent-light); border-radius: 8px;">
+                    <div class="stat" style="font-size: 1.4em;">$1.75M/year</div>
+                    <p style="font-size: 0.58em; margin-top: 4px; color: var(--accent-dark);">preventable loss per single division</p>
+                </div>
+            </div>
+            <div class="warning">
+                <p><strong>Pilot calibration needed:</strong> The $500/day constant will be replaced with builder-specific inputs (rate lock fees, lot carrying, labor idle) during onboarding. The equation structure stays the same.</p>
+            </div>
+        </div>
+    </div>
+    <div class="source-note">Sources: APB ($670/day), NAHB (200 homes/div/month from DHI 83K homes ÷ 40 divisions ÷ 12 months), market-validation-and-industry-evidence.md §8.3</div>
+</section>
+
+<!-- SLIDE 6: Blockchain — Founding Team Decision -->
+<section>
+    <p class="eyebrow">Founding Team Decision</p>
+    <h2>Blockchain: Not now. Revisit in 2&ndash;3 years.</h2>
+    <p>The predictability model works without it. The legal landscape is unsettled. We simplify our investor story.</p>
+    <div class="grid-2" style="margin-top: 12px;">
+        <div>
+            <div class="card" style="margin-bottom: 10px; border-left: 3px solid var(--green);">
+                <h3>The Decision</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    <strong>Not in our investor pitch or product roadmap for the next 2&ndash;3 years.</strong><br><br>
+                    Core platform delivers full value without it. This also removes syndication / fractionalization from scope entirely.<br><br>
+                    One-sentence in pitch: "Future: immutable audit trail for home transaction history once regulatory frameworks mature."
+                </p>
+            </div>
+            <div class="highlight" style="margin-top: 0;">
+                <p><strong>Investor benefit:</strong> We're an AI intelligence layer for homebuilders. Period. No crypto confusion, no securities risk, no regulatory landmines.</p>
+            </div>
+        </div>
+        <div>
+            <div class="card">
+                <h3>Why Defer (Not Kill)</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    &bull; <strong>ABA (March 2026):</strong> US law does NOT recognize blockchain for real estate conveyance<br><br>
+                    &bull; <strong>SEC Howey Test:</strong> Tokens with economic return = securities<br><br>
+                    &bull; <strong>GDPR vs. immutability:</strong> Right to be forgotten &mdash; unresolved<br><br>
+                    &bull; <strong>50-state property law:</strong> No federal preemption<br><br>
+                    Arguments both for and against. Once there's clarity, revisit as a data provenance / audit trail layer.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 7: Market Sizing -->
+<section>
+    <p class="eyebrow">Market Opportunity</p>
+    <h2>$1&ndash;2B addressable. Top 100 builders = our market.</h2>
+    <p>Bottom-up from verifiable sources. Every number traceable.</p>
+    <div class="grid-3" style="margin-top: 12px;">
+        <div class="card" style="text-align: center; border-top: 3px solid var(--accent);">
+            <p class="eyebrow" style="margin-bottom: 4px;">TAM</p>
+            <div class="stat">$1&ndash;2B</div>
+            <p style="margin-top: 6px; font-size: 0.6em; line-height: 1.5;">700K new US homes/yr &times; $1K&ndash;$2K SaaS fee per home transaction</p>
+        </div>
+        <div class="card" style="text-align: center; border-top: 3px solid var(--accent);">
+            <p class="eyebrow" style="margin-bottom: 4px;">SAM</p>
+            <div class="stat">$300&ndash;600M</div>
+            <p style="margin-top: 6px; font-size: 0.6em; line-height: 1.5;">Top 100 builders, ~420K homes<br>(65% of all closings)</p>
+        </div>
+        <div class="card" style="text-align: center; border-top: 3px solid var(--accent);">
+            <p class="eyebrow" style="margin-bottom: 4px;">SOM (Year 3)</p>
+            <div class="stat">$15&ndash;25M</div>
+            <p style="margin-top: 6px; font-size: 0.6em; line-height: 1.5;">15&ndash;20 builders &times; $1&ndash;2M ACV<br>(conservative from comps)</p>
+        </div>
+    </div>
+    <div class="grid-2" style="margin-top: 14px;">
+        <div class="card">
+            <h3>Bottom-Up Build</h3>
+            <table class="metrics">
+                <tr><th>Input</th><th>Value</th><th>Source</th></tr>
+                <tr><td>US new homes sold/yr</td><td>~700K</td><td>Census Bureau</td></tr>
+                <tr><td>Top 10 builder share</td><td>44.7%</td><td>NAHB/Eye on Housing 2024</td></tr>
+                <tr><td>Public builder share</td><td>~51%</td><td>ResiClub</td></tr>
+                <tr><td>Top 100 (estimated)</td><td>~65%</td><td>Extrapolated</td></tr>
+                <tr><td>Avg home price (new)</td><td>$499K</td><td>NAHB regulatory study 2026</td></tr>
+            </table>
+        </div>
+        <div class="card">
+            <h3>Validation: Comparable Revenue/Home</h3>
+            <table class="metrics">
+                <tr><th>Company</th><th>Revenue/Home</th><th>Scope</th></tr>
+                <tr><td>BuildPro (Hyphen)</td><td>~$200</td><td>Scheduling only</td></tr>
+                <tr><td>Encompass (ICE)</td><td>~$1,500&ndash;$2K</td><td>Mortgage only</td></tr>
+                <tr><td><strong>Home Passport</strong></td><td><strong>$500&ndash;$2K</strong></td><td><strong>Cross-system (5)</strong></td></tr>
+            </table>
+            <p style="margin-top: 6px; font-size: 0.58em;">We span more systems than any single tool &rarr; capturing more value per home is justified.</p>
+        </div>
+    </div>
+    <div class="source-note">Sources: Census Bureau (SAAR data), NAHB/Eye on Housing (top-10 share 2024), ResiClub (public builder share), Dataintelo (home builder software $3.2B global)</div>
+</section>
+
+<!-- SLIDE 8: Revenue Model & Pricing -->
+<section>
+    <p class="eyebrow">Open Question Addressed</p>
+    <h2>Three pricing models. Start per-deal, convert to platform.</h2>
+    <p>How much does it cost? Subscription or license? Here's our recommendation.</p>
+    <div class="grid-3" style="margin-top: 12px;">
+        <div class="card" style="border-top: 3px solid var(--accent);">
+            <h3>Option A: Per-Home Fee</h3>
+            <p style="font-size: 0.62em; line-height: 1.6;">
+                $500&ndash;$2,000 per home transaction<br><br>
+                <strong>Pro:</strong> Aligns cost with value. Easy ROI story.<br>
+                <strong>Con:</strong> Revenue fluctuates with housing cycles.
+            </p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent);">
+            <h3>Option B: Platform Subscription</h3>
+            <p style="font-size: 0.62em; line-height: 1.6;">
+                $500K&ndash;$5M/year per builder (volume-tiered)<br><br>
+                <strong>Pro:</strong> Predictable. Budgetable for builders.<br>
+                <strong>Con:</strong> Harder to justify without case study data.
+            </p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent);">
+            <h3>Option C: Hybrid</h3>
+            <p style="font-size: 0.62em; line-height: 1.6;">
+                Base fee + per-home fee<br><br>
+                <strong>Pro:</strong> Guaranteed minimum + upside.<br>
+                <strong>Con:</strong> Complex to explain in initial sales.
+            </p>
+        </div>
+    </div>
+    <div class="grid-2" style="margin-top: 14px;">
+        <div class="card" style="border-left: 3px solid var(--green);">
+            <h3>Recommendation: Start Per-Home, Convert to Platform</h3>
+            <p style="font-size: 0.64em; line-height: 1.6;">
+                Pilot at discounted rate ($500&ndash;$750/home) to prove ROI. Once case study data exists, move to platform pricing.<br><br>
+                This is the <strong>Procore playbook</strong> &mdash; usage-based first, platform pricing once modules expand.
+            </p>
+        </div>
+        <div class="card">
+            <h3>The ROI Argument (Per Builder)</h3>
+            <p style="font-size: 0.64em; line-height: 1.6;">
+                At $1,000/home for D.R. Horton (84K homes):<br>
+                &bull; Platform cost: <strong>$84M/yr (0.25% of revenue)</strong><br>
+                &bull; If we reduce incentive spend by just 1pp: <strong>$303M saved</strong><br>
+                &bull; ROI: <strong>3.6x in year one</strong><br><br>
+                Even conservative scenarios return 2x+.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 9: Valuation & The Ask -->
+<section>
+    <p class="eyebrow">The Funding Question &middot; Evidence-Based</p>
+    <h2>$2M on $12M post-money. Here's why.</h2>
+    <p>Comparable transactions show we're UNDER-asking relative to what similar companies raised with less product.</p>
+    <div class="grid-2" style="margin-top: 10px;">
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>Comparable Transactions (Verified)</h3>
+                <table class="metrics">
+                    <tr><th>Company</th><th>Stage</th><th>Raised</th><th>Product at Raise</th></tr>
+                    <tr><td><strong>Higharc</strong></td><td>Seed (2019)</td><td><strong>$4.69M</strong></td><td>Platform concept, no integrations</td></tr>
+                    <tr><td><strong>Verustruct</strong></td><td>Pre-Seed (2025)</td><td><strong>$2.44M</strong></td><td>Small-scale prototype only</td></tr>
+                    <tr><td><strong>Suppli</strong></td><td>Seed (2023)</td><td><strong>$3.1M</strong></td><td>Single-feature credit tool</td></tr>
+                </table>
+                <p style="font-size: 0.58em; margin-top: 6px; color: var(--text-3);">
+                    Dealroom 2026: Pre-Seed median ~$500K at $5M&ndash;$10M. Seed median ~$3M at $10M&ndash;$25M.<br>
+                    Carta 2024: Median seed valuation $14.8M.
+                </p>
+            </div>
+            <div class="source-quote green">
+                <p class="quote-text">Higharc had <mark>no product in production</mark> at seed and raised $4.69M. They're now at <mark>$174M total raised, $500M+ valuation</mark>. Same industry. Same buyers.</p>
+                <p class="quote-source">PitchBook, Inforcapital, Forbes (Feb 2024)</p>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>Why We Deserve More Than Typical Pre-Seed</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    <span style="color: var(--green);">&#9650;</span> Working product (870+ tests, live integrations)<br>
+                    <span style="color: var(--green);">&#9650;</span> ML model trained with SHAP explainability<br>
+                    <span style="color: var(--green);">&#9650;</span> Founding team of 4 already executing<br>
+                    <span style="color: var(--green);">&#9650;</span> Concentrated, identifiable ICP (top 200 builders)<br>
+                    <span style="color: var(--green);">&#9650;</span> $300M&ndash;$600M SAM validated by public data<br>
+                    <span style="color: var(--red);">&#9660;</span> No revenue yet<br>
+                    <span style="color: var(--red);">&#9660;</span> PropTech (not pure-AI premium)
+                </p>
+            </div>
+            <div class="card" style="border-left: 3px solid var(--accent);">
+                <h3>The Ask</h3>
+                <table class="metrics">
+                    <tr><td>Instrument</td><td><strong>Post-Money SAFE (YC standard)</strong></td></tr>
+                    <tr><td>Raise</td><td><strong>$2,000,000</strong></td></tr>
+                    <tr><td>Cap</td><td><strong>$12,000,000</strong></td></tr>
+                    <tr><td>Dilution</td><td><strong>~16.7%</strong></td></tr>
+                    <tr><td>Runway</td><td><strong>18&ndash;24 months</strong></td></tr>
+                    <tr><td>Milestone to Seed</td><td><strong>$1M+ ARR (5&ndash;8 paying builders)</strong></td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="source-note">Alternative scenarios: Conservative $1.5M on $10M (15% dilution) &middot; Aggressive $2.5M on $15M (16.7% dilution)</div>
+</section>
+
+<!-- SLIDE 10: Team & Use of Funds -->
+<section>
+    <p class="eyebrow">Use of Funds &middot; 18&ndash;24 Month Plan</p>
+    <h2>Where every dollar goes. Team of 4 today, scaling to 8.</h2>
+    <div class="grid-2" style="margin-top: 12px;">
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>Founding Team (Already Executing)</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    &bull; <strong>Bhavdeep &amp; Raman</strong> &mdash; Engineering (CTO + ML/Data)<br>
+                    &bull; <strong>Maen &amp; spouse</strong> &mdash; Strategy &amp; Business Development<br>
+                    &bull; <strong>Teresa &amp; spouse</strong> &mdash; Operations &amp; Industry Expertise<br><br>
+                    3 founding units. Base salary for each at pre-seed standard ($6K&ndash;$8K/month per unit until revenue).
+                </p>
+            </div>
+            <div class="card">
+                <h3>Allocation</h3>
+                <table class="metrics">
+                    <tr><th>Category</th><th>Amount</th><th>%</th></tr>
+                    <tr><td>Founder Salaries (3 units, 18&ndash;24 mo)</td><td>$430K&ndash;$575K</td><td>28%</td></tr>
+                    <tr><td>ML Engineer/Consultant (Month 2)</td><td>$200K&ndash;$250K</td><td>13%</td></tr>
+                    <tr><td>Full-Time Designer (Month 2)</td><td>$180K&ndash;$220K</td><td>11%</td></tr>
+                    <tr><td>Infrastructure (AWS + compliance)</td><td>$120K</td><td>6%</td></tr>
+                    <tr><td>SOC 2 + Legal + Insurance</td><td>$80K</td><td>4%</td></tr>
+                    <tr><td>Sales/Marketing (Month 6+)</td><td>$150K</td><td>8%</td></tr>
+                    <tr><td>Contingency (15%)</td><td>$300K</td><td>15%</td></tr>
+                    <tr><td><strong>Total</strong></td><td><strong>~$2M</strong></td><td></td></tr>
+                </table>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>Hiring Priority (Corrected)</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    <strong>Month 1&ndash;2:</strong> ML engineer/consultant &mdash; real data pipeline, model retraining on live builder data. Also: full-time designer &mdash; portal needs to be pitch-ready for builder demos.<br><br>
+                    <strong>Month 1&ndash;3:</strong> AWS deploy + SOC 2 Type I &mdash; achievable in 2&ndash;3 weeks with coding agents + team capacity. Not a 6-month endeavor.<br><br>
+                    <strong>Month 6+:</strong> Sales/BD (commission-heavy). By this point we should have pilot data to sell with.<br><br>
+                    <strong>No full-stack engineer needed early.</strong> Coding agents + existing team handle feature velocity. ML expertise and design are the actual gaps.
+                </p>
+            </div>
+            <div class="highlight" style="margin-top: 0;">
+                <p><strong>~60% goes to people.</strong> The product is built. We need: (1) ML expertise to train on real data, (2) design to make it sellable, (3) runway to close 5&ndash;8 builder contracts.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 11: Exit Strategy & Risks -->
+<section>
+    <p class="eyebrow">Open Question Addressed</p>
+    <h2>The exit number shapes everything else.</h2>
+    <p>Define the exit &mdash; it dictates who we target and how we handle investors.</p>
+    <div class="grid-2" style="margin-top: 12px;">
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>Exit Paths</h3>
+                <p style="font-size: 0.64em; line-height: 1.6;">
+                    <strong>Path A: Acquisition ($50&ndash;150M, 5&ndash;7 years)</strong><br>
+                    Acquirers: Procore, Higharc, Oracle (JDE), or a national builder. At $5M+ ARR with 85% gross margin, 10&ndash;20x revenue multiple is standard for vertical SaaS.<br><br>
+                    <strong>Path B: Vertical SaaS Growth ($500M+, 8&ndash;12 years)</strong><br>
+                    The Veeva/Procore model. Own one industry's workflow. IPO path. Higharc just hit $500M+ valuation in our exact space.<br><br>
+                    <strong>Path C: Acqui-hire Floor ($5&ndash;15M, 2&ndash;3 years)</strong><br>
+                    Team + technology value to any proptech company. Floor, not target.
+                </p>
+            </div>
+            <div class="warning" style="margin-top: 0;">
+                <p><strong>Decision needed:</strong> Are we building to sell (Path A) or building to own (Path B)? This affects fundraising strategy, team composition, and customer selection.</p>
+            </div>
+        </div>
+        <div>
+            <div class="card" style="margin-bottom: 10px;">
+                <h3>Kill Shots (Honest Assessment)</h3>
+                <table class="metrics">
+                    <tr><th>Risk</th><th>Prob</th><th>Mitigation</th></tr>
+                    <tr><td>BuildPro blocks API</td><td>15%</td><td>Position as complementary; builder makes intro</td></tr>
+                    <tr><td>Builder IT blocks post security review</td><td>25%</td><td>SOC 2 Type I; exec sponsor override</td></tr>
+                    <tr><td>Key person risk</td><td>20%</td><td>Raise to hire; team of 4 not solo</td></tr>
+                    <tr><td>Hyphen builds it themselves</td><td>10%</td><td>They lack mortgage + title + sales data</td></tr>
+                    <tr><td>Nobody wants this enough to pay</td><td>10%</td><td>$1.75M/yr quantified pain exists</td></tr>
+                </table>
+            </div>
+            <div class="highlight" style="margin-top: 0;">
+                <p><strong>What kills us:</strong> Not a competitor. Not tech failure. Not legal. It's the gap between "product ready" and "someone paying." The product is ahead of the business. Close that gap &mdash; everything else is solvable. Timeline: 6&ndash;9 months to first dollar.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+    Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        width: 1100,
+        height: 680,
+        margin: 0.05,
+        transition: 'slide',
+        transitionSpeed: 'default',
+        backgroundTransition: 'fade'
+    });
+</script>
+</body>
+</html>

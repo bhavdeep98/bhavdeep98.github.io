@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
     <title>Home Passport — AI-Powered Transaction Execution for Homebuilders</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
@@ -180,9 +179,8 @@
         <span class="badge">Read-Only Integration</span>
         <span class="badge">6 System Categories</span>
         <span class="badge">51 Signal Types</span>
-        <span class="badge badge-green">500+ Tests</span>
-        <span class="badge badge-purple">ML-Powered Predictions</span>
-        <span class="badge badge-orange">Blockchain Audit Trail</span>
+        <span class="badge badge-green">870+ Tests</span>
+        <span class="badge badge-purple">ML-Powered Predictions (Explainable)</span>
     </div>
     <div class="highlight" style="margin-top: 18px;">
         <p>Sits ABOVE existing builder tools (BuildPro, Encompass, Qualia, JDE, Salesforce, Procore) — never writes back, never disrupts operations.</p>
@@ -371,7 +369,7 @@
 
         <!-- Layer 3 -->
         <rect x="50" y="20" width="800" height="100" rx="10" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6"/>
-        <text x="450" y="43" text-anchor="middle" font-size="11" fill="#7c3aed" font-weight="bold">LAYER 3 — BLOCKCHAIN INFRASTRUCTURE (Planned)</text>
+        <text x="450" y="43" text-anchor="middle" font-size="11" fill="#7c3aed" font-weight="bold">LAYER 3 — BLOCKCHAIN INFRASTRUCTURE (Deferred 2028+)</text>
         <text x="250" y="72" text-anchor="middle" font-size="10" fill="#6d28d9">Home Passport</text>
         <text x="250" y="88" text-anchor="middle" font-size="8" fill="#8b5cf6">Immutable milestone history</text>
         <text x="450" y="72" text-anchor="middle" font-size="10" fill="#6d28d9">Land Passport</text>
@@ -537,8 +535,8 @@
 
     <div class="grid-2" style="margin-top: 14px;">
         <div class="card" style="border-left: 3px solid var(--accent);">
-            <h3>Analytics Layer</h3>
-            <p><strong>Confidence Score Calculator:</strong> Weighted category completion (Construction 35%, Mortgage 40%, Title 25%) minus penalties for staleness.<br><br><strong>Escalation Engine:</strong> Threshold-based alerts fire when scores drop or milestones stall. Right alert → right person → right time.</p>
+            <h3>Analytics Layer (ML-Powered, Explainable)</h3>
+            <p><strong>ML Confidence Score:</strong> XGBoost model predicts on_time / delayed / cancelled probability per deal. Every score comes with ranked SHAP explanations ("mortgage silent 12 days", "construction/mortgage out of sync").<br><br><strong>Category Completion (always computed):</strong> Real milestone progress per category (construction, mortgage, title, financial, sales, utility) from actual data — shown alongside ML score so users see both WHY and WHERE.<br><br><strong>Escalation Engine:</strong> Threshold-based alerts fire when scores drop or milestones stall.</p>
         </div>
         <div class="card" style="border-left: 3px solid var(--green);">
             <h3>Data Guarantees</h3>
@@ -669,42 +667,41 @@
     </aside>
 </section>
 
-<!-- SLIDE 8: Blockchain Layer -->
+<!-- SLIDE 8: Blockchain Layer — DEFERRED -->
 <section>
-    <p class="eyebrow">Layer 3 — Blockchain (Planned)</p>
-    <h2>Immutable trust layer — invisible infrastructure for every home.</h2>
-    <p>Blockchain is infrastructure, not a feature. Builders experience trusted workflows and permanent records. The technology is invisible to end users.</p>
+    <p class="eyebrow">Layer 3 — Blockchain (Deferred to 2028+)</p>
+    <h2>Immutable trust layer — deferred until regulatory clarity.</h2>
+    <p>The founding team has decided to defer blockchain from the product roadmap. The core platform delivers full value without it. Revisit in 2–3 years once the policy ecosystem matures.</p>
 
     <div class="grid-2" style="margin-top: 12px;">
         <div>
             <div class="card" style="margin-bottom: 10px; border-left: 3px solid var(--purple);">
-                <h3>🏠 Digital Home Passport</h3>
-                <p>Created at contract signing. Every verified milestone anchored as an immutable timestamped event. Travels with the asset through ownership changes forever.</p>
-                <p style="margin-top: 6px;"><strong>Contains:</strong> Construction history, ownership lineage, mortgage records, warranties, utility records, maintenance history.</p>
+                <h3>🏠 Future Vision: Digital Home Passport</h3>
+                <p>Immutable audit trail for construction milestones, ownership lineage, and maintenance history. Positioned as data provenance (like a notary), not property conveyance.</p>
+                <p style="margin-top: 6px;"><strong>Not in current product scope. Not in investor pitch.</strong></p>
             </div>
-            <div class="card" style="border-left: 3px solid var(--purple);">
-                <h3>🌍 Digital Land Passport (Phase 3)</h3>
-                <p>Created at land acquisition. Tracks ownership lineage, JV structures, zoning, easements, entitlements, environmental reports.</p>
-                <p style="margin-top: 6px;">Feeds forward into Home Passport when construction begins.</p>
+            <div class="card" style="border-left: 3px solid var(--orange);">
+                <h3>⚖️ Why Deferred</h3>
+                <p>• ABA (March 2026): US law does not recognize blockchain for real estate conveyance<br>• SEC Howey Test: tokens with economic return = securities<br>• GDPR vs. immutability: unresolved tension<br>• 50-state property law: no federal preemption<br><br>Arguments both for and against. Revisit once frameworks mature.</p>
             </div>
         </div>
         <div>
             <div class="card" style="margin-bottom: 10px;">
-                <h3>⚙️ Technology: Hyperledger Fabric 2.x</h3>
+                <h3>⚙️ Technology: Hyperledger Fabric 2.x (Architecture Validated)</h3>
                 <p>• Permissioned consortium (no gas fees)<br>• Role-based access control<br>• Private data collections for confidentiality<br>• 2-org network (expandable)</p>
             </div>
             <div class="card" style="margin-bottom: 10px;">
-                <h3>🔄 Two-Layer Trust Model</h3>
-                <p><strong>PostgreSQL:</strong> Mutable state (supports forward/backward transitions)<br><strong>Blockchain:</strong> Append-only event anchors (immutable audit trail)<br>Graph engine writes to DB freely; emits events for blockchain service to anchor asynchronously.</p>
+                <h3>🔄 Two-Layer Trust Model (Designed, Not Deployed)</h3>
+                <p><strong>PostgreSQL:</strong> Mutable state (supports forward/backward transitions)<br><strong>Blockchain:</strong> Append-only event anchors (immutable audit trail)<br>Async anchoring means blockchain never adds latency to operations.</p>
             </div>
             <div class="card" style="background: var(--orange-light);">
-                <h3>📋 Status: Architecture Confirmed</h3>
-                <p>Design validated. Dev network deferred — nothing on the critical path depends on it. Async anchoring means blockchain never adds latency to operations.</p>
+                <h3>📋 Status: Architecture Confirmed, Deployment Deferred</h3>
+                <p>Design validated. Dev network deferred to 2028+. Nothing on the critical path depends on it. Core product (confidence scoring + escalation) works fully without blockchain.</p>
             </div>
         </div>
     </div>
     <aside class="notes">
-        Layer 3 is the blockchain — and I want to be clear about our philosophy here: blockchain is infrastructure, not a feature. Builders never see it. They experience trusted workflows and permanent records. Under the hood, Hyperledger Fabric — a permissioned consortium blockchain with no gas fees and role-based access. The two-layer trust model is key: PostgreSQL holds mutable state — deals can go backward, milestones can regress. The blockchain receives append-only event anchors asynchronously. It creates a Digital Home Passport at contract signing and anchors every verified milestone as an immutable timestamped event. This passport travels with the home through ownership changes — containing construction history, mortgage records, warranties, everything. The Land Passport extends this backward to land acquisition in Phase 3. Status: architecture confirmed, dev network deferred. Nothing on our critical path depends on it — we built it to be async so it never adds latency to operations.
+        Layer 3 blockchain is deferred. The founding team decided in July 2026 that the legal landscape is too unsettled — ABA ruling, SEC Howey risk, GDPR immutability conflict. The core product works without it. We'll revisit in 2-3 years once regulatory frameworks mature. This simplifies our investor story: we're an AI intelligence layer, period.
     </aside>
 </section>
 
@@ -752,11 +749,11 @@
         </div>
         <div class="card" style="border-left: 3px solid var(--green);">
             <h3>📐 Market Position</h3>
-            <p><strong>TAM:</strong> $1B–$2B/yr (US new-home transaction SaaS)<br><strong>SAM:</strong> $300M–$600M/yr (top 100 production builders)<br><strong>SOM (Year 3):</strong> $50M–$100M ARR<br><strong>Pricing:</strong> $500–$2,000 per home transaction</p>
+            <p><strong>TAM:</strong> $1B–$2B/yr (US new-home transaction SaaS, 700K homes × $1K–$2K)<br><strong>SAM:</strong> $300M–$600M/yr (top 100 production builders, ~420K homes)<br><strong>SOM (Year 3):</strong> $15M–$25M ARR<br><strong>Pricing:</strong> $500–$2,000 per home transaction</p>
         </div>
     </div>
     <div class="source-note">
-        Full strategic analysis (PESTLE, Porter's, SWOT, VRIO, Ansoff, Balanced Scorecard) available in strategy-frameworks document. Market sizing: NAHB, Dataintelo ($3.2B→$7.1B by 2034), Eye on Housing (top-10 = 44.7% of closings).
+        Full strategic analysis (PESTLE, Porter's, SWOT, VRIO, Ansoff, Balanced Scorecard): <a href="file:///C:/Users/bhavd/workspace/housing%20passport/docs/strategy-frameworks.html" target="_blank">strategy-frameworks.html</a> · Market sizing: NAHB, Dataintelo ($3.2B→$7.1B by 2034), Eye on Housing (top-10 = 44.7% of closings).
     </div>
     <aside class="notes">
         Competitive landscape. Let's group the players by category. Builder tools like BuildPro, Encompass, Qualia — each serves ONE lifecycle stage. We connect all of them. Builder ERPs like Cecilian Partners — internal workflow, no cross-system prediction. Transaction players like Propy and Coadjute — they handle the closing itself. We predict risk BEFORE it gets to closing. Tokenization platforms like RealT — investment products, completely different market. Our Porter's Five Forces analysis shows low rivalry, low threat of new entrants because of the integration complexity, and the main substitute is literally spreadsheets in weekly meetings. VRIO analysis identifies three sustained competitive advantages: the multi-system integration layer that takes months per system, stale-data-resilient prediction that works even when BuildPro data is stale, and cross-system features that no single tool can compute. Growth strategy is Ansoff market penetration: prove at one division, expand within the builder, then sign more builders. The data moat grows with every deal. Full strategic analysis — PESTLE, Porter's, SWOT, VRIO, Ansoff, and Balanced Scorecard — is documented in the strategy frameworks document.
@@ -777,7 +774,7 @@
                     <tr><td>Homes cancel because problems surface too late</td><td>Confidence Score predicts risk per home in real-time</td></tr>
                     <tr><td>Operations teams waste time asking "where are we?"</td><td>Unified dashboard with milestone visibility</td></tr>
                     <tr><td>Incentives are the only lever</td><td>AI-powered escalation triggers action before stalls</td></tr>
-                    <tr><td>No permanent record of construction</td><td>Blockchain-backed Home Passport</td></tr>
+                    <tr><td>No permanent record of construction</td><td>Immutable audit trail (future roadmap, deferred)</td></tr>
                 </tbody>
             </table>
         </div>
