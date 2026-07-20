@@ -328,69 +328,41 @@
 <!-- SLIDE 3: Architecture Overview -->
 <section>
     <p class="eyebrow">Architecture</p>
-    <h2>Three-layer platform — intelligence above existing tools.</h2>
-    <svg viewBox="0 0 900 380" style="width: 92%; margin-top: 10px;">
-        <!-- Layer 1 -->
+    <h2>One core platform — intelligence above existing tools.</h2>
+    <svg viewBox="0 0 900 380" style="width: 92%; margin-top: 10px;" role="img" aria-label="Builder systems flow through ingestion, Kafka, graph processing, PostgreSQL, API, and portal">
         <rect x="50" y="290" width="800" height="70" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
-        <text x="450" y="315" text-anchor="middle" font-size="11" fill="#64748b" font-weight="bold">LAYER 1 — EXISTING BUILDER SYSTEMS (Read-Only)</text>
+        <text x="450" y="315" text-anchor="middle" font-size="11" fill="#64748b" font-weight="bold">EXISTING BUILDER SYSTEMS — READ-ONLY</text>
         <text x="450" y="340" text-anchor="middle" font-size="10" fill="#94a3b8">BuildPro · JDE · Encompass · Qualia · Salesforce · Procore</text>
 
-        <!-- Layer 2 -->
         <rect x="50" y="140" width="800" height="130" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
-        <text x="450" y="163" text-anchor="middle" font-size="11" fill="#2563eb" font-weight="bold">LAYER 2 — AI TRANSACTION EXECUTION (Core Product)</text>
+        <text x="450" y="163" text-anchor="middle" font-size="11" fill="#2563eb" font-weight="bold">HOME PASSPORT — TRANSACTION INTELLIGENCE</text>
+        <rect x="80" y="175" width="130" height="50" rx="6" fill="#fff" stroke="#2563eb"/><text x="145" y="197" text-anchor="middle" font-size="9" fill="#1e293b" font-weight="600">Event Ingestion</text><text x="145" y="213" text-anchor="middle" font-size="8" fill="#64748b">YAML Connectors</text>
+        <rect x="230" y="175" width="120" height="50" rx="6" fill="#fff" stroke="#2563eb"/><text x="290" y="197" text-anchor="middle" font-size="9" fill="#1e293b" font-weight="600">Kafka Bus</text><text x="290" y="213" text-anchor="middle" font-size="8" fill="#64748b">Event Stream</text>
+        <rect x="370" y="175" width="130" height="50" rx="6" fill="#fff" stroke="#2563eb"/><text x="435" y="197" text-anchor="middle" font-size="9" fill="#1e293b" font-weight="600">Graph Engine</text><text x="435" y="213" text-anchor="middle" font-size="8" fill="#64748b">DAG + Critical Path</text>
+        <rect x="520" y="175" width="130" height="50" rx="6" fill="#fff" stroke="#2563eb"/><text x="585" y="197" text-anchor="middle" font-size="9" fill="#1e293b" font-weight="600">ML Prediction</text><text x="585" y="213" text-anchor="middle" font-size="8" fill="#64748b">Ranked Explanations</text>
+        <rect x="670" y="175" width="150" height="50" rx="6" fill="#fff" stroke="#2563eb"/><text x="745" y="197" text-anchor="middle" font-size="9" fill="#1e293b" font-weight="600">Confidence Score</text><text x="745" y="213" text-anchor="middle" font-size="8" fill="#64748b">Per Active Home</text>
+        <rect x="200" y="237" width="240" height="25" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="0.5"/><text x="320" y="254" text-anchor="middle" font-size="9" fill="#1d4ed8" font-weight="600">Fastify API + Escalation Engine</text>
+        <rect x="470" y="237" width="200" height="25" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="0.5"/><text x="570" y="254" text-anchor="middle" font-size="9" fill="#1d4ed8" font-weight="600">Next.js Builder Portal</text>
 
-        <!-- Layer 2 components -->
-        <rect x="80" y="175" width="130" height="50" rx="6" fill="#fff" stroke="#2563eb" stroke-width="1"/>
-        <text x="145" y="197" text-anchor="middle" font-size="9" fill="#1e293b" font-weight="600">Event Ingestion</text>
-        <text x="145" y="213" text-anchor="middle" font-size="8" fill="#64748b">YAML Connectors</text>
+        <rect x="50" y="20" width="800" height="100" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+        <text x="450" y="43" text-anchor="middle" font-size="11" fill="#059669" font-weight="bold">BUILDER OPERATING VIEW</text>
+        <text x="225" y="76" text-anchor="middle" font-size="10" fill="#047857">Pipeline Visibility</text><text x="225" y="92" text-anchor="middle" font-size="8" fill="#059669">Division → community → home</text>
+        <text x="450" y="76" text-anchor="middle" font-size="10" fill="#047857">Explainable Risk</text><text x="450" y="92" text-anchor="middle" font-size="8" fill="#059669">What is at risk and why</text>
+        <text x="675" y="76" text-anchor="middle" font-size="10" fill="#047857">Prioritized Action</text><text x="675" y="92" text-anchor="middle" font-size="8" fill="#059669">Escalations owned by people</text>
 
-        <rect x="230" y="175" width="120" height="50" rx="6" fill="#fff" stroke="#2563eb" stroke-width="1"/>
-        <text x="290" y="197" text-anchor="middle" font-size="9" fill="#1e293b" font-weight="600">Kafka Bus</text>
-        <text x="290" y="213" text-anchor="middle" font-size="8" fill="#64748b">Redpanda</text>
-
-        <rect x="370" y="175" width="130" height="50" rx="6" fill="#fff" stroke="#2563eb" stroke-width="1"/>
-        <text x="435" y="197" text-anchor="middle" font-size="9" fill="#1e293b" font-weight="600">Graph Engine</text>
-        <text x="435" y="213" text-anchor="middle" font-size="8" fill="#64748b">DAG + Critical Path</text>
-
-        <rect x="520" y="175" width="130" height="50" rx="6" fill="#fff" stroke="#2563eb" stroke-width="1"/>
-        <text x="585" y="197" text-anchor="middle" font-size="9" fill="#1e293b" font-weight="600">ML Prediction</text>
-        <text x="585" y="213" text-anchor="middle" font-size="8" fill="#64748b">26 Features</text>
-
-        <rect x="670" y="175" width="150" height="50" rx="6" fill="#fff" stroke="#2563eb" stroke-width="1"/>
-        <text x="745" y="197" text-anchor="middle" font-size="9" fill="#1e293b" font-weight="600">Confidence Score</text>
-        <text x="745" y="213" text-anchor="middle" font-size="8" fill="#64748b">Real-time per home</text>
-
-        <!-- API + Portal row -->
-        <rect x="200" y="237" width="240" height="25" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="0.5"/>
-        <text x="320" y="254" text-anchor="middle" font-size="9" fill="#1d4ed8" font-weight="600">Fastify REST API + Escalation Engine</text>
-
-        <rect x="470" y="237" width="200" height="25" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="0.5"/>
-        <text x="570" y="254" text-anchor="middle" font-size="9" fill="#1d4ed8" font-weight="600">Next.js Builder Portal</text>
-
-        <!-- Layer 3 -->
-        <rect x="50" y="20" width="800" height="100" rx="10" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6"/>
-        <text x="450" y="43" text-anchor="middle" font-size="11" fill="#7c3aed" font-weight="bold">LAYER 3 — BLOCKCHAIN INFRASTRUCTURE (Deferred 2028+)</text>
-        <text x="250" y="72" text-anchor="middle" font-size="10" fill="#6d28d9">Home Passport</text>
-        <text x="250" y="88" text-anchor="middle" font-size="8" fill="#8b5cf6">Immutable milestone history</text>
-        <text x="450" y="72" text-anchor="middle" font-size="10" fill="#6d28d9">Land Passport</text>
-        <text x="450" y="88" text-anchor="middle" font-size="8" fill="#8b5cf6">Ownership lineage</text>
-        <text x="650" y="72" text-anchor="middle" font-size="10" fill="#6d28d9">Smart Contracts</text>
-        <text x="650" y="88" text-anchor="middle" font-size="8" fill="#8b5cf6">Hyperledger Fabric 2.x</text>
-
-        <!-- Arrows -->
         <path d="M 450 290 L 450 270" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowGray)"/>
-        <path d="M 450 140 L 450 120" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4" marker-end="url(#arrowPurple)"/>
+        <path d="M 450 140 L 450 120" stroke="#059669" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
         <defs>
             <marker id="arrowGray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#94a3b8"/></marker>
-            <marker id="arrowPurple" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#7c3aed"/></marker>
+            <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#059669"/></marker>
             <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2563eb"/></marker>
         </defs>
     </svg>
     <div class="highlight" style="margin-top: 8px;">
-        <p><strong>Key principle:</strong> Never writes back to builder systems. Read-only integration enforced by EgressGuard (blocks non-GET/HEAD requests at the connector level).</p>
+        <p><strong>Key principle:</strong> Home Passport reads authorized status data and never writes back to builder systems. The core product has no blockchain dependency.</p>
     </div>
     <aside class="notes">
-        This is the three-layer architecture. At the bottom, Layer 1, are the builder's existing systems — BuildPro, JDE, Encompass, Qualia, Salesforce, Procore. We don't replace any of them. We connect to them read-only. Layer 2 is our core product — the AI Transaction Execution layer. Data flows from their systems through our YAML-based connectors into Kafka, then into the Graph Engine where we maintain a dependency DAG per deal. The ML model extracts 26 features and produces a confidence score. All of this serves the API and the builder portal. Layer 3, shown dashed because it's planned, is the blockchain layer — Hyperledger Fabric for immutable event anchoring. It creates a permanent Home Passport that travels with the property. The key principle is that read-only guarantee. We have an EgressGuard that physically blocks any non-GET request at the connector level. Builders can trust we'll never touch their data.
+        The builder keeps every existing system. Home Passport reads authorized status data, normalizes it, and maps the cross-system dependencies that determine whether a home can close. Kafka carries typed signals into the graph and prediction layers; the API and portal turn those results into pipeline visibility, explainable risk, and human-owned escalations. Nothing in the core path depends on blockchain or writes back into a builder tool.
     </aside>
 </section>
 <!-- SLIDE 4: Connector Framework -->
@@ -667,41 +639,44 @@
     </aside>
 </section>
 
-<!-- SLIDE 8: Blockchain Layer — DEFERRED -->
+<!-- SLIDE 8: Enterprise Scale -->
 <section>
-    <p class="eyebrow">Layer 3 — Blockchain (Deferred to 2028+)</p>
-    <h2>Immutable trust layer — deferred until regulatory clarity.</h2>
-    <p>The founding team has decided to defer blockchain from the product roadmap. The core platform delivers full value without it. Revisit in 2–3 years once the policy ecosystem matures.</p>
+    <p class="eyebrow">Enterprise Scale</p>
+    <h2>Scale active operations and historical learning differently.</h2>
+    <p>National builders may have millions of completed homes in source systems, but only tens of thousands are active at once. Live graphs belong in the operational tier; history belongs in object storage and derived training features.</p>
 
-    <div class="grid-2" style="margin-top: 12px;">
-        <div>
-            <div class="card" style="margin-bottom: 10px; border-left: 3px solid var(--purple);">
-                <h3>🏠 Future Vision: Digital Home Passport</h3>
-                <p>Immutable audit trail for construction milestones, ownership lineage, and maintenance history. Positioned as data provenance (like a notary), not property conveyance.</p>
-                <p style="margin-top: 6px;"><strong>Not in current product scope. Not in investor pitch.</strong></p>
-            </div>
-            <div class="card" style="border-left: 3px solid var(--orange);">
-                <h3>⚖️ Why Deferred</h3>
-                <p>• ABA (March 2026): US law does not recognize blockchain for real estate conveyance<br>• SEC Howey Test: tokens with economic return = securities<br>• GDPR vs. immutability: unresolved tension<br>• 50-state property law: no federal preemption<br><br>Arguments both for and against. Revisit once frameworks mature.</p>
-            </div>
+    <div class="grid-4" style="margin-top: 12px;">
+        <div class="card" style="border-top: 3px solid var(--accent); text-align: center;">
+            <p class="eyebrow">Pilot Division</p><div class="stat" style="font-size: 1.35em;">$1.1–1.5K</div><p style="margin-top: 6px;">per month<br>500–2K active homes<br>1K–10K signals/day</p>
         </div>
-        <div>
-            <div class="card" style="margin-bottom: 10px;">
-                <h3>⚙️ Technology: Hyperledger Fabric 2.x (Architecture Validated)</h3>
-                <p>• Permissioned consortium (no gas fees)<br>• Role-based access control<br>• Private data collections for confidentiality<br>• 2-org network (expandable)</p>
-            </div>
-            <div class="card" style="margin-bottom: 10px;">
-                <h3>🔄 Two-Layer Trust Model (Designed, Not Deployed)</h3>
-                <p><strong>PostgreSQL:</strong> Mutable state (supports forward/backward transitions)<br><strong>Blockchain:</strong> Append-only event anchors (immutable audit trail)<br>Async anchoring means blockchain never adds latency to operations.</p>
-            </div>
-            <div class="card" style="background: var(--orange-light);">
-                <h3>📋 Status: Architecture Confirmed, Deployment Deferred</h3>
-                <p>Design validated. Dev network deferred to 2028+. Nothing on the critical path depends on it. Core product (confidence scoring + escalation) works fully without blockchain.</p>
-            </div>
+        <div class="card" style="border-top: 3px solid var(--accent); text-align: center;">
+            <p class="eyebrow">Regional Builder</p><div class="stat" style="font-size: 1.35em;">$1.7–3.0K</div><p style="margin-top: 6px;">per month<br>5K–15K active homes<br>10K–75K signals/day</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--orange); text-align: center;">
+            <p class="eyebrow">National Builder</p><div class="stat stat-orange" style="font-size: 1.35em;">$3.8–9.8K</div><p style="margin-top: 6px;">per month<br>30K–50K active homes<br>60K–250K signals/day</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--green); text-align: center;">
+            <p class="eyebrow">+ 2M History</p><div class="stat stat-green" style="font-size: 1.35em;">+$20–75</div><p style="margin-top: 6px;">archive/month<br>+$1K–5K import<br>~800GB raw</p>
         </div>
     </div>
+
+    <div class="grid-2" style="margin-top: 12px;">
+        <div class="card">
+            <h3>Production changes before national scale</h3>
+            <p>Kafka RF3 with 12–24 partitions · multiple graph consumers · explicit connection pools and PgBouncer · RDS Multi-AZ · time-partitioned signals · closed-home graph archival.</p>
+        </div>
+        <div class="card">
+            <h3>Why PostgreSQL is the cost focus</h3>
+            <p>At 250K signals/day, seven-day Kafka storage at RF3 is only ~10.5GB. Retaining signals and indexes in PostgreSQL can add roughly 548–913GB/year, so archival and retention policy matter more than streaming storage.</p>
+        </div>
+    </div>
+
+    <div class="highlight" style="margin-top: 10px;">
+        <p><strong>Architecture decision:</strong> keep active homes in PostgreSQL and the graph engine; store completed history in S3/Parquet and materialize only the features needed for model training.</p>
+    </div>
+    <div class="source-note">Planning assumptions: AWS us-east-1 on-demand, ARM Fargate, Multi-AZ production, 2KB average signal, 2–5 signals/active-home/day, seven-day Kafka retention. Sources: <a href="https://aws.amazon.com/fargate/pricing/" target="_blank">AWS Fargate</a>, <a href="https://aws.amazon.com/msk/pricing/" target="_blank">AWS MSK</a>, <a href="https://aws.amazon.com/rds/postgresql/pricing/" target="_blank">AWS RDS</a>, <a href="https://aws.amazon.com/s3/pricing/" target="_blank">AWS S3</a>. Planning ranges, not an AWS quote.</div>
     <aside class="notes">
-        Layer 3 blockchain is deferred. The founding team decided in July 2026 that the legal landscape is too unsettled — ABA ruling, SEC Howey risk, GDPR immutability conflict. The core product works without it. We'll revisit in 2-3 years once regulatory frameworks mature. This simplifies our investor story: we're an AI intelligence layer, period.
+        Scale is not millions of concurrent graphs. A national builder is more likely to have 30,000 to 50,000 active homes, producing roughly 60,000 to 250,000 emitted signals per day under our planning assumptions. The live stack scales for those homes. Millions of completed homes are imported once into low-cost object storage, transformed into Parquet and model features, and never instantiated as active milestone graphs. These ranges include a production high-availability baseline and remain planning estimates until we measure real connector payloads and throughput.
     </aside>
 </section>
 
@@ -718,20 +693,20 @@
                     <tr><th>Category</th><th>Players</th><th>Our Differentiation</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td><strong>Builder Tools (Single-Silo)</strong></td><td>BuildPro, Encompass, Qualia, Procore</td><td>Each serves ONE stage. We connect all of them.</td></tr>
-                    <tr><td><strong>Builder ERPs</strong></td><td>Cecilian Partners (The XO), Buildertrend</td><td>Internal workflow, no cross-system AI prediction.</td></tr>
-                    <tr><td><strong>Transactions/Deeds</strong></td><td>Propy, ShelterZoom, Coadjute, Ubitquity</td><td>They close deals. We <em>predict risk before</em> close.</td></tr>
-                    <tr><td><strong>Tokenization</strong></td><td>RealT, Lofty, Roofstock onChain</td><td>Investment platforms. We serve <em>production ops</em>.</td></tr>
-                    <tr><td><strong>Builder Communication</strong></td><td>Digs.com</td><td>UX layer only. No analytics or prediction.</td></tr>
+                    <tr><td><strong>Builder Tools (Single-Silo)</strong></td><td>BuildPro, Encompass, Qualia, Procore</td><td>Each serves one stage; we connect their dependencies.</td></tr>
+                    <tr><td><strong>Builder ERP / Workflow</strong></td><td>The XO, Buildertrend</td><td>Systems of record and workflow vs. cross-system close-risk prediction.</td></tr>
+                    <tr><td><strong>Construction Analytics</strong></td><td>ALICE, Mastt</td><td>Project optimization and reporting vs. the full transaction path to close.</td></tr>
+                    <tr><td><strong>Builder Communication</strong></td><td>Digs</td><td>Buyer and team collaboration vs. dependency graphs and prediction.</td></tr>
+                    <tr><td><strong>Internal BI</strong></td><td>Data warehouses, dashboards</td><td>Custom reporting is the strongest substitute; we offer a packaged operating model.</td></tr>
                 </tbody>
             </table>
         </div>
         <div>
             <div class="card" style="border-left: 3px solid var(--green); margin-bottom: 8px;">
-                <h3>Porter's Five Forces — Favorable</h3>
-                <p><strong>New Entrants:</strong> Low threat — requires deep builder integration + domain expertise + blockchain infra.<br>
-                <strong>Rivalry:</strong> Low — no direct competitor combines AI prediction + multi-system integration + blockchain passport.<br>
-                <strong>Substitutes:</strong> Spreadsheets and weekly pipeline meetings. No cross-system AI alternative exists.</p>
+                <h3>Porter's Five Forces — Execution Matters</h3>
+                <p><strong>New entrants:</strong> Integration depth, domain mapping, security review, and customer access create friction — but not an impenetrable barrier.<br>
+                <strong>Rivalry:</strong> Adjacent ERP, analytics, and workflow vendors can expand into prediction.<br>
+                <strong>Substitutes:</strong> Builder BI teams, spreadsheets, and weekly pipeline meetings remain the default.</p>
             </div>
             <div class="card" style="border-left: 3px solid var(--accent);">
                 <h3>VRIO — 3 Sustained Advantages</h3>
@@ -744,71 +719,86 @@
 
     <div class="grid-2" style="margin-top: 8px;">
         <div class="card" style="border-left: 3px solid var(--purple);">
-            <h3>🏰 Moat Strategy (Ansoff: Penetration First)</h3>
-            <p>Prove wedge at 1 division → expand to all 40+ divisions → sign 2nd builder. Data moat grows with every home that flows through. Blockchain passport value compounds over time.</p>
+            <h3>🏰 Moat Strategy: Penetration First</h3>
+            <p>Prove the wedge in one paid division → document measurable operating value → expand across divisions and system categories → sign the next builder. Defensibility grows from normalized cross-system data, workflow adoption, and validated builder-specific outcomes.</p>
         </div>
         <div class="card" style="border-left: 3px solid var(--green);">
             <h3>📐 Market Position</h3>
-            <p><strong>TAM:</strong> $1B–$2B/yr (US new-home transaction SaaS, 700K homes × $1K–$2K)<br><strong>SAM:</strong> $300M–$600M/yr (top 100 production builders, ~420K homes)<br><strong>SOM (Year 3):</strong> $15M–$25M ARR<br><strong>Pricing:</strong> $500–$2,000 per home transaction</p>
+            <p><strong>TAM:</strong> $67.9M/year (679,083 U.S. new homes × $100)<br><strong>SAM:</strong> &gt;$50M/year (&gt;500,000 top-200 builder units × $100)<br><strong>SOM:</strong> $2.5M ARR (10 builders × 2,500 homes × $100)<br><strong>Pricing hypothesis:</strong> $100 per home monitored through close</p>
         </div>
     </div>
     <div class="source-note">
-        Full strategic analysis (PESTLE, Porter's, SWOT, VRIO, Ansoff, Balanced Scorecard): <a href="file:///C:/Users/bhavd/workspace/housing%20passport/docs/strategy-frameworks.html" target="_blank">strategy-frameworks.html</a> · Market sizing: NAHB, Dataintelo ($3.2B→$7.1B by 2034), Eye on Housing (top-10 = 44.7% of closings).
+        Market sizing: <a href="https://www.census.gov/construction/nrs/pdf/newressales.pdf" target="_blank">U.S. Census New Residential Sales</a> and NAHB/Builder top-200 closing totals. Pricing is a pilot hypothesis, not a reported industry benchmark.
     </div>
     <aside class="notes">
-        Competitive landscape. Let's group the players by category. Builder tools like BuildPro, Encompass, Qualia — each serves ONE lifecycle stage. We connect all of them. Builder ERPs like Cecilian Partners — internal workflow, no cross-system prediction. Transaction players like Propy and Coadjute — they handle the closing itself. We predict risk BEFORE it gets to closing. Tokenization platforms like RealT — investment products, completely different market. Our Porter's Five Forces analysis shows low rivalry, low threat of new entrants because of the integration complexity, and the main substitute is literally spreadsheets in weekly meetings. VRIO analysis identifies three sustained competitive advantages: the multi-system integration layer that takes months per system, stale-data-resilient prediction that works even when BuildPro data is stale, and cross-system features that no single tool can compute. Growth strategy is Ansoff market penetration: prove at one division, expand within the builder, then sign more builders. The data moat grows with every deal. Full strategic analysis — PESTLE, Porter's, SWOT, VRIO, Ansoff, and Balanced Scorecard — is documented in the strategy frameworks document.
+        The competitive claim is specific: builder systems each hold part of the path to close, while Home Passport normalizes their signals into one dependency graph and one explainable risk view. This is not a claim that competition cannot emerge. ERP, workflow, and analytics vendors can move toward the same problem. Our execution strategy is to prove value in one paid division, expand within that builder, and compound normalized data and workflow adoption. Market sizing is bottom-up at one $100-per-monitored-home hypothesis: $67.9 million total U.S. new-home revenue, more than $50 million from top-200 builders, and a concrete three-year target of $2.5 million ARR from ten builders averaging 2,500 homes.
+    </aside>
+</section>
+
+<!-- SLIDE 10: Market Opportunity -->
+<section>
+    <p class="eyebrow">Market Opportunity</p>
+    <h2>One unit of value: a home monitored through close.</h2>
+    <p>The $18–24B industry pain envelope explains urgency. Market size is calculated separately from annual homes and one $100-per-home pricing hypothesis.</p>
+
+    <div class="grid-3" style="margin-top: 12px;">
+        <div class="card" style="text-align: center; border-top: 3px solid var(--accent);">
+            <p class="eyebrow">TAM · Total Market</p><div class="stat">$67.9M</div>
+            <p style="margin-top: 6px;"><strong>679,083</strong> U.S. new homes sold in 2025 × <strong>$100</strong></p>
+            <p style="font-size: 0.56em; margin-top: 6px;">Revenue if every U.S. new home used Home Passport.</p>
+        </div>
+        <div class="card" style="text-align: center; border-top: 3px solid var(--accent);">
+            <p class="eyebrow">SAM · Initial Buyers</p><div class="stat">&gt;$50M</div>
+            <p style="margin-top: 6px;"><strong>&gt;500,000</strong> top-200 builder units × <strong>$100</strong></p>
+            <p style="font-size: 0.56em; margin-top: 6px;">Revenue from production builders served first.</p>
+        </div>
+        <div class="card" style="text-align: center; border-top: 3px solid var(--green);">
+            <p class="eyebrow">SOM · 3-Year Target</p><div class="stat stat-green">$2.5M</div>
+            <p style="margin-top: 6px;"><strong>10 builders × 2,500 homes</strong> × <strong>$100</strong></p>
+            <p style="font-size: 0.56em; margin-top: 6px;">A 25,000-home operating target, about 5% of SAM volume.</p>
+        </div>
+    </div>
+
+    <div class="grid-2" style="margin-top: 12px;">
+        <div class="card"><h3>Regional builder example</h3><p>2,400 annual homes × $100 = <strong>$240K annual contract value</strong>.</p></div>
+        <div class="card"><h3>National ceiling example</h3><p>87,168 annual homes × $100 = <strong>$8.7M annual contract value</strong> at full adoption.</p></div>
+    </div>
+    <div class="source-note">Sources: <a href="https://www.census.gov/construction/nrs/pdf/newressales.pdf" target="_blank">U.S. Census New Residential Sales</a>; NAHB/Builder top-200 closing totals. Pricing and SOM are operating hypotheses to validate through paid pilots; expansion markets are excluded.</div>
+    <aside class="notes">
+        TAM, SAM, and SOM are revenue definitions, not percentages of industry pain. TAM asks what annual revenue exists if all 679,083 U.S. new homes use the product at $100 each: $67.9 million. SAM narrows to the production builders we can serve first: more than 500,000 top-200 units, or more than $50 million. SOM is our three-year operating target: ten builders averaging 2,500 homes, or $2.5 million ARR. The pricing hypothesis must be validated in paid pilots.
     </aside>
 </section>
 
 <!-- SLIDE 11: Value Proposition Summary -->
 <section>
-    <p class="eyebrow">The Opportunity</p>
-    <h2>Real-time visibility → fewer delays → less waste → higher margins.</h2>
+    <p class="eyebrow">Financial Visibility</p>
+    <h2>Make the product math visible — and label it correctly.</h2>
+    <div class="highlight" style="margin-top: 10px;">
+        <p style="text-align: center; font-size: 0.78em;"><strong>Per home: max(0, target close date − original close date) × $500/day</strong></p>
+    </div>
 
-    <div class="grid-2" style="margin-top: 14px;">
-        <div>
-            <table class="data-table">
-                <thead><tr><th>Builder Pain</th><th>Home Passport Solution</th></tr></thead>
-                <tbody>
-                    <tr><td>Can't see cross-system dependencies</td><td>Graph engine maps construction → mortgage → title → CRM</td></tr>
-                    <tr><td>Homes cancel because problems surface too late</td><td>Confidence Score predicts risk per home in real-time</td></tr>
-                    <tr><td>Operations teams waste time asking "where are we?"</td><td>Unified dashboard with milestone visibility</td></tr>
-                    <tr><td>Incentives are the only lever</td><td>AI-powered escalation triggers action before stalls</td></tr>
-                    <tr><td>No permanent record of construction</td><td>Immutable audit trail (future roadmap, deferred)</td></tr>
-                </tbody>
-            </table>
+    <div class="grid-3" style="margin-top: 12px;">
+        <div class="card" style="text-align: center;"><p class="eyebrow">Home A</p><div class="stat stat-green" style="font-size: 1.5em;">0 days</div><p style="margin-top: 6px;">On or before original date<br><strong>$0 exposure</strong></p></div>
+        <div class="card" style="text-align: center;"><p class="eyebrow">Home B</p><div class="stat stat-orange" style="font-size: 1.5em;">8 days</div><p style="margin-top: 6px;">Close date moved later<br><strong>$4,000 exposure</strong></p></div>
+        <div class="card" style="text-align: center;"><p class="eyebrow">Home C</p><div class="stat stat-orange" style="font-size: 1.5em;">14 days</div><p style="margin-top: 6px;">Close date moved later<br><strong>$7,000 exposure</strong></p></div>
+    </div>
+
+    <div class="grid-2" style="margin-top: 12px;">
+        <div class="card" style="border-left: 3px solid var(--accent);">
+            <h3>Three-home division view</h3>
+            <p><strong>0 + 8 + 14 = 22 delayed days</strong><br>22 × $500 = <strong>$11,000 estimated delay exposure</strong></p>
         </div>
-        <div>
-            <div class="card" style="text-align: center; padding: 20px;">
-                <p style="font-size: 0.6em; color: var(--text-3); margin-bottom: 4px;">Expected Impact Per Division</p>
-                <div class="stat" style="font-size: 2.2em;">$1.75M</div>
-                <p style="font-size: 0.6em; margin-top: 4px;">preventable losses per year</p>
-            </div>
-            <div class="grid-2" style="margin-top: 10px; gap: 8px;">
-                <div class="card" style="text-align: center; padding: 12px;">
-                    <div class="stat stat-green" style="font-size: 1.4em;">5–10 days</div>
-                    <p style="font-size: 0.56em;">cycle time reduction</p>
-                </div>
-                <div class="card" style="text-align: center; padding: 12px;">
-                    <div class="stat stat-green" style="font-size: 1.4em;">15–25%</div>
-                    <p style="font-size: 0.56em;">fewer cancellations</p>
-                </div>
-                <div class="card" style="text-align: center; padding: 12px;">
-                    <div class="stat stat-green" style="font-size: 1.4em;">20–30%</div>
-                    <p style="font-size: 0.56em;">fewer "where are we?" calls</p>
-                </div>
-                <div class="card" style="text-align: center; padding: 12px;">
-                    <div class="stat stat-orange" style="font-size: 1.4em;">$70M+</div>
-                    <p style="font-size: 0.56em;">exposure per top builder</p>
-                </div>
-            </div>
+        <div class="card" style="border-left: 3px solid var(--green);">
+            <h3>Annual planning scenario</h3>
+            <p>200 homes/month × 12% delayed × 35% preventable × 18 days × $500 × 12 = <strong>$907,200/year</strong></p>
         </div>
     </div>
-    <div class="source-note">
-        200 homes/div/month × 12% delayed × 35% preventable × $700/day × 18 days = $1.75M/yr per division. Top builders have 40+ divisions.
+    <div class="highlight" style="margin-top: 10px;">
+        <p><strong>Commercial hypothesis:</strong> $100/home pricing equals about 26% of the modeled $378 average preventable exposure per home. A paid pilot must prove whether actions taken through Home Passport convert exposure into realized savings.</p>
     </div>
+    <div class="source-note">$500/day matches the current product constant. A $700/day external sensitivity produces $1.270M/year under the same assumptions, but is not the in-product rate. Content sourced from external references was rephrased for compliance with licensing restrictions.</div>
     <aside class="notes">
-        Let me close with the value proposition mapped directly to the pain we just showed you. Can't see cross-system dependencies? Our graph engine maps them. Deals cancel because problems surface too late? Confidence score predicts risk in real-time. Operations teams waste time asking "where are we?" — unified dashboard. Incentives are the only lever? AI escalation triggers action before deals stall. No permanent record? Blockchain passport. The math: 200 homes per division per month, 12% get delayed, 35% of those are preventable with visibility, at $700 per day for 18 days average — that's $1.75 million per year per single division. D.R. Horton has 40+ divisions. Lennar has 35-40. That's $70 million in preventable losses per top builder. Our pricing: $500 to $2,000 per home transaction. At those prices, the ROI is immediate and obvious.
+        The product reports estimated delay exposure, not realized savings. For each home, it takes the later target close date minus the original close date, floors negative values at zero, and multiplies delayed days by the current $500 daily constant. In this visual, the homes contribute zero, eight, and fourteen days: twenty-two days and $11,000 of exposure. The annual division scenario is $907,200 at the same product rate. Actual savings must be measured from interventions in a paid pilot.
     </aside>
 </section>
 
