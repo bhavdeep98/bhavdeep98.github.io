@@ -57,42 +57,48 @@
 <div class="slides">
 
 <section>
-    <p class="eyebrow">Internal Strategy Session &middot; July 2026</p>
-    <h1>Investment Strategy &amp;<br>Operating Decisions</h1>
-    <p style="font-size: 0.88em; margin-top: 6px;">A defensible investor story built from product behavior, bottom-up economics, and milestone-gated spending.</p>
+    <p class="eyebrow">Home Passport &middot; Internal Investment Strategy &middot; July 2026</p>
+    <h1>Homebuilders cannot see a home&rsquo;s full path to close.</h1>
+    <p style="font-size: 0.88em; margin-top: 6px;">Construction, mortgage, title, CRM, and financial status live in separate systems. Each team sees its own work; nobody sees cross-system closing risk early enough to act.</p>
     <div style="margin-top: 14px;">
-        <span class="badge">$100 / Home</span><span class="badge">$2M Pre-Seed SAFE</span><span class="badge">24-Month Plan</span><span class="badge">AI First</span>
+        <span class="badge">Closing Confidence Wedge</span><span class="badge">Read-Only Integration</span><span class="badge">Cross-System Data Platform</span><span class="badge">Pricing to Validate</span>
     </div>
     <div class="highlight" style="margin-top: 18px;">
-        <p><strong>Decisions:</strong> quantify exposure, not promised savings &rarr; price from monitored homes, not industry pain &rarr; omit blockchain from the core thesis &rarr; release funds as customer milestones justify them.</p>
+        <p><strong>Home Passport creates the missing operating layer:</strong> one dependency graph, one explainable on-time-close probability, and one prioritized action view across every monitored home.</p>
     </div>
 </section>
 
 <section>
-    <p class="eyebrow">Problem Context</p>
-    <h2>$18&ndash;24B is a pain envelope &mdash; not our market size.</h2>
-    <div class="grid-2" style="margin-top: 12px;">
-        <div>
-            <table class="metrics">
-                <tr><th>Evidence bucket</th><th>Annual amount</th><th>Confidence</th></tr>
-                <tr><td>Longer-build carrying cost</td><td><strong>$2.663B</strong></td><td>NAHB/HBI estimate</td></tr>
-                <tr><td>Lost production</td><td><strong>$8.143B</strong></td><td>NAHB/HBI estimate</td></tr>
-                <tr><td>Excess incentives</td><td><strong>$5&ndash;8B</strong></td><td>Planning estimate from builder disclosures</td></tr>
-                <tr><td>Cancellation waste</td><td><strong>$3&ndash;5B</strong></td><td>Planning estimate from transaction data</td></tr>
-                <tr><td><strong>Contextual envelope</strong></td><td><strong>$18&ndash;24B</strong></td><td>Potential overlap</td></tr>
-            </table>
+    <p class="eyebrow">The Core Problem</p>
+    <h2>Siloed systems show local status &mdash; not whether the home will close.</h2>
+    <div class="grid-3" style="margin-top: 12px;">
+        <div class="card" style="border-top: 3px solid var(--accent);">
+            <h3>Fragmented truth</h3>
+            <p>Construction, mortgage, title, CRM, and financial systems each hold one part of the transaction. No source contains the complete path to close.</p>
         </div>
-        <div>
-            <div class="card" style="border-left: 3px solid var(--accent);">
-                <h3>What is measured vs. estimated</h3>
-                <p><strong>$10.806B</strong> is the sourced NAHB/HBI subtotal. The remaining <strong>$8&ndash;13B</strong> is directional and may overlap with the measured subtotal. It demonstrates urgency; it does not determine pricing or TAM.</p>
-            </div>
-            <div class="highlight">
-                <p><strong>Investor framing:</strong> builders face a large, visible coordination problem. Home Passport earns revenue only from homes monitored through close.</p>
-            </div>
+        <div class="card" style="border-top: 3px solid var(--orange);">
+            <h3>Dependencies stay hidden</h3>
+            <p>A home can look healthy inside one system while another team is stalled. Weekly meetings and spreadsheets discover the mismatch after risk has accumulated.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--red);">
+            <h3>Action comes too late</h3>
+            <p>Teams respond after dates move, incentives rise, or buyers cancel instead of intervening while the outcome can still change.</p>
         </div>
     </div>
-    <p class="source-note">Sources: <a href="https://www.nahb.org/blog/2025/10/hbi-labor-market-report" target="_blank" rel="noopener">NAHB/HBI labor-market report</a>; public builder earnings and Redfin cancellation data. Estimates require pilot validation and should not be summed without the overlap caveat.</p>
+    <div class="grid-2" style="margin-top: 12px;">
+        <div class="card">
+            <p class="eyebrow">Sourced economic evidence</p>
+            <div class="stat" style="font-size: 1.5em;">$10.806B</div>
+            <p style="margin-top: 6px;">NAHB/HBI estimate of annual carrying-cost and lost-production impact associated with longer build times.</p>
+        </div>
+        <div class="card">
+            <p class="eyebrow">Broader urgency context</p>
+            <div class="stat stat-orange" style="font-size: 1.5em;">$18&ndash;24B</div>
+            <p style="margin-top: 6px;">Contextual pain envelope after adding directional incentive and cancellation estimates. Categories may overlap; this is not TAM.</p>
+        </div>
+    </div>
+    <div class="highlight"><p><strong>The product opportunity:</strong> connect the dependencies before the close is at risk, then turn the shared data into a repeatable operating and intelligence layer.</p></div>
+    <p class="source-note">Sources: <a href="https://www.nahb.org/blog/2025/10/hbi-labor-market-report" target="_blank" rel="noopener">NAHB/HBI labor-market report</a>; public builder earnings and Redfin cancellation data. The $18&ndash;24B envelope contains planning estimates and possible overlap; it demonstrates urgency but does not determine pricing or market size.</p>
 </section>
 
 <section>
@@ -134,74 +140,98 @@
 
 <section>
     <p class="eyebrow">Financial Impact</p>
-    <h2>Show estimated delay exposure &mdash; the metric the product actually computes.</h2>
-    <div class="equation">Per home: max(0, target close date &minus; original close date) &times; $500/day</div>
-    <div class="grid-3" style="margin-top: 12px;">
+    <h2>Delay exposure &mdash; an illustrative estimate built on stated assumptions.</h2>
+    <div class="equation">Delay exposure per home = delayed days &times; assumed daily delay cost<br><span style="font-weight: 500; font-size: 0.82em;">delayed days = max(0, target close date &minus; original close date) &nbsp;&middot;&nbsp; assumed daily cost = $500/day</span></div>
+    <div class="grid-3" style="margin-top: 10px;">
         <div class="card" style="text-align: center;"><p class="eyebrow">Home A</p><div class="stat stat-green">0 days</div><p style="margin-top: 6px;">On or before original date<br><strong>$0 exposure</strong></p></div>
         <div class="card" style="text-align: center;"><p class="eyebrow">Home B</p><div class="stat stat-orange">8 days</div><p style="margin-top: 6px;">Close date moved later<br><strong>$4,000 exposure</strong></p></div>
         <div class="card" style="text-align: center;"><p class="eyebrow">Home C</p><div class="stat stat-orange">14 days</div><p style="margin-top: 6px;">Close date moved later<br><strong>$7,000 exposure</strong></p></div>
     </div>
     <div class="grid-2" style="margin-top: 10px;">
-        <div class="card"><h3>Visible division example</h3><p><strong>0 + 8 + 14 = 22 delayed days</strong><br>22 &times; $500 = <strong>$11,000 estimated delay exposure</strong></p></div>
-        <div class="card"><h3>Annual planning scenario</h3><p>200 homes/month &times; 12% delayed &times; 35% preventable &times; 18 days &times; $500 &times; 12 = <strong>$907,200/year</strong></p></div>
+        <div class="card"><h3>Illustrative division view</h3><p><strong>0 + 8 + 14 = 22 delayed days</strong> &times; $500 = <strong>$11,000 delay exposure</strong>. Annual scenario: 200 homes/month &times; 12% delayed &times; 35% preventable &times; 18 days &times; $500 &times; 12 = <strong>$907,200/year</strong>.</p></div>
+        <div class="card" style="border-left: 3px solid var(--orange);"><h3>What $500/day is &mdash; and is not</h3><p><strong>An internal planning assumption, not a measured carrying cost, and it is configurable per builder.</strong> Pure carrying cost (financing, taxes, insurance, upkeep) is roughly <strong>$75&ndash;$205/day</strong> across a $250K&ndash;$800K home. Broader cost-of-delay references run higher &mdash; APB estimates ~<strong>$670/day</strong> on a $750K build. We set $500 deliberately between the two.</p></div>
     </div>
-    <div class="warning"><p><strong>Do not call this realized savings.</strong> It is exposure under a configurable $500/day assumption. A $700/day external sensitivity produces $1.270M/year; it is not the in-product rate.</p></div>
+    <div class="warning"><p><strong>Key caveats:</strong> this is estimated exposure, not realized savings; the $500/day rate, the 12% delayed / 35% preventable / 18-day assumptions, and the exposure formula are all hypotheses to validate in a paid pilot before any outcome-based fee. A $700/day sensitivity raises the annual scenario to ~$1.27M.</p></div>
+    <p class="source-note">Carrying-cost range is a bottom-up planning estimate (~9% of home value/year across financing, property tax, insurance, and upkeep), not a builder quote; financing rate is the main swing factor. Cost-of-delay reference: <a href="https://blog.associationofprofessionalbuilders.com/true-cost-of-project-delay" target="_blank" rel="noopener">Association of Professional Builders</a> (~$670/day on a $750K build). Content rephrased for compliance with licensing restrictions.</p>
 </section>
 
 <section>
-    <p class="eyebrow">Internal Appendix Decision</p>
-    <h2>Blockchain is an option, not a product dependency.</h2>
-    <div class="grid-2" style="margin-top: 12px;">
-        <div>
-            <div class="card" style="border-left: 3px solid var(--green);"><h3>Decision</h3><p><strong>Omit it from the core investor thesis and near-term roadmap.</strong> Confidence scoring, escalation, and the audit log work without a distributed ledger. Revisit only if several customers or title/recording authorities request shared verification.</p></div>
-            <div class="highlight"><p>Market pull is the trigger. There is no arbitrary two- or three-year restart date.</p></div>
-        </div>
-        <div class="card">
-            <h3>Three different legal questions</h3>
-            <p><strong>Private audit trail:</strong> ordinary enterprise data-provenance use; not inherently a security.<br><br><strong>Blockchain-recorded deed:</strong> subject to state property, notarization, filing-format, and local recording procedures.<br><br><strong>Fractional investment token:</strong> securities law may apply when the economic arrangement is an investment contract; changing the record format does not avoid that analysis.</p>
-        </div>
-    </div>
-    <p class="source-note">Sources: <a href="https://www.law.cornell.edu/uscode/text/15/7001" target="_blank" rel="noopener">federal E-SIGN statute</a>; <a href="https://www.azleg.gov/ars/44/07061.htm" target="_blank" rel="noopener">Arizona blockchain statute</a>; <a href="https://www.sec.gov/corpfin/framework-investment-contract-analysis-digital-assets" target="_blank" rel="noopener">SEC digital-asset investment-contract framework</a>. State and local rules remain transaction-specific; obtain counsel before deployment.</p>
-</section>
-
-<section>
-    <p class="eyebrow">Market Opportunity</p>
-    <h2>Define the market from homes monitored &times; one pricing hypothesis.</h2>
-    <div class="funnel">
-        <div class="card" style="border-top: 3px solid var(--accent);"><p class="eyebrow">TAM &middot; Total Market</p><div class="stat">$67.9M</div><p style="margin-top: 6px;"><strong>679,083</strong> U.S. new homes sold in 2025 &times; <strong>$100/home</strong></p></div>
-        <span class="arrow">&rarr;</span>
-        <div class="card" style="border-top: 3px solid var(--accent);"><p class="eyebrow">SAM &middot; Initial Buyers</p><div class="stat">&gt;$50M</div><p style="margin-top: 6px;"><strong>&gt;500,000</strong> top-200 builder units &times; <strong>$100/home</strong></p></div>
-        <span class="arrow">&rarr;</span>
-        <div class="card" style="border-top: 3px solid var(--green);"><p class="eyebrow">SOM &middot; Land &amp; Expand</p><div class="stat stat-green">$5M</div><p style="margin-top: 6px;">3-year base: <strong>50K homes &times; $100</strong><br>National-builder upside: <strong>150K homes &rarr; $15M</strong></p></div>
-    </div>
-    <div class="grid-2" style="margin-top: 12px;">
-        <div class="card"><h3>Milestone ladder</h3>
-            <table class="metrics">
-                <tr><th>Stage</th><th>Homes</th><th>ARR</th></tr>
-                <tr><td>6 months &mdash; paid division pilots</td><td>2,500&ndash;5,000</td><td>$250K&ndash;$500K</td></tr>
-                <tr><td>18 months &mdash; multi-division</td><td>10K&ndash;25K</td><td>$1M&ndash;$2.5M</td></tr>
-                <tr><td>3 years &mdash; base</td><td>50K</td><td>$5M</td></tr>
-                <tr><td>3 years &mdash; upside</td><td>150K</td><td>$15M</td></tr>
-            </table>
-        </div>
-        <div class="card"><h3>Why accelerated</h3><p>Founding CEO has executive-level access to national builders (current VP at a top-5 builder). This shortens introductions and executive sponsorship but does not eliminate procurement, security review, connector deployment, or pilot validation. Forecasts assume authorized pilots, not relationship access alone.</p></div>
-    </div>
-    <p class="source-note">Sources: <a href="https://www.census.gov/construction/nrs/pdf/newressales.pdf" target="_blank" rel="noopener">U.S. Census New Residential Sales</a>; NAHB/Builder top-200 closing totals. Founding team has executive-level access to national builders; forecasts assume authorized pilots and measured expansion, not relationship access alone.</p>
-</section>
-
-<section>
-    <p class="eyebrow">Revenue &amp; Sales Strategy</p>
-    <h2>Land a division, prove ROI, then expand through the builder.</h2>
+    <p class="eyebrow">Platform Expansion</p>
+    <h2>Closing Confidence is the wedge; normalized cross-system data is the platform.</h2>
     <div class="grid-3" style="margin-top: 12px;">
-        <div class="card"><p class="eyebrow">1 &middot; Paid Pilot</p><h3>One division</h3><p>Scope 500&ndash;2,000 active homes, 2&ndash;3 systems, a 90-day connector target, and agreed baseline/outcome definitions. Charge against monitored homes.</p></div>
-        <div class="card"><p class="eyebrow">2 &middot; Proof</p><h3>Case study</h3><p>Validate data freshness, prediction calibration, workflow adoption, escalations acted on, and exposure avoided. Do not promise savings before measurement.</p></div>
-        <div class="card"><p class="eyebrow">3 &middot; Expansion</p><h3>Enterprise rollout</h3><p>Add divisions and system categories under an annual commitment priced at the <strong>$100/home equivalent</strong>, with volume and implementation terms negotiated.</p></div>
+        <div class="card" style="border-top: 3px solid var(--green);">
+            <p class="eyebrow">Now &middot; Product Wedge</p>
+            <h3>Protect the close</h3>
+            <p>Rank homes by on-time-close probability, explain the cross-system risk, and route a human-owned next action before the date moves.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent);">
+            <p class="eyebrow">Next &middot; Operating Intelligence</p>
+            <h3>Improve the transaction</h3>
+            <p>Use the same event history to identify cycle-time bottlenecks, cancellation patterns, stale handoffs, forecast variance, and recurring process failures.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--orange);">
+            <p class="eyebrow">Later &middot; Portfolio Intelligence</p>
+            <h3>Optimize the business</h3>
+            <p>Benchmark divisions and communities, measure interventions, detect incentive leakage, and support planning with builder-specific historical patterns.</p>
+        </div>
+    </div>
+    <div class="equation" style="margin-top: 14px;">Connect systems &rarr; normalize events &rarr; predict risk &rarr; record action &rarr; measure outcome &rarr; improve the model</div>
+    <div class="grid-2" style="margin-top: 12px;">
+        <div class="card"><h3>Why expansion is credible</h3><p>New workflows reuse the connector network, home identity, transaction graph, event history, and outcome labels already required by Closing Confidence.</p></div>
+        <div class="card"><h3>Why expansion is not in the base case</h3><p>Customer willingness to pay, attributable value, and module priority must come from production pilots. These are growth options, not current revenue claims.</p></div>
+    </div>
+    <div class="highlight"><p><strong>Platform thesis:</strong> begin with one urgent decision &mdash; which homes need attention today &mdash; then expand across the transaction using the data foundation already deployed.</p></div>
+</section>
+
+<section>
+    <p class="eyebrow">Market Opportunity &middot; $100/Home Base Case</p>
+    <h2>A clear beachhead today, with platform and outcome revenue excluded.</h2>
+    <div class="funnel">
+        <div class="card" style="border-top: 3px solid var(--accent);"><p class="eyebrow">Base TAM &middot; U.S. New Homes</p><div class="stat">$67.9M</div><p style="margin-top: 6px;"><strong>679,083</strong> homes sold in 2025 &times; <strong>$100 annual fee</strong> per monitored home</p></div>
+        <span class="arrow">&rarr;</span>
+        <div class="card" style="border-top: 3px solid var(--accent);"><p class="eyebrow">Base SAM &middot; Initial Buyers</p><div class="stat">&gt;$50M</div><p style="margin-top: 6px;"><strong>&gt;500,000</strong> top-200 builder homes &times; <strong>$100 annual fee</strong></p></div>
+        <span class="arrow">&rarr;</span>
+        <div class="card" style="border-top: 3px solid var(--green);"><p class="eyebrow">3-Year Base SOM</p><div class="stat stat-green">$5M</div><p style="margin-top: 6px;"><strong>50,000</strong> homes monitored annually &times; <strong>$100</strong></p></div>
+    </div>
+    <div class="grid-2" style="margin-top: 14px;">
+        <div class="card">
+            <h3>What these numbers include</h3>
+            <p>One transparent pricing case: Home Passport receives $100 once for each home monitored during the contract year. This makes the wedge market auditable and avoids sizing revenue as a percentage of industry pain.</p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--orange);">
+            <h3>What these numbers exclude</h3>
+            <p>Annual platform minimums, implementation fees, verified-outcome fees, additional intelligence modules, and expansion beyond U.S. new-home builders. None is counted until pilots establish willingness to pay.</p>
+        </div>
+    </div>
+    <div class="highlight"><p><strong>Investor framing:</strong> $67.9M is the current Closing Confidence wedge TAM under the simplest pricing option &mdash; not the full long-term platform ceiling. Expanded TAM must be earned and quantified from customer evidence.</p></div>
+    <p class="source-note">Sources: <a href="https://www.census.gov/construction/nrs/pdf/newressales.pdf" target="_blank" rel="noopener">U.S. Census New Residential Sales</a>; NAHB/Builder top-200 closing totals. The $100 annual fee is a pricing hypothesis, not an adopted price or reported industry benchmark.</p>
+</section>
+
+<section>
+    <p class="eyebrow">Revenue Model Options</p>
+    <h2>Test three models in paid pilots &mdash; do not present a pricing decision yet.</h2>
+    <div class="grid-3" style="margin-top: 12px;">
+        <div class="card" style="border-top: 3px solid var(--accent);">
+            <p class="eyebrow">Option A &middot; Usage-Led</p>
+            <h3>$100 per monitored home</h3>
+            <p>Charge once for each home monitored during the contract year, with an annual volume commitment and true-up.<br><br><strong>Strength:</strong> simple, transparent, and scales with usage.<br><strong>Risk:</strong> caps the base U.S. wedge TAM at $67.9M and varies with housing volume.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--green);">
+            <p class="eyebrow">Option B &middot; Platform + Volume</p>
+            <h3>Annual platform subscription</h3>
+            <p>Price by division or enterprise with an included annual home band, volume overages, and negotiated implementation terms.<br><br><strong>Strength:</strong> budgetable revenue that reflects integration and platform value.<br><strong>Risk:</strong> harder to set before ROI and adoption are proven.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--orange);">
+            <p class="eyebrow">Option C &middot; Base + Outcome</p>
+            <h3>Verified-outcome finding fee</h3>
+            <p>Combine an annual minimum or per-home base with a capped share of value from qualifying findings that lead to verified outcomes.<br><br><strong>Strength:</strong> aligns price with measurable customer value and creates upside.<br><strong>Risk:</strong> requires agreed baselines, attribution, audit rights, timing, and fee caps.</p>
+        </div>
     </div>
     <div class="grid-2" style="margin-top: 12px;">
-        <div class="card" style="border-left: 3px solid var(--green);"><h3>Regional example</h3><p>2,400 annual homes &times; $100 = <strong>$240K ACV</strong>, compared with a planning exposure scenario of $907K/year. That is a hypothesis to validate, not a guaranteed return.</p></div>
-        <div class="card"><h3>National ceiling example</h3><p>D.R. Horton's 87,168 homes &times; $100 = <strong>$8.7M ACV</strong> at full adoption. This replaces the unsupported prior example.</p></div>
+        <div class="card"><h3>What every paid pilot measures</h3><p>Homes monitored, source freshness, prediction calibration, findings accepted, interventions completed, close-date movement, avoidable exposure, workflow adoption, and procurement response to each price structure.</p></div>
+        <div class="card"><h3>Decision gate after 2&ndash;3 pilots</h3><p>Choose the model that produces the clearest customer ROI, lowest attribution disputes, strongest gross margin, most predictable renewal, and easiest enterprise procurement &mdash; not the largest spreadsheet TAM.</p></div>
     </div>
-    <div class="highlight"><p><strong>GTM spending gate:</strong> founder-led selling first; add dedicated sales capacity only after two paid pilots and one credible case study.</p></div>
+    <div class="highlight"><p><strong>Current modeling convention:</strong> TAM, SAM, SOM, and fundraising milestones use Option A at $100 per home only so the deck has one comparable base case. That is a modeling assumption, not a commercial decision.</p></div>
 </section>
 
 <section>
@@ -215,8 +245,8 @@
                 <tr><td>Raise</td><td><strong>$2,000,000</strong></td></tr>
                 <tr><td>Valuation cap</td><td><strong>$12,000,000 post-money</strong></td></tr>
                 <tr><td>Implied dilution</td><td><strong>~16.7%</strong> before other securities</td></tr>
-                <tr><td>Planned deployment</td><td><strong>24 months</strong>; next raise begins near month 18</td></tr>
-                <tr><td>Average ceiling</td><td><strong>$83,333/month</strong>; unspent capital remains runway</td></tr>
+                <tr><td>Planned deployment</td><td><strong>24 months</strong> planned; blended US/India team extends runway toward <strong>~30 months</strong></td></tr>
+                <tr><td>Average ceiling</td><td><strong>$83,333/month</strong> planned; lower engineering burn keeps unspent capital as runway</td></tr>
             </table>
         </div>
         <div class="card" style="border-left: 3px solid var(--accent);">
@@ -236,37 +266,38 @@
             <table class="metrics">
                 <tr><th>Budget pool</th><th>Ceiling</th></tr>
                 <tr><td>Founder/core-team compensation</td><td><strong>$520K</strong></td></tr>
-                <tr><td>ML/platform engineering</td><td><strong>$320K</strong></td></tr>
+                <tr><td>ML/platform engineering <span style="color: var(--text-3);">(US lead + India pod)</span></td><td><strong>$210K</strong></td></tr>
                 <tr><td>Full-time product design</td><td><strong>$250K</strong></td></tr>
-                <tr><td>Integration/security engineering</td><td><strong>$240K</strong></td></tr>
+                <tr><td>Integration/security engineering <span style="color: var(--text-3);">(US lead + India pod)</span></td><td><strong>$150K</strong></td></tr>
                 <tr><td>Go-to-market</td><td><strong>$220K</strong></td></tr>
                 <tr><td>Infrastructure/security/compliance</td><td><strong>$200K</strong></td></tr>
                 <tr><td>Legal/admin/recruiting</td><td><strong>$80K</strong></td></tr>
-                <tr><td>Reserve</td><td><strong>$170K</strong></td></tr>
+                <tr><td>Reserve &amp; extended runway</td><td><strong>$370K</strong></td></tr>
                 <tr><td><strong>Total</strong></td><td><strong>$2.000M</strong></td></tr>
             </table>
         </div>
         <div>
-            <div class="card" style="margin-bottom: 9px;"><h3>At close</h3><p>Fund required founder compensation, ML/platform review, and full-time product design. Compensation pools do not pre-assign roles to contributors who have not committed full time.</p></div>
-            <div class="card" style="margin-bottom: 9px;"><h3>After first paid pilot</h3><p>Add integration/security capacity and increase compliance spending as enterprise reviews expose concrete requirements.</p></div>
-            <div class="card"><h3>After two paid pilots</h3><p>Release dedicated GTM hiring and larger event spend only when a case study and repeatable sales narrative exist.</p></div>
+            <div class="card" style="border-left: 3px solid var(--green); margin-bottom: 9px;"><h3>Blended US/India engineering</h3><p>A senior US lead paired with an India engineering pod cuts fully loaded engineering cost by roughly 40&ndash;55% versus US-only hiring, freeing about <strong>$200K</strong> into reserve and extending runway toward ~30 months at the same milestones.</p></div>
+            <div class="card" style="margin-bottom: 9px;"><h3>Staging</h3><p>At close: founder compensation, ML/platform review, product design. After first paid pilot: add integration/security capacity. After two pilots: release dedicated GTM hiring and larger event spend.</p></div>
+            <div class="card" style="border-left: 3px solid var(--orange);"><h3>Offshore guardrails</h3><p>Offshore access to customer data stays inside tenant-scoped controls, DPAs, and least-privilege roles; pilots use synthetic or de-identified data until enterprise security review clears production access.</p></div>
         </div>
     </div>
-    <div class="highlight"><p><strong>Operating principle:</strong> these are maximum allocations, not instructions to spend every dollar. Infrastructure and hiring scale only when workload and customers justify them.</p></div>
+    <div class="highlight"><p><strong>Operating principle:</strong> these are maximum allocations, not instructions to spend every dollar. The India hub lowers burn per unit of engineering output, so capacity and runway scale further without a larger raise.</p></div>
 </section>
 
 <section>
-    <p class="eyebrow">Enterprise Infrastructure</p>
-    <h2>Millions of historical homes are an archive problem &mdash; not a live-graph problem.</h2>
+    <p class="eyebrow">Infrastructure &amp; Data Economics</p>
+    <h2>Cheap to run at scale &mdash; and history compounds into a data moat.</h2>
+    <p>Only active homes run as live graphs, so infrastructure stays in the low thousands per month even at national volume. Completed homes cost cents to retain and become training features and benchmarks.</p>
     <div class="grid-4" style="margin-top: 12px;">
         <div class="card" style="border-top: 3px solid var(--accent);"><p class="eyebrow">Pilot Division</p><div class="stat" style="font-size: 1.35em;">$1.1&ndash;1.5K</div><p style="margin-top: 6px;">per month<br>500&ndash;2K active homes<br>1K&ndash;10K signals/day</p></div>
         <div class="card" style="border-top: 3px solid var(--accent);"><p class="eyebrow">Regional Builder</p><div class="stat" style="font-size: 1.35em;">$1.7&ndash;3.0K</div><p style="margin-top: 6px;">per month<br>5K&ndash;15K active homes<br>10K&ndash;75K signals/day</p></div>
         <div class="card" style="border-top: 3px solid var(--orange);"><p class="eyebrow">National Builder</p><div class="stat stat-orange" style="font-size: 1.35em;">$3.8&ndash;9.8K</div><p style="margin-top: 6px;">per month<br>30K&ndash;50K active homes<br>60K&ndash;250K signals/day</p></div>
-        <div class="card" style="border-top: 3px solid var(--green);"><p class="eyebrow">+ 2M History</p><div class="stat stat-green" style="font-size: 1.35em;">+$20&ndash;75</div><p style="margin-top: 6px;">archive/month<br>+$1K&ndash;5K one-time import<br>800GB raw assumption</p></div>
+        <div class="card" style="border-top: 3px solid var(--green);"><p class="eyebrow">+ 2M History</p><div class="stat stat-green" style="font-size: 1.35em;">+$20&ndash;75</div><p style="margin-top: 6px;">retained/month<br>+$1K&ndash;5K one-time import<br>fuels ML + benchmarks</p></div>
     </div>
     <div class="grid-2" style="margin-top: 12px;">
-        <div class="card"><h3>What drives cost</h3><p>Production high availability creates a fixed Kafka/RDS/network baseline. At 250K signals/day, seven-day Kafka storage at RF3 is only ~10.5GB; PostgreSQL can grow roughly <strong>548&ndash;913GB/year</strong> with indexes and overhead.</p></div>
-        <div class="card"><h3>Required before national scale</h3><p>RF3 Kafka with 12&ndash;24 partitions; multiple graph consumers; PgBouncer and explicit pools; RDS Multi-AZ; time-partitioned signals; closed-home graph archival; S3/Parquet history and derived ML features.</p></div>
+        <div class="card" style="border-left: 3px solid var(--accent);"><h3>Why cost stays low</h3><p>A national builder runs tens of thousands of active homes, not millions. Live cost is a fixed high-availability baseline plus a small streaming/storage increment &mdash; roughly <strong>0.1%</strong> of a $100/home contract at national scale.</p></div>
+        <div class="card" style="border-left: 3px solid var(--green);"><h3>Why history is an asset, not a burden</h3><p>Completed homes move once into S3/Parquet at ~$20&ndash;75/month and become labeled training data and portfolio benchmarks. Cheap to keep, compounding in value &mdash; the data foundation behind the platform-expansion story.</p></div>
     </div>
     <p class="source-note">Planning assumptions: AWS us-east-1 on-demand, ARM Fargate, 2KB average signal, 2&ndash;5 signals/active-home/day, seven-day Kafka retention. Sources: <a href="https://aws.amazon.com/fargate/pricing/" target="_blank" rel="noopener">AWS Fargate pricing</a>, <a href="https://aws.amazon.com/msk/pricing/" target="_blank" rel="noopener">AWS MSK pricing</a>, <a href="https://aws.amazon.com/rds/postgresql/pricing/" target="_blank" rel="noopener">AWS RDS for PostgreSQL pricing</a>, <a href="https://aws.amazon.com/s3/pricing/" target="_blank" rel="noopener">AWS S3 pricing</a>. Ranges are planning estimates until production telemetry exists; vendor egress and services are excluded.</p>
 </section>
@@ -292,6 +323,22 @@
     </div>
     <div class="warning"><p><strong>Primary risks:</strong> security review delays, source-system access, incomplete data, weak model lift, long enterprise sales cycles, and willingness to pay. Mitigate with paid pilots, scoped integrations, telemetry, and milestone-gated spending &mdash; not unsupported probability estimates.</p></div>
     <p class="source-note">Content sourced from external references was rephrased for compliance with licensing restrictions.</p>
+</section>
+
+<section>
+    <p class="eyebrow">Appendix &middot; Optional Direction</p>
+    <h2>Blockchain is an option, not a product dependency.</h2>
+    <div class="grid-2" style="margin-top: 12px;">
+        <div>
+            <div class="card" style="border-left: 3px solid var(--green);"><h3>Position</h3><p><strong>Omit it from the core investor thesis and near-term roadmap.</strong> Confidence scoring, escalation, and the audit log work without a distributed ledger. Revisit only if several customers or title/recording authorities request shared verification.</p></div>
+            <div class="highlight"><p>Market pull is the trigger. There is no arbitrary two- or three-year restart date.</p></div>
+        </div>
+        <div class="card">
+            <h3>Three different legal questions</h3>
+            <p><strong>Private audit trail:</strong> ordinary enterprise data-provenance use; not inherently a security.<br><br><strong>Blockchain-recorded deed:</strong> subject to state property, notarization, filing-format, and local recording procedures.<br><br><strong>Fractional investment token:</strong> securities law may apply when the economic arrangement is an investment contract; changing the record format does not avoid that analysis.</p>
+        </div>
+    </div>
+    <p class="source-note">Sources: <a href="https://www.law.cornell.edu/uscode/text/15/7001" target="_blank" rel="noopener">federal E-SIGN statute</a>; <a href="https://www.azleg.gov/ars/44/07061.htm" target="_blank" rel="noopener">Arizona blockchain statute</a>; <a href="https://www.sec.gov/corpfin/framework-investment-contract-analysis-digital-assets" target="_blank" rel="noopener">SEC digital-asset investment-contract framework</a>. State and local rules remain transaction-specific; obtain counsel before deployment.</p>
 </section>
 
 </div>
