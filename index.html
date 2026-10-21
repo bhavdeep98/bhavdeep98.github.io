@@ -600,7 +600,9 @@ const setup=()=>{if(window.gsap&&window.ScrollTrigger&&ANIM&&!MOB){gsap.register
  else{jtrack.addEventListener('scroll',()=>{jrange.value=Math.round(jtrack.scrollLeft/(jtrack.scrollWidth-jtrack.clientWidth||1)*1000)},{passive:true})}};
 jrange.addEventListener('input',()=>{const v=jrange.value/1000;if(pinST)scrollTo({top:pinST.start+(pinST.end-pinST.start)*v,behavior:'auto'});else jtrack.scrollLeft=v*(jtrack.scrollWidth-jtrack.clientWidth)});
 jtrack.addEventListener('keydown',e=>{if(e.target!==jtrack)return;const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;e.preventDefault();jrange.value=clamp(+jrange.value+d*80,0,1000);jrange.dispatchEvent(new Event('input'))});
-if(document.readyState==='complete')setup();else addEventListener('load',setup);
+const goHash=()=>{const id=decodeURIComponent(location.hash.slice(1));const t=id&&document.getElementById(id);if(t)requestAnimationFrame(()=>requestAnimationFrame(()=>t.scrollIntoView({behavior:'auto',block:'start'})))};
+const boot=()=>{setup();goHash()};
+if(document.readyState==='complete')boot();else addEventListener('load',boot);
 /* ---------- tilt + magnetic ---------- */
 if(FINE&&ANIM){$$('.wcard').forEach(c=>{c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.setProperty('--ry',x*14+'deg');c.style.setProperty('--rx',-y*14+'deg')});c.addEventListener('pointerleave',()=>{c.style.setProperty('--ry','0deg');c.style.setProperty('--rx','0deg')})});
  const m=$('#mail');if(m){m.addEventListener('pointermove',e=>{const r=m.getBoundingClientRect();m.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.3}px)`});m.addEventListener('pointerleave',()=>{m.style.transition='transform .4s';m.style.transform=''})}}
