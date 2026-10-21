@@ -9,16 +9,15 @@
                                       /_/                     /____/        
 ```
 
-Hey there! I'm Bhavdeep Singh Sachdeva - a Software Engineer at AWS GuardDuty who loves building AI systems and writing about the future of artificial intelligence.
+Hey there! I'm Bhavdeep Singh Sachdeva - a software engineer and NLP researcher (formerly AWS GuardDuty and Security Hub) who loves building AI systems and writing about the future of artificial intelligence.
 
 **Live site:** https://bhavdeep98.github.io
 
 ## What's This About?
 
 This is my corner of the internet where I share:
-- Research papers I've published (ACL, EACL, and friends)
+- Research papers I've published (ACL, Findings of ACL, EACL, and friends)
 - Thoughts on AI safety, governance, and multi-agent systems
-- My journey from academia to AWS
 - Random musings about technology and life
 
 Think of it as my digital business card, but way cooler.
