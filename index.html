@@ -45,7 +45,7 @@
 <style>
 :root{--bg:#05070d;--bg2:#0a0e1c;--fg:#e8ebf5;--mut:#a3abc0;--ind:#818cf8;--vio:#a78bfa;--teal:#2dd4bf;--cyan:#22d3ee;--amb:#fbbf24;--glass:rgba(255,255,255,.04);--line:rgba(255,255,255,.1);--disp:"Space Grotesk",Inter,system-ui,sans-serif;--body:Inter,system-ui,-apple-system,Segoe UI,sans-serif;--grad:linear-gradient(100deg,var(--ind),var(--vio) 45%,var(--teal) 80%,var(--cyan));--nav:64px}
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg);color:var(--fg)}
+html{background:var(--bg);color:var(--fg)}
 body{margin:0;font-family:var(--body);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.07;mix-blend-mode:overlay;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 a{color:var(--cyan)}
@@ -596,14 +596,23 @@ if(con&&edges){const C={c:'#818cf8',w:'#2dd4bf',p:'#a78bfa',j:'#22d3ee'};const i
 /* ---------- journey ---------- */
 const jpin=$('#jpin'),jtrack=$('#jtrack'),jrange=$('#jrange'),jsec=$('#journey');
 let pinST=null;
-const setup=()=>{if(window.gsap&&window.ScrollTrigger&&ANIM&&!MOB){gsap.registerPlugin(ScrollTrigger);jsec.classList.add('pinned');const dist=()=>Math.max(0,jtrack.scrollWidth-innerWidth);const tw=gsap.to(jtrack,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:jpin,pin:true,scrub:.8,start:'top 80px',end:()=>'+='+dist(),invalidateOnRefresh:true,onUpdate:s=>{jrange.value=Math.round(s.progress*1000)}}});pinST=tw.scrollTrigger;
-  $$('.pwrap').forEach(w=>ScrollTrigger.create({trigger:w,start:'top 60%',end:'bottom 60%',onToggle:s=>$('.panel',w).classList.toggle('active',s.isActive)}))}
- else{jtrack.addEventListener('scroll',()=>{jrange.value=Math.round(jtrack.scrollLeft/(jtrack.scrollWidth-jtrack.clientWidth||1)*1000)},{passive:true})}};
+const nativeStrip=()=>{jrange.value=Math.round(jtrack.scrollLeft/(jtrack.scrollWidth-jtrack.clientWidth||1)*1000)};
+jtrack.addEventListener('scroll',()=>{if(!pinST)nativeStrip()},{passive:true});
+const setup=()=>{if(!(window.gsap&&window.ScrollTrigger&&ANIM))return;gsap.registerPlugin(ScrollTrigger);ScrollTrigger.config({ignoreMobileResize:true});
+ if(!MOB)$$('.pwrap').forEach(w=>ScrollTrigger.create({trigger:w,start:'top 60%',end:'bottom 60%',onToggle:s=>$('.panel',w).classList.toggle('active',s.isActive)}));
+ /* Pin the journey only on large viewports; smaller ones keep the native scroll-snap strip. */
+ gsap.matchMedia().add('(min-width:1200px) and (min-height:600px)',()=>{jsec.classList.add('pinned');jtrack.scrollLeft=0;const dist=()=>Math.max(0,jtrack.scrollWidth-innerWidth);
+  const tw=gsap.to(jtrack,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:jpin,pin:true,pinSpacing:true,anticipatePin:1,scrub:.8,start:'top 80px',end:()=>'+='+dist(),invalidateOnRefresh:true,onUpdate:s=>{jrange.value=Math.round(s.progress*1000)}}});pinST=tw.scrollTrigger;
+  return()=>{pinST=null;jsec.classList.remove('pinned');gsap.set(jtrack,{clearProps:'transform'});nativeStrip()}})};
 jrange.addEventListener('input',()=>{const v=jrange.value/1000;if(pinST)scrollTo({top:pinST.start+(pinST.end-pinST.start)*v,behavior:'auto'});else jtrack.scrollLeft=v*(jtrack.scrollWidth-jtrack.clientWidth)});
 jtrack.addEventListener('keydown',e=>{if(e.target!==jtrack)return;const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;e.preventDefault();jrange.value=clamp(+jrange.value+d*80,0,1000);jrange.dispatchEvent(new Event('input'))});
 const goHash=()=>{const id=decodeURIComponent(location.hash.slice(1));const t=id&&document.getElementById(id);if(t)requestAnimationFrame(()=>requestAnimationFrame(()=>t.scrollIntoView({behavior:'auto',block:'start'})))};
-const boot=()=>{setup();goHash()};
-if(document.readyState==='complete')boot();else addEventListener('load',boot);
+const loaded=new Promise(r=>document.readyState==='complete'?r():addEventListener('load',r,{once:true}));
+const fontsReady=document.fonts&&document.fonts.ready?document.fonts.ready.catch(()=>0):Promise.resolve();
+Promise.all([loaded,fontsReady]).then(()=>{setup();requestAnimationFrame(()=>{if(window.ScrollTrigger)ScrollTrigger.refresh();goHash();
+ if(window.ScrollTrigger&&window.ResizeObserver){let lastH=document.body.scrollHeight,tm=0;new ResizeObserver(()=>{const h=document.body.scrollHeight;if(Math.abs(h-lastH)<2)return;lastH=h;clearTimeout(tm);tm=setTimeout(()=>ScrollTrigger.refresh(),150)}).observe(document.body)}})});
+/* smooth in-page navigation without CSS scroll-behavior */
+document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a||e.defaultPrevented||e.button||e.metaKey||e.ctrlKey||e.shiftKey)return;const id=decodeURIComponent(a.getAttribute('href').slice(1));const t=id&&document.getElementById(id);if(!t)return;e.preventDefault();t.scrollIntoView({behavior:ANIM?'smooth':'auto',block:'start'});if(!t.hasAttribute('tabindex')&&!/^(A|BUTTON|INPUT|SELECT|TEXTAREA)$/.test(t.tagName))t.setAttribute('tabindex','-1');t.focus({preventScroll:true});history.pushState(null,'','#'+id)});
 /* ---------- tilt + magnetic ---------- */
 if(FINE&&ANIM){$$('.wcard').forEach(c=>{c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.setProperty('--ry',x*14+'deg');c.style.setProperty('--rx',-y*14+'deg')});c.addEventListener('pointerleave',()=>{c.style.setProperty('--ry','0deg');c.style.setProperty('--rx','0deg')})});
  const m=$('#mail');if(m){m.addEventListener('pointermove',e=>{const r=m.getBoundingClientRect();m.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.3}px)`});m.addEventListener('pointerleave',()=>{m.style.transition='transform .4s';m.style.transform=''})}}
