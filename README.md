@@ -42,10 +42,10 @@ Think of it as my digital business card, but way cooler.
 
 ```
  Frontend:  HTML5 + CSS3 + Vanilla JavaScript
- Fonts:     Google Fonts (Inter)
+ Fonts:     Google Fonts (Inter, Space Grotesk)
+ Visuals:   three.js + GSAP (CDN), SVG, canvas
  Hosting:   GitHub Pages
  SEO:       Meta tags + JSON-LD + Open Graph
- Testing:   Custom Node.js test suite
 ```
 
 No frameworks, no build process, no nonsense. Just clean code that works.
@@ -55,10 +55,9 @@ No frameworks, no build process, no nonsense. Just clean code that works.
 ```
 ├── index.html              # The main show
 ├── images/                 # Photos and icons
-├── articles_archive/       # My writing (13 articles)
+├── articles_archive/       # My writing (11 articles)
 ├── robots.txt             # For search engines
 ├── sitemap.xml            # Also for search engines
-├── run-tests.js           # Quality control
 └── README.md              # You are here
 ```
 
@@ -73,11 +72,6 @@ git clone https://github.com/bhavdeep98/bhavdeep98.github.io.git
 cd bhavdeep98.github.io
 python -m http.server 8000
 # Open http://localhost:8000
-```
-
-Run tests:
-```bash
-node run-tests.js
 ```
 
 ## Contact
