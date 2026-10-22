@@ -231,6 +231,13 @@
             text-decoration: underline;
         }
 
+        a.ref {
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+            text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+        }
+
         /* Lists */
         ul, ol {
             margin: var(--space-6) 0;
@@ -349,10 +356,10 @@
             <section id="understanding-foundations">
                 <h2>Understanding the Foundations</h2>
                 <h3>Monolithic Models: A Starting Point</h3>
-                <p>Monolithic AI models, like OpenAI’s GPT-3, are trained on vast datasets to achieve remarkable general-purpose capabilities (<em>Brown et al., 2020</em>). These models demonstrate versatility in language generation, translation, and summarization. However, their static nature—frozen in the data they were trained on—limits their adaptability to new information or contexts.</p>
+                <p>Monolithic AI models, like OpenAI’s GPT-3, are trained on vast datasets to achieve remarkable general-purpose capabilities (<em><a href="https://arxiv.org/abs/2005.14165" target="_blank" rel="noopener" class="ref">Brown et al., 2020</a></em>). These models demonstrate versatility in language generation, translation, and summarization. However, their static nature—frozen in the data they were trained on—limits their adaptability to new information or contexts.</p>
 
                 <h3>Compound AI Systems: Breaking the Mold</h3>
-                <p>Compound AI represents a paradigm shift. Unlike monolithic models, compound systems integrate multiple components such as reasoning engines, databases, and external tools. These hybrid architectures extend the capabilities of AI by enabling dynamic interaction with external sources. A prominent example is the Retrieval-Augmented Generation (RAG) framework, which equips language models with retrieval systems to access real-time information (<em>Lewis et al., 2020</em>).</p>
+                <p>Compound AI represents a paradigm shift. Unlike monolithic models, compound systems integrate multiple components such as reasoning engines, databases, and external tools. These hybrid architectures extend the capabilities of AI by enabling dynamic interaction with external sources. A prominent example is the Retrieval-Augmented Generation (RAG) framework, which equips language models with retrieval systems to access real-time information (<em><a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noopener" class="ref">Lewis et al., 2020</a></em>).</p>
             </section>
 
             <section id="ai-agents">
@@ -364,7 +371,7 @@
             <section id="research-areas">
                 <h2>Key Research Areas in Compound AI</h2>
                 <h3>1. Retrieval-Augmented Generation (RAG)</h3>
-                <p>The RAG approach exemplifies how external knowledge systems can complement language models. By incorporating retrieval mechanisms, models can dynamically fetch relevant data, improving accuracy and contextual relevance (<em>Lewis et al., 2020</em>).</p>
+                <p>The RAG approach exemplifies how external knowledge systems can complement language models. By incorporating retrieval mechanisms, models can dynamically fetch relevant data, improving accuracy and contextual relevance (<em><a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noopener" class="ref">Lewis et al., 2020</a></em>).</p>
 
                 <h3>2. Modular System Design</h3>
                 <p>Compound AI systems rely heavily on modular architecture. This approach, inspired by microservices in software engineering, allows developers to design interchangeable and scalable components (<em>Modular AI for NLP Tasks, ACL Anthology, 2021</em>).</p>
@@ -376,7 +383,7 @@
                 <p>Tool integration extends the utility of LLMs beyond text generation. For instance, APIs can connect LLMs to data visualization tools, content management systems, or even IoT devices, enabling seamless automation of complex workflows (<em>Polu et al., 2022</em>).</p>
 
                 <h3>5. Memory and Contextualization</h3>
-                <p>Long-term memory is a cornerstone of advanced AI systems. By equipping AI agents with episodic memory mechanisms, researchers aim to allow systems to learn from and adapt to past interactions. Advances in attention mechanisms further enhance this capability (<em>Sukhbaatar et al., 2015</em>).</p>
+                <p>Long-term memory is a cornerstone of advanced AI systems. By equipping AI agents with episodic memory mechanisms, researchers aim to allow systems to learn from and adapt to past interactions. Advances in attention mechanisms further enhance this capability (<em><a href="https://arxiv.org/abs/1503.08895" target="_blank" rel="noopener" class="ref">Sukhbaatar et al., 2015</a></em>).</p>
             </section>
 
             <section id="future-of-ai">
@@ -396,11 +403,11 @@
             <section id="references">
                 <h2>References</h2>
                 <ul>
-                    <li>Brown, T. B., et al. (2020). "Language Models are Few-Shot Learners."</li>
-                    <li>Lewis, P., et al. (2020). "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks."</li>
+                    <li>Brown, T. B., et al. (2020). "<a href="https://arxiv.org/abs/2005.14165" target="_blank" rel="noopener" class="ref">Language Models are Few-Shot Learners.</a>"</li>
+                    <li>Lewis, P., et al. (2020). "<a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noopener" class="ref">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.</a>"</li>
                     <li>Andreas, J., & Klein, D. (2021). "Reasoning with Language Models."</li>
                     <li>Polu, S., et al. (2022). "Tool Use in Language Models: An Emerging Paradigm."</li>
-                    <li>Sukhbaatar, S., et al. (2015). "End-to-End Memory Networks."</li>
+                    <li>Sukhbaatar, S., et al. (2015). "<a href="https://arxiv.org/abs/1503.08895" target="_blank" rel="noopener" class="ref">End-to-End Memory Networks.</a>"</li>
                 </ul>
             </section>
         </main>

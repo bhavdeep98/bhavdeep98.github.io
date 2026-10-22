@@ -208,6 +208,13 @@
             text-decoration: underline;
         }
 
+        a.ref {
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+            text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+        }
+
         /* Lists */
         ul, ol {
             margin: var(--space-6) 0;
@@ -389,7 +396,7 @@
             <p>While action-model learning provides a framework for dynamic adaptation, we can also address this problem from a neural network architecture perspective. This approach involves developing new architectures that go beyond the current paradigms, like transformers, and reflect the unique characteristics of human-model interaction. The goal is to capture long-term connections and complex reasoning patterns, which are central to human cognition but are often underexplored in existing architectures.</p>
 
             <h3>Transformers and Their Limitations:</h3>
-            <p>It’s important to clarify that transformers excel at capturing long-term dependencies in data, which is one of their key strengths. By using self-attention mechanisms, transformers can handle relationships across extended sequences, making them highly effective for tasks like language modeling, machine translation, and summarization. However, as noted in the work of Tomer Ullman and Yejin Choi, transformers still fall short when it comes to modeling human-like capabilities such as theory of mind—the ability to understand and infer the beliefs, desires, and intentions of others—and other forms of abstract reasoning.</p>
+            <p>It’s important to clarify that transformers excel at capturing long-term dependencies in data, which is one of their key strengths. By using self-attention mechanisms, transformers can handle relationships across extended sequences, making them highly effective for tasks like language modeling, machine translation, and summarization. However, as noted in the work of <a href="https://arxiv.org/abs/2302.08399" target="_blank" rel="noopener" class="ref">Tomer Ullman</a> and <a href="https://arxiv.org/abs/2210.13312" target="_blank" rel="noopener" class="ref">Yejin Choi</a>, transformers still fall short when it comes to modeling human-like capabilities such as theory of mind—the ability to understand and infer the beliefs, desires, and intentions of others—and other forms of abstract reasoning.</p>
 
             <h3>Moving Toward Theory of Mind and Reasoning Architectures</h3>
             <p>Instead of solely relying on transformer-based architectures, we should explore models that explicitly incorporate mechanisms for understanding human intentions and reasoning about beliefs. This could involve new forms of inter-layer communication that enable reasoning across layers, reflecting how humans engage in multi-step reasoning processes. Such architectures might:</p>

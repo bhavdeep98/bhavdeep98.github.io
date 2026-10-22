@@ -208,6 +208,13 @@
             text-decoration: underline;
         }
 
+        a.ref {
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+            text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+        }
+
         /* Lists */
         ul, ol {
             margin: var(--space-6) 0;
@@ -320,7 +327,7 @@
             <div class="article-content">
                 <section>
             <h2>Introduction</h2>
-            <p>When I first learned about Cohere For AI's ambitious Project Aya, aiming to build a state-of-the-art multilingual language model, I was thrilled. But my excitement quickly turned to dismay when I realized my mother tongue, Punjabi, was severely underrepresented. As a Punjabi speaker and a software engineer at AWS, I knew I had to do something about it. My familiarity with Dr. Sara Hooker's groundbreaking work on model evaluation and interpretability in AI, particularly her insightful paper, "Moving Beyond 'Algorithmic Bias is a Data Problem,'" was a significant motivator. This paper, which argues for a more holistic approach to evaluating machine learning models beyond just focusing on data, resonated deeply with the challenges I faced in ensuring fair representation for Punjabi in Project Aya. Dr. Hooker's leadership at Cohere For AI and her dedication to responsible AI development are nothing short of inspirational, making it an honor to contribute to an initiative she spearheaded. This article chronicles my journey with Project Aya, the challenges I faced, the lessons I learned, and the broader implications of this work for the future of AI and underrepresented languages.</p>
+            <p>When I first learned about Cohere For AI's ambitious <a href="https://cohere.com/research/aya" target="_blank" rel="noopener" class="ref">Project Aya</a>, aiming to build a state-of-the-art multilingual language model, I was thrilled. But my excitement quickly turned to dismay when I realized my mother tongue, Punjabi, was severely underrepresented. As a Punjabi speaker and a software engineer at AWS, I knew I had to do something about it. My familiarity with Dr. Sara Hooker's groundbreaking work on model evaluation and interpretability in AI, particularly her insightful paper, <a href="https://doi.org/10.1016/j.patter.2021.100241" target="_blank" rel="noopener" class="ref">"Moving Beyond 'Algorithmic Bias is a Data Problem,'"</a> was a significant motivator. This paper, which argues for a more holistic approach to evaluating machine learning models beyond just focusing on data, resonated deeply with the challenges I faced in ensuring fair representation for Punjabi in Project Aya. Dr. Hooker's leadership at Cohere For AI and her dedication to responsible AI development are nothing short of inspirational, making it an honor to contribute to an initiative she spearheaded. This article chronicles my journey with Project Aya, the challenges I faced, the lessons I learned, and the broader implications of this work for the future of AI and underrepresented languages.</p>
         </section>
 
         <section>
@@ -360,18 +367,18 @@
         <section>
             <h2>Accelerating Data Creation with a Human-Powered, NLP-Assisted Workflow</h2>
             <p>With time running out and limited resources, I turned to innovative methods to accelerate progress on Project Aya. Recognizing the critical need for high-quality, human-verified data, I developed a system that leveraged the power of NLP, coupled with the irreplaceable nuance of human understanding. This human-in-the-loop approach became the cornerstone of my contribution.</p>
-            <p>The core of this system was a workflow designed to generate Punjabi question-answer pairs, a crucial dataset for training the Aya model. Here's a breakdown of the process:</p>
+            <p>The core of this system was a workflow designed to generate Punjabi question-answer pairs, a crucial dataset for training the <a href="https://arxiv.org/abs/2402.07827" target="_blank" rel="noopener" class="ref">Aya model</a>. Here's a breakdown of the process:</p>
             <ul>
                 <li><strong>Content Acquisition:</strong> The process began with ethically sourced Punjabi news articles, generously provided by a fellow researcher. This ensured that the foundation of our data was grounded in real-world language usage and current events.</li>
                 <li><strong>Language Choice Flexibility:</strong> Recognizing that contributors might be more comfortable working in either English or Punjabi, the system was designed to be bilingual. We employed Google's Translator API to seamlessly convert the Punjabi text into English, allowing the user to initiate the process in their preferred language.</li>
-                <li><strong>Automated Question Generation (English):</strong> Leveraging the power of NLP, a set of English questions was automatically generated from the news articles using a robust question generation code. Full credit goes to the original developers of the question_generator code. This automated step significantly reduced the time and effort required to create a diverse set of questions.</li>
+                <li><strong>Automated Question Generation (English):</strong> Leveraging the power of NLP, a set of English questions was automatically generated from the news articles using a robust question generation code. Full credit goes to the original developers of the <a href="https://github.com/AMontgomerie/question_generator" target="_blank" rel="noopener" class="ref">question_generator</a> code. This automated step significantly reduced the time and effort required to create a diverse set of questions.</li>
                 <li><strong>Human-in-the-Loop Refinement (English):</strong> This is where the human element became paramount. The automatically generated questions were presented to a human operator (myself, initially, and later collaborators). This crucial step allowed for:</li>
                 <ul>
                     <li>Quality Control: Reviewing the questions for relevance, clarity, and grammatical correctness.</li>
                     <li>Contextual Adaptation: Modifying or entirely rewriting questions to better reflect the nuances of the news article and the intended learning outcomes for the AI model.</li>
                     <li>Creative Expansion: Creating entirely new questions that the automated system might have missed, ensuring a comprehensive exploration of the subject matter.</li>
                 </ul>
-                <li><strong>Answer Generation and Verification (English):</strong> To further assist the human operator, we integrated Hugging Face's open-source QA models, like BERT, to suggest answers based on the refined questions. However, recognizing the limitations of even the most advanced models, this step was not fully automated. The generated answers served as a guide, helping to pinpoint the relevant information within the news article. Human intervention was critical to:</li>
+                <li><strong>Answer Generation and Verification (English):</strong> To further assist the human operator, we integrated Hugging Face's open-source QA models, like <a href="https://aclanthology.org/N19-1423/" target="_blank" rel="noopener" class="ref">BERT</a>, to suggest answers based on the refined questions. However, recognizing the limitations of even the most advanced models, this step was not fully automated. The generated answers served as a guide, helping to pinpoint the relevant information within the news article. Human intervention was critical to:</li>
                 <ul>
                     <li>Accuracy Verification: Cross-referencing the suggested answer with the original text to ensure its factual correctness.</li>
                     <li>Contextual Nuance: Refining the answer to capture the full meaning and context of the information presented in the article.</li>
