@@ -207,24 +207,8 @@ details ul{padding-left:1.1rem}
 .pfull p{margin:.3rem 0}
 .note{font-style:italic;font-size:.8rem}
 /* research impact: who built on it */
-.imp{margin:3.5rem 0 0}
-.imp-h{font-size:clamp(1.6rem,3.4vw,2.4rem);margin:0 0 .6rem}
-.imp-intro{color:var(--mut);max-width:60ch;font-size:1rem;margin:0}
 .mono{display:inline-grid;place-items:center;flex:none;width:2.25rem;height:2.25rem;border-radius:.6rem;font:800 .58rem/1 var(--body);letter-spacing:.03em;color:#05070d;background:var(--k,#818cf8);box-shadow:inset 0 -2px 0 rgba(0,0,0,.18)}
 .m-u{--k:#818cf8}.m-c{--k:#2dd4bf}.m-i{--k:#fbbf24}.m-x{--k:rgba(255,255,255,.14);color:var(--fg)}
-.om{margin:1.4rem 0 1.6rem;padding:clamp(1rem,2.5vw,1.5rem)}
-.om-k{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1.6rem;margin-bottom:1rem}.om-k .st{display:flex;align-items:baseline;gap:.5rem;min-width:0}
-.om-k b{font:700 clamp(1.9rem,5vw,2.6rem)/1 var(--disp);color:var(--fg)}
-.om-k span{color:var(--mut);font-size:.8rem}
-.om-g{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;position:relative}
-.om-y{min-width:0;border-top:2px solid rgba(129,140,248,.35);padding-top:.6rem}
-.om-l{display:block;font:700 .78rem var(--disp);letter-spacing:.08em;color:var(--fg);margin-bottom:.55rem}
-.om-t{display:flex;flex-wrap:wrap;gap:.35rem}
-.om-lg{display:flex;flex-wrap:wrap;gap:.4rem 1rem;margin:1rem 0 0;font-size:.7rem;color:var(--mut)}
-.om-lg span{display:inline-flex;align-items:center;gap:.35rem;background:none}
-.om-lg span::before{content:"";width:.7rem;height:.7rem;border-radius:.2rem;background:var(--k)}
-.js .om .om-t .mono{opacity:0;transform:scale(.6);transition:opacity .35s,transform .45s cubic-bezier(.2,.9,.3,1.3);transition-delay:calc(var(--i,0)*45ms + .1s)}
-.js .om.in .om-t .mono{opacity:1;transform:none}
 .feed,.cbs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
 .fy{grid-column:1/-1;display:flex;align-items:center;gap:.7rem;margin:.6rem 0 -.2rem;font:700 .8rem var(--disp);letter-spacing:.1em;color:var(--mut)}
 .fy::after{content:"";flex:1;height:1px;background:var(--line)}
@@ -257,10 +241,8 @@ details ul{padding-left:1.1rem}
 .cbb p{margin:0;font-size:.78rem;color:#c9cee0}
 .cbb i{color:var(--mut)}
 .imp-src{margin:1.4rem 0 0;font-size:.7rem;color:var(--mut);max-width:70ch}
-html.static .om .om-t .mono{opacity:1!important;transform:none!important;transition:none!important}
-@media (prefers-reduced-motion:reduce){.js .om .om-t .mono{opacity:1;transform:none;transition:none}}
 @media (max-width:900px){.feed,.cbs{grid-template-columns:1fr}}
-@media (max-width:620px){.js .feed:not(.all) .mf{display:none}.news{row-gap:.55rem}.news .nb{display:contents}.news .stk{display:flex;flex-wrap:wrap}.news .stk .mono:only-child{grid-column:auto}.news .nk{align-self:center;margin:0}.news .nh,.news .nu,.news .nw{grid-column:1/-1}.news .nh{margin:0}.news .nu{margin:0}.om-g{grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem .8rem}.mono{width:2rem;height:2rem;font-size:.52rem}.news{padding:.9rem;gap:.7rem}.nh{font-size:.94rem}}
+@media (max-width:620px){.js .feed:not(.all) .mf{display:none}.news{row-gap:.55rem}.news .nb{display:contents}.news .stk{display:flex;flex-wrap:wrap}.news .stk .mono:only-child{grid-column:auto}.news .nk{align-self:center;margin:0}.news .nh,.news .nu,.news .nw{grid-column:1/-1}.news .nh{margin:0}.news .nu{margin:0}.mono{width:2rem;height:2rem;font-size:.52rem}.news{padding:.9rem;gap:.7rem}.nh{font-size:.94rem}}
 /* drawer */
 .drawer{position:fixed;inset:0;z-index:70;display:flex;justify-content:flex-end}
 .drawer[hidden]{display:none}
@@ -288,6 +270,7 @@ html.static .om .om-t .mono{opacity:1!important;transform:none!important;transit
 @keyframes fade{to{opacity:1}}
 @keyframes trav{0%{opacity:0;transform:translateX(0)}6%{opacity:1;transform:translateX(0)}28%{transform:translateX(0)}42%{transform:translateX(150px)}64%{transform:translateX(150px)}78%{transform:translateX(300px)}94%{opacity:1;transform:translateX(300px)}100%{opacity:0;transform:translateX(300px)}}
 .tsvg .ico{fill:none;stroke:var(--cyan);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.tsvg .pn{fill:#161b3a;stroke:#818cf8;stroke-width:1.5}.tsvg .ph,.tsvg .pb{fill:#c7cbff;stroke:none}
 .tcard{padding:1.8rem}
 .tcard h3{font-size:1.4rem;margin:.9rem 0}
 .tcard p{color:var(--mut);margin:0}
@@ -335,9 +318,9 @@ footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--mut);font-siz
 html.static .reveal,html.static .story .w{opacity:1!important;transform:none!important;clip-path:none!important}
 html.static .panel{position:static}
 html.static .pwrap{min-height:0;padding-top:1.2rem}
-html.static .tsvg .ln{stroke-dashoffset:0;animation:none}
-html.static .tsvg .pass,html.static .tsvg .own{opacity:1;transform:none;animation:none}
-html.static .tsvg .trav{opacity:1;transform:translateX(150px);animation:none}
+html.static .tsvg .ln,html.static .tsvg.in .ln{stroke-dashoffset:0;animation:none}
+html.static .tsvg .pass,html.static .tsvg .own,html.static .tsvg.in .pass,html.static .tsvg.in .own{opacity:1;transform:none;animation:none}
+html.static .tsvg .trav,html.static .tsvg.in .trav{opacity:1;transform:translateX(150px);animation:none}
 html.static .beacon{opacity:1}
 html.static .cue,html.static #contact::before,html.static #contact::after{animation:none}
 /* honors cards */
@@ -554,15 +537,6 @@ html.static .tk-tr{animation:none!important}
    <li class="pcard glass" data-id="8" data-type="j" data-x="88" data-y="14" data-r="6" data-authors="Arshvir Kaur, Nitakshi Sood, Naveen Aggarwal, Dinesh Vij, Bhavdeep Sachdeva"><h3>Traffic state detection using smartphone based acoustic sensing</h3><button class="pbtn" type="button" aria-label="Open details: Traffic state detection using smartphone based acoustic sensing"><span class="badge j">JIFS 2017</span><span>2017</span></button><div class="pfull"><p class="auth">Arshvir Kaur, Nitakshi Sood, Naveen Aggarwal, Dinesh Vij, <strong>Bhavdeep Sachdeva</strong></p><p>Journal of Intelligent &amp; Fuzzy Systems 32(4): traffic state detection from acoustic data collected on smartphones.</p><p class="themes">Applied ML</p><a href="https://doi.org/10.3233/JIFS-169259" target="_blank" rel="noopener">Read paper ↗</a></div></li>
   </ol>
   <p><a href="https://scholar.google.com/citations?user=d0sZa-oAAAAJ&amp;hl=en" target="_blank" rel="noopener">Full list on Google Scholar ↗</a></p>
-  <div class="imp" id="impact" aria-labelledby="om-h">
-   <h3 id="om-h" class="imp-h reveal">Where they work</h3>
-   <p class="imp-intro reveal">Organizations on the author lists of the 19 papers that built on it, by year.</p>
-   <div class="om glass reveal" id="orgmap">
-    <div class="om-k"><div class="st"><b>19</b><span>papers that used it</span></div><div class="st"><b>44</b><span>organizations where these authors work</span></div></div>
-    <ol class="om-g" aria-label="Organizations by year"><li class="om-y"><span class="om-l">2022</span><div class="om-t"><span class="mono m-i" title="Allen Institute for AI" role="img" aria-label="Allen Institute for AI" style="--i:0">AI2</span><span class="mono m-u" title="UCLA" role="img" aria-label="UCLA" style="--i:1">UCLA</span><span class="mono m-u" title="Harvard University" role="img" aria-label="Harvard University" style="--i:2">HU</span><span class="mono m-u" title="Georgia Tech" role="img" aria-label="Georgia Tech" style="--i:3">GT</span><span class="mono m-i" title="Idiap Research Institute" role="img" aria-label="Idiap Research Institute" style="--i:4">IDP</span><span class="mono m-u" title="HKUST" role="img" aria-label="HKUST" style="--i:5">HKST</span><span class="mono m-u" title="University of Tübingen" role="img" aria-label="University of Tübingen" style="--i:6">TÜB</span><span class="mono m-u" title="University of Adelaide" role="img" aria-label="University of Adelaide" style="--i:7">ADL</span><span class="mono m-u" title="Stony Brook University" role="img" aria-label="Stony Brook University" style="--i:8">SBU</span></div></li><li class="om-y"><span class="om-l">2023</span><div class="om-t"><span class="mono m-u" title="Fudan University" role="img" aria-label="Fudan University" style="--i:0">FDU</span><span class="mono m-i" title="Shanghai AI Laboratory" role="img" aria-label="Shanghai AI Laboratory" style="--i:1">SAIL</span><span class="mono m-u" title="UC Santa Barbara" role="img" aria-label="UC Santa Barbara" style="--i:2">UCSB</span><span class="mono m-u" title="Kyoto University" role="img" aria-label="Kyoto University" style="--i:3">KYU</span><span class="mono m-i" title="National Institute of Informatics" role="img" aria-label="National Institute of Informatics" style="--i:4">NII</span></div></li><li class="om-y"><span class="om-l">2024</span><div class="om-t"><span class="mono m-u" title="University of Waterloo" role="img" aria-label="University of Waterloo" style="--i:0">UWAT</span><span class="mono m-u" title="Ohio State University" role="img" aria-label="Ohio State University" style="--i:1">OSU</span><span class="mono m-u" title="HKUST" role="img" aria-label="HKUST" style="--i:2">HKST</span><span class="mono m-u" title="University of Edinburgh" role="img" aria-label="University of Edinburgh" style="--i:3">ED</span><span class="mono m-c" title="01.AI" role="img" aria-label="01.AI" style="--i:4">01AI</span><span class="mono m-c" title="Microsoft Research" role="img" aria-label="Microsoft Research" style="--i:5">MSR</span><span class="mono m-u" title="Tsinghua University" role="img" aria-label="Tsinghua University" style="--i:6">THU</span><span class="mono m-u" title="University of Illinois Urbana-Champaign" role="img" aria-label="University of Illinois Urbana-Champaign" style="--i:7">UIUC</span><span class="mono m-u" title="Northeastern University" role="img" aria-label="Northeastern University" style="--i:8">NEU</span><span class="mono m-c" title="ModelBest" role="img" aria-label="ModelBest" style="--i:9">MB</span><span class="mono m-u" title="Renmin University of China" role="img" aria-label="Renmin University of China" style="--i:10">RUC</span><span class="mono m-u" title="Beijing University of Posts and Telecommunications" role="img" aria-label="Beijing University of Posts and Telecommunications" style="--i:11">BUPT</span><span class="mono m-c" title="Tencent" role="img" aria-label="Tencent" style="--i:12">TCT</span><span class="mono m-u" title="Nanjing University" role="img" aria-label="Nanjing University" style="--i:13">NJU</span><span class="mono m-i" title="AIST, Japan" role="img" aria-label="AIST, Japan" style="--i:14">AIST</span><span class="mono m-i" title="Zhejiang Lab" role="img" aria-label="Zhejiang Lab" style="--i:15">ZJL</span><span class="mono m-i" title="Academia Sinica" role="img" aria-label="Academia Sinica" style="--i:16">AS</span><span class="mono m-u" title="National Taiwan University" role="img" aria-label="National Taiwan University" style="--i:17">NTU</span><span class="mono m-u" title="UCLA" role="img" aria-label="UCLA" style="--i:18">UCLA</span><span class="mono m-u" title="CUHK-Shenzhen" role="img" aria-label="CUHK-Shenzhen" style="--i:19">CUHK</span><span class="mono m-i" title="Shenzhen Research Institute of Big Data" role="img" aria-label="Shenzhen Research Institute of Big Data" style="--i:20">SRBD</span><span class="mono m-u" title="University of Maryland" role="img" aria-label="University of Maryland" style="--i:21">UMD</span></div></li><li class="om-y"><span class="om-l">2025</span><div class="om-t"><span class="mono m-u" title="UC Santa Barbara" role="img" aria-label="UC Santa Barbara" style="--i:0">UCSB</span><span class="mono m-c" title="Google Cloud AI Research" role="img" aria-label="Google Cloud AI Research" style="--i:1">GCR</span><span class="mono m-c" title="Google DeepMind" role="img" aria-label="Google DeepMind" style="--i:2">GDM</span><span class="mono m-u" title="Carnegie Mellon University" role="img" aria-label="Carnegie Mellon University" style="--i:3">CMU</span><span class="mono m-u" title="UC Berkeley" role="img" aria-label="UC Berkeley" style="--i:4">UCB</span><span class="mono m-c" title="NVIDIA" role="img" aria-label="NVIDIA" style="--i:5">NV</span><span class="mono m-u" title="MIT" role="img" aria-label="MIT" style="--i:6">MIT</span><span class="mono m-u" title="Tsinghua University" role="img" aria-label="Tsinghua University" style="--i:7">THU</span><span class="mono m-c" title="Salesforce AI Research" role="img" aria-label="Salesforce AI Research" style="--i:8">SFR</span><span class="mono m-c" title="Apple" role="img" aria-label="Apple" style="--i:9">APL</span><span class="mono m-c" title="Red Hat AI Innovation" role="img" aria-label="Red Hat AI Innovation" style="--i:10">RH</span><span class="mono m-c" title="NEC Corporation" role="img" aria-label="NEC Corporation" style="--i:11">NEC</span></div></li></ol>
-    <p class="om-lg" aria-hidden="true"><span class="m-u">University</span><span class="m-c">Company</span><span class="m-i">Research institute</span></p>
-   </div>
-  </div>
  </div>
 </section>
 
@@ -584,8 +558,7 @@ html.static .tk-tr{animation:none!important}
     </g>
     <g class="own">
      <line x1="60" y1="265" x2="460" y2="265" stroke="rgba(129,140,248,.5)" stroke-width="2"/>
-     <g fill="rgba(129,140,248,.25)" stroke="#818cf8" stroke-width="1.5"><circle cx="110" cy="265" r="13"/><circle cx="260" cy="265" r="13"/><circle cx="410" cy="265" r="13"/></g>
-     <g class="ico" stroke="#c7cbff"><path d="M106 268a4 4 0 0 1 8 0M110 258a3 3 0 1 1 0 6M256 268a4 4 0 0 1 8 0M260 258a3 3 0 1 1 0 6M406 268a4 4 0 0 1 8 0M410 258a3 3 0 1 1 0 6"/></g>
+     <g class="person" transform="translate(110 265)"><circle r="13" class="pn"/><circle cy="-4" r="3.6" class="ph"/><path d="M-6.5 7.5c0-4.1 2.9-6.2 6.5-6.2s6.5 2.1 6.5 6.2z" class="pb"/></g><g class="person" transform="translate(260 265)"><circle r="13" class="pn"/><circle cy="-4" r="3.6" class="ph"/><path d="M-6.5 7.5c0-4.1 2.9-6.2 6.5-6.2s6.5 2.1 6.5 6.2z" class="pb"/></g><g class="person" transform="translate(410 265)"><circle r="13" class="pn"/><circle cy="-4" r="3.6" class="ph"/><path d="M-6.5 7.5c0-4.1 2.9-6.2 6.5-6.2s6.5 2.1 6.5 6.2z" class="pb"/></g>
      <text class="lbl" x="110" y="294" font-size="11">Owner 1</text><text class="lbl" x="260" y="294" font-size="11">Owner 2</text><text class="lbl" x="410" y="294" font-size="11">Owner 3</text>
     </g>
     <g class="trav"><rect x="99" y="212" width="22" height="28" rx="4" fill="#0b2a33" stroke="#22d3ee" stroke-width="1.5"/><path d="M104 220h12M104 225h12M104 230h8" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round"/><path d="M110 240v10" stroke="rgba(34,211,238,.6)" stroke-width="1.5" stroke-dasharray="2 2"/></g>
@@ -668,8 +641,6 @@ html.static .tk-tr{animation:none!important}
 const H=document.documentElement,STATIC=H.classList.contains('static'),RM=matchMedia('(prefers-reduced-motion: reduce)').matches,ANIM=!STATIC&&!RM,MOB=matchMedia('(max-width:767px)').matches,FINE=matchMedia('(pointer:fine)').matches;
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)],clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 /* ---------- research impact: org map one-shot reveal + show-more toggles ---------- */
-{const box=$('#impact');if(box){const om=$('#orgmap',box);if(om){if(ANIM){const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){om.classList.add('in');o.disconnect()}}),{rootMargin:'0px 0px -10% 0px'});o.observe(om)}else om.classList.add('in')}
- $$('.fmore',box).forEach(b=>{const l=$('#'+b.dataset.target,box);if(b.dataset.nm&&matchMedia('(max-width:620px)').matches)b.textContent='Show '+b.dataset.nm+' more';const t0=b.textContent;b.addEventListener('click',()=>{const on=l.classList.toggle('all');b.setAttribute('aria-expanded',on);b.textContent=on?'Show fewer':t0;if(on)$$('.reveal',l).forEach(x=>x.classList.add('in'))})})}}
 /* ---------- world dots ---------- */
 const DOTS=(()=>{const t=$('#world-dots'),o=[];if(!t||/__WORLD/.test(t.textContent))return o;t.textContent.trim().split(';').forEach(r=>{const[j,is]=r.split(':');if(!is)return;is.split(',').forEach(i=>{if(i!=='')o.push([-180+i*2.5+1.25,80-j*2.5])})});return o})();
 const BEACONS=(()=>{const s=DOTS.filter(d=>d[1]>-45&&d[1]<68).sort((a,b)=>a[0]-b[0]),n=12,o=[];if(!s.length)return o;const b=s.length/n;for(let i=0;i<n;i++){const st=Math.floor(i*b),len=Math.floor(b)||1;o.push(s[st+((i*37)%len)])}return o})();
